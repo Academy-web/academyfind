@@ -42,27 +42,27 @@ const categories = [
 
 export function TrendingDestinations() {
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <span className="text-sm font-medium text-amber-500">
               Trending Searches
             </span>
 
-            <h2 className="mt-2 text-4xl font-bold tracking-tight">
+            <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
               What Students Are Searching
             </h2>
 
-            <p className="mt-3 max-w-2xl text-muted-foreground">
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
               Discover the most searched coaching destinations across India.
             </p>
           </div>
 
           <Link
             href="/search"
-            className="hidden md:flex items-center gap-2 font-medium hover:text-amber-500"
+            className="hidden items-center gap-2 font-medium transition-colors hover:text-amber-500 md:flex"
           >
             View All
             <ArrowRight className="h-4 w-4" />
@@ -85,18 +85,20 @@ export function TrendingDestinations() {
                     rounded-2xl
                     border
                     bg-background
-                    p-5
+                    p-4
                     transition-all
                     hover:border-amber-200
-                    hover:shadow-sm
+                    hover:shadow-md
+                    sm:p-5
                   "
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex min-w-0 items-center gap-3 sm:gap-4">
                     <div
                       className="
                         flex
                         h-10
                         w-10
+                        shrink-0
                         items-center
                         justify-center
                         rounded-full
@@ -109,12 +111,12 @@ export function TrendingDestinations() {
                       #{index + 1}
                     </div>
 
-                    <div>
-                      <h3 className="font-medium">
+                    <div className="min-w-0">
+                      <h3 className="truncate text-sm font-medium sm:text-base">
                         {item.title}
                       </h3>
 
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs text-muted-foreground sm:text-sm">
                         {item.subtitle}
                       </p>
                     </div>
@@ -124,6 +126,7 @@ export function TrendingDestinations() {
                     className="
                       h-4
                       w-4
+                      shrink-0
                       text-muted-foreground
                       transition-all
                       group-hover:translate-x-1
@@ -133,34 +136,63 @@ export function TrendingDestinations() {
                 </Link>
               ))}
             </div>
+
+            {/* Mobile CTA */}
+            <Link
+              href="/search"
+              className="
+                mt-5
+                flex
+                items-center
+                justify-center
+                gap-2
+                rounded-xl
+                border
+                p-3
+                font-medium
+                transition-colors
+                hover:bg-amber-50
+                md:hidden
+              "
+            >
+              View All Searches
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
           {/* Right */}
           <div className="lg:col-span-4">
-            <div className="rounded-2xl border p-6">
+            <div className="rounded-2xl border bg-background p-5 shadow-sm sm:p-6">
               <div className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-amber-500" />
 
                 <h3 className="font-semibold">
-                  Trending Categories
+                  Popular Categories
                 </h3>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <p className="mt-2 text-sm text-muted-foreground">
+                Explore coaching categories students search the most.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
                 {categories.map((category) => (
                   <Link
                     key={category}
-                    href="/categories"
+                    href={`/search?q=${category}`}
                     className="
                       rounded-full
-                      bg-amber-50
+                      border
                       px-3
-                      py-2
-                      text-sm
+                      py-1.5
+                      text-xs
                       font-medium
-                      text-amber-700
-                      transition-colors
-                      hover:bg-amber-100
+                      transition-all
+                      hover:border-amber-200
+                      hover:bg-amber-50
+                      sm:px-4
+                      sm:py-2
+                      sm:text-sm
                     "
                   >
                     {category}
@@ -168,17 +200,13 @@ export function TrendingDestinations() {
                 ))}
               </div>
 
-              <div className="mt-8 border-t pt-6">
-                <p className="text-sm text-muted-foreground">
-                  Most searched destination this week
+              <div className="mt-6 rounded-xl bg-amber-50 p-4">
+                <p className="text-sm font-medium">
+                  🔥 Most Searched This Week
                 </p>
 
-                <h4 className="mt-2 font-semibold">
-                  JEE Coaching in Kota
-                </h4>
-
                 <p className="mt-1 text-sm text-muted-foreground">
-                  1,200+ institutes available
+                  JEE Coaching in Kota and NEET Coaching in Delhi are trending.
                 </p>
               </div>
             </div>

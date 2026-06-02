@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 const comparisons = [
   {
@@ -27,20 +26,20 @@ const comparisons = [
 
 export function PopularComparisons() {
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-12 flex items-end justify-between">
+        <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <span className="text-sm font-medium text-amber-400">
+            <span className="text-sm font-medium text-amber-500">
               Compare Institutes
             </span>
 
-            <h2 className="mt-2 text-4xl font-bold tracking-tight">
+            <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
               Popular Comparisons
             </h2>
 
-            <p className="mt-3 max-w-2xl text-muted-foreground">
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
               Compare coaching institutes side-by-side and make smarter
               decisions before enrolling.
             </p>
@@ -56,7 +55,7 @@ export function PopularComparisons() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
           {comparisons.map((comparison) => (
             <Link
               key={`${comparison.instituteA}-${comparison.instituteB}`}
@@ -67,35 +66,37 @@ export function PopularComparisons() {
                   group
                   h-full
                   overflow-hidden
+                  rounded-2xl
+                  border
                   transition-all
                   duration-300
-                  hover:-translate-y-1
-                  hover:border-amber-200
-                  hover:shadow-lg
+                  md:hover:-translate-y-1
+                  md:hover:border-amber-200
+                  md:hover:shadow-lg
                 "
               >
-                <CardContent className="p-5">
-                  {/* Institutes */}
+                <CardContent className="p-4 sm:p-5">
                   <div className="flex items-center justify-between">
-                    <div className="flex flex-col items-center">
+                    {/* Institute A */}
+                    <div className="flex flex-col items-center text-center">
                       <div
                         className="
                           flex
-                          h-10
-                          w-10
+                          h-12
+                          w-12
                           items-center
                           justify-center
                           rounded-full
                           bg-amber-50
-                          text-xs
+                          text-sm
                           font-bold
-                          text-amber-400
+                          text-amber-500
                         "
                       >
                         {comparison.instituteA.charAt(0)}
                       </div>
 
-                      <span className="mt-3 font-semibold">
+                      <span className="mt-3 text-sm font-semibold sm:text-base">
                         {comparison.instituteA}
                       </span>
                     </div>
@@ -108,157 +109,102 @@ export function PopularComparisons() {
                           border
                           border-amber-200
                           bg-amber-50
-                          px-2
+                          px-3
                           py-1
                           text-xs
                           font-bold
-                          text-amber-400
+                          text-amber-500
                         "
                       >
                         VS
                       </div>
 
-                      <span className="mt-3 text-xs text-muted-foreground">
+                      <span className="mt-2 text-xs text-muted-foreground">
                         Compare
                       </span>
                     </div>
 
-                    <div className="flex flex-col items-center">
+                    {/* Institute B */}
+                    <div className="flex flex-col items-center text-center">
                       <div
                         className="
                           flex
-                          h-10
-                          w-10
+                          h-12
+                          w-12
                           items-center
                           justify-center
                           rounded-full
                           bg-amber-50
-                          text-xs
+                          text-sm
                           font-bold
-                          text-amber-400
+                          text-amber-500
                         "
                       >
                         {comparison.instituteB.charAt(0)}
                       </div>
 
-                      <span className="mt-3 font-semibold">
+                      <span className="mt-3 text-sm font-semibold sm:text-base">
                         {comparison.instituteB}
                       </span>
                     </div>
                   </div>
 
-                  {/* Category */}
-                  <div className="mt-8 flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-muted-foreground">
-                        Category
-                      </p>
-
-                      <p className="mt-1 font-medium">
-                        {comparison.category}
-                      </p>
-                    </div>
-
-                    <ArrowRight
+                  {/* Footer */}
+                  <div className="mt-6 flex items-center justify-between border-t pt-4">
+                    <span
                       className="
-                        h-5
-                        w-5
-                        text-muted-foreground
-                        transition-all
-                        duration-300
-                        group-hover:translate-x-1
-                        group-hover:text-amber-500
+                        rounded-full
+                        bg-muted
+                        px-3
+                        py-1
+                        text-xs
+                        font-medium
                       "
-                    />
-                  </div>
-
-                  {/* Features */}
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-muted px-3 py-1 text-xs">
-                      Fees
+                    >
+                      {comparison.category}
                     </span>
 
-                    <span className="rounded-full bg-muted px-3 py-1 text-xs">
-                      Faculty
-                    </span>
-
-                    <span className="rounded-full bg-muted px-3 py-1 text-xs">
-                      Results
-                    </span>
-
-                    <span className="rounded-full bg-muted px-3 py-1 text-xs">
-                      Reviews
+                    <span
+                      className="
+                        flex
+                        items-center
+                        gap-1
+                        text-sm
+                        font-medium
+                        text-amber-500
+                      "
+                    >
+                      Compare
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
                 </CardContent>
               </Card>
             </Link>
           ))}
-
-          {/* CTA Card */}
-          
         </div>
-        <div>
-          <Card
-            className="
-              border-dashed
-              transition-all
-              duration-300
-              hover:border-amber-300
-              hover:bg-amber-50/30
-            "
-          >
-            <CardContent className="flex h-full flex-col items-center justify-center p-10 text-center">
-              <div
-                className="
-                  mb-5
-                  flex
-                  h-16
-                  w-16
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-amber-50
-                "
-              >
-                <Search className="h-8 w-8 text-amber-400" />
-              </div>
 
-              <h3 className="text-xl font-semibold">
-                Compare Any Institute
-              </h3>
-
-              <p className="mt-3 max-w-sm text-muted-foreground">
-                Search and compare thousands of coaching institutes across
-                India.
-              </p>
-
-              <Button
-                asChild
-                className="mt-6 bg-amber-400 hover:bg-amber-600"
-              >
-                <Link href="/compare">
-                  Start Comparing
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <div className="mt-8 flex justify-center md:hidden w-full">
+        {/* Mobile CTA */}
+        <div className="mt-8 flex justify-center md:hidden">
           <Link
             href="/compare"
-            className="inline-flex items-center gap-2 font-medium text-amber-400"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-xl
+              border
+              px-4
+              py-3
+              font-medium
+              transition-colors
+              hover:bg-amber-50
+            "
           >
             Compare More Institutes
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        </div>
-        
-
-        {/* Mobile CTA */}
-        
       </div>
     </section>
   );

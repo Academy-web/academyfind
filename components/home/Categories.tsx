@@ -58,20 +58,20 @@ const goals = [
 
 export function ExploreByGoal() {
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-14 flex items-end justify-between">
+        <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <span className="text-sm font-medium text-amber-500">
               Categories
             </span>
 
-            <h2 className="mt-2 text-4xl font-bold tracking-tight">
+            <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
               Explore By Goal
             </h2>
 
-            <p className="mt-3 max-w-2xl text-muted-foreground">
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
               Browse coaching institutes based on your preparation journey.
             </p>
           </div>
@@ -86,7 +86,7 @@ export function ExploreByGoal() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
           {goals.map((goal) => {
             const Icon = goal.icon;
 
@@ -98,19 +98,15 @@ export function ExploreByGoal() {
                     relative
                     h-full
                     overflow-hidden
+                    rounded-2xl
                     border
                     transition-all
                     duration-300
-                    hover:-translate-y-2
-                    hover:border-amber-200
-                    hover:shadow-2xl
+                    md:hover:-translate-y-2
+                    md:hover:border-amber-200
+                    md:hover:shadow-2xl
                   "
                 >
-                  {/* Gradient Background */}
-                  {/* <div
-                    className={`absolute inset-0 bg-gradient-to-br from-amber-50 to amber-100`}
-                  /> */}
-
                   {/* Glow */}
                   <div
                     className="
@@ -120,23 +116,23 @@ export function ExploreByGoal() {
                       h-32
                       w-32
                       rounded-full
-                      bg-white/20
+                      bg-amber-100/40
                       blur-3xl
                       opacity-0
-                        transition-opacity
-                        duration-300
+                      transition-opacity
+                      duration-300
                       group-hover:opacity-100
                     "
                   />
 
-                  <CardContent className="relative p-5">
+                  <CardContent className="relative p-4 sm:p-5">
                     {/* Top Row */}
                     <div className="mb-6 flex items-start justify-between">
                       <div
                         className="
                           flex
-                          h-7
-                          w-7
+                          h-12
+                          w-12
                           items-center
                           justify-center
                           rounded-2xl
@@ -147,7 +143,7 @@ export function ExploreByGoal() {
                           group-hover:scale-110
                         "
                       >
-                        <Icon className="h-7 w-7 text-amber-400" />
+                        <Icon className="h-6 w-6 text-amber-500" />
                       </div>
 
                       <ArrowRight
@@ -164,32 +160,33 @@ export function ExploreByGoal() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-semibold tracking-tight">
+                    <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
                       {goal.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-3 text-sm text-muted-foreground">
+                    <p className="mt-2 text-sm text-muted-foreground">
                       {goal.description}
                     </p>
 
                     {/* Footer */}
-                    <div className="mt-8 flex items-center justify-between">
+                    <div className="mt-6 flex items-center justify-between">
                       <span
                         className="
                           rounded-full
                           bg-background/80
                           px-3
                           py-1
-                          text-xs
+                          text-[11px]
                           font-medium
                           backdrop-blur
+                          sm:text-xs
                         "
                       >
                         {goal.institutes}
                       </span>
 
-                      <span className="text-sm font-medium text-amber-400">
+                      <span className="text-sm font-medium text-amber-500">
                         Explore
                       </span>
                     </div>
@@ -204,7 +201,18 @@ export function ExploreByGoal() {
         <div className="mt-8 flex justify-center md:hidden">
           <Link
             href="/categories"
-            className="inline-flex items-center gap-2 font-medium text-amber-400"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-xl
+              border
+              px-4
+              py-3
+              font-medium
+              transition-colors
+              hover:bg-amber-50
+            "
           >
             View All Categories
             <ArrowRight className="h-4 w-4" />

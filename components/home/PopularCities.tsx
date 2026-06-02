@@ -36,19 +36,20 @@ const cities = [
 
 export function PopularCities() {
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
-        <div className="mb-12 flex items-end justify-between">
+        {/* Header */}
+        <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <span className="text-sm font-medium text-amber-500">
               Explore Cities
             </span>
 
-            <h2 className="mt-2 text-4xl font-bold tracking-tight">
+            <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
               Popular Coaching Cities
             </h2>
 
-            <p className="mt-3 max-w-2xl text-muted-foreground">
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
               Discover coaching institutes across India's most popular
               education hubs.
             </p>
@@ -71,7 +72,8 @@ export function PopularCities() {
           </Link>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {/* Grid */}
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {cities.map((city) => (
             <Link
               key={city.name}
@@ -81,35 +83,52 @@ export function PopularCities() {
                 rounded-2xl
                 border
                 bg-background
-                p-6
+                p-4
+                sm:p-5
                 transition-all
                 duration-300
-                hover:-translate-y-1
-                hover:border-amber-200
-                hover:shadow-md
+                md:hover:-translate-y-1
+                md:hover:border-amber-200
+                md:hover:shadow-md
               "
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-amber-500" />
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-xl
+                        bg-amber-50
+                      "
+                    >
+                      <MapPin className="h-5 w-5 text-amber-500" />
+                    </div>
 
-                    <h3 className="font-semibold">
-                      {city.name}
-                    </h3>
+                    <div>
+                      <h3 className="font-semibold">
+                        {city.name}
+                      </h3>
+
+                      <p className="text-sm text-muted-foreground">
+                        {city.institutes}
+                      </p>
+                    </div>
                   </div>
-
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {city.institutes}
-                  </p>
                 </div>
 
                 <ArrowRight
                   className="
+                    mt-2
                     h-4
                     w-4
                     text-muted-foreground
                     transition-all
+                    duration-300
                     group-hover:translate-x-1
                     group-hover:text-amber-500
                   "
@@ -119,10 +138,22 @@ export function PopularCities() {
           ))}
         </div>
 
+        {/* Mobile CTA */}
         <div className="mt-8 flex justify-center md:hidden">
           <Link
             href="/cities"
-            className="inline-flex items-center gap-2 font-medium text-amber-500"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-xl
+              border
+              px-4
+              py-3
+              font-medium
+              transition-colors
+              hover:bg-amber-50
+            "
           >
             View All Cities
             <ArrowRight className="h-4 w-4" />

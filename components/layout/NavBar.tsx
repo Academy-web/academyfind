@@ -9,67 +9,151 @@ import {
   Building2,
   LogIn,
   UserPlus,
+  Menu,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-zinc-200/60">
-      <div className="max-w-[1140px] mx-auto px-8 py-4 flex items-center justify-between">
-        
+    <header className="sticky top-0 z-50 border-b border-zinc-200/60 bg-white/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-[1140px] items-center justify-between px-4 py-4 lg:px-8">
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="size-9 rounded-xl bg-amber-400 text-amber-50 flex items-center justify-center shadow-lg shadow-amber-500/30">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-amber-400 text-amber-50 shadow-lg shadow-amber-500/30">
             <BookOpen className="size-5" />
           </div>
 
-          <span className="font-bold text-lg tracking-tight">
-            AcademyFind
-            <p className="text-[0.6rem] text-black font-normal">Academy Search Simplified</p>
-          </span>
+          <div>
+            <span className="block text-lg font-bold tracking-tight">
+              AcademyFind
+            </span>
+
+            <p className="hidden text-[0.6rem] text-muted-foreground sm:block">
+              Academy Search Simplified
+            </p>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          <Button variant="ghost" className="gap-2 text-zinc-900">
+          <Button variant="ghost" className="gap-2">
             <Search className="size-4" />
             Search
           </Button>
 
-          <Button variant="ghost" className="gap-2 text-zinc-600">
+          <Button variant="ghost" className="gap-2">
             <BarChart3 className="size-4" />
             Compare
           </Button>
 
-          <Button variant="ghost" className="gap-2 text-zinc-600">
+          <Button variant="ghost" className="gap-2">
             <FileText className="size-4" />
             Resources
           </Button>
 
-          <Button variant="ghost" className="gap-2 text-zinc-600">
+          <Button variant="ghost" className="gap-2">
             <Building2 className="size-4" />
             Contact
           </Button>
 
-          <Button variant="ghost" className="gap-2 text-zinc-600">
+          <Button variant="ghost" className="gap-2">
             <Building2 className="size-4" />
-            About Us
+            About
           </Button>
         </nav>
 
-        {/* Auth */}
+        {/* Desktop Auth */}
         <div className="hidden lg:flex items-center gap-2">
-          <Button variant="ghost" className="gap-2 text-zinc-600">
+          <Button variant="ghost" className="gap-2">
             <LogIn className="size-4" />
             Login
           </Button>
 
-          <Button className="bg-amber-500 hover:bg-amber-600 text-white gap-2 shadow-md shadow-amber-500/30">
+          <Button className="gap-2 bg-amber-500 text-white hover:bg-amber-600">
             <UserPlus className="size-4" />
             Sign Up
           </Button>
         </div>
+
+        {/* Mobile Menu */}
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="size-5" />
+              </Button>
+            </SheetTrigger>
+
+            <SheetContent side="right" className="w-[300px]">
+              <div className="mt-8 flex flex-col gap-2">
+
+                <Button
+                  variant="ghost"
+                  className="justify-start gap-3"
+                >
+                  <Search className="size-4" />
+                  Search
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  className="justify-start gap-3"
+                >
+                  <BarChart3 className="size-4" />
+                  Compare
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  className="justify-start gap-3"
+                >
+                  <FileText className="size-4" />
+                  Resources
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  className="justify-start gap-3"
+                >
+                  <Building2 className="size-4" />
+                  Contact
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  className="justify-start gap-3"
+                >
+                  <Building2 className="size-4" />
+                  About Us
+                </Button>
+
+                <div className="my-4 border-t" />
+
+                <Button
+                  variant="outline"
+                  className="justify-start gap-3"
+                >
+                  <LogIn className="size-4" />
+                  Login
+                </Button>
+
+                <Button className="gap-3 bg-amber-500 hover:bg-amber-600">
+                  <UserPlus className="size-4" />
+                  Sign Up
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+
       </div>
     </header>
   );

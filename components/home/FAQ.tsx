@@ -35,42 +35,84 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto max-w-4xl px-4">
-        <div className="mb-12 text-center">
+        {/* Header */}
+        <div className="mb-8 text-center sm:mb-12">
           <span className="text-sm font-medium text-amber-500">
             FAQ
           </span>
 
-          <h2 className="mt-2 text-4xl font-bold tracking-tight">
+          <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
             Frequently Asked Questions
           </h2>
 
-          <p className="mt-3 text-muted-foreground">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
             Everything you need to know about AcademyFind.
           </p>
         </div>
 
-        <Accordion
-          type="single"
-          collapsible
-          className="w-full"
+        {/* FAQ Card */}
+        <div
+          className="
+            rounded-2xl
+            border
+            bg-background
+            p-2
+            shadow-sm
+            sm:p-4
+          "
         >
-          {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-            >
-              <AccordionTrigger>
-                {faq.question}
-              </AccordionTrigger>
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full"
+          >
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-b last:border-b-0"
+              >
+                <AccordionTrigger
+                  className="
+                    py-4
+                    text-left
+                    text-sm
+                    font-medium
+                    hover:no-underline
+                    sm:py-5
+                    sm:text-base
+                  "
+                >
+                  {faq.question}
+                </AccordionTrigger>
 
-              <AccordionContent>
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+                <AccordionContent
+                  className="
+                    pb-4
+                    text-sm
+                    leading-6
+                    text-muted-foreground
+                    sm:text-base
+                  "
+                >
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        {/* Bottom Help Text */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            Still have questions?
+            <span className="ml-1 font-medium text-amber-500">
+              Contact our team.
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -15,41 +15,47 @@ const trendingSearches = [
 
 export function HeroSection() {
   return (
-    <section className="border-b bg-gradient-to-b from-amber-50/50 via-background to-background">
-      <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-[1.3fr_0.7fr]">
-          
-          {/* LEFT */}
-          <div>
-            <Badge className="mb-5">
-              India's Coaching Discovery Platform
-            </Badge>
+    <section className="overflow-hidden border-b bg-gradient-to-b from-amber-50/50 via-background to-background">
+      <div className="container mx-auto px-4 py-10 sm:py-14 lg:py-24">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:gap-12">
 
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
+          {/* LEFT */}
+          <div className="flex flex-col justify-center">
+
+            {/* Trust Badge */}
+            {/* <div className="mb-4 inline-flex w-fit items-center rounded-full border bg-white/80 px-3 py-1 text-xs font-medium shadow-sm backdrop-blur">
+              ⭐ Trusted by Students Across India
+            </div> */}
+
+            {/* <Badge className="mb-5 w-fit">
+              India's Coaching Discovery Platform
+            </Badge> */}
+
+            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Find the Right
               <span className="block text-amber-500">
                 Coaching Institute
               </span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
+            <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
               Compare coaching institutes, explore cities,
               read reviews, and discover the best place
               for your preparation journey.
             </p>
 
             {/* Search */}
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <SearchBar />
             </div>
 
             {/* Trending */}
-            <div className="mt-8">
-              <p className="mb-4 text-sm font-medium text-muted-foreground">
+            <div className="mt-6 sm:mt-8">
+              <p className="mb-3 text-sm font-medium text-muted-foreground">
                 🔥 Trending Today
               </p>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {trendingSearches.map((item) => (
                   <Link
                     key={item}
@@ -58,12 +64,15 @@ export function HeroSection() {
                       rounded-full
                       border
                       bg-background
-                      px-4
-                      py-2
-                      text-sm
+                      px-3
+                      py-1.5
+                      text-xs
                       transition-all
                       hover:border-amber-200
                       hover:bg-amber-50
+                      sm:px-4
+                      sm:py-2
+                      sm:text-sm
                     "
                   >
                     {item}
@@ -76,12 +85,14 @@ export function HeroSection() {
             <Link
               href="/categories"
               className="
-                mt-8
+                mt-6
                 inline-flex
                 items-center
                 gap-2
                 font-medium
                 text-amber-500
+                transition-colors
+                hover:text-amber-600
               "
             >
               Browse All Categories
@@ -91,9 +102,17 @@ export function HeroSection() {
 
           {/* RIGHT */}
           <div>
-            <Card className="rounded-3xl border shadow-xl">
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-bold">
+            <Card
+              className="
+                rounded-2xl
+                border
+                shadow-lg
+                lg:rounded-3xl
+                lg:shadow-xl
+              "
+            >
+              <CardContent className="p-5 sm:p-6">
+                <h2 className="text-xl font-bold sm:text-2xl">
                   Free Expert Guidance
                 </h2>
 
@@ -107,11 +126,12 @@ export function HeroSection() {
                     type="text"
                     placeholder="Your Name"
                     className="
+                      h-12
                       w-full
                       rounded-xl
                       border
                       px-4
-                      py-3
+                      text-sm
                       outline-none
                       focus:border-amber-400
                     "
@@ -121,11 +141,12 @@ export function HeroSection() {
                     type="tel"
                     placeholder="Phone Number"
                     className="
+                      h-12
                       w-full
                       rounded-xl
                       border
                       px-4
-                      py-3
+                      text-sm
                       outline-none
                       focus:border-amber-400
                     "
@@ -133,11 +154,12 @@ export function HeroSection() {
 
                   <select
                     className="
+                      h-12
                       w-full
                       rounded-xl
                       border
                       px-4
-                      py-3
+                      text-sm
                       outline-none
                       focus:border-amber-400
                     "
@@ -153,14 +175,15 @@ export function HeroSection() {
                   </select>
 
                   <input
-                    type="tel"
+                    type="text"
                     placeholder="Your Query"
                     className="
+                      h-12
                       w-full
                       rounded-xl
                       border
                       px-4
-                      py-3
+                      text-sm
                       outline-none
                       focus:border-amber-400
                     "
@@ -170,12 +193,13 @@ export function HeroSection() {
                 <Button
                   className="
                     mt-5
-                    w-full
-                    bg-amber-500
-                    hover:bg-amber-600
-                    h-9
+                    h-12
                     w-full
                     rounded-xl
+                    bg-amber-500
+                    text-sm
+                    font-semibold
+                    hover:bg-amber-600
                   "
                 >
                   Get Free Guidance

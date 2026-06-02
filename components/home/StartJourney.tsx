@@ -5,51 +5,69 @@ import { Button } from "@/components/ui/button";
 
 export function StartJourney() {
   return (
-    <section className="py-24">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div
           className="
-            rounded-3xl
+            rounded-2xl
             border
             bg-gradient-to-br
             from-amber-50
             via-background
             to-amber-50
-            px-8
-            py-16
+            px-5
+            py-10
             text-center
+            shadow-sm
+            sm:rounded-3xl
+            sm:px-8
+            sm:py-14
+            lg:py-16
           "
         >
+          {/* Icon */}
           <div
             className="
               mx-auto
               flex
-              h-16
-              w-16
+              h-14
+              w-14
               items-center
               justify-center
               rounded-full
               bg-amber-100
+              sm:h-16
+              sm:w-16
             "
           >
-            <Compass className="h-8 w-8 text-amber-500" />
+            <Compass className="h-7 w-7 text-amber-500 sm:h-8 sm:w-8" />
           </div>
 
-          <h2 className="mt-6 text-4xl font-bold tracking-tight">
+          {/* Heading */}
+          <h2 className="mt-6 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
             Ready to Start Your Journey?
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+          {/* Description */}
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
             Explore coaching institutes, compare options,
             read reviews, and discover the right place
             to achieve your goals.
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          {/* CTA Buttons */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button
               asChild
               size="lg"
-              className="bg-amber-500 hover:bg-amber-600"
+              className="
+                h-12
+                bg-amber-500
+                text-sm
+                font-semibold
+                hover:bg-amber-600
+                sm:px-8
+              "
             >
               <Link href="/institutes">
                 Explore Institutes
@@ -61,12 +79,23 @@ export function StartJourney() {
               asChild
               variant="outline"
               size="lg"
+              className="
+                h-12
+                text-sm
+                font-semibold
+                sm:px-8
+              "
             >
               <Link href="/compare">
                 Compare Institutes
               </Link>
             </Button>
           </div>
+
+          {/* Trust Text */}
+          <p className="mt-5 text-xs text-muted-foreground sm:text-sm">
+            Trusted by thousands of students across India.
+          </p>
         </div>
       </div>
     </section>
