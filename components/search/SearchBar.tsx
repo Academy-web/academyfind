@@ -18,8 +18,8 @@ export function SearchBar() {
         bg-white
         p-2
         shadow-lg
-        sm:h-24
-        sm:flex-col
+
+        sm:h-16
       "
     >
       <Search className="ml-2 mr-3 h-5 w-5 shrink-0 text-amber-400" />
@@ -48,8 +48,8 @@ export function SearchBar() {
           font-medium
           hover:bg-amber-500
 
-          sm:h-24
-          sm:px-10
+          sm:h-12
+          sm:px-8
         "
       >
         Search
