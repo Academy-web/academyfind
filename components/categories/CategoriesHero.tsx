@@ -3,7 +3,7 @@ import { Layers3 } from "lucide-react";
 export default function CategoriesHero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-amber-50 via-background to-background dark:from-amber-950/20" />
+      <div className="absolute inset-0 bg-linear-to-b from-amber-50 via-background to-background dark:from-amber-950/20" />
 
       <div className="container mx-auto px-4 pt-16 pb-12 relative">
         <div className="inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm shadow-sm">
