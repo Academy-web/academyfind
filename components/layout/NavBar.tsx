@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 
+
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200/60 bg-white/70 backdrop-blur-xl">
@@ -54,25 +55,32 @@ export default function Navbar() {
             Search
           </Button>
 
+          <Link href="/about">
+            <Button variant="ghost" className="gap-2">
+              <Building2 className="size-4" />
+              About
+            </Button>
+          </Link>
+
           <Button variant="ghost" className="gap-2">
             <BarChart3 className="size-4" />
             Compare
           </Button>
 
-          <Button variant="ghost" className="gap-2">
-            <FileText className="size-4" />
-            Resources
-          </Button>
+          <Link href="/blog">
+            <Button variant="ghost" className="gap-2">
+              <FileText className="size-4" />
+              Blogs
+            </Button>
+          </Link>
 
-          <Button variant="ghost" className="gap-2">
-            <Building2 className="size-4" />
-            Contact
-          </Button>
+          <Link href="/contact">
+            <Button variant="ghost" className="gap-2">
+              <Building2 className="size-4" />
+              Contact
+            </Button>
+          </Link>
 
-          <Button variant="ghost" className="gap-2">
-            <Building2 className="size-4" />
-            About
-          </Button>
         </nav>
 
         {/* Desktop Auth */}
@@ -108,6 +116,13 @@ export default function Navbar() {
                   Search
                 </Button>
 
+                <Link href="/about">
+                  <Button variant="ghost" className="justify-start gap-3">
+                    <Building2 className="size-4" />
+                    About Us
+                  </Button>
+                </Link>
+
                 <Button
                   variant="ghost"
                   className="justify-start gap-3"
@@ -116,29 +131,26 @@ export default function Navbar() {
                   Compare
                 </Button>
 
-                <Button
-                  variant="ghost"
-                  className="justify-start gap-3"
-                >
-                  <FileText className="size-4" />
-                  Resources
-                </Button>
+                <Link href="/blog">
+                  <Button
+                    variant="ghost"
+                    className="justify-start gap-3"
+                  >
+                    <FileText className="size-4" />
+                    Blogs
+                  </Button>
+                </Link>
 
-                <Button
-                  variant="ghost"
-                  className="justify-start gap-3"
-                >
-                  <Building2 className="size-4" />
-                  Contact
-                </Button>
 
-                <Button
-                  variant="ghost"
-                  className="justify-start gap-3"
-                >
-                  <Building2 className="size-4" />
-                  About Us
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="ghost"
+                    className="justify-start gap-3"
+                  >
+                    <Building2 className="size-4" />
+                    Contact
+                  </Button>
+                </Link>
 
                 <div className="my-4 border-t" />
 
