@@ -104,7 +104,7 @@ export function SearchBar() {
         </SelectTrigger>
 
         <SelectContent className="rounded-xl border-0 bg-slate-50 p-2 shadow-lg">
-          <SelectItem value="kota">Kota</SelectItem>
+          <SelectItem value="kota">Noida</SelectItem>
           <SelectItem value="delhi">Delhi</SelectItem>
           <SelectItem value="jaipur">Jaipur</SelectItem>
           <SelectItem value="patna">Patna</SelectItem>

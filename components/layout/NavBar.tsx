@@ -50,10 +50,12 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
+          <Link href="/">
           <Button variant="ghost" className="gap-2">
             <Search className="size-4" />
             Search
           </Button>
+          </Link>
 
           <Link href="/about">
             <Button variant="ghost" className="gap-2">
@@ -113,6 +115,7 @@ export default function Navbar() {
             <SheetContent side="right" className="w-75">
               <div className="mt-8 flex flex-col gap-2">
 
+                <Link href="/">
                 <Button
                   variant="ghost"
                   className="justify-start gap-3"
@@ -120,6 +123,7 @@ export default function Navbar() {
                   <Search className="size-4" />
                   Search
                 </Button>
+                </Link>
 
                 <Link href="/about">
                   <Button variant="ghost" className="justify-start gap-3">
