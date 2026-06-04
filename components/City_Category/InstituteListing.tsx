@@ -50,7 +50,7 @@ export default function InstituteListing({
             </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 grid grid-cols-3 gap-3">
             {institutes.map((institute) => (
             <InstituteCard
                 key={institute.id}

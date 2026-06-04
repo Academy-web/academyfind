@@ -3,14 +3,14 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 
 const destinations = [
   {
-    title: "JEE Coaching in Kota",
+    title: "JEE Coaching in Noida",
     subtitle: "1,200+ Institutes",
-    href: "/jee-coaching/kota",
+    href: "/jee-coaching/noida",
   },
   {
-    title: "NEET Coaching in Delhi",
+    title: "NEET Coaching in Noida",
     subtitle: "850+ Institutes",
-    href: "/neet-coaching/delhi",
+    href: "/neet-coaching/noida",
   },
   {
     title: "UPSC Coaching in Mukherjee Nagar",

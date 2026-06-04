@@ -4,10 +4,20 @@ import { ArrowRight } from "lucide-react";
 import { SearchBar } from "@/components/search/SearchBar";
 
 const trendingSearches = [
-  "Allen vs Motion",
-  "JEE Coaching in Kota",
-  "UPSC Coaching in Delhi",
-  "NEET Coaching in Jaipur",
+  {
+    title:"Allen vs Motion",
+    slug: "allen-vs-motion"
+  },
+  {
+    title:"JEE Coaching in Noida",
+    slug:"jee-coaching/noida",
+  },
+  {
+    title:"NEET Coaching in Noida",
+    slug:"neet-coaching/noida"
+  }
+  
+  
 ];
 
 export function HeroSection() {
@@ -166,8 +176,8 @@ export function HeroSection() {
             <div className="flex flex-wrap justify-center gap-2">
               {trendingSearches.map((item) => (
                 <Link
-                  key={item}
-                  href="#"
+                  key={item.slug}
+                  href={item.slug}
                   className="
                     rounded-full
                     border
@@ -180,7 +190,7 @@ export function HeroSection() {
                     hover:bg-amber-50
                   "
                 >
-                  {item}
+                  {item.title}
                 </Link>
               ))}
             </div>

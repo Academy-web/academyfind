@@ -113,6 +113,8 @@ export const InstituteScalarFieldEnum = {
   googlePlaceId: 'googlePlaceId',
   googleRating: 'googleRating',
   googleReviewCount: 'googleReviewCount',
+  googleMapsUrl: 'googleMapsUrl',
+  placeTypes: 'placeTypes',
   cityId: 'cityId',
   imageUrl: 'imageUrl',
   isVerified: 'isVerified',
@@ -143,6 +145,8 @@ export const CategoryScalarFieldEnum = {
   name: 'name',
   slug: 'slug',
   parentId: 'parentId',
+  level: 'level',
+  isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

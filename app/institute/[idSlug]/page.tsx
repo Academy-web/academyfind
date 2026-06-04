@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import extractId from "@/lib/extractId";
 import { getInstituteById } from "@/lib/institutes_id";
 import Breadcrumb from "@/components/navigation/BreadCrumbs";
+import Link from "next/link";
 
 export const revalidate = 86400;
 
@@ -153,10 +154,12 @@ export default async function InstitutePage({
                 Connect with experts and compare
                 institutes before admission.
               </p>
-
+              
+              <Link href="/contact">
               <button className="mt-5 w-full rounded-xl bg-amber-400 px-5 py-3 font-semibold text-black transition hover:bg-amber-500">
                 Enquire Now
               </button>
+              </Link>
             </div>
           </div>
         </div>
