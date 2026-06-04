@@ -5,8 +5,8 @@ import { SearchBar } from "@/components/search/SearchBar";
 
 const trendingSearches = [
   {
-    title:"Allen vs Motion",
-    slug: "allen-vs-motion"
+    title:"Dance Classes in Delhi",
+    slug: "dance-classes/delhi"
   },
   {
     title:"JEE Coaching in Noida",
@@ -15,6 +15,11 @@ const trendingSearches = [
   {
     title:"NEET Coaching in Noida",
     slug:"neet-coaching/noida"
+  },
+  {
+    title:"NEET Coaching in Noida",
+    slug:"neet-coaching/noida"
+  
   }
   
   

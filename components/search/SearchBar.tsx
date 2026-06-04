@@ -70,6 +70,8 @@ export function SearchBar() {
       params.set("city", city);
     }
 
+    setSuggestions([]);
+
     router.push(`/search?${params.toString()}`);
   };
 
@@ -96,42 +98,46 @@ export function SearchBar() {
         sm:items-center
       "
     >
-      {/* Search Input */}
-      <div className="relative flex min-w-0 w-full flex-1 items-center">
-        <Search className="ml-2 mr-3 h-5 w-5 shrink-0 text-amber-400" />
+      {/* Search Input + Dropdown */}
+      <div className="relative min-w-0 w-full flex-1">
+        <div className="flex items-center h-12">
+          <Search className="ml-2 mr-3 h-5 w-5 shrink-0 text-amber-400" />
 
-        <Input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleSearch();
-            }
-          }}
-          placeholder="Search coaching institutes..."
-          className="
-            min-w-0
-            flex-1
-            border-0
-            p-0
-            text-sm
-            shadow-none
-            focus-visible:ring-0
-            sm:text-base
-          "
-        />
+          <Input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearch();
+              }
+            }}
+            placeholder="Search coaching institutes..."
+            className="
+              min-w-0
+              flex-1
+              border-0
+              p-0
+              text-sm
+              shadow-none
+              focus-visible:ring-0
+              sm:text-base
+            "
+          />
+        </div>
 
-        {/* Suggestions Dropdown */}
         {(suggestions.length > 0 || loading) && (
           <div
             className="
               absolute
               left-0
-              right-0
               top-full
               z-50
               mt-3
-              overflow-hidden
+              w-full
+
+              max-h-96
+              overflow-y-auto
+
               rounded-2xl
               border
               border-slate-200
@@ -163,14 +169,14 @@ export function SearchBar() {
                     hover:bg-amber-50
                   "
                 >
-                  <span className="text-lg">
+                  <span className="text-lg shrink-0">
                     {item.type === "institute" && "🏫"}
                     {item.type === "city" && "📍"}
                     {item.type === "category" && "📚"}
                   </span>
 
-                  <div>
-                    <p className="font-medium text-slate-900">
+                  <div className="min-w-0">
+                    <p className="truncate font-medium text-slate-900">
                       {item.name}
                     </p>
 

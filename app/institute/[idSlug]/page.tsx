@@ -180,7 +180,7 @@ export default async function InstitutePage({
             </h3>
           </div>
 
-          <div className="rounded-3xl border bg-white p-6">
+          {/* <div className="rounded-3xl border bg-white p-6">
             <p className="text-sm text-slate-500">
               Categories
             </p>
@@ -208,7 +208,7 @@ export default async function InstitutePage({
             <h3 className="mt-2 text-2xl font-bold text-green-600">
               Active
             </h3>
-          </div>
+          </div> */}
         </div>
       </section>
 

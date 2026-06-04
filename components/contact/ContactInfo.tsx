@@ -73,7 +73,7 @@ export default function ContactInfo() {
             </h3>
 
             <p className="text-muted-foreground">
-              Usually within 24 hours
+              Usually within 12 hours
             </p>
           </div>
         </div>

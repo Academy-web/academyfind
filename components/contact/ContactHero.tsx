@@ -40,10 +40,9 @@ export default function ContactHero() {
           <span className="text-amber-500"> From You</span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          Questions, feedback, partnerships or support.
-          Reach out and we'll get back to you.
-        </p>
+        <p className="mx-auto mt-6 text-lg text-muted-foreground">
+          Questions, feedback, partnerships or support. Reach out and we'll get back to you.
+      </p>
       </div>
     </section>
   );
