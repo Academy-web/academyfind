@@ -20,12 +20,11 @@ enum Role {
 }
 
 model User {
-  id String @id @default(cuid())
-
-  name         String?
+  id           String  @id @default(cuid())
+  name         String? // Better Auth reads this field
   email        String  @unique
   phone        String?
-  passwordHash String?
+  passwordHash String? // Your custom credentials field
   image        String?
 
   role Role @default(USER)
@@ -34,14 +33,64 @@ model User {
   reviews           Review[]
 
   isActive            Boolean @default(true)
-  emailVerified       Boolean @default(false)
+  emailVerified       Boolean @default(false) // Better Auth reads this
   onboardingCompleted Boolean @default(false)
 
   lastLoginAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 
+  // Better Auth required relations
+  sessions Session[]
+  accounts Account[]
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  expiresAt DateTime
+  token     String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("session")
 }
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime // Maps to verification expiry
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("verification")
+}
+
 
 model Institute {
   id          String  @id @default(cuid())
@@ -172,3 +221,4 @@ model Review {
   @@index([userId])
   @@index([instituteId])
 }
+

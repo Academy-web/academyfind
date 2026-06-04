@@ -16,12 +16,13 @@ const CITY_HUBS: Record<string, string[]> = {
     "Sector 93",
     "Sector 50",
     "Sector 27",
+    "greater noida"
   ],
 
   delhi: [
     "Mukherjee Nagar",
     "Rajendra Nagar",
-    "Kalu Sarai",
+    "Hauz Khas & Kalu Sarai",
     "Laxmi Nagar",
     "Dwarka",
     "Rohini",
@@ -489,7 +490,7 @@ async function main() {
         "gate-coaching",
         "ca-coaching",
         "ielts-coaching",
-        "gmat-coaching",
+        "gre-coaching",
         "web-development",
         "cyber-security-training",
         "english-speaking",
@@ -507,30 +508,7 @@ async function main() {
   const selectedCities = cities.filter((c) =>
   [
     "delhi",
-    "mumbai",
-    "pune",
-    "nagpur",
-    "bangalore",
-    "hyderabad",
-    "chennai",
-    "kolkata",
-    "ahmedabad",
-    "surat",
-    "jaipur",
-    "kota",
-    "sikar",
-    "jodhpur",
-    "lucknow",
-    "kanpur",
     "noida",
-    "gurgaon",
-    "faridabad",
-    "chandigarh",
-    "patna",
-    "indore",
-    "bhopal",
-    "bhubaneswar",
-    "gwalior",
   ].includes(c.slug)
 );
 

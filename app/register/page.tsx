@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Mail,
@@ -8,18 +8,73 @@ import {
   Lock,
   Eye,
   EyeOff,
-  GraduationCap,
-  Star,
-  MapPin,
   User,
 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [method, setMethod] = useState<"email" | "phone">("email");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword,setShowConfirmPassword] = useState(false)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setphone] = useState("")
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const router = useRouter()
+
+  const handleGoogleLogin = async() => {
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/"
+      })
+    }
+
+  async function handleRegister(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (method !== "email") {
+      alert("Phone registration will be implemented separately.");
+      return;
+    }
+
+    if (!name.trim()) {
+      alert("Please enter your name");
+      return;
+    }
+
+    if (!email.trim()) {
+      alert("Please enter your email");
+      return;
+    }
+
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+  }
+
+  const { error } = await authClient.signUp.email({
+    name,
+    email,
+    password,
+    callbackURL: "/confirm-otp",
+  });
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  router.push("/confirm-otp");
+}
 
   return (
     <main className="min-h-screen bg-[#f8f8f8] p-4 lg:p-8">
@@ -163,7 +218,7 @@ export default function LoginPage() {
               </button>
             </div>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleRegister}>
 
                 <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">
@@ -177,6 +232,8 @@ export default function LoginPage() {
                     type="text"
                     placeholder="Enter your full name"
                     className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm outline-none transition-all focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
                     />
                 </div>
                 </div>
@@ -203,6 +260,13 @@ export default function LoginPage() {
                         : "Enter mobile number"
                     }
                     className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+                    value={method === "email" ? email : phone}
+                    onChange={(e) => {
+                      if(method === "email")
+                        setEmail(e.target.value)
+                      else
+                        setphone(e.target.value)
+                    }}
                   />
                 </div>
               </div>
@@ -229,6 +293,8 @@ export default function LoginPage() {
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
                     className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-12 text-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
 
                   <button
@@ -259,6 +325,8 @@ export default function LoginPage() {
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="Confirm your password"
                     className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-12 text-sm outline-none transition-all focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                     />
 
                     <button
@@ -299,6 +367,7 @@ export default function LoginPage() {
             <button
               type="button"
               className="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+              onClick={handleGoogleLogin}
             >
               <FcGoogle size={20} />
               Continue with Google

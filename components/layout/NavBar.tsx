@@ -61,7 +61,7 @@ export default function Navbar() {
           <Link href="/about">
             <Button variant="ghost" className="gap-2">
               <Building2 className="size-4" />
-              About
+              About Us
             </Button>
           </Link>
 
@@ -73,14 +73,14 @@ export default function Navbar() {
           <Link href="/blog">
             <Button variant="ghost" className="gap-2">
               <FileText className="size-4" />
-              Blogs
+              Resources
             </Button>
           </Link>
 
           <Link href="/contact">
             <Button variant="ghost" className="gap-2">
               <Building2 className="size-4" />
-              Contact
+              Contact Us
             </Button>
           </Link>
 

@@ -8,16 +8,63 @@ import {
   Lock,
   Eye,
   EyeOff,
-  GraduationCap,
   Star,
-  MapPin,
 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [method, setMethod] = useState<"email" | "phone">("email");
   const [showPassword, setShowPassword] = useState(false);
+  const [phone, setphone] = useState("")
+
+  const handleGoogleLogin = async() => {
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/"
+    })
+  }
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter()
+
+   async function handleLogin(
+  e: React.FormEvent<HTMLFormElement>
+) {
+  e.preventDefault();
+
+  if (method !== "email") {
+    alert("Phone login will be implemented separately.");
+    return;
+  }
+
+  if (!email.trim()) {
+    alert("Please enter your email");
+    return;
+  }
+
+  if (!password.trim()) {
+    alert("Please enter your password");
+    return;
+  }
+
+  const { error } = await authClient.signIn.email({
+    email,
+    password,
+    callbackURL: "/",
+  });
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  router.push("/");
+}
+  
 
   return (
     <main className="min-h-screen bg-[#f8f8f8] p-4 lg:p-8">
@@ -153,7 +200,7 @@ export default function LoginPage() {
               </button>
             </div>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleLogin}>
               {/* Email / Phone */}
               <div> 
                 <label className="mb-2 block text-sm font-medium text-slate-700">
@@ -176,6 +223,15 @@ export default function LoginPage() {
                         ? "Enter your email"
                         : "Enter mobile number"
                     }
+                    value={method === "email" ? email : phone}
+                    onChange={(e) => {
+                      if(method === "email")
+                        setEmail(e.target.value)
+                      else
+                        setphone(e.target.value)
+
+                    }}
+                    
                     className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
                   />
                 </div>
@@ -203,6 +259,8 @@ export default function LoginPage() {
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
                     className="h-12 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-12 text-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                   />
 
                   <button
@@ -243,6 +301,7 @@ export default function LoginPage() {
             <button
               type="button"
               className="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+              onClick={handleGoogleLogin}
             >
               <FcGoogle size={20} />
               Continue with Google

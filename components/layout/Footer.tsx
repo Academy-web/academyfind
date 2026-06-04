@@ -198,7 +198,7 @@ export function Footer() {
                 href="/contact"
                 className="transition-colors hover:text-foreground"
               >
-                Contact
+                Contact Us
               </Link>
 
               <Link
