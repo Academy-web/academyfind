@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { SearchBar } from "@/components/search/SearchBar";
+import TypingHeading from "./TypingHeading";
+
 
 const trendingSearches = [
   {
@@ -77,9 +79,7 @@ export function HeroSection() {
             "
           >
             Find the Right
-            <span className="block text-amber-400">
-              Coaching Institute
-            </span>
+            <TypingHeading />
           </h1>
 
           {/* Description */}
