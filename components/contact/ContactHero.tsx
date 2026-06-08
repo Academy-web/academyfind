@@ -6,7 +6,7 @@ export default function ContactHero() {
         overflow-hidden
         border-b
         border-amber-100
-        bg-gradient-to-b
+        bg-linear-to-b
         from-amber-50
         via-background
         to-background

@@ -212,7 +212,7 @@ export default function RegisterPage() { // Component ka naam RegisterPage hona 
               /* ================= OTP VERIFICATION UI ================= */
               <div className="animate-in fade-in zoom-in duration-300">
                 <div className="mb-8 text-center">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold bg-linear-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
                     Check Your Email
                   </h2>
                   <p className="mt-2 text-sm text-slate-500">
@@ -263,7 +263,7 @@ export default function RegisterPage() { // Component ka naam RegisterPage hona 
               /* ================= ORIGINAL REGISTRATION UI ================= */
               <div className="animate-in fade-in duration-300">
                 <div className="mb-6 text-center">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold bg-linear-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
                     Create Account
                   </h2>
                   <p className="mt-2 text-sm text-slate-500">

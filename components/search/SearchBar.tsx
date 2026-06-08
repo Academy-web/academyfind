@@ -1,19 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Search, MapPin } from "lucide-react";
+import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// 👇 Aapka naya Google Places Component yahan import karein
+import LocationAutocomplete from "./LocationAutoComplete";
 
 type Suggestion = {
   id: string;
@@ -22,7 +17,6 @@ type Suggestion = {
   url: string;
 };
 
-// 👇 Naye Smart Routing Dictionaries (Apni needs ke hisaab se words add karein)
 const CATEGORY_MAP = [
   { keywords: ["jee", "iit", "mains", "advanced"], slug: "jee-coaching" },
   { keywords: ["neet", "medical", "mbbs"], slug: "neet-coaching" },
@@ -37,13 +31,19 @@ const CITY_MAP = [
 
 export function SearchBar() {
   const [input, setInput] = useState("");
-  const [city, setCity] = useState("");
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // 👇 Naya State: Google Places se aaye hue coordinates ke liye
+  const [selectedLocation, setSelectedLocation] = useState<{
+    lat: number;
+    lng: number;
+    address: string;
+  } | null>(null);
+
   const router = useRouter();
 
-  // Handle Autocomplete Suggestions
+  // Handle Autocomplete Suggestions (Sirf "What" input ke liye)
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (input.trim().length < 2) {
@@ -69,70 +69,82 @@ export function SearchBar() {
     return () => clearTimeout(timer);
   }, [input]);
 
-  // 👇 Updated: Smart Routing Handle Search
-  // 👇 Updated: Bulletproof Smart Routing Handle Search
+  // Handle Search Execution
   const handleSearch = () => {
-    // Agar input khali hai aur city bhi select nahi ki (ya 'all' hai), toh kuch mat karo
-    if (!input.trim() && (!city || city === "all")) return;
+    // Agar dono input khali hain, toh kuch mat karo
+    if (!input.trim() && !selectedLocation) return;
 
     setSuggestions([]);
 
-    const activeCity = city === "all" ? "" : city;
-    // Pura text ek dum clean lowercase array banalo
-    const combinedQuery = `${input} ${activeCity}`.toLowerCase();
+    const lowerInput = input.toLowerCase();
     
-    // Testing ke liye console me dekhein
-    console.log("Analyzing Query:", combinedQuery);
+    // Google API se jo address aaya (e.g., "Sector 62, Noida, UP"), usko check karenge
+    const lowerAddress = selectedLocation?.address.toLowerCase() || "";
 
     let matchedCategorySlug = null;
-    let matchedCitySlug = activeCity || null;
+    let matchedCitySlug = null;
 
-    // 1. Better Category Matching (Word boundaries use karke taaki 'jee' aur 'jeevan' mix na ho)
+    // 1. Find Category from "What" input
     for (const cat of CATEGORY_MAP) {
       for (const kw of cat.keywords) {
-        // Regex word boundary \b ensure karega exact word match ho
-        const regex = new RegExp(`\\b${kw}\\b`, 'i');
-        if (regex.test(combinedQuery)) {
+        if (new RegExp(`\\b${kw}\\b`, "i").test(lowerInput)) {
           matchedCategorySlug = cat.slug;
-          console.log(`✅ Category Match Found: ${kw} -> ${cat.slug}`);
-          break; // Break keyword loop
+          break;
         }
       }
-      if (matchedCategorySlug) break; // Break category map loop
+      if (matchedCategorySlug) break;
     }
 
-    // 2. Better City Matching (Agar dropdown se 'all' ya khali tha)
-    if (!matchedCitySlug) {
-      for (const c of CITY_MAP) {
-        for (const kw of c.keywords) {
-          const regex = new RegExp(`\\b${kw}\\b`, 'i');
-          if (regex.test(combinedQuery)) {
-            matchedCitySlug = c.slug;
-            console.log(`✅ City Match Found: ${kw} -> ${c.slug}`);
-            break;
-          }
+    // 2. Find City from "Where" Address (Google result) ya fallback text input
+    const citySearchText = lowerAddress || lowerInput;
+    for (const c of CITY_MAP) {
+      for (const kw of c.keywords) {
+        if (new RegExp(`\\b${kw}\\b`, "i").test(citySearchText)) {
+          matchedCitySlug = c.slug;
+          break;
         }
-        if (matchedCitySlug) break;
       }
+      if (matchedCitySlug) break;
     }
 
-    // 3. Exact Routing Decisions
-    console.log("Final Routing Plan:", { category: matchedCategorySlug, city: matchedCitySlug });
+    // 3. 🧹 Magic Cleaner: Taki URL neat and clean dikhe
+    let cleanQuery = lowerInput;
+    const stopWords = ["best", "top", "in", "near", "me", "coaching", "coachings", "institute", "institutes", "classes"];
+    
+    stopWords.forEach((kw) => {
+      cleanQuery = cleanQuery.replace(new RegExp(`\\b${kw}\\b`, "gi"), "");
+    });
+    // Category aur City hatao (Kyunki wo URL path me chali jayegi)
+    if (matchedCategorySlug) {
+      CATEGORY_MAP.find(c => c.slug === matchedCategorySlug)?.keywords.forEach(kw => {
+        cleanQuery = cleanQuery.replace(new RegExp(`\\b${kw}\\b`, "gi"), "");
+      });
+    }
+    if (matchedCitySlug && !selectedLocation) {
+      CITY_MAP.find(c => c.slug === matchedCitySlug)?.keywords.forEach(kw => {
+        cleanQuery = cleanQuery.replace(new RegExp(`\\b${kw}\\b`, "gi"), "");
+      });
+    }
+    cleanQuery = cleanQuery.replace(/\s+/g, " ").trim();
 
+    // 4. Build URL Parameters
+    const params = new URLSearchParams();
+    if (cleanQuery) params.set("q", cleanQuery);
+
+    // 👇 SABSE ZAROORI: Google Coordinates URL me pass karo
+    if (selectedLocation) {
+      params.set("lat", selectedLocation.lat.toString());
+      params.set("lng", selectedLocation.lng.toString());
+      // Optional: Agar aapko SEO page pe address print karwana hai "Showing results near Sector 62..."
+      params.set("address", selectedLocation.address); 
+    }
+
+    // 5. Smart Routing
     if (matchedCategorySlug && matchedCitySlug) {
-      // Dono mil gaye -> Direct dedicated page
-      router.push(`/${matchedCategorySlug}/${matchedCitySlug}`);
-    } 
-    else if (matchedCategorySlug) {
-      // Sirf Category mili -> Category hub page
-      router.push(`/${matchedCategorySlug}`);
-    } 
-    else {
-      // Generic ya institute naam hai -> Meilisearch page par bhejo
-      const params = new URLSearchParams();
-      if (input.trim()) params.set("q", input.trim());
-      if (activeCity) params.set("city", activeCity);
-      
+      router.push(`/${matchedCategorySlug}/${matchedCitySlug}?${params.toString()}`);
+    } else if (matchedCategorySlug) {
+      router.push(`/${matchedCategorySlug}?${params.toString()}`);
+    } else {
       router.push(`/search?${params.toString()}`);
     }
   };
@@ -160,20 +172,17 @@ export function SearchBar() {
         sm:items-center
       "
     >
-      {/* Search Input + Dropdown */}
+      {/* 1. "What" Input Box */}
       <div className="relative min-w-0 w-full flex-1">
         <div className="flex items-center h-12">
           <Search className="ml-2 mr-3 h-5 w-5 shrink-0 text-amber-400" />
-
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleSearch();
-              }
+              if (e.key === "Enter") handleSearch();
             }}
-            placeholder="Search 'Best JEE coaching in Noida'..."
+            placeholder="Search 'JEE Coaching' or 'Aakash'..."
             className="
               min-w-0
               flex-1
@@ -189,23 +198,7 @@ export function SearchBar() {
 
         {/* Suggestions Dropdown Container */}
         {(suggestions.length > 0 || loading) && (
-          <div
-            className="
-              absolute
-              left-0
-              top-full
-              z-50
-              mt-3
-              w-full
-              max-h-96
-              overflow-y-auto
-              rounded-2xl
-              border
-              border-slate-200
-              bg-white
-              shadow-2xl
-            "
-          >
+          <div className="absolute left-0 top-full z-50 mt-3 w-full max-h-96 overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl">
             {loading && (
               <div className="px-4 py-3 text-sm text-slate-500">
                 Searching...
@@ -218,29 +211,18 @@ export function SearchBar() {
                   key={item.id}
                   type="button"
                   onClick={() => handleSuggestionClick(item.url)}
-                  className="
-                    flex
-                    w-full
-                    items-center
-                    gap-3
-                    px-4
-                    py-3
-                    text-left
-                    transition
-                    hover:bg-amber-50
-                  "
+                  className="flex w-full items-center gap-3 px-4 py-3 text-left transition hover:bg-amber-50"
                 >
                   <span className="text-lg shrink-0">
                     {item.type === "institute" && "🏫"}
                     {item.type === "city" && "📍"}
                     {item.type === "category" && "📚"}
                   </span>
-
                   <div className="min-w-0">
                     <p className="truncate font-medium text-slate-900">
                       {item.name}
                     </p>
-                    <p className="text-xs text-slate-500 capitalize">
+                    <p className="truncate text-xs text-slate-500 capitalize">
                       {item.type}
                     </p>
                   </div>
@@ -250,32 +232,17 @@ export function SearchBar() {
         )}
       </div>
 
-      {/* City Select Dropdown */}
-      <Select value={city} onValueChange={setCity}>
-        <SelectTrigger
-          className="
-            h-12
-            w-full
-            sm:w-40
-            sm:shrink-0
-            border-0
-            shadow-none
-            focus:ring-0
-          "
-        >
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-amber-500" />
-            <SelectValue placeholder="All Cities" />
-          </div>
-        </SelectTrigger>
+      {/* Desktop Divider */}
+      <div className="hidden h-8 w-px bg-slate-200 sm:block"></div>
 
-        <SelectContent className="rounded-xl border-0 bg-slate-50 p-2 shadow-lg">
-          <SelectItem value="all">All Cities</SelectItem>
-          <SelectItem value="noida">Noida</SelectItem>
-          <SelectItem value="delhi">Delhi</SelectItem>
-          <SelectItem value="kota">Kota</SelectItem>
-        </SelectContent>
-      </Select>
+      {/* 2. "Where" Location Autocomplete Box */}
+      <div className="w-full sm:w-72">
+        <LocationAutocomplete
+          onLocationSelect={(lat, lng, address) => {
+            setSelectedLocation({ lat, lng, address });
+          }}
+        />
+      </div>
 
       {/* Search Button */}
       <Button

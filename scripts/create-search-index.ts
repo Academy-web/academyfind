@@ -7,6 +7,7 @@ async function main() {
 
   const searchableTask = await index.updateSearchableAttributes([
     "name",
+    "address",
     "city",
     "description",
     "categoryNames",
@@ -17,10 +18,12 @@ async function main() {
     "type",
     "citySlug",
     "categorySlugs",
+    "_geo",
   ]);
 
   const sortableTask = await index.updateSortableAttributes([
     "name",
+    "_geo"
   ]);
 
   const typoTask = await index.updateTypoTolerance({

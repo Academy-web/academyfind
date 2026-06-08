@@ -149,7 +149,7 @@ export default function LoginPage() {
     <main className="min-h-screen bg-[#f8f8f8] p-4 lg:p-8">
       <div className="mx-auto flex min-h-[calc(100vh-2rem)] max-w-7xl overflow-hidden rounded-[32px] bg-white shadow-2xl">
         {/* LEFT PANEL */}
-        <div className="relative hidden w-1/2 overflow-hidden bg-gradient-to-b from-amber-400 to-amber-500 p-12 text-white lg:flex lg:flex-col">
+        <div className="relative hidden w-1/2 overflow-hidden bg-linear-to-b from-amber-400 to-amber-500 p-12 text-white lg:flex lg:flex-col">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl shadow-lg shadow-amber-500/30 bg-white/90 backdrop-blur">
@@ -192,7 +192,7 @@ export default function LoginPage() {
 
           {/* Decorative Triangle */}
           <div className="absolute bottom-20 right-16 opacity-10">
-            <div className="h-0 w-0 border-l-[90px] border-r-[90px] border-b-[160px] border-l-transparent border-r-transparent border-b-white" />
+            <div className="h-0 w-0 border-l-90 border-r-90 border-b-160 border-l-transparent border-r-transparent border-b-white" />
           </div>
         </div>
 
@@ -217,7 +217,7 @@ export default function LoginPage() {
               /* ================= OTP VERIFICATION UI ================= */
               <div className="animate-in fade-in zoom-in duration-300">
                 <div className="mb-8 text-center">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold bg-linear-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
                     Check Your Email
                   </h2>
                   <p className="mt-2 text-sm text-slate-500">
@@ -268,7 +268,7 @@ export default function LoginPage() {
               <div className="animate-in fade-in duration-300">
                 {/* Heading */}
                 <div className="mb-6 text-center">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
+                  <h2 className="text-3xl font-bold bg-linear-to-r from-amber-500 to-rose-200 bg-clip-text text-transparent">
                     Welcome Back
                   </h2>
                   <p className="mt-2 text-sm text-slate-500">

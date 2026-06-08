@@ -48,7 +48,7 @@ export function AuthPromptModal() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="max-w-md rounded-3xl border-0 p-0 overflow-hidden">
-        <div className="bg-gradient-to-br from-amber-50 via-white to-orange-50 p-8">
+        <div className="bg-linear-to-br from-amber-50 via-white to-orange-50 p-8">
 
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100">
             <Sparkles className="h-7 w-7 text-amber-600" />

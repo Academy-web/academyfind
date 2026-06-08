@@ -46,6 +46,7 @@ async function main() {
       state: inst.city.state,
 
       description: inst.description ?? "",
+      address: inst.address,
 
       categoryNames: inst.categories.map(
         (c) => c.category.name
@@ -63,8 +64,10 @@ async function main() {
 
       imageUrl: inst.imageUrl ?? "",
 
-      latitude: inst.latitude,
-      longitude: inst.longitude,
+      _geo: inst.latitude && inst.longitude ? {
+        lat: parseFloat(inst.latitude.toString()),
+        lng: parseFloat(inst.longitude.toString())
+      } : undefined,
 
       url: `/institute/${inst.id}-${inst.slug}`,
     })),

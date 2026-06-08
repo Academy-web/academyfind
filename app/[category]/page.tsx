@@ -7,7 +7,7 @@ import formatSlug from "@/lib/formatSlug";
 import {
   getCategoryBySlug,
   getCitiesForCategory,
-  getFeaturedInstitutesForCategory, // 👈 Naya function import kiya
+  getFeaturedInstitutesForCategory, 
 } from "@/lib/category";
 
 import { getInstitutesByCategory } from "@/lib/category_inst";
@@ -32,6 +32,7 @@ interface PageProps {
   }>;
   searchParams: Promise<{
     page?: string;
+    q?: string;
   }>
 }
 
@@ -50,7 +51,7 @@ export async function generateMetadata({
 
 export default async function CategoryPage({ params,searchParams }: PageProps) {
   const { category } = await params;
-  const {page} = await searchParams;
+  const {page,q} = await searchParams;
 
   const categoryData = await getCategoryBySlug(category);
 
@@ -64,8 +65,8 @@ export default async function CategoryPage({ params,searchParams }: PageProps) {
   const currentPage = page ? parseInt(page, 10) : 1;
 
   
-  // 👈 Ye actual institutes laane ke liye call hai
-  const {institutes,totalPages,totalCount} = await getInstitutesByCategory(category,currentPage); 
+ 
+  const {institutes,totalPages,totalCount} = await getInstitutesByCategory(category,currentPage,q); 
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-10">
@@ -87,6 +88,12 @@ export default async function CategoryPage({ params,searchParams }: PageProps) {
           <h2 className="text-3xl font-bold">
             Explore All {categoryData.name} Institutes
           </h2>
+          {q && (
+             <p className="mt-2 sm:mt-0 text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+               Filtered by: <span className="font-semibold">"{q}"</span>
+             </p>
+          )}
+          
         </div>
         
         <InstituteListing institutes={institutes} />

@@ -12,6 +12,7 @@ import { AuthPromptModal } from "@/components/layout/auth-prompt-model";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NextTopLoader from 'nextjs-toploader'
 import {Toaster} from 'react-hot-toast'
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,10 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.className} h-full antialiased`}
     >
+      <head>
+        <Script src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
+          strategy="beforeInteractive" />
+      </head>
       <body
         className={`min-h-full flex flex-col ${inter.className}`}
       >

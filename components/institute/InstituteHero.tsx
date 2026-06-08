@@ -12,11 +12,11 @@ import { Button } from "@/components/ui/button";
 
 export default function InstituteHero() {
   return (
-    <section className="relative overflow-hidden border-b bg-gradient-to-b from-amber-50 via-white to-white">
+    <section className="relative overflow-hidden border-b bg-linear-to-b from-amber-50 via-white to-white">
       <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-300/20 blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-4 py-12">
-        <div className="overflow-hidden rounded-3xl bg-gradient-to-r from-slate-800 to-slate-900 h-64" />
+        <div className="overflow-hidden rounded-3xl bg-linear-to-r from-slate-800 to-slate-900 h-64" />
 
         <div className="relative -mt-14 grid gap-8 lg:grid-cols-[1fr_340px]">
           <div>
