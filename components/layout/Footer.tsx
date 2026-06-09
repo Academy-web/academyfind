@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import Image from "next/image";
+import { FaFacebook, FaInstagram, FaLinkedinIn, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 const categories = [
   {
@@ -88,6 +89,15 @@ export function Footer() {
               Discover coaching institutes, compare options,
               read reviews, and make smarter education decisions.
             </p>
+
+            <div className="mt-6 flex justify-center sm:justify-start gap-4">
+              <SocialLink href="https://wa.me/919045699938" icon={<FaWhatsapp className="h-5 w-5 text-[#128C7E]" />} />
+              <SocialLink href="https://t.me/academyfind" icon={<FaTelegram className="h-5 w-5 text-[#24A1DE]" />} />
+              <SocialLink href="https://www.linkedin.com/company/academyfind" icon={<FaLinkedinIn className="h-5 w-5 text-[#0A66C2]" />} />
+              <SocialLink href="https://www.facebook.com/profile.php?id=61561180379260" icon={<FaFacebook className="h-5 w-5 text-[#1877F2]" />} />
+              <SocialLink href="https://www.instagram.com/academyfind" icon={<FaInstagram className="h-5 w-5 text-pink-400" />} />
+              <SocialLink href="https://www.youtube.com/channel/UCYiRb6vo_Rr_w3PO746hsKg" icon={<FaYoutube className="h-5 w-5 text-[#FF0000]" />} />
+            </div>
 
             {/* Trust Badge */}
             <div
@@ -236,5 +246,18 @@ export function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
+  return (
+    <Link 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-muted-foreground transition-colors hover:text-amber-600"
+    >
+      {icon}
+    </Link>
   );
 }
