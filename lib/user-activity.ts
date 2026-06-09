@@ -26,7 +26,7 @@ export const trackVisitHistory = async (userId: string, instituteId: string) => 
 
       if (totalLogs.length > 20) {
         const logsToDelete = totalLogs.slice(20); 
-        const idsToDelete = logsToDelete.map((log) => log.id);
+        const idsToDelete = logsToDelete.map((log: any) => log.id);
         
         await prisma.userHistory.deleteMany({
           where: { id: { in: idsToDelete } },
