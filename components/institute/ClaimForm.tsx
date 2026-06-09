@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { submitClaimRequest } from "@/lib/institute-claim"; // Path check kar lena
+import { submitClaimRequest } from "@/lib/institute-claim";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, ShieldCheck, TrendingUp, Edit3 } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -42,7 +43,7 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
 
   if (success) {
     return (
-      <div className="mx-auto w-full max-w-md bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-10 text-center border border-slate-100">
+      <div className="mx-auto w-full max-w-md bg-white rounded-3xl shadow-xl shadow-amber-900/5 p-10 text-center border border-amber-100">
         <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 className="w-10 h-10" />
         </div>
@@ -61,57 +62,45 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
   }
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/40 overflow-hidden flex flex-col lg:flex-row border border-slate-100">
+    <div className="bg-white rounded-3xl shadow-2xl shadow-amber-900/5 overflow-hidden flex flex-col lg:flex-row border border-amber-100/60">
       
-      {/* LEFT PANEL: Premium Dark Mode with Amber Accents */}
-      <div className="lg:w-5/12 bg-slate-900 p-10 lg:p-12 flex flex-col justify-between relative overflow-hidden">
-        {/* Decorative Glow */}
-        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 bg-amber-500 rounded-full blur-[100px] opacity-20"></div>
-        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-blue-500 rounded-full blur-[100px] opacity-10"></div>
+      {/* LEFT PANEL: Soft Amber Theme with Your Illustration */}
+      <div className="lg:w-5/12 bg-amber-50 p-10 lg:p-12 flex flex-col justify-between relative overflow-hidden border-r border-amber-100/50">
+        {/* Soft background glow */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 bg-amber-200 rounded-full blur-[80px] opacity-40"></div>
         
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-semibold mb-6 border border-amber-500/20">
-            <ShieldCheck className="w-4 h-4" />
-            Verification Process
-          </div>
-          
-          <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 tracking-tight">Claim Profile</h1>
-          <p className="text-xl font-medium text-amber-400 mb-8 pb-6 border-b border-slate-800">
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-amber-950 mb-2 tracking-tight">
+            Claim Profile
+          </h1>
+          <p className="text-lg font-bold text-amber-600 mb-4 pb-4 border-b border-amber-200">
             {instituteName}
           </p>
           
-          <p className="text-slate-400 leading-relaxed mb-8">
-            Take official ownership of your AcademyFind listing. Unlock powerful tools to grow your institute's presence.
+          <p className="text-amber-900/70 leading-relaxed text-sm font-medium">
+            Take official ownership of your AcademyFind listing. Unlock powerful tools to grow your institute's presence, update courses, and attract more students.
           </p>
-          
-          <ul className="space-y-6">
-            <li className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0">
-                <Edit3 className="w-5 h-5 text-amber-400" />
-              </div>
-              <div>
-                <h4 className="text-slate-200 font-semibold mb-1">Edit Information</h4>
-                <p className="text-sm text-slate-500">Update courses, fees, and contact details anytime.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0">
-                <TrendingUp className="w-5 h-5 text-amber-400" />
-              </div>
-              <div>
-                <h4 className="text-slate-200 font-semibold mb-1">Attract Students</h4>
-                <p className="text-sm text-slate-500">Showcase photos and reply to student reviews.</p>
-              </div>
-            </li>
-          </ul>
+        </div>
+
+        {/* The Magic Image Integration */}
+        <div className="mt-10 relative z-10 flex justify-center items-center">
+          <Image 
+            src="/claim-illustration.PNG" 
+            alt="Claim Institute Illustration" 
+            width={500} 
+            height={500} 
+            priority
+            // mix-blend-multiply image ke white background ko hide karke amber bg se blend kar dega
+            className="object-contain mix-blend-multiply drop-shadow-sm transition-transform hover:scale-105 duration-700 ease-out"
+          />
         </div>
       </div>
 
       {/* RIGHT PANEL: Clean Form */}
       <div className="lg:w-7/12 p-10 lg:p-12 bg-white">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-900">Your Details</h2>
-          <p className="text-slate-500 mt-1">Please provide your official contact information.</p>
+          <h2 className="text-2xl font-bold text-slate-800">Your Details</h2>
+          <p className="text-slate-500 mt-1 text-sm">Please provide your official contact information.</p>
         </div>
         
         {errorMsg && (
@@ -132,7 +121,7 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
                 type="text" 
                 name="fullName" 
                 required
-                className="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
+                className="w-full px-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none transition-all"
                 placeholder="John Doe"
               />
             </div>
@@ -143,7 +132,7 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
                 type="tel" 
                 name="phone" 
                 required
-                className="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
+                className="w-full px-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none transition-all"
                 placeholder="+91 98765 43210"
               />
             </div>
@@ -155,7 +144,7 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
               type="email" 
               name="email" 
               required
-              className="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all"
+              className="w-full px-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none transition-all"
               placeholder="contact@yourinstitute.com"
             />
           </div>
@@ -163,7 +152,7 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-700">Your Role at Institute <span className="text-red-500">*</span></label>
             <Select name="role" required>
-              <SelectTrigger className="w-full px-4 py-6 bg-slate-50 border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all text-base">
+              <SelectTrigger className="w-full px-4 py-6 bg-slate-50/50 border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none transition-all text-base shadow-none">
                 <SelectValue placeholder="Select your designation" />
               </SelectTrigger>
               <SelectContent className="rounded-xl border-slate-100 shadow-xl">
@@ -180,7 +169,7 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
             <textarea 
               name="message" 
               rows={3}
-              className="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 outline-none transition-all resize-none"
+              className="w-full px-4 py-3.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none transition-all resize-none"
               placeholder="Any links (website, social media) to help us verify faster..."
             ></textarea>
           </div>
