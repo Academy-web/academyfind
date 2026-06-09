@@ -1,47 +1,64 @@
+import { CheckCircle2 } from "lucide-react";
+
 export default function MissionSection() {
   return (
     <section className="grid gap-12 lg:grid-cols-2 lg:items-center">
-      <div>
-        <span className="text-sm font-semibold uppercase tracking-wide text-amber-500">
-          Our Mission
-        </span>
+      {/* Left Side: Mission Text */}
+      <div className="space-y-6">
+        <div>
+          {/* Badge style for tag */}
+          <span className="inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-700">
+            Our Mission
+          </span>
 
-        <h2 className="mt-3 text-4xl font-bold">
-          Making Institute Discovery Simple
-        </h2>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Making Institute Discovery Simple
+          </h2>
+        </div>
 
-        <p className="mt-6 text-muted-foreground">
-         Finding the right place to learn is often difficult. Information is scattered across multiple websites, social media pages, and directories, making it time-consuming to compare options. AcademyFind brings this information together in one place, allowing users to explore learning opportunities through simple search and filtering tools.
-          Whether you're preparing for a competitive exam, looking for academic support, learning a new skill, or pursuing a hobby, AcademyFind aims to make the search process easier and more transparent.
-          Our mission is to organize the fragmented learning ecosystem and help learners discover the opportunities that best fit their goals.
-
-        </p>
-
-        <p className="mt-4 text-muted-foreground">
-          AcademyFind exists to organize and simplify the fragmented learning ecosystem by making educational and extracurricular opportunities easily discoverable, searchable, and accessible. 
-        </p>
+        {/* Clean, readable paragraphs */}
+        <div className="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p>
+            <strong className="font-semibold text-slate-800">
+              Finding the right place to learn shouldn't be a struggle.
+            </strong>{" "}
+            Information is often scattered across multiple websites, social media pages, and local directories, making it frustrating and time-consuming to compare your options.
+          </p>
+          
+          <p>
+            AcademyFind brings this fragmented ecosystem together. Whether you're preparing for a competitive exam, seeking academic support, or pursuing a new hobby, our platform lets you explore opportunities through intuitive search and filtering tools.
+          </p>
+          
+          <p>
+            We exist to organize the learning landscape, making educational and extracurricular opportunities easily discoverable, searchable, and accessible for everyone.
+          </p>
+        </div>
       </div>
 
-      <div
-        className="
-          rounded-3xl
-          border
-          border-amber-100
-          bg-linear-to-br
-          from-amber-50
-          to-orange-50
-          p-10
-        "
-      >
-        <h3 className="text-2xl font-bold">
+      {/* Right Side: Values Card */}
+      <div className="relative overflow-hidden rounded-3xl border border-amber-100 bg-linear-to-br from-amber-50 to-orange-50 p-8 sm:p-10 shadow-sm">
+        {/* Decorative background blur/glow */}
+        <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-amber-300/20 blur-3xl pointer-events-none" />
+
+        <h3 className="relative z-10 text-2xl font-bold text-slate-900">
           What We Believe
         </h3>
 
-        <ul className="mt-6 space-y-4 text-muted-foreground">
-          <li>✓ Students deserve transparent information</li>
-          <li>✓ Comparisons should be unbiased</li>
-          <li>✓ Discovery should be simple and fast</li>
-          <li>✓ Quality education should be easier to find</li>
+        {/* Upgraded List with Icons */}
+        <ul className="relative z-10 mt-8 space-y-5">
+          {[
+            "Students deserve transparent information",
+            "Comparisons should be fair and unbiased",
+            "Discovery should be simple and fast",
+            "Quality education should be easier to find",
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-slate-700">
+              <div className="mt-0.5 shrink-0 rounded-full bg-amber-200/50 p-1">
+                <CheckCircle2 className="h-4 w-4 text-amber-600" />
+              </div>
+              <span className="font-medium">{item}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
