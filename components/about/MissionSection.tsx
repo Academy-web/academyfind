@@ -11,17 +11,14 @@ export default function MissionSection() {
         </h2>
 
         <p className="mt-6 text-muted-foreground">
-          Choosing the right coaching institute is
-          one of the most important decisions for
-          students. Yet most information online is
-          scattered, outdated or biased.
+         Finding the right place to learn is often difficult. Information is scattered across multiple websites, social media pages, and directories, making it time-consuming to compare options. AcademyFind brings this information together in one place, allowing users to explore learning opportunities through simple search and filtering tools.
+Whether you're preparing for a competitive exam, looking for academic support, learning a new skill, or pursuing a hobby, AcademyFind aims to make the search process easier and more transparent.
+Our mission is to organize the fragmented learning ecosystem and help learners discover the opportunities that best fit their goals.
+
         </p>
 
         <p className="mt-4 text-muted-foreground">
-          AcademyFind exists to help students make
-          informed decisions by providing
-          transparent institute information,
-          comparisons, reviews and insights.
+          AcademyFind exists to organize and simplify the fragmented learning ecosystem by making educational and extracurricular opportunities easily discoverable, searchable, and accessible. 
         </p>
       </div>
 

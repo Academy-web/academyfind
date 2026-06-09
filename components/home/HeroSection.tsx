@@ -94,9 +94,7 @@ export function HeroSection() {
               lg:text-base
             "
           >
-            Compare coaching institutes, explore cities,
-            read reviews and discover the best place
-            for your preparation journey.
+            Discover coaching institutes, tuition centers, skill-development programs, and extracurricular classes for your preparation journey. 
           </p>
 
           {/* Search Label */}

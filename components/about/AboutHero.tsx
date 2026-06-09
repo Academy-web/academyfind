@@ -41,10 +41,7 @@ export default function AboutHero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          AcademyFind helps students discover,
-          compare and evaluate coaching institutes
-          across India through transparent and
-          reliable information.
+          AcademyFind is a discovery platform designed to help students, parents, and lifelong learners find the right coaching institutes, tuition centers, skill-development programs, and extracurricular classes.
         </p>
       </div>
     </section>
