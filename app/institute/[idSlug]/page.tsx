@@ -149,7 +149,7 @@ if(session?.user){
                         <div className="mt-3 flex flex-wrap items-center gap-3">
                           {/* Categories */}
                           <div className="flex flex-wrap gap-2">
-                            {institute.categories.map((item) => (
+                            {institute.categories.map((item: any) => (
                               <span
                                 key={item.category.id}
                                 className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-700"
