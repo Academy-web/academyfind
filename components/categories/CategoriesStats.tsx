@@ -8,12 +8,12 @@ import {
 const stats = [
   {
     title: "Categories",
-    value: "28",
+    value: "65+",
     icon: Layers3,
   },
   {
     title: "Institutes",
-    value: "8000+",
+    value: "9500+",
     icon: Building2,
   },
   {

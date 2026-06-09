@@ -11,6 +11,7 @@ import {
   LogIn,
   UserPlus,
   Menu,
+  User,
 } from "lucide-react";
 // 👇 Hooks import kiye hain auto-close logic ke liye
 import { useState, useEffect } from "react";
@@ -26,6 +27,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import Image from "next/image";
+import UserDropdown from "@/components/navigation/UserDropdown";
 
 export default function Navbar() {
   const { data: session, isPending } = authClient.useSession();
@@ -118,38 +120,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           {session?.user ? (
             <>
-              <div className="flex items-center gap-3">
-                {session.user.image ? (
-                  <Image
-                    src={session.user.image}
-                    alt={session.user.name || "User"}
-                    width={40}
-                    height={40}
-                    className="rounded-full border"
-                  />
-                ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 font-semibold text-amber-700">
-                    {session.user.name?.charAt(0).toUpperCase()}
-                  </div>
-                )}
-
-                <div className="flex flex-col">
-                  <span className="text-sm font-semibold">
-                    {session.user.name}
-                  </span>
-                  <span className="text-xs text-zinc-500">
-                    {session.user.email}
-                  </span>
-                </div>
-              </div>
-
-              <Button
-                variant="outline"
-                onClick={handleLogOut}
-                className="bg-amber-50 cursor-pointer"
-              >
-                Logout
-              </Button>
+              <UserDropdown user={session.user}/>
             </>
           ) : (
             <>
@@ -224,21 +195,7 @@ export default function Navbar() {
 
                 {session?.user ? (
                   <>
-                    <div className="rounded-xl border p-4">
-                      <p className="font-semibold">
-                        {session.user.name}
-                      </p>
-                      <p className="text-sm text-zinc-500">
-                        {session.user.email}
-                      </p>
-                    </div>
-
-                    <Button
-                      variant="outline"
-                      onClick={handleLogOut}
-                    >
-                      Logout
-                    </Button>
+                    <UserDropdown user={session.user} />
                   </>
                 ) : (
                   <>
