@@ -1,0 +1,57 @@
+"use server";
+
+import { prisma } from "@/lib/prisma"; // Apne prisma client ka path check kar lena
+import { revalidatePath } from "next/cache";
+
+export async function submitClaimRequest(formData: FormData) {
+  try {
+    // Form se data nikalna
+    const instituteId = formData.get("instituteId") as string;
+    const userId = formData.get("userId") as string;
+    const fullName = formData.get("fullName") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const role = formData.get("role") as string;
+    const message = formData.get("message") as string;
+
+    // Basic validation
+    if (!instituteId || !userId || !fullName || !email || !phone || !role) {
+      return { success: false, error: "Please fill all required fields." };
+    }
+
+    // Check agar user ne pehle se claim request daali hui hai (Pending state me)
+    const existingClaim = await prisma.instituteClaim.findFirst({
+      where: {
+        instituteId: instituteId,
+        userId: userId,
+        status: "PENDING",
+      },
+    });
+
+    if (existingClaim) {
+      return { success: false, error: "You already have a pending claim request for this institute." };
+    }
+
+    // Database me nayi claim request save karna
+    await prisma.instituteClaim.create({
+      data: {
+        instituteId,
+        userId,
+        fullName,
+        email,
+        phone,
+        role,
+        message,
+        status: "PENDING", // By default PENDING jayega admin approval ke liye
+      },
+    });
+
+    // Institute page ko revalidate karna taaki cache clear ho jaye
+    revalidatePath(`/institute/${instituteId}`);
+
+    return { success: true };
+  } catch (error) {
+    console.error("Error submitting claim request:", error);
+    return { success: false, error: "Internal server error. Please try again later." };
+  }
+}

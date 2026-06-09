@@ -60,7 +60,8 @@ export const ModelName = {
   Category: 'Category',
   InstituteCategory: 'InstituteCategory',
   InstituteManager: 'InstituteManager',
-  Review: 'Review'
+  Review: 'Review',
+  InstituteClaim: 'InstituteClaim'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -230,6 +231,23 @@ export const ReviewScalarFieldEnum = {
 } as const
 
 export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
+
+
+export const InstituteClaimScalarFieldEnum = {
+  id: 'id',
+  instituteId: 'instituteId',
+  userId: 'userId',
+  fullName: 'fullName',
+  email: 'email',
+  phone: 'phone',
+  role: 'role',
+  message: 'message',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InstituteClaimScalarFieldEnum = (typeof InstituteClaimScalarFieldEnum)[keyof typeof InstituteClaimScalarFieldEnum]
 
 
 export const SortOrder = {

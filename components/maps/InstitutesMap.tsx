@@ -82,7 +82,7 @@ export default function InstitutesMap({ institutes }: Props) {
             pixelOffset={[0, -35]} // Marker ke thoda upar khulne ke liye
           >
             {/* Premium Info Window Styling */}
-            <div className="flex flex-col gap-2 p-1 min-w-[200px]">
+            <div className="flex flex-col gap-2 p-1 min-w-50">
               <p className="text-base font-semibold text-gray-900 leading-tight">
                 {selected.name}
               </p>

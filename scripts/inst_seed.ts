@@ -1,8 +1,10 @@
 import "dotenv/config";
 import { prisma } from "@/lib/prisma";
 import slugify from "slugify";
+import fs from "fs"; // File system module add kiya track karne ke liye
 
 const GOOGLE_API_KEY = process.env.GOOGLE_MAPS_API_KEY!;
+const PROGRESS_FILE = "./import_progress.json"; // Is file me save hoga data
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -87,6 +89,23 @@ function getBoundingBox(lat: number, lng: number, radiusMeters: number) {
   };
 }
 
+// Track Progress Helpers
+function getCompletedCategories() {
+  if (fs.existsSync(PROGRESS_FILE)) {
+    const data = fs.readFileSync(PROGRESS_FILE, "utf-8");
+    return JSON.parse(data);
+  }
+  return [];
+}
+
+function markCategoryCompleted(slug: string) {
+  const completed = getCompletedCategories();
+  if (!completed.includes(slug)) {
+    completed.push(slug);
+    fs.writeFileSync(PROGRESS_FILE, JSON.stringify(completed, null, 2));
+  }
+}
+
 // 1. FIXED SEARCH PLACES FUNCTION
 async function searchPlaces(queryText: string, hub?: { lat: number; lng: number; radius: number }) {
   const allPlaces: any[] = [];
@@ -169,7 +188,14 @@ async function importCategoryCity(category: any, city: any) {
   const hubs = cityKey === "noida" ? CITY_HUBS : [{ name: city.name, lat: null, lng: null, radius: null }];
 
   console.log(`\n🚀 Processing: ${category.name} -> ${city.name}`);
-
+  const educationalKeywords = ["coaching", "training", "classes", "academy", "tuition", "institute", "programs"];
+  const categoryNameLower = category.name.toLowerCase();
+  
+  // Check karte hain ki naam me inme se koi word hai kya?
+  const hasEducationalWord = educationalKeywords.some(word => categoryNameLower.includes(word));
+  
+  // Agar nahi hai, toh "Institute" add kar do (best for Graphic Design, Video Editing etc.)
+  const searchQuery = hasEducationalWord ? category.name : `${category.name} Institute`;
   const uniquePlaces = new Map<string, any>();
 
   console.log(`Processing ${hubs.length} hubs`);
@@ -181,9 +207,9 @@ async function importCategoryCity(category: any, city: any) {
     
     if (hub.lat !== null && hub.lng !== null) {
       // Clean query: Let the Bounding Box do the filtering work
-      places = await searchPlaces(`${category.name}`, { lat: hub.lat, lng: hub.lng, radius: hub.radius });
+      places = await searchPlaces(`${searchQuery}`, { lat: hub.lat, lng: hub.lng, radius: hub.radius });
     } else {
-      places = await searchPlaces(`${category.name} in ${city.name}`);
+      places = await searchPlaces(`${searchQuery} in ${city.name}`);
     }
 
     console.log(`Fetched ${places.length} items from this hub segment.`);
@@ -267,12 +293,39 @@ async function main() {
   const categories = await prisma.category.findMany();
   const cities = await prisma.city.findMany();
 
-  const selectedCategories =
-    categories.filter((c) =>
-      [
-        "nursing-coaching",
-      ].includes(c.slug)
-    );
+  const selectedCategories = categories.filter((c) =>
+  [
+    // Medical (Updated slug)
+    "nursing-entrance-coaching",
+    // Nayi School Tuition Categories
+    "class-3-tuition", "class-4-tuition", 
+    "class-5-tuition", "class-6-tuition", "class-7-tuition", "class-8-tuition", 
+    "class-9-tuition", "class-10-tuition", "class-11-tuition", "class-12-tuition", 
+    // Government Exams, Defence & Teaching (New Additions)
+    "state-pcs-coaching", "nda-coaching", 
+    "ugc-net-coaching",  
+    // Study Abroad (New Additions)
+     "sat-coaching", 
+    // Computer & Tech, Design, Cloud (New Additions)
+    "aws-training", 
+     "ui-ux-design", "graphic-design", "video-editing", "animation-vfx",
+    // Business & Professional Skills (Poori nayi section)
+    "digital-marketing", "sales-training", "stock-market-training",  "hr-training", 
+    "interview-preparation", 
+    // Vocational & Job-Oriented (Poori nayi section)
+    "hotel-management-coaching", 
+    "aviation-cabin-crew", "beauty-makeup-courses",  
+    "fashion-designing", 
+    // Languages, Arts, Creativity (New Additions)
+    "korean-classes", "theatre-acting", "piano-classes", 
+     "violin-classes", "sketching", "art-craft-classes",
+    // Sports, Wellness & Combat (New Additions)
+    "basketball-academy", "skating-classes", 
+    "karate",
+    // Kids, Hobby & Early Education (New Additions)
+    "handwriting-improvement",
+  ].includes(c.slug)
+);
 
   const selectedCities = cities.filter((c) =>
     [
@@ -280,16 +333,32 @@ async function main() {
     ].includes(c.slug)
   );
 
+  // PEHLE SE HO CHUKI CATEGORIES LOAD KARO
+  const completedCategories = getCompletedCategories();
+  if (completedCategories.length > 0) {
+    console.log(`\n📄 Progress File Found! Skipping ${completedCategories.length} already completed categories...`);
+  }
+
   for (const category of selectedCategories) {
+    // AGAR CATEGORY PEHLE HI HO CHUKI HAI TOH SKIP KAR DO
+    if (completedCategories.includes(category.slug)) {
+      console.log(`\n⏭️ Skipping Category: [${category.name}] - Already processed previously.`);
+      continue;
+    }
+
     for (const city of selectedCities) {
       await importCategoryCity(
         category,
         city
       );
     }
+    
+    // CITY IMPORT SUCCESSFUL HONE KE BAAD FILE ME SAVE KARO
+    markCategoryCompleted(category.slug);
+    console.log(`\n📁 PROGRESS SAVED: [${category.name}] added to import_progress.json`);
   }
 
-  console.log("\n🎉 Import Completed");
+  console.log("\n🎉 ALL IMPORTS COMPLETED SUCCESSFULLY!");
 }
 
 main()

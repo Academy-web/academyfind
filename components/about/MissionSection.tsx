@@ -12,8 +12,8 @@ export default function MissionSection() {
 
         <p className="mt-6 text-muted-foreground">
          Finding the right place to learn is often difficult. Information is scattered across multiple websites, social media pages, and directories, making it time-consuming to compare options. AcademyFind brings this information together in one place, allowing users to explore learning opportunities through simple search and filtering tools.
-Whether you're preparing for a competitive exam, looking for academic support, learning a new skill, or pursuing a hobby, AcademyFind aims to make the search process easier and more transparent.
-Our mission is to organize the fragmented learning ecosystem and help learners discover the opportunities that best fit their goals.
+          Whether you're preparing for a competitive exam, looking for academic support, learning a new skill, or pursuing a hobby, AcademyFind aims to make the search process easier and more transparent.
+          Our mission is to organize the fragmented learning ecosystem and help learners discover the opportunities that best fit their goals.
 
         </p>
 
@@ -27,7 +27,7 @@ Our mission is to organize the fragmented learning ecosystem and help learners d
           rounded-3xl
           border
           border-amber-100
-          bg-gradient-to-br
+          bg-linear-to-br
           from-amber-50
           to-orange-50
           p-10

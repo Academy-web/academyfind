@@ -305,11 +305,17 @@ const categories = [
     slug: "language-learning",
     children: [
       {
-        name: "English & Hindi",
-        slug: "english-hindi",
+        name: "English Learning Coaching",
+        slug: "english-learning",
         children: [
-          { name: "Spoken English", slug: "spoken-english" },
-          { name: "Spoken Hindi", slug: "spoken-hindi" },
+          { name: "English Speaking", slug: "english-speaking" },
+        ],
+      },
+      {
+        name: "Hindi Learning Coaching",
+        slug: "hindi-learning",
+        children: [
+          { name: "Hindi Speaking", slug: "hindi-speaking" },
         ],
       },
       {
@@ -405,14 +411,21 @@ const categories = [
         ],
       },
       {
-        name: "Wellness & Combat",
-        slug: "wellness-combat",
+        name: "Wellness",
+        slug: "wellness",
         children: [
           { name: "Yoga Classes", slug: "yoga-classes" },
+          { name: "Gym",  slug: "gym"},
+        ],
+      },
+      {
+        name: "Combat",
+        slug: "combat",
+        children:[
           { name: "Martial Arts", slug: "martial-arts" },
           { name: "Karate", slug: "karate" },
           { name: "Taekwondo", slug: "taekwondo" },
-        ],
+        ]
       },
     ],
   },
@@ -435,8 +448,8 @@ const categories = [
         slug: "skill-development",
         children: [
           { name: "Abacus Classes", slug: "abacus-classes" },
-          { name: "Vedic & Mental Maths", slug: "vedic-mental-maths" },
-          { name: "Robotics & STEM", slug: "robotics-stem" },
+          { name: "Vedic & Mental Maths", slug: "vedic-maths" },
+          { name: "Robotics & STEM", slug: "robotics-classes" },
           { name: "Coding for Kids", slug: "coding-for-kids" },
         ],
       },

@@ -393,7 +393,8 @@ export const ModelName = {
   Category: 'Category',
   InstituteCategory: 'InstituteCategory',
   InstituteManager: 'InstituteManager',
-  Review: 'Review'
+  Review: 'Review',
+  InstituteClaim: 'InstituteClaim'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -409,7 +410,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "institute" | "city" | "category" | "instituteCategory" | "instituteManager" | "review"
+    modelProps: "user" | "session" | "account" | "verification" | "institute" | "city" | "category" | "instituteCategory" | "instituteManager" | "review" | "instituteClaim"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1153,6 +1154,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    InstituteClaim: {
+      payload: Prisma.$InstituteClaimPayload<ExtArgs>
+      fields: Prisma.InstituteClaimFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.InstituteClaimFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.InstituteClaimFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>
+        }
+        findFirst: {
+          args: Prisma.InstituteClaimFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.InstituteClaimFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>
+        }
+        findMany: {
+          args: Prisma.InstituteClaimFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>[]
+        }
+        create: {
+          args: Prisma.InstituteClaimCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>
+        }
+        createMany: {
+          args: Prisma.InstituteClaimCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.InstituteClaimCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>[]
+        }
+        delete: {
+          args: Prisma.InstituteClaimDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>
+        }
+        update: {
+          args: Prisma.InstituteClaimUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>
+        }
+        deleteMany: {
+          args: Prisma.InstituteClaimDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.InstituteClaimUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.InstituteClaimUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>[]
+        }
+        upsert: {
+          args: Prisma.InstituteClaimUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteClaimPayload>
+        }
+        aggregate: {
+          args: Prisma.InstituteClaimAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateInstituteClaim>
+        }
+        groupBy: {
+          args: Prisma.InstituteClaimGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InstituteClaimGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.InstituteClaimCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InstituteClaimCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1343,6 +1418,23 @@ export const ReviewScalarFieldEnum = {
 } as const
 
 export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
+
+
+export const InstituteClaimScalarFieldEnum = {
+  id: 'id',
+  instituteId: 'instituteId',
+  userId: 'userId',
+  fullName: 'fullName',
+  email: 'email',
+  phone: 'phone',
+  role: 'role',
+  message: 'message',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InstituteClaimScalarFieldEnum = (typeof InstituteClaimScalarFieldEnum)[keyof typeof InstituteClaimScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1571,6 +1663,7 @@ export type GlobalOmitConfig = {
   instituteCategory?: Prisma.InstituteCategoryOmit
   instituteManager?: Prisma.InstituteManagerOmit
   review?: Prisma.ReviewOmit
+  instituteClaim?: Prisma.InstituteClaimOmit
 }
 
 /* Types for Logging */

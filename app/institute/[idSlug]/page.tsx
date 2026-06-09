@@ -202,7 +202,7 @@ export default async function InstitutePage({ params }: PageProps) {
                         Claim this profile to update information, add photos, and enhance your presence on AcademyFind.
                       </p>
 
-                      <Link href="/claim" className="shrink-0">
+                      <Link href={`/institute/${institute.id}-${institute.slug}/claim`} className="shrink-0">
                         <Button className="bg-amber-600 hover:bg-amber-700 text-white cursor-pointer transition-colors px-6">
                           Claim Profile
                         </Button>
