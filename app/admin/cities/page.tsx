@@ -55,7 +55,7 @@ export default async function AdminCitiesPage() {
                                     <td colSpan={4} className="p-8 text-center text-slate-400">No cities found. Please run your database seed script.</td>
                                 </tr>
                             ) : (
-                                cities.map((city) => (
+                                cities.map((city: any) => (
                                     <tr key={city.id} className="hover:bg-slate-50/50 transition-colors">
                                         
                                         {/* 1. Name & Slug */}

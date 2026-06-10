@@ -129,7 +129,7 @@ export default async function AdminDashboardPage() {
                         {recentUsers.length === 0 ? (
                             <div className="text-center text-slate-400 py-8 text-sm">No users found.</div>
                         ) : (
-                            recentUsers.map(user => (
+                            recentUsers.map((user:any) => (
                                 <div key={user.id} className="flex justify-between items-center p-3 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
                                     <div>
                                         <p className="font-bold text-sm text-slate-800 line-clamp-1">{user.name || "Anonymous"}</p>
