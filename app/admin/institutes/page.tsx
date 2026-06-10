@@ -102,7 +102,7 @@ export default async function AdminInstitutesPage({
                                     <td colSpan={5} className="p-8 text-center text-slate-400">No institutes match your filters.</td>
                                 </tr>
                             ) : (
-                                institutes.map((institute) => (
+                                institutes.map((institute: any) => (
                                     <tr key={institute.id} className={`hover:bg-slate-50/50 transition-colors ${!institute.isActive ? 'opacity-60 grayscale-[0.5]' : ''}`}>
                                         <td className="p-4">
                                             <div className="font-bold text-slate-800 text-base">{institute.name}</div>

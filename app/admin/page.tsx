@@ -102,7 +102,7 @@ export default async function AdminDashboardPage() {
                         {recentClaims.length === 0 ? (
                             <div className="text-center text-slate-400 py-8 text-sm">No pending claims. All caught up! 🎉</div>
                         ) : (
-                            recentClaims.map(claim => (
+                            recentClaims.map((claim: any) => (
                                 <div key={claim.id} className="flex justify-between items-center p-3 rounded-xl border border-slate-100 hover:bg-slate-50 transition">
                                     <div>
                                         <p className="font-bold text-sm text-slate-800 line-clamp-1">{claim.institute.name}</p>
