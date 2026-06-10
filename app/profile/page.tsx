@@ -109,7 +109,7 @@ export default async function ProfilePage() {
                 </Card>
 
                 {/* 🚀 MANAGER QUICK ACCESS CARD (Conditionally Rendered) */}
-                {/* {managedInstitutes.length > 0 && ( */}
+                {managedInstitutes.length > 0 && (
                     <Card className="rounded-3xl border-blue-100 shadow-sm bg-linear-to-br from-blue-50/50 to-white overflow-hidden relative">
                         <div className="absolute right-0 top-0 -mr-16 -mt-16 w-48 h-48 bg-blue-400 rounded-full blur-[80px] opacity-10 pointer-events-none"></div>
                         <CardHeader className="pb-2">
@@ -130,7 +130,7 @@ export default async function ProfilePage() {
                             </Button>
                         </CardContent>
                     </Card>
-                {/* )} */}
+                 )} 
 
                 {/* Grid sections for Shortlisted & History logs */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
