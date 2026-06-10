@@ -10,6 +10,7 @@ export async function getInstituteById(
 
     include: {
       city: true,
+      teachers: true,
 
       categories: {
         include: {

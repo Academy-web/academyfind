@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
-import EditProfileForm from "./EditProfileForm";
+import EditProfileForm from "./edit/EditProfileForm";
 
 export default async function ManagerProfilePage({
     params
@@ -12,7 +12,10 @@ export default async function ManagerProfilePage({
 
     // Fetch Institute Data
     const institute = await prisma.institute.findUnique({
-        where: { id: instituteId }
+        where: { id: instituteId },
+        include:{
+            teachers: true
+        }
     });
 
     if (!institute) return redirect("/manager");
@@ -30,16 +33,6 @@ export default async function ManagerProfilePage({
             {/* Form Section */}
             <div className="p-6 md:p-8 bg-slate-50 border border-slate-100 rounded-3xl shadow-sm">
                 <EditProfileForm institute={institute} />
-            </div>
-
-            {/* Gallery Hint (Optional Future Feature) */}
-            <div className="p-6 bg-blue-50/50 border border-blue-100 rounded-3xl text-sm text-blue-800">
-                <p className="font-semibold flex items-center gap-2">
-                    🖼️ Want to add Photos?
-                </p>
-                <p className="mt-1 text-blue-600/80">
-                    Gallery upload feature will be available soon. Keep your description highly detailed to attract more students!
-                </p>
             </div>
         </div>
     );

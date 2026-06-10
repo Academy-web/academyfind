@@ -7,8 +7,8 @@ import Breadcrumb from "@/components/navigation/BreadCrumbs";
 import Link from "next/link";
 import InstituteMap from "@/components/maps/InstituteMap";
 import ReviewForm from "@/components/reviews/ReviewForm";
-// 👇 Saare naye icons import kiye hain
-import { Star, Phone, MapPin, Mail, Globe, CheckCircle } from "lucide-react"; 
+// 👇 Naye Icons add kiye hain premium look ke liye
+import { Star, Phone, MapPin, Mail, Globe, CheckCircle, Users, Trophy, PlayCircle, User } from "lucide-react"; 
 import Image from "next/image";
 import SmartButton from "@/components/ui/SmartButton";
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+// 🚀 Helper Function to extract YouTube ID for embedding
+function getYouTubeId(url: string) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
+
 export default async function InstitutePage({ params }: PageProps) {
   const { idSlug } = await params;
   const id = extractId(idSlug);
@@ -54,26 +61,25 @@ export default async function InstitutePage({ params }: PageProps) {
   }
 
   const session = await auth.api.getSession({
-  headers: await headers()
-})
+    headers: await headers()
+  })
 
-let alreadySaved = false;
+  let alreadySaved = false;
 
-if(session?.user){
-  await trackVisitHistory(session.user.id,institute.id).catch(console.error)
+  if (session?.user) {
+    await trackVisitHistory(session.user.id, institute.id).catch(console.error)
 
-  const savedEntry = await prisma.userShortlist.findUnique({
-    where:{
-      userId_instituteId:{
-        userId: session.user.id,
-        instituteId: institute.id
+    const savedEntry = await prisma.userShortlist.findUnique({
+      where: {
+        userId_instituteId: {
+          userId: session.user.id,
+          instituteId: institute.id
+        }
       }
-    }
-  });
-  alreadySaved = !!savedEntry
-}
+    });
+    alreadySaved = !!savedEntry
+  }
 
-  
   const displayRating = institute.googleRating ?? institute.averageRating ?? 0;
   const displayReviewCount = institute.googleReviewCount ?? institute.reviewCount ?? 0;
 
@@ -126,8 +132,8 @@ if(session?.user){
                     <Image 
                       src={institute.logo ?? institute.imageUrl ?? "/inst.jpg"} 
                       alt={institute.name} 
-                      width={128} 
-                      height={128}
+                      width={40}
+                      height={40}
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -141,8 +147,9 @@ if(session?.user){
                             {institute.name}
                           </h1>
                           {institute.isVerified && (
-                            <p className="text-[0.6rem]"><CheckCircle className="h-6 w-6 text-blue-500"/>Verified Institute</p>
-                            
+                            <p className="text-[0.6rem] font-bold text-blue-600 flex items-center gap-1 bg-blue-50 px-2 py-1 rounded-full border border-blue-100 mt-1">
+                              <CheckCircle className="h-3.5 w-3.5"/> Verified
+                            </p>
                           )}
                         </div>
 
@@ -152,7 +159,7 @@ if(session?.user){
                             {institute.categories.map((item: any) => (
                               <span
                                 key={item.category.id}
-                                className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-700"
+                                className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800"
                               >
                                 {item.category.name}
                               </span>
@@ -177,7 +184,7 @@ if(session?.user){
                       </div>
                     </div>
 
-                    {/* 🚀 Updated Contact Info Box */}
+                    {/* Contact Info Box */}
                     <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 border border-slate-100">
                       
                       {/* Address */}
@@ -218,19 +225,19 @@ if(session?.user){
                 </div>
 
                 {/* Description */}
-               {institute.description ? (
-                  <p className="mt-8 leading-8 text-amber-600 bg-slate-50 p-4 border border-slate-100 rounded-xl">
+                {institute.description ? (
+                  <p className="mt-8 leading-8 text-amber-700 bg-amber-50/50 p-5 border border-amber-100 rounded-2xl">
                     {institute.description}
                   </p>
                 ) : (
-                  <div className="mt-8 text-amber-600 bg-slate-50 p-4 border border-slate-100 rounded-xl space-y-4">
+                  <div className="mt-8 text-amber-700 bg-amber-50/50 p-5 border border-amber-100 rounded-2xl space-y-4">
                     <p className="leading-8">
                       <strong>{institute.name}</strong> located in {institute.city.name} is listed on AcademyFind to help students and parents discover educational and learning opportunities. Information displayed on this page has been compiled from publicly available sources and may be updated over time. For the latest details regarding courses, fees, schedules, admissions, and facilities, please contact the institute directly.
                     </p>
                     
                     {/* Clean, Flexbox CTA Section */}
                     <div className="pt-4 border-t border-amber-200/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      <p className="text-amber-700 text-sm sm:text-base leading-relaxed">
+                      <p className="text-amber-800 text-sm sm:text-base leading-relaxed">
                         <strong>Are you the owner or representative of this institute?</strong>{' '}
                         Claim this profile to update information, add photos, and enhance your presence on AcademyFind.
                       </p>
@@ -259,11 +266,10 @@ if(session?.user){
                   </SmartButton>
                 </Link>
                 
-                {/* Agar Google Maps URL hai toh ek aur button show kar do */}
                 {institute.googleMapsUrl && (
                   <a href={institute.googleMapsUrl} target="_blank" rel="noopener noreferrer">
                     <button className="mt-3 w-full rounded-xl border border-slate-200 bg-white px-5 py-3 font-medium text-slate-700 transition hover:bg-slate-50 flex items-center justify-center gap-2">
-                      <MapPin className="h-4 w-4" />
+                      <MapPin className="h-4 w-4 text-slate-400" />
                       View on Maps
                     </button>
                   </a>
@@ -274,21 +280,22 @@ if(session?.user){
         </div>
       </section>
 
-      {/* Rest of the Content (Quick Facts, About, Location, Reviews remain same) */}
-      <div className="mx-auto max-w-7xl px-4 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12 space-y-16">
+        
+        {/* Quick Facts */}
         <section>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-3xl border bg-white p-6">
+            <div className="rounded-3xl border bg-white p-6 shadow-sm">
               <p className="text-sm text-slate-500">City</p>
-              <h3 className="mt-2 text-2xl font-bold">{institute.city.name}</h3>
+              <h3 className="mt-2 text-2xl font-bold text-slate-800">{institute.city.name}</h3>
             </div>
-            <div className="rounded-3xl border bg-white p-6">
-              <p className="text-sm text-slate-500">Categories</p>
-              <h3 className="mt-2 text-2xl font-bold">{institute.categories.length}</h3>
+            <div className="rounded-3xl border bg-white p-6 shadow-sm">
+              <p className="text-sm text-slate-500">Categories Listed</p>
+              <h3 className="mt-2 text-2xl font-bold text-slate-800">{institute.categories.length}</h3>
             </div>
-            <div className="rounded-3xl border bg-white p-6">
+            <div className="rounded-3xl border bg-white p-6 shadow-sm">
               <p className="text-sm text-slate-500">Google Rating</p>
-              <h3 className="mt-2 flex items-center gap-2 text-2xl font-bold">
+              <h3 className="mt-2 flex items-center gap-2 text-2xl font-bold text-slate-800">
                 {displayRating > 0 ? (
                   <>{displayRating} <Star className="h-5 w-5 fill-amber-400 text-amber-400" /></>
                 ) : ("New")}
@@ -298,37 +305,118 @@ if(session?.user){
           </div>
         </section>
 
-        {/* About Section */}
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold">About {institute.name}</h2>
-          <div className="mt-6 rounded-3xl border bg-white p-8">
-            <p className="leading-8 text-slate-600">
-              {institute.description ?? "Empowering students with top-notch education and expert faculty to pave the way for their successful careers."}
-            </p>
-          </div>
-        </section>
+        {/* 🚀 NAYA SECTION: TEACHERS / FACULTY */}
+        {institute && institute.teachers.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 bg-emerald-100 text-emerald-600 rounded-xl"><Users className="w-6 h-6" /></div>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900">Expert Faculty</h2>
+                <p className="text-slate-500 text-sm mt-1">Learn from highly experienced educators.</p>
+              </div>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {institute.teachers.map((teacher: any) => (
+                <div key={teacher.id} className="rounded-3xl border border-slate-200 bg-white p-6 flex items-center gap-5 shadow-sm hover:shadow-md transition">
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center">
+                    {teacher.imageUrl ? (
+                      <Image src={teacher.imageUrl} alt={teacher.name} width={60} height={60} className="h-full w-full object-cover" />
+                    ) : (
+                      <User className="h-8 w-8 text-slate-300" />
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg">{teacher.name}</h4>
+                    {teacher.subject && <p className="text-sm font-semibold text-emerald-600">{teacher.subject}</p>}
+                    {teacher.experience && <p className="text-xs text-slate-500 mt-1">{teacher.experience}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 🚀 NAYA SECTION: RESULT IMAGES / GALLERY */}
+        {institute.gallery && institute.gallery.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 bg-amber-100 text-amber-600 rounded-xl"><Trophy className="w-6 h-6" /></div>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900">Student Achievements</h2>
+                <p className="text-slate-500 text-sm mt-1">Glimpses of past results and campus.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {institute.gallery.map((url: string, idx: number) => (
+                <div key={idx} className="relative aspect-square overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm group cursor-pointer">
+                  <img 
+                    src={url} 
+                    alt={`Result ${idx + 1}`} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 🚀 NAYA SECTION: YOUTUBE VIDEOS */}
+        {institute.youtubeVideos && institute.youtubeVideos.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 bg-red-100 text-red-600 rounded-xl"><PlayCircle className="w-6 h-6" /></div>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900">Featured Videos</h2>
+                <p className="text-slate-500 text-sm mt-1">Watch demo classes and academy tours.</p>
+              </div>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              {institute.youtubeVideos.map((url: string, idx: number) => {
+                const videoId = getYouTubeId(url);
+                if (!videoId) return null;
+                return (
+                  <div key={idx} className="aspect-video w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title="YouTube Video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="h-full w-full border-0"
+                    ></iframe>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Location Map */}
         {institute.latitude && institute.longitude && (
-          <section className="mt-16">
-            <h2 className="mb-6 text-3xl font-bold">Location</h2>
-            <InstituteMap name={institute.name} latitude={institute.latitude} longitude={institute.longitude} />
+          <section>
+            <h2 className="mb-6 text-3xl font-bold text-slate-900">Location Map</h2>
+            <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
+              <InstituteMap name={institute.name} latitude={institute.latitude} longitude={institute.longitude} />
+            </div>
           </section>
         )}
 
         {/* Reviews Section */}
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold">AcademyFind Reviews</h2>
+        <section>
+          <h2 className="text-3xl font-bold text-slate-900">AcademyFind Reviews</h2>
           <p className="mt-2 text-slate-600">Share your personal experience with this institute.</p>
           <div className="mt-6 space-y-4">
             {institute.reviews.length === 0 ? (
-              <div className="rounded-3xl border bg-white p-8 text-center text-slate-500">
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">
                 Be the first to review {institute.name} on our platform!
               </div>
             ) : (
               institute.reviews.map((review: any) => (
-                <div key={review.id} className="rounded-3xl border bg-white p-6">
-                  <div className="font-semibold">{review.user?.name || "Anonymous User"}</div>
+                <div key={review.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="font-semibold text-slate-800">{review.user?.name || "Anonymous User"}</div>
                   <div className="mt-2 text-amber-400">{"⭐".repeat(review.rating)}</div>
                   {review.comment && <p className="mt-3 text-slate-600">{review.comment}</p>}
                 </div>

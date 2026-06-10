@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { Lock, MessageSquare, Mail, Phone, Calendar } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
+import { PLAN_LIMITS,PlanType } from "@/lib/plan_limits";
 
 export default async function EnquiriesPage({ params }: { params: Promise<{ instituteId: string }> }) {
     const { instituteId } = await params;
@@ -15,8 +16,10 @@ export default async function EnquiriesPage({ params }: { params: Promise<{ inst
 
     if (!institute) return <div>Institute not found</div>;
 
+    const limits = PLAN_LIMITS[institute.subscriptionPlan as PlanType];
+
     // 🔒 LOCK SCREEN FOR BASIC PLAN
-    if (institute.subscriptionPlan === "BASIC") {
+    if (!limits.hasLeads) {
         return (
             <div className="min-h-[500px] flex flex-col items-center justify-center text-center p-8 bg-slate-50/50 rounded-3xl border border-dashed border-slate-200">
                 <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
@@ -24,7 +27,7 @@ export default async function EnquiriesPage({ params }: { params: Promise<{ inst
                 </div>
                 <h2 className="text-2xl font-bold text-slate-800 mb-2">Student Leads Locked</h2>
                 <p className="text-slate-500 max-w-md mb-6">
-                    Unlock direct student enquiries and lead generation. Upgrade to the <b>Premium Plan</b> to see who is trying to contact your academy.
+                    Unlock direct student enquiries and lead generation. Upgrade to the <b>Verified, Premium  Plan</b> or <b>Featured </b>to see who is trying to contact your academy.
                 </p>
                 <Link href={`/manager/${instituteId}/subscription`} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-medium transition">
                     View Upgrade Plans

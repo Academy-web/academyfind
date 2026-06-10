@@ -111,3 +111,8 @@ export type UserHistory = Prisma.UserHistoryModel
  * 
  */
 export type InstituteEnquiry = Prisma.InstituteEnquiryModel
+/**
+ * Model TeacherProfile
+ * 
+ */
+export type TeacherProfile = Prisma.TeacherProfileModel
