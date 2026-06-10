@@ -83,6 +83,28 @@ export default async function InstitutePage({ params }: PageProps) {
   const displayRating = institute.googleRating ?? institute.averageRating ?? 0;
   const displayReviewCount = institute.googleReviewCount ?? institute.reviewCount ?? 0;
 
+  const primaryCategoryId = institute.categories[0]?.categoryId;
+  
+  let similarInstitutes: any[] = [];
+  if (primaryCategoryId && institute.cityId) {
+    similarInstitutes = await prisma.institute.findMany({
+      where: {
+        cityId: institute.cityId, // Same City
+        isActive: true,
+        id: { not: institute.id }, // Khud ko list se hatao
+        categories: {
+          some: { categoryId: primaryCategoryId } // Same primary category
+        }
+      },
+      take: 3, // Sirf 4 chahiye
+      orderBy: { averageRating: 'desc' }, // Top rated pehle
+      include: {
+        city: true,
+        categories: { include: { category: true } }
+      }
+    });
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
@@ -427,6 +449,79 @@ export default async function InstitutePage({ params }: PageProps) {
             <ReviewForm instituteId={institute.id} />
           </div>
         </section>
+
+        {/* ... Aapka Reviews Section yahan khatam ho raha hai ... */}
+        
+        {/* 🚀 NAYA SECTION: SIMILAR INSTITUTES */}
+        {similarInstitutes.length > 0 && (
+          <section className="border-t border-slate-200 pt-16 mt-16">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900">
+                  Similar Institutes in {institute.city.name}
+                </h2>
+                <p className="mt-2 text-slate-500">
+                  Explore other top-rated options for {institute.categories[0]?.category.name}.
+                </p>
+              </div>
+              <Link href={`/${institute.categories[0]?.category.slug}/${institute.city.slug}`} className="text-sm font-bold text-amber-600 hover:text-amber-700 transition">
+                View All →
+              </Link>
+            </div>
+            
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {similarInstitutes.map((simInst: any) => (
+                <Link 
+                  href={`/institute/${simInst.id}-${simInst.slug}`} 
+                  key={simInst.id} 
+                  className="group flex flex-col rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                >
+                  {/* Card Image */}
+                  <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
+                    <img 
+                      src={simInst.imageUrl ?? simInst.logo ?? "/no_image/coaching_inst.PNG"} 
+                      alt={simInst.name} 
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    {simInst.isVerified && (
+                        <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                            <CheckCircle className="w-3.5 h-3.5 text-blue-500" />
+                            <span className="text-[10px] font-bold text-slate-700">Verified</span>
+                        </div>
+                    )}
+                  </div>
+                  
+                  {/* Card Content */}
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md line-clamp-1">
+                            {simInst.categories[0]?.category.name}
+                        </span>
+                    </div>
+                    <h3 className="font-bold text-slate-900 text-lg line-clamp-1 group-hover:text-amber-600 transition-colors">
+                      {simInst.name}
+                    </h3>
+                    <p className="text-sm text-slate-500 mt-1.5 flex items-start gap-1.5 line-clamp-2">
+                      <MapPin className="w-4 h-4 shrink-0 mt-0.5" /> 
+                      {simInst.address || simInst.city.name}
+                    </p>
+                    
+                    {/* Card Footer (Rating) */}
+                    <div className="mt-auto pt-5 flex items-center gap-2">
+                        <div className="flex items-center gap-1 bg-slate-50 border border-slate-100 px-2 py-1 rounded-lg">
+                          <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                          <span className="text-xs font-bold text-slate-800">
+                            {simInst.googleRating > 0 ? simInst.googleRating : "New"}
+                          </span>
+                        </div>
+                        <span className="text-xs font-medium text-slate-400">({simInst.googleReviewCount} reviews)</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </main>
   );
