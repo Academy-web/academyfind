@@ -63,7 +63,8 @@ export const ModelName = {
   Review: 'Review',
   InstituteClaim: 'InstituteClaim',
   UserShortlist: 'UserShortlist',
-  UserHistory: 'UserHistory'
+  UserHistory: 'UserHistory',
+  InstituteEnquiry: 'InstituteEnquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -172,7 +173,9 @@ export const InstituteScalarFieldEnum = {
   averageRating: 'averageRating',
   reviewCount: 'reviewCount',
   googleMapsUrl: 'googleMapsUrl',
-  placeTypes: 'placeTypes'
+  placeTypes: 'placeTypes',
+  gallery: 'gallery',
+  subscriptionPlan: 'subscriptionPlan'
 } as const
 
 export type InstituteScalarFieldEnum = (typeof InstituteScalarFieldEnum)[keyof typeof InstituteScalarFieldEnum]
@@ -269,6 +272,21 @@ export const UserHistoryScalarFieldEnum = {
 } as const
 
 export type UserHistoryScalarFieldEnum = (typeof UserHistoryScalarFieldEnum)[keyof typeof UserHistoryScalarFieldEnum]
+
+
+export const InstituteEnquiryScalarFieldEnum = {
+  id: 'id',
+  instituteId: 'instituteId',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  message: 'message',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InstituteEnquiryScalarFieldEnum = (typeof InstituteEnquiryScalarFieldEnum)[keyof typeof InstituteEnquiryScalarFieldEnum]
 
 
 export const SortOrder = {

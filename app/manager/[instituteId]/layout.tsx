@@ -1,0 +1,125 @@
+import { auth } from "@/lib/auth/auth";
+import { prisma } from "@/lib/prisma";
+import { ArrowLeft, BarChart3, CreditCard, LayoutDashboardIcon, MessageSquare, User } from "lucide-react";
+import { headers } from "next/headers";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
+
+export default async function ManagerDashBoardLayout({
+    children,params
+}:{
+    children: React.ReactNode;
+    params: Promise<{ instituteId: string }>
+}) {
+    const {instituteId} = await params;
+    const session = await auth.api.getSession({
+        headers: await headers()
+    })
+
+    if(!session){
+        toast.error("You are not logged In")
+        redirect('/login')
+    }
+
+    const isAuthorized = await prisma.instituteManager.findUnique({
+        where:{
+            userId_instituteId:{
+                userId: session.user.id,
+                instituteId: instituteId
+            },
+        }
+    })
+
+    if(session.user.role !== "ADMIN" && !isAuthorized){
+        return (
+            <div className="p-12 text-center text-red-500 font-bold text-xl">Unauthorized Access!</div>
+        )
+    }
+
+    const institute = await prisma.institute.findUnique({
+        where: { id: instituteId },
+        select: { name: true, subscriptionPlan: true }
+    });
+
+    if (!institute) return <div>Institute not found.</div>;
+
+    const plan = institute.subscriptionPlan; // BASIC, PREMIUM, ULTRA
+
+    return (
+        <div className="bg-slate-50/50 min-h-screen pb-12">
+            <div className="container mx-auto max-w-7xl pt-8 px-4 flex flex-col md:flex-row gap-8">
+                
+                {/* --- SIDEBAR --- */}
+                <aside className="w-full md:w-64 shrink-0 space-y-6">
+                    {/* Header */}
+                    <div>
+                        <Link href="/manager" className="inline-flex items-center text-xs text-slate-500 hover:text-slate-800 mb-4 transition-colors">
+                            <ArrowLeft className="w-3 h-3 mr-1" /> Switch Workspace
+                        </Link>
+                        <h2 className="font-extrabold text-xl text-slate-900 leading-tight">
+                            {institute.name}
+                        </h2>
+                        <span className="inline-block mt-2 text-[10px] uppercase tracking-wider font-bold bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full">
+                            {plan} PLAN
+                        </span>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <nav className="flex flex-col gap-1.5">
+                        <SidebarLink 
+                            href={`/manager/${instituteId}`} 
+                            icon={<LayoutDashboardIcon />} 
+                            label="Dashboard"  
+                        />
+                        <SidebarLink href={`/manager/${instituteId}/profile`} icon={<User />} label="Profile Data" />
+                        
+                        <SidebarLink 
+                            href={`/manager/${instituteId}/leads`} 
+                            icon={<MessageSquare />} 
+                            label="Student Leads" 
+                            locked={plan === "BASIC"} 
+                        />
+                        
+                        <SidebarLink 
+                            href={`/manager/${instituteId}/analytics`} 
+                            icon={<BarChart3 />} 
+                            label="Analytics" 
+                            locked={plan !== "ULTRA"} 
+                        />
+                        
+                        <SidebarLink 
+                            href={`/manager/${instituteId}/subscription`} 
+                            icon={<CreditCard />} 
+                            label="Billing & Plan" 
+                            className="mt-4 bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200/50"
+                        />
+                    </nav>
+                </aside>
+
+                {/* --- MAIN CONTENT AREA --- */}
+                <main className="flex-1 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 md:p-8 min-h-[600px]">
+                    {children}
+                </main>
+
+            </div>
+        </div>
+    );
+}
+
+// Helper Component for Sidebar Links
+function SidebarLink({ href, icon, label, locked, className = "" }: any) {
+    return (
+        <Link 
+            href={href} 
+            className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all
+            hover:bg-blue-50 hover:text-blue-700 text-slate-600 ${className}`}
+        >
+            <div className="flex items-center gap-3">
+                <span className="[&>svg]:w-4 [&>svg]:h-4">{icon}</span>
+                {label}
+            </div>
+            {locked && <span className="text-xs bg-slate-100 text-slate-500 px-1.5 rounded">🔒</span>}
+        </Link>
+    );
+}

@@ -1,5 +1,5 @@
 import InstituteCard from "@/components/institutes/InstituteCard";
-import { getInstitutesByCategory } from "@/lib/category_inst"; // 👈 Sahi function import kiya type ke liye
+import { getInstitutesByCategory } from "@/lib/category/category_inst"; // 👈 Sahi function import kiya type ke liye
 import MapToggleSection from "../maps/MapToggleSection";
 
 // Ye ensure karta hai ki TypeScript ko exact DB columns pata hon

@@ -1,6 +1,6 @@
 import InstituteCard from "@/components/institutes/InstituteCard";
-import { getInstitutesByCategoryAndCity } from "@/lib/institutes_cat_city";
-import { InstituteWithDistance } from "@/lib/institutes_cat_city";
+import { getInstitutesByCategoryAndCity } from "@/lib/institutes/institutes_cat_city";
+import { InstituteWithDistance } from "@/lib/institutes/institutes_cat_city";
 
 type InstituteWithRelations = Awaited<ReturnType<typeof getInstitutesByCategoryAndCity>>["institutes"][number];
 

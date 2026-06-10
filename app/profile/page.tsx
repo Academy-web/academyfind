@@ -1,4 +1,4 @@
-import { auth } from "@/lib/auth";
+import { auth } from "@/lib/auth/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
@@ -9,7 +9,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import LogoutButton from "@/components/layout/LogOut";
-import { Bookmark, Clock, PenTool, ArrowRight, FileText, Scale, MapPin } from "lucide-react";
+import { Bookmark, Clock, PenTool, ArrowRight, FileText, Scale, MapPin, Building2 } from "lucide-react";
 import {
     Dialog,
     DialogContent,
@@ -43,6 +43,13 @@ export default async function ProfilePage() {
     const displayShortlist = shortlistedItems.slice(0, 3);
     const displayHistory = historyItems.slice(0, 3);
 
+    // 🚀 Fetch Managed Institutes (Only if user is a manager or admin)
+    const managedInstitutes = (user.role === 'INSTITUTE_MANAGER' || user.role === 'ADMIN') 
+        ? await prisma.instituteManager.findMany({
+            where: { userId: user.id },
+            include: { institute: { select: { id: true, name: true, slug: true } } }
+          })
+        : [];
     return (
         <div className="container mx-auto py-10 px-4 max-w-4xl font-sans">
             <h1 className="text-3xl font-extrabold text-slate-900 mb-8 tracking-tight">My Profile</h1>
@@ -53,9 +60,14 @@ export default async function ProfilePage() {
                     <CardHeader className="flex flex-row items-center justify-between bg-slate-50/50 border-b border-slate-100 pb-5">
                         <div className="flex items-center gap-3">
                             <CardTitle className="text-xl">Personal Information</CardTitle>
-                            <Badge className={user.role === 'ADMIN' ? 'bg-green-500 hover:bg-green-600' : 'bg-amber-500 hover:bg-amber-600'}>
-                                {user.role}
-                            </Badge>
+                            {/* Replace your existing Badge with this to make 'INSTITUTE_MANAGER' look clean */}
+                                <Badge className={
+                                    user.role === 'ADMIN' ? 'bg-green-500 hover:bg-green-600' : 
+                                    user.role === 'INSTITUTE_MANAGER' ? 'bg-blue-600 hover:bg-blue-700' : 
+                                    'bg-amber-500 hover:bg-amber-600'
+                                }>
+                                    {user.role === 'INSTITUTE_MANAGER' ? 'Institute Manager' : user.role}
+                                </Badge>
                         </div>
                         <LogoutButton />
                     </CardHeader>
@@ -95,6 +107,30 @@ export default async function ProfilePage() {
                         </div>
                     </CardContent>
                 </Card>
+
+                {/* 🚀 MANAGER QUICK ACCESS CARD (Conditionally Rendered) */}
+                {/* {managedInstitutes.length > 0 && ( */}
+                    <Card className="rounded-3xl border-blue-100 shadow-sm bg-linear-to-br from-blue-50/50 to-white overflow-hidden relative">
+                        <div className="absolute right-0 top-0 -mr-16 -mt-16 w-48 h-48 bg-blue-400 rounded-full blur-[80px] opacity-10 pointer-events-none"></div>
+                        <CardHeader className="pb-2">
+                            <div className="flex items-center gap-2 mb-1">
+                                <div className="p-2 bg-blue-100 rounded-lg text-blue-600"><Building2 className="w-5 h-5" /></div>
+                                <CardTitle className="text-xl">Manager Workspace</CardTitle>
+                            </div>
+                            <CardDescription>Quick access to the institutes you manage.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                            <div className="flex-1 w-full text-sm font-medium text-slate-700">
+                                You currently manage <span className="font-bold text-blue-600">{managedInstitutes.length}</span> academy profile(s).
+                            </div>
+                            <Button asChild className="w-full sm:w-auto gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl">
+                                <Link href="/manager">
+                                    Go to Dashboard <ArrowRight className="w-4 h-4" />
+                                </Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
+                {/* )} */}
 
                 {/* Grid sections for Shortlisted & History logs */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

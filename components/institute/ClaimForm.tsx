@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { submitClaimRequest } from "@/lib/institute-claim";
+import { submitClaimRequest } from "@/lib/institutes/institute-claim";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";

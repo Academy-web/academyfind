@@ -8,9 +8,9 @@ import {
   getCategoryBySlug,
   getCitiesForCategory,
   getFeaturedInstitutesForCategory, 
-} from "@/lib/category";
+} from "@/lib/category/category";
 
-import { getInstitutesByCategory } from "@/lib/category_inst";
+import { getInstitutesByCategory } from "@/lib/category/category_inst";
 
 import Breadcrumb from "@/components/navigation/BreadCrumbs";
 import CategoryHero from "@/components/category/CategoryHero";

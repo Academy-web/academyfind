@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
-import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth/auth-client";
 import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast'
 

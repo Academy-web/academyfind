@@ -11,7 +11,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { User, LogOut, LayoutDashboard, ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth-client"; // Apne auth-client ka path check kar lena
+import { authClient } from "@/lib/auth/auth-client"; // Apne auth-client ka path check kar lena
 import Image from "next/image";
 
 export default function UserDropdown({ user }: { user: any }) {
@@ -71,13 +71,23 @@ export default function UserDropdown({ user }: { user: any }) {
         </DropdownMenuItem>
         
         {/* Dashboard Item (Role Based) */}
-        {(user?.role === 'ADMIN' || user?.role === 'INSTITUTE_MANAGER') && (
+        {(user?.role === 'ADMIN') && (
           <DropdownMenuItem 
-            onClick={() => router.push("/dashboard")}
+            onClick={() => router.push("/admin")}
             className="rounded-xl cursor-pointer py-3 px-3 focus:bg-amber-50 focus:text-amber-700 transition-colors"
           >
             <LayoutDashboard className="mr-3 h-4 w-4" />
-            <span className="font-medium text-sm">Dashboard</span>
+            <span className="font-medium text-sm">Admin Panel</span>
+          </DropdownMenuItem>
+        )}
+
+        {(user?.role === 'INSTITUTE_MANAGER') && (
+          <DropdownMenuItem 
+            onClick={() => router.push("/manager")}
+            className="rounded-xl cursor-pointer py-3 px-3 focus:bg-amber-50 focus:text-amber-700 transition-colors"
+          >
+            <LayoutDashboard className="mr-3 h-4 w-4" />
+            <span className="font-medium text-sm">Manage Institutes</span>
           </DropdownMenuItem>
         )}
 

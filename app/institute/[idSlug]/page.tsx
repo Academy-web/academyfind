@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import extractId from "@/lib/extractId";
-import { getInstituteById } from "@/lib/institutes_id";
+import { getInstituteById } from "@/lib/institutes/institutes_id";
 import Breadcrumb from "@/components/navigation/BreadCrumbs";
 import Link from "next/link";
 import InstituteMap from "@/components/maps/InstituteMap";
@@ -13,8 +13,8 @@ import Image from "next/image";
 import SmartButton from "@/components/ui/SmartButton";
 import { Button } from "@/components/ui/button";
 import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
-import { trackVisitHistory } from "@/lib/user-activity";
+import { auth } from "@/lib/auth/auth";
+import { trackVisitHistory } from "@/lib/User/user/user-activity";
 import { prisma } from "@/lib/prisma";
 import SaveButton from "@/components/ui/SaveButton.tsx";
 

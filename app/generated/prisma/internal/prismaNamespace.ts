@@ -396,7 +396,8 @@ export const ModelName = {
   Review: 'Review',
   InstituteClaim: 'InstituteClaim',
   UserShortlist: 'UserShortlist',
-  UserHistory: 'UserHistory'
+  UserHistory: 'UserHistory',
+  InstituteEnquiry: 'InstituteEnquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -412,7 +413,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "institute" | "city" | "category" | "instituteCategory" | "instituteManager" | "review" | "instituteClaim" | "userShortlist" | "userHistory"
+    modelProps: "user" | "session" | "account" | "verification" | "institute" | "city" | "category" | "instituteCategory" | "instituteManager" | "review" | "instituteClaim" | "userShortlist" | "userHistory" | "instituteEnquiry"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1378,6 +1379,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    InstituteEnquiry: {
+      payload: Prisma.$InstituteEnquiryPayload<ExtArgs>
+      fields: Prisma.InstituteEnquiryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.InstituteEnquiryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.InstituteEnquiryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>
+        }
+        findFirst: {
+          args: Prisma.InstituteEnquiryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.InstituteEnquiryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>
+        }
+        findMany: {
+          args: Prisma.InstituteEnquiryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>[]
+        }
+        create: {
+          args: Prisma.InstituteEnquiryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>
+        }
+        createMany: {
+          args: Prisma.InstituteEnquiryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.InstituteEnquiryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>[]
+        }
+        delete: {
+          args: Prisma.InstituteEnquiryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>
+        }
+        update: {
+          args: Prisma.InstituteEnquiryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>
+        }
+        deleteMany: {
+          args: Prisma.InstituteEnquiryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.InstituteEnquiryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.InstituteEnquiryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>[]
+        }
+        upsert: {
+          args: Prisma.InstituteEnquiryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$InstituteEnquiryPayload>
+        }
+        aggregate: {
+          args: Prisma.InstituteEnquiryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateInstituteEnquiry>
+        }
+        groupBy: {
+          args: Prisma.InstituteEnquiryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InstituteEnquiryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.InstituteEnquiryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.InstituteEnquiryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1507,7 +1582,9 @@ export const InstituteScalarFieldEnum = {
   averageRating: 'averageRating',
   reviewCount: 'reviewCount',
   googleMapsUrl: 'googleMapsUrl',
-  placeTypes: 'placeTypes'
+  placeTypes: 'placeTypes',
+  gallery: 'gallery',
+  subscriptionPlan: 'subscriptionPlan'
 } as const
 
 export type InstituteScalarFieldEnum = (typeof InstituteScalarFieldEnum)[keyof typeof InstituteScalarFieldEnum]
@@ -1604,6 +1681,21 @@ export const UserHistoryScalarFieldEnum = {
 } as const
 
 export type UserHistoryScalarFieldEnum = (typeof UserHistoryScalarFieldEnum)[keyof typeof UserHistoryScalarFieldEnum]
+
+
+export const InstituteEnquiryScalarFieldEnum = {
+  id: 'id',
+  instituteId: 'instituteId',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  message: 'message',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InstituteEnquiryScalarFieldEnum = (typeof InstituteEnquiryScalarFieldEnum)[keyof typeof InstituteEnquiryScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1710,6 +1802,20 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'SubscriptionPlan'
+ */
+export type EnumSubscriptionPlanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionPlan'>
+    
+
+
+/**
+ * Reference to a field of type 'SubscriptionPlan[]'
+ */
+export type ListEnumSubscriptionPlanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionPlan[]'>
     
 
 /**
@@ -1835,6 +1941,7 @@ export type GlobalOmitConfig = {
   instituteClaim?: Prisma.InstituteClaimOmit
   userShortlist?: Prisma.UserShortlistOmit
   userHistory?: Prisma.UserHistoryOmit
+  instituteEnquiry?: Prisma.InstituteEnquiryOmit
 }
 
 /* Types for Logging */

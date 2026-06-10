@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound, redirect } from "next/navigation";
 import ClaimForm from "@/components/institute/ClaimForm";
 import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
+import { auth } from "@/lib/auth/auth";
 import extractId from "@/lib/extractId"; // 👈 ID extract karne ka function
 
 export default async function ClaimInstitutePage({

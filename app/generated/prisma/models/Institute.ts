@@ -70,6 +70,7 @@ export type InstituteMinAggregateOutputType = {
   averageRating: number | null
   reviewCount: number | null
   googleMapsUrl: string | null
+  subscriptionPlan: $Enums.SubscriptionPlan | null
 }
 
 export type InstituteMaxAggregateOutputType = {
@@ -98,6 +99,7 @@ export type InstituteMaxAggregateOutputType = {
   averageRating: number | null
   reviewCount: number | null
   googleMapsUrl: string | null
+  subscriptionPlan: $Enums.SubscriptionPlan | null
 }
 
 export type InstituteCountAggregateOutputType = {
@@ -127,6 +129,8 @@ export type InstituteCountAggregateOutputType = {
   reviewCount: number
   googleMapsUrl: number
   placeTypes: number
+  gallery: number
+  subscriptionPlan: number
   _all: number
 }
 
@@ -175,6 +179,7 @@ export type InstituteMinAggregateInputType = {
   averageRating?: true
   reviewCount?: true
   googleMapsUrl?: true
+  subscriptionPlan?: true
 }
 
 export type InstituteMaxAggregateInputType = {
@@ -203,6 +208,7 @@ export type InstituteMaxAggregateInputType = {
   averageRating?: true
   reviewCount?: true
   googleMapsUrl?: true
+  subscriptionPlan?: true
 }
 
 export type InstituteCountAggregateInputType = {
@@ -232,6 +238,8 @@ export type InstituteCountAggregateInputType = {
   reviewCount?: true
   googleMapsUrl?: true
   placeTypes?: true
+  gallery?: true
+  subscriptionPlan?: true
   _all?: true
 }
 
@@ -348,6 +356,8 @@ export type InstituteGroupByOutputType = {
   reviewCount: number
   googleMapsUrl: string | null
   placeTypes: string[]
+  gallery: string[]
+  subscriptionPlan: $Enums.SubscriptionPlan
   _count: InstituteCountAggregateOutputType | null
   _avg: InstituteAvgAggregateOutputType | null
   _sum: InstituteSumAggregateOutputType | null
@@ -400,6 +410,8 @@ export type InstituteWhereInput = {
   reviewCount?: Prisma.IntFilter<"Institute"> | number
   googleMapsUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   placeTypes?: Prisma.StringNullableListFilter<"Institute">
+  gallery?: Prisma.StringNullableListFilter<"Institute">
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFilter<"Institute"> | $Enums.SubscriptionPlan
   city?: Prisma.XOR<Prisma.CityScalarRelationFilter, Prisma.CityWhereInput>
   categories?: Prisma.InstituteCategoryListRelationFilter
   managers?: Prisma.InstituteManagerListRelationFilter
@@ -407,6 +419,7 @@ export type InstituteWhereInput = {
   claims?: Prisma.InstituteClaimListRelationFilter
   shortlistedBy?: Prisma.UserShortlistListRelationFilter
   viewHistory?: Prisma.UserHistoryListRelationFilter
+  enquiries?: Prisma.InstituteEnquiryListRelationFilter
 }
 
 export type InstituteOrderByWithRelationInput = {
@@ -436,6 +449,8 @@ export type InstituteOrderByWithRelationInput = {
   reviewCount?: Prisma.SortOrder
   googleMapsUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   placeTypes?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
+  subscriptionPlan?: Prisma.SortOrder
   city?: Prisma.CityOrderByWithRelationInput
   categories?: Prisma.InstituteCategoryOrderByRelationAggregateInput
   managers?: Prisma.InstituteManagerOrderByRelationAggregateInput
@@ -443,6 +458,7 @@ export type InstituteOrderByWithRelationInput = {
   claims?: Prisma.InstituteClaimOrderByRelationAggregateInput
   shortlistedBy?: Prisma.UserShortlistOrderByRelationAggregateInput
   viewHistory?: Prisma.UserHistoryOrderByRelationAggregateInput
+  enquiries?: Prisma.InstituteEnquiryOrderByRelationAggregateInput
 }
 
 export type InstituteWhereUniqueInput = Prisma.AtLeast<{
@@ -475,6 +491,8 @@ export type InstituteWhereUniqueInput = Prisma.AtLeast<{
   reviewCount?: Prisma.IntFilter<"Institute"> | number
   googleMapsUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   placeTypes?: Prisma.StringNullableListFilter<"Institute">
+  gallery?: Prisma.StringNullableListFilter<"Institute">
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFilter<"Institute"> | $Enums.SubscriptionPlan
   city?: Prisma.XOR<Prisma.CityScalarRelationFilter, Prisma.CityWhereInput>
   categories?: Prisma.InstituteCategoryListRelationFilter
   managers?: Prisma.InstituteManagerListRelationFilter
@@ -482,6 +500,7 @@ export type InstituteWhereUniqueInput = Prisma.AtLeast<{
   claims?: Prisma.InstituteClaimListRelationFilter
   shortlistedBy?: Prisma.UserShortlistListRelationFilter
   viewHistory?: Prisma.UserHistoryListRelationFilter
+  enquiries?: Prisma.InstituteEnquiryListRelationFilter
 }, "id" | "googlePlaceId">
 
 export type InstituteOrderByWithAggregationInput = {
@@ -511,6 +530,8 @@ export type InstituteOrderByWithAggregationInput = {
   reviewCount?: Prisma.SortOrder
   googleMapsUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   placeTypes?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
+  subscriptionPlan?: Prisma.SortOrder
   _count?: Prisma.InstituteCountOrderByAggregateInput
   _avg?: Prisma.InstituteAvgOrderByAggregateInput
   _max?: Prisma.InstituteMaxOrderByAggregateInput
@@ -548,6 +569,8 @@ export type InstituteScalarWhereWithAggregatesInput = {
   reviewCount?: Prisma.IntWithAggregatesFilter<"Institute"> | number
   googleMapsUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   placeTypes?: Prisma.StringNullableListFilter<"Institute">
+  gallery?: Prisma.StringNullableListFilter<"Institute">
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanWithAggregatesFilter<"Institute"> | $Enums.SubscriptionPlan
 }
 
 export type InstituteCreateInput = {
@@ -576,6 +599,8 @@ export type InstituteCreateInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -583,6 +608,7 @@ export type InstituteCreateInput = {
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateInput = {
@@ -612,12 +638,15 @@ export type InstituteUncheckedCreateInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUpdateInput = {
@@ -646,6 +675,8 @@ export type InstituteUpdateInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -653,6 +684,7 @@ export type InstituteUpdateInput = {
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateInput = {
@@ -682,12 +714,15 @@ export type InstituteUncheckedUpdateInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateManyInput = {
@@ -717,6 +752,8 @@ export type InstituteCreateManyInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
 }
 
 export type InstituteUpdateManyMutationInput = {
@@ -745,6 +782,8 @@ export type InstituteUpdateManyMutationInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
 }
 
 export type InstituteUncheckedUpdateManyInput = {
@@ -774,6 +813,8 @@ export type InstituteUncheckedUpdateManyInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -811,6 +852,8 @@ export type InstituteCountOrderByAggregateInput = {
   reviewCount?: Prisma.SortOrder
   googleMapsUrl?: Prisma.SortOrder
   placeTypes?: Prisma.SortOrder
+  gallery?: Prisma.SortOrder
+  subscriptionPlan?: Prisma.SortOrder
 }
 
 export type InstituteAvgOrderByAggregateInput = {
@@ -848,6 +891,7 @@ export type InstituteMaxOrderByAggregateInput = {
   averageRating?: Prisma.SortOrder
   reviewCount?: Prisma.SortOrder
   googleMapsUrl?: Prisma.SortOrder
+  subscriptionPlan?: Prisma.SortOrder
 }
 
 export type InstituteMinOrderByAggregateInput = {
@@ -876,6 +920,7 @@ export type InstituteMinOrderByAggregateInput = {
   averageRating?: Prisma.SortOrder
   reviewCount?: Prisma.SortOrder
   googleMapsUrl?: Prisma.SortOrder
+  subscriptionPlan?: Prisma.SortOrder
 }
 
 export type InstituteSumOrderByAggregateInput = {
@@ -906,6 +951,10 @@ export type InstituteCreateplaceTypesInput = {
   set: string[]
 }
 
+export type InstituteCreategalleryInput = {
+  set: string[]
+}
+
 export type NullableFloatFieldUpdateOperationsInput = {
   set?: number | null
   increment?: number
@@ -933,6 +982,15 @@ export type IntFieldUpdateOperationsInput = {
 export type InstituteUpdateplaceTypesInput = {
   set?: string[]
   push?: string | string[]
+}
+
+export type InstituteUpdategalleryInput = {
+  set?: string[]
+  push?: string | string[]
+}
+
+export type EnumSubscriptionPlanFieldUpdateOperationsInput = {
+  set?: $Enums.SubscriptionPlan
 }
 
 export type InstituteCreateNestedManyWithoutCityInput = {
@@ -1061,6 +1119,20 @@ export type InstituteUpdateOneRequiredWithoutViewHistoryNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.InstituteUpdateToOneWithWhereWithoutViewHistoryInput, Prisma.InstituteUpdateWithoutViewHistoryInput>, Prisma.InstituteUncheckedUpdateWithoutViewHistoryInput>
 }
 
+export type InstituteCreateNestedOneWithoutEnquiriesInput = {
+  create?: Prisma.XOR<Prisma.InstituteCreateWithoutEnquiriesInput, Prisma.InstituteUncheckedCreateWithoutEnquiriesInput>
+  connectOrCreate?: Prisma.InstituteCreateOrConnectWithoutEnquiriesInput
+  connect?: Prisma.InstituteWhereUniqueInput
+}
+
+export type InstituteUpdateOneRequiredWithoutEnquiriesNestedInput = {
+  create?: Prisma.XOR<Prisma.InstituteCreateWithoutEnquiriesInput, Prisma.InstituteUncheckedCreateWithoutEnquiriesInput>
+  connectOrCreate?: Prisma.InstituteCreateOrConnectWithoutEnquiriesInput
+  upsert?: Prisma.InstituteUpsertWithoutEnquiriesInput
+  connect?: Prisma.InstituteWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.InstituteUpdateToOneWithWhereWithoutEnquiriesInput, Prisma.InstituteUpdateWithoutEnquiriesInput>, Prisma.InstituteUncheckedUpdateWithoutEnquiriesInput>
+}
+
 export type InstituteCreateWithoutCityInput = {
   id?: string
   name: string
@@ -1087,12 +1159,15 @@ export type InstituteCreateWithoutCityInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutCityInput = {
@@ -1121,12 +1196,15 @@ export type InstituteUncheckedCreateWithoutCityInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutCityInput = {
@@ -1185,6 +1263,8 @@ export type InstituteScalarWhereInput = {
   reviewCount?: Prisma.IntFilter<"Institute"> | number
   googleMapsUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   placeTypes?: Prisma.StringNullableListFilter<"Institute">
+  gallery?: Prisma.StringNullableListFilter<"Institute">
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFilter<"Institute"> | $Enums.SubscriptionPlan
 }
 
 export type InstituteCreateWithoutCategoriesInput = {
@@ -1213,12 +1293,15 @@ export type InstituteCreateWithoutCategoriesInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutCategoriesInput = {
@@ -1248,11 +1331,14 @@ export type InstituteUncheckedCreateWithoutCategoriesInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutCategoriesInput = {
@@ -1297,12 +1383,15 @@ export type InstituteUpdateWithoutCategoriesInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutCategoriesInput = {
@@ -1332,11 +1421,14 @@ export type InstituteUncheckedUpdateWithoutCategoriesInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutManagersInput = {
@@ -1365,12 +1457,15 @@ export type InstituteCreateWithoutManagersInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutManagersInput = {
@@ -1400,11 +1495,14 @@ export type InstituteUncheckedCreateWithoutManagersInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutManagersInput = {
@@ -1449,12 +1547,15 @@ export type InstituteUpdateWithoutManagersInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutManagersInput = {
@@ -1484,11 +1585,14 @@ export type InstituteUncheckedUpdateWithoutManagersInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutReviewsInput = {
@@ -1517,12 +1621,15 @@ export type InstituteCreateWithoutReviewsInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutReviewsInput = {
@@ -1552,11 +1659,14 @@ export type InstituteUncheckedCreateWithoutReviewsInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutReviewsInput = {
@@ -1601,12 +1711,15 @@ export type InstituteUpdateWithoutReviewsInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutReviewsInput = {
@@ -1636,11 +1749,14 @@ export type InstituteUncheckedUpdateWithoutReviewsInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutClaimsInput = {
@@ -1669,12 +1785,15 @@ export type InstituteCreateWithoutClaimsInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutClaimsInput = {
@@ -1704,11 +1823,14 @@ export type InstituteUncheckedCreateWithoutClaimsInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutClaimsInput = {
@@ -1753,12 +1875,15 @@ export type InstituteUpdateWithoutClaimsInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutClaimsInput = {
@@ -1788,11 +1913,14 @@ export type InstituteUncheckedUpdateWithoutClaimsInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutShortlistedByInput = {
@@ -1821,12 +1949,15 @@ export type InstituteCreateWithoutShortlistedByInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutShortlistedByInput = {
@@ -1856,11 +1987,14 @@ export type InstituteUncheckedCreateWithoutShortlistedByInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutShortlistedByInput = {
@@ -1905,12 +2039,15 @@ export type InstituteUpdateWithoutShortlistedByInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutShortlistedByInput = {
@@ -1940,11 +2077,14 @@ export type InstituteUncheckedUpdateWithoutShortlistedByInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutViewHistoryInput = {
@@ -1973,12 +2113,15 @@ export type InstituteCreateWithoutViewHistoryInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutViewHistoryInput = {
@@ -2008,11 +2151,14 @@ export type InstituteUncheckedCreateWithoutViewHistoryInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutViewHistoryInput = {
@@ -2057,12 +2203,15 @@ export type InstituteUpdateWithoutViewHistoryInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutViewHistoryInput = {
@@ -2092,11 +2241,178 @@ export type InstituteUncheckedUpdateWithoutViewHistoryInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+}
+
+export type InstituteCreateWithoutEnquiriesInput = {
+  id?: string
+  name: string
+  slug: string
+  description?: string | null
+  phone?: string | null
+  email?: string | null
+  website?: string | null
+  address: string
+  latitude?: number | null
+  longitude?: number | null
+  logo?: string | null
+  coverImage?: string | null
+  googlePlaceId?: string | null
+  googleRating?: number | null
+  googleReviewCount?: number | null
+  isVerified?: boolean
+  isFeatured?: boolean
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  imageUrl?: string | null
+  averageRating?: number | null
+  reviewCount?: number
+  googleMapsUrl?: string | null
+  placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
+  city: Prisma.CityCreateNestedOneWithoutInstitutesInput
+  categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
+  managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+}
+
+export type InstituteUncheckedCreateWithoutEnquiriesInput = {
+  id?: string
+  name: string
+  slug: string
+  description?: string | null
+  phone?: string | null
+  email?: string | null
+  website?: string | null
+  address: string
+  latitude?: number | null
+  longitude?: number | null
+  logo?: string | null
+  coverImage?: string | null
+  googlePlaceId?: string | null
+  googleRating?: number | null
+  googleReviewCount?: number | null
+  cityId: string
+  isVerified?: boolean
+  isFeatured?: boolean
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  imageUrl?: string | null
+  averageRating?: number | null
+  reviewCount?: number
+  googleMapsUrl?: string | null
+  placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
+  categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
+  managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+}
+
+export type InstituteCreateOrConnectWithoutEnquiriesInput = {
+  where: Prisma.InstituteWhereUniqueInput
+  create: Prisma.XOR<Prisma.InstituteCreateWithoutEnquiriesInput, Prisma.InstituteUncheckedCreateWithoutEnquiriesInput>
+}
+
+export type InstituteUpsertWithoutEnquiriesInput = {
+  update: Prisma.XOR<Prisma.InstituteUpdateWithoutEnquiriesInput, Prisma.InstituteUncheckedUpdateWithoutEnquiriesInput>
+  create: Prisma.XOR<Prisma.InstituteCreateWithoutEnquiriesInput, Prisma.InstituteUncheckedCreateWithoutEnquiriesInput>
+  where?: Prisma.InstituteWhereInput
+}
+
+export type InstituteUpdateToOneWithWhereWithoutEnquiriesInput = {
+  where?: Prisma.InstituteWhereInput
+  data: Prisma.XOR<Prisma.InstituteUpdateWithoutEnquiriesInput, Prisma.InstituteUncheckedUpdateWithoutEnquiriesInput>
+}
+
+export type InstituteUpdateWithoutEnquiriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  address?: Prisma.StringFieldUpdateOperationsInput | string
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  logo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  coverImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  googlePlaceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  googleRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  googleReviewCount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  averageRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+  city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
+  categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
+  managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+}
+
+export type InstituteUncheckedUpdateWithoutEnquiriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  address?: Prisma.StringFieldUpdateOperationsInput | string
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  logo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  coverImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  googlePlaceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  googleRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  googleReviewCount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  cityId?: Prisma.StringFieldUpdateOperationsInput | string
+  isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  averageRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
+  categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
+  managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateManyCityInput = {
@@ -2125,6 +2441,8 @@ export type InstituteCreateManyCityInput = {
   reviewCount?: number
   googleMapsUrl?: string | null
   placeTypes?: Prisma.InstituteCreateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteCreategalleryInput | string[]
+  subscriptionPlan?: $Enums.SubscriptionPlan
 }
 
 export type InstituteUpdateWithoutCityInput = {
@@ -2153,12 +2471,15 @@ export type InstituteUpdateWithoutCityInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutCityInput = {
@@ -2187,12 +2508,15 @@ export type InstituteUncheckedUpdateWithoutCityInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateManyWithoutCityInput = {
@@ -2221,6 +2545,8 @@ export type InstituteUncheckedUpdateManyWithoutCityInput = {
   reviewCount?: Prisma.IntFieldUpdateOperationsInput | number
   googleMapsUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   placeTypes?: Prisma.InstituteUpdateplaceTypesInput | string[]
+  gallery?: Prisma.InstituteUpdategalleryInput | string[]
+  subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
 }
 
 
@@ -2235,6 +2561,7 @@ export type InstituteCountOutputType = {
   claims: number
   shortlistedBy: number
   viewHistory: number
+  enquiries: number
 }
 
 export type InstituteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2244,6 +2571,7 @@ export type InstituteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensi
   claims?: boolean | InstituteCountOutputTypeCountClaimsArgs
   shortlistedBy?: boolean | InstituteCountOutputTypeCountShortlistedByArgs
   viewHistory?: boolean | InstituteCountOutputTypeCountViewHistoryArgs
+  enquiries?: boolean | InstituteCountOutputTypeCountEnquiriesArgs
 }
 
 /**
@@ -2298,6 +2626,13 @@ export type InstituteCountOutputTypeCountViewHistoryArgs<ExtArgs extends runtime
   where?: Prisma.UserHistoryWhereInput
 }
 
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountEnquiriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteEnquiryWhereInput
+}
+
 
 export type InstituteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2326,6 +2661,8 @@ export type InstituteSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   reviewCount?: boolean
   googleMapsUrl?: boolean
   placeTypes?: boolean
+  gallery?: boolean
+  subscriptionPlan?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
   categories?: boolean | Prisma.Institute$categoriesArgs<ExtArgs>
   managers?: boolean | Prisma.Institute$managersArgs<ExtArgs>
@@ -2333,6 +2670,7 @@ export type InstituteSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   claims?: boolean | Prisma.Institute$claimsArgs<ExtArgs>
   shortlistedBy?: boolean | Prisma.Institute$shortlistedByArgs<ExtArgs>
   viewHistory?: boolean | Prisma.Institute$viewHistoryArgs<ExtArgs>
+  enquiries?: boolean | Prisma.Institute$enquiriesArgs<ExtArgs>
   _count?: boolean | Prisma.InstituteCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -2363,6 +2701,8 @@ export type InstituteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   reviewCount?: boolean
   googleMapsUrl?: boolean
   placeTypes?: boolean
+  gallery?: boolean
+  subscriptionPlan?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -2393,6 +2733,8 @@ export type InstituteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   reviewCount?: boolean
   googleMapsUrl?: boolean
   placeTypes?: boolean
+  gallery?: boolean
+  subscriptionPlan?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -2423,9 +2765,11 @@ export type InstituteSelectScalar = {
   reviewCount?: boolean
   googleMapsUrl?: boolean
   placeTypes?: boolean
+  gallery?: boolean
+  subscriptionPlan?: boolean
 }
 
-export type InstituteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "phone" | "email" | "website" | "address" | "latitude" | "longitude" | "logo" | "coverImage" | "googlePlaceId" | "googleRating" | "googleReviewCount" | "cityId" | "isVerified" | "isFeatured" | "isActive" | "createdAt" | "updatedAt" | "imageUrl" | "averageRating" | "reviewCount" | "googleMapsUrl" | "placeTypes", ExtArgs["result"]["institute"]>
+export type InstituteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "phone" | "email" | "website" | "address" | "latitude" | "longitude" | "logo" | "coverImage" | "googlePlaceId" | "googleRating" | "googleReviewCount" | "cityId" | "isVerified" | "isFeatured" | "isActive" | "createdAt" | "updatedAt" | "imageUrl" | "averageRating" | "reviewCount" | "googleMapsUrl" | "placeTypes" | "gallery" | "subscriptionPlan", ExtArgs["result"]["institute"]>
 export type InstituteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
   categories?: boolean | Prisma.Institute$categoriesArgs<ExtArgs>
@@ -2434,6 +2778,7 @@ export type InstituteInclude<ExtArgs extends runtime.Types.Extensions.InternalAr
   claims?: boolean | Prisma.Institute$claimsArgs<ExtArgs>
   shortlistedBy?: boolean | Prisma.Institute$shortlistedByArgs<ExtArgs>
   viewHistory?: boolean | Prisma.Institute$viewHistoryArgs<ExtArgs>
+  enquiries?: boolean | Prisma.Institute$enquiriesArgs<ExtArgs>
   _count?: boolean | Prisma.InstituteCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type InstituteIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2453,6 +2798,7 @@ export type $InstitutePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     claims: Prisma.$InstituteClaimPayload<ExtArgs>[]
     shortlistedBy: Prisma.$UserShortlistPayload<ExtArgs>[]
     viewHistory: Prisma.$UserHistoryPayload<ExtArgs>[]
+    enquiries: Prisma.$InstituteEnquiryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2481,6 +2827,8 @@ export type $InstitutePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     reviewCount: number
     googleMapsUrl: string | null
     placeTypes: string[]
+    gallery: string[]
+    subscriptionPlan: $Enums.SubscriptionPlan
   }, ExtArgs["result"]["institute"]>
   composites: {}
 }
@@ -2882,6 +3230,7 @@ export interface Prisma__InstituteClient<T, Null = never, ExtArgs extends runtim
   claims<T extends Prisma.Institute$claimsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$claimsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteClaimPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   shortlistedBy<T extends Prisma.Institute$shortlistedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$shortlistedByArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserShortlistPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   viewHistory<T extends Prisma.Institute$viewHistoryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$viewHistoryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  enquiries<T extends Prisma.Institute$enquiriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$enquiriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteEnquiryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2937,6 +3286,8 @@ export interface InstituteFieldRefs {
   readonly reviewCount: Prisma.FieldRef<"Institute", 'Int'>
   readonly googleMapsUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly placeTypes: Prisma.FieldRef<"Institute", 'String[]'>
+  readonly gallery: Prisma.FieldRef<"Institute", 'String[]'>
+  readonly subscriptionPlan: Prisma.FieldRef<"Institute", 'SubscriptionPlan'>
 }
     
 
@@ -3479,6 +3830,30 @@ export type Institute$viewHistoryArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.UserHistoryScalarFieldEnum | Prisma.UserHistoryScalarFieldEnum[]
+}
+
+/**
+ * Institute.enquiries
+ */
+export type Institute$enquiriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteEnquiry
+   */
+  select?: Prisma.InstituteEnquirySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteEnquiry
+   */
+  omit?: Prisma.InstituteEnquiryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteEnquiryInclude<ExtArgs> | null
+  where?: Prisma.InstituteEnquiryWhereInput
+  orderBy?: Prisma.InstituteEnquiryOrderByWithRelationInput | Prisma.InstituteEnquiryOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteEnquiryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteEnquiryScalarFieldEnum | Prisma.InstituteEnquiryScalarFieldEnum[]
 }
 
 /**

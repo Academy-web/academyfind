@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight } from "lucide-react";
 
-import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth/auth-client";
 
 export function AuthPromptModal() {
   const pathname = usePathname();

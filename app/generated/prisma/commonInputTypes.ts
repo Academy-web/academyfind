@@ -198,6 +198,13 @@ export type IntFilter<$PrismaModel = never> = {
   not?: Prisma.NestedIntFilter<$PrismaModel> | number
 }
 
+export type EnumSubscriptionPlanFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionPlan | Prisma.EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionPlanFilter<$PrismaModel> | $Enums.SubscriptionPlan
+}
+
 export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: number | Prisma.FloatFieldRefInput<$PrismaModel> | null
   in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
@@ -244,6 +251,16 @@ export type IntWithAggregatesFilter<$PrismaModel = never> = {
   _sum?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedIntFilter<$PrismaModel>
   _max?: Prisma.NestedIntFilter<$PrismaModel>
+}
+
+export type EnumSubscriptionPlanWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionPlan | Prisma.EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionPlanWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionPlan
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSubscriptionPlanFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSubscriptionPlanFilter<$PrismaModel>
 }
 
 export type NestedStringFilter<$PrismaModel = never> = {
@@ -421,6 +438,13 @@ export type NestedFloatNullableFilter<$PrismaModel = never> = {
   not?: Prisma.NestedFloatNullableFilter<$PrismaModel> | number | null
 }
 
+export type NestedEnumSubscriptionPlanFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionPlan | Prisma.EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionPlanFilter<$PrismaModel> | $Enums.SubscriptionPlan
+}
+
 export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: number | Prisma.FloatFieldRefInput<$PrismaModel> | null
   in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
@@ -478,6 +502,16 @@ export type NestedFloatFilter<$PrismaModel = never> = {
   gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   not?: Prisma.NestedFloatFilter<$PrismaModel> | number
+}
+
+export type NestedEnumSubscriptionPlanWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionPlan | Prisma.EnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionPlan[] | Prisma.ListEnumSubscriptionPlanFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionPlanWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionPlan
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSubscriptionPlanFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSubscriptionPlanFilter<$PrismaModel>
 }
 
 

@@ -1,4 +1,4 @@
-import { getInstitutesByCategoryAndCity } from "@/lib/institutes_cat_city";
+import { getInstitutesByCategoryAndCity } from "@/lib/institutes/institutes_cat_city";
 import type { Metadata } from "next";
 import formatSlug from "@/lib/formatSlug";
 
@@ -11,7 +11,7 @@ import RelatedCities from "@/components/City_Category/RelatedCities";
 import CityFAQ from "@/components/City_Category/CityFAQ";
 import CityCTA from "@/components/City_Category/CityCTA";
 import Pagination from "@/components/navigation/Pagination";
-import { trackVisitHistory } from "@/lib/user-activity";
+import { trackVisitHistory } from "@/lib/User/user/user-activity";
 
 // Naya component import karein
 import MapToggleSection from "@/components/maps/MapToggleSection"; 

@@ -1,7 +1,7 @@
 "use client";
 
 import { LogOut } from "lucide-react";
-import { authClient } from "@/lib/auth-client"; // Apne auth-client ka path
+import { authClient } from "@/lib/auth/auth-client"; // Apne auth-client ka path
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
