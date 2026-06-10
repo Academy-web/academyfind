@@ -46,7 +46,7 @@ export function PopularComparisons() {
           </div>
 
           <Link
-            href="/compare"
+            href="/"
             className="hidden md:flex items-center gap-2 font-medium transition-colors hover:text-amber-500"
           >
             Compare More Institutes
@@ -59,7 +59,7 @@ export function PopularComparisons() {
           {comparisons.map((comparison) => (
             <Link
               key={`${comparison.instituteA}-${comparison.instituteB}`}
-              href={comparison.href}
+              href={"/"}
             >
               <Card
                 className="

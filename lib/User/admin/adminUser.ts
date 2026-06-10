@@ -1,0 +1,34 @@
+"use server"
+
+import { prisma } from "@/lib/prisma"
+import { revalidatePath } from "next/cache"
+
+// 1. Role Change Action
+export async function updateUserRole(userId: string, newRole: "USER" | "CONTENT_WRITER" | "INSTITUTE_MANAGER" | "ADMIN") {
+    try {
+        await prisma.user.update({
+            where: { id: userId },
+            data: { role: newRole }
+        });
+        revalidatePath("/admin/users");
+        return { success: true, message: `User role updated to ${newRole}!` };
+    } catch (error) {
+        console.error(error);
+        return { success: false, error: "Failed to update role." };
+    }
+}
+
+// 2. Status Toggle Action (Block / Unblock)
+export async function toggleUserStatus(userId: string, currentStatus: boolean) {
+    try {
+        await prisma.user.update({
+            where: { id: userId },
+            data: { isActive: !currentStatus } // True hai toh False (Block)
+        });
+        revalidatePath("/admin/users");
+        return { success: true, message: `User account ${!currentStatus ? 'activated' : 'blocked'} successfully!` };
+    } catch (error) {
+        console.error(error);
+        return { success: false, error: "Failed to update account status." };
+    }
+}
