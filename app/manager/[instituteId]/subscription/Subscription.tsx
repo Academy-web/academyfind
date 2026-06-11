@@ -99,7 +99,7 @@ export default function SubscriptionClient({ currentPlan }: SubscriptionClientPr
 
             {/* 🚀 Changed to 3 columns since Free is removed */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 max-w-5xl mx-auto">
-                {plans.map((plan) => {
+                {plans.map((plan: any) => {
                     const priceData = isAnnual ? plan.pricing.annual : plan.pricing.monthly;
 
                     return (
@@ -130,7 +130,7 @@ export default function SubscriptionClient({ currentPlan }: SubscriptionClientPr
                             <p className="text-xs text-slate-500 mt-2 mb-6 h-8 leading-relaxed font-medium">{plan.desc}</p>
                             
                             <ul className="space-y-3 mb-8 flex-1">
-                                {plan.features.map((feature, i) => (
+                                {plan.features.map((feature: any, i: any) => (
                                     <li key={i} className="flex items-start gap-2 text-sm text-slate-700 font-medium">
                                         <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 
                                         <span className="leading-tight">{feature}</span>
