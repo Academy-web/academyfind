@@ -57,6 +57,12 @@ export async function addInstitute(userId: string, formData: FormData,selectedCa
             counter++;
         }
 
+        let secureUrl = null;
+        if (imageFile && imageFile.size > 0) {
+            // Humne ID pehle nahi banayi, isliye slug+timestamp ka use kar rahe image ke naam ke liye
+            secureUrl = await uploadImageToCloudinary(imageFile, "institutes", `inst-${slug}-${Date.now()}`);
+        }
+
         // Transaction to create Institute AND link categories
         const newInstitute = await prisma.$transaction(async (tx) => {
             const institute = await tx.institute.create({
@@ -64,7 +70,8 @@ export async function addInstitute(userId: string, formData: FormData,selectedCa
                     name, slug, description, phone, email, website, address, feeInfo,
                     googleMapsUrl, cityId, latitude, longitude,
                     isActive: false,
-                    subscriptionPlan: "VERIFIED"
+                    subscriptionPlan: "VERIFIED",
+                    imageUrl: secureUrl
                 }
             });
 
@@ -81,19 +88,10 @@ export async function addInstitute(userId: string, formData: FormData,selectedCa
                 data: { userId, instituteId: institute.id }
             });
 
-            if (imageFile && imageFile.size > 0) {
-                const secureUrl = await uploadImageToCloudinary(imageFile, "institutes", `inst-${institute.id}`);
-                await tx.institute.update({
-                    where: { id: institute.id },
-                    data: { imageUrl: secureUrl }
-                });
-            }
-
             await tx.instituteRequest.create({
                 data: {
                     userId: userId,
                     instituteId: institute.id,
-                    cityId: institute.cityId,
                     status: "PENDING"
                 }
             });

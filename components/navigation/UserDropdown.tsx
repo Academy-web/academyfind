@@ -119,7 +119,7 @@ export default function UserDropdown({ user }: { user: any }) {
         {/* 🚀 ADD LISTING PASS - Strictly rendering via native Boolean DB query passed from Server Navbar */}
         {liveUserData?.canAddInstitute === true && (
           <DropdownMenuItem asChild className="rounded-xl cursor-pointer py-3 px-3 bg-emerald-50 hover:bg-emerald-100/80 text-emerald-700 focus:bg-emerald-100 focus:text-emerald-800 transition-colors">
-            <Link href="/add-institute">
+            <Link href="/user/create-institute">
               <PlusCircle className="mr-3 h-4 w-4 text-emerald-600" />
               <span className="font-bold text-sm">Add Listing</span>
             </Link>

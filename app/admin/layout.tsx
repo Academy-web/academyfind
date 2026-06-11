@@ -9,7 +9,8 @@ import {
     FolderTree, 
     FileText, 
     ArrowLeft,
-    MapPin
+    MapPin,
+    FileType2
 } from "lucide-react";
 
 export default async function AdminLayout({
@@ -60,6 +61,7 @@ export default async function AdminLayout({
                     <nav className="flex flex-col gap-1.5">
                         <SidebarLink href="/admin" icon={<LayoutDashboard />} label="Overview" exact />
                         <SidebarLink href="/admin/claims" icon={<FileText />} label="Claim Requests" />
+                         <SidebarLink href="/admin/instituteRequests" icon={<FileType2 />} label="Institute Requests" />
                         <SidebarLink href="/admin/institutes" icon={<Building2 />} label="All Institutes" />
                         <SidebarLink href="/admin/users" icon={<Users />} label="User Management" />
                         <div className="my-2 border-t border-slate-200"></div>
