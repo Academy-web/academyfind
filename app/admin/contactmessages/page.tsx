@@ -46,7 +46,7 @@ export default async function ContactMessagesPage() {
                                     <td colSpan={5} className="p-8 text-center text-slate-400">Your inbox is completely empty! 🎉</td>
                                 </tr>
                             ) : (
-                                messages.map((msg) => (
+                                messages.map((msg: any) => (
                                     <tr 
                                         key={msg.id} 
                                         className={`hover:bg-slate-50 transition-colors group ${!msg.isRead ? 'bg-blue-50/30' : ''}`}
