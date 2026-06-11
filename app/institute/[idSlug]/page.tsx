@@ -127,7 +127,7 @@ export default async function InstitutePage({ params }: PageProps) {
       />
 
       <section className="relative overflow-hidden border-b bg-linear-to-b from-amber-50 via-white to-white">
-        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-300/20 blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-300/20 blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-7xl px-4 py-10">
           <Breadcrumb
@@ -196,15 +196,12 @@ export default async function InstitutePage({ params }: PageProps) {
                       </div>
                       
                       {/* 🚀 FIX: Save Button & Text wrapped in a col-flex */}
-                      <div className="shrink-0 flex flex-col items-center justify-center gap-1.5 pt-1">
+                      <div className="shrink-0 flex flex-col items-center justify-center gap-1.5 pt-1 relative z-20">
                         <SaveButton 
                           userId={session?.user?.id} 
                           instituteId={institute.id} 
                           isInitiallySaved={alreadySaved} 
                         />
-                        <span className={`text-[10px] font-bold uppercase tracking-wider ${alreadySaved ? "text-amber-600" : "text-slate-400"}`}>
-                          {alreadySaved ? "Saved" : "Save"}
-                        </span>
                       </div>
                     </div>
 
@@ -297,7 +294,7 @@ export default async function InstitutePage({ params }: PageProps) {
         </div>
       </section>
 
-      <div className="mx-auto max-w-7xl px-4 py-12 space-y-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 space-y-16 relative z-10">
         
         {/* Quick Facts */}
         <section>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Bookmark } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toggleShortlist } from "@/lib/User/user/user-activity";
+import toast from "react-hot-toast";
 
 interface SaveButtonProps {
   userId?: string; // Optional rakha hai, in case guest user ho
@@ -12,47 +13,54 @@ interface SaveButtonProps {
 }
 
 export default function SaveButton({ userId, instituteId, isInitiallySaved }: SaveButtonProps) {
-  const [isSaved, setIsSaved] = useState(isInitiallySaved);
-  const [loading, setLoading] = useState(false);
   const router = useRouter();
-
-  const handleSave = async (e: React.MouseEvent) => {
-    e.preventDefault(); // Agar card Link tag ke andar hai toh usko rokne ke liye
     
-    // Agar user login nahi hai, toh login page par bhej do
+  const [isSaved, setIsSaved] = useState(isInitiallySaved);
+    const [isLoading, setIsLoading] = useState(false);
+    
+  const handleToggleSave = async () => {
     if (!userId) {
-      router.push("/login");
+      toast.error("Please login to save!");
       return;
     }
 
-    setLoading(true);
-    
-    // Optimistic UI update (turant color change kar do)
-    setIsSaved(!isSaved);
+        setIsSaved(!isSaved);
+        setIsLoading(true);
 
-    // Server action call karo
-    const res = await toggleShortlist(userId, instituteId);
-    
-    // Agar server pe error aayi, toh wapas purana state kar do
-    if (!res.success) {
-      setIsSaved(isSaved);
-      console.error(res.error);
+    try {
+          const res = await toggleShortlist(userId, instituteId);
+        
+        if (!res.success) {
+          setIsSaved(isSaved);
+          console.error(res.error);
+        }
+    } catch (error) {
+      setIsSaved(!isSaved); // Revert UI on error
+      console.error("Failed to save");
+    } finally {
+      setIsLoading(false);
     }
-    
-    setLoading(false);
   };
-
   return (
-    <button 
-      onClick={handleSave}
-      disabled={loading}
-      className={`p-2 rounded-full transition-all flex items-center justify-center
-        ${isSaved 
-          ? 'bg-amber-100 text-amber-600 hover:bg-amber-200' 
-          : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-        }`}
-    >
-      <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-amber-600' : ''}`} />
-    </button>
+    <div className="flex flex-col items-center justify-center gap-1.5 cursor-pointer">
+      <button 
+        onClick={handleToggleSave} 
+        disabled={isLoading}
+        className="p-3 hover:bg-slate-100 rounded-full transition-colors"
+      >
+        <Bookmark 
+          className={`w-7 h-7 transition-all cursor-pointer ${
+            isSaved ? "fill-amber-500 text-amber-500" : "text-slate-400 hover:text-slate-600"
+          }`} 
+        />
+      </button>
+
+      {/* 🚀 NEW: Text ab isSaved state se direct link ho gaya */}
+      <span className={`text-[10px] font-bold uppercase tracking-wider transition-colors ${
+        isSaved ? "text-amber-600" : "text-slate-400"
+      }`}>
+        {isSaved ? "Saved" : "Save"}
+      </span>
+    </div>
   );
 }
