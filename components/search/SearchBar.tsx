@@ -17,10 +17,179 @@ type Suggestion = {
   url: string;
 };
 
-const CATEGORY_MAP = [
-  { keywords: ["jee", "iit", "mains", "advanced"], slug: "jee-coaching" },
-  { keywords: ["neet", "medical", "mbbs"], slug: "neet-coaching" },
-  { keywords: ["upsc", "ias", "civil services"], slug: "upsc-coaching" },
+export const CATEGORY_MAP = [
+  // ==========================================
+  // 📚 ACADEMIC & SCHOOL TUITION
+  // ==========================================
+  { keywords: ["class 1", "1st standard", "1st grade", "class 1st"], slug: "class-1-tuition" },
+  { keywords: ["class 2", "2nd standard", "2nd grade", "class 2nd"], slug: "class-2-tuition" },
+  { keywords: ["class 3", "3rd standard", "3rd grade", "class 3rd"], slug: "class-3-tuition" },
+  { keywords: ["class 4", "4th standard", "4th grade", "class 4th"], slug: "class-4-tuition" },
+  { keywords: ["class 5", "5th standard", "5th grade", "class 5th"], slug: "class-5-tuition" },
+  { keywords: ["class 6", "6th standard", "6th grade", "class 6th"], slug: "class-6-tuition" },
+  { keywords: ["class 7", "7th standard", "7th grade", "class 7th"], slug: "class-7-tuition" },
+  { keywords: ["class 8", "8th standard", "8th grade", "class 8th"], slug: "class-8-tuition" },
+  { keywords: ["class 9", "9th standard", "9th grade", "class 9th"], slug: "class-9-tuition" },
+  { keywords: ["class 10", "10th standard", "boards", "10th boards", "matric"], slug: "class-10-tuition" },
+  { keywords: ["class 11", "11th standard", "plus one", "11th science", "11th commerce"], slug: "class-11-tuition" },
+  { keywords: ["class 12", "12th standard", "12th boards", "plus two", "12th science", "12th commerce", "hsc"], slug: "class-12-tuition" },
+  { keywords: ["online class", "online tuition", "zoom tuition"], slug: "online-tuition" },
+  { keywords: ["home tuition", "private tutor", "home tutor", "tutor at home"], slug: "home-tuition" },
+  { keywords: ["cuet", "central university entrance", "du admission"], slug: "cuet-coaching" },
+  { keywords: ["foundation", "pre foundation", "ntse", "ijso"], slug: "foundation-courses" },
+  { keywords: ["olympiad", "imo", "nso", "math olympiad", "science olympiad"], slug: "olympiad-coaching" },
+
+  // ==========================================
+  // 🔬 ENGINEERING & MEDICAL ENTRANCE
+  // ==========================================
+  { keywords: ["jee", "iit", "iit jee", "mains", "advanced", "btech preparation"], slug: "jee-coaching" },
+  { keywords: ["neet", "medical", "mbbs", "aiims", "bds", "prmt"], slug: "neet-coaching" },
+  { keywords: ["nursing", "bsc nursing", "gnm", "anm"], slug: "nursing-entrance-coaching" },
+
+  // ==========================================
+  // 🏛️ GOVERNMENT EXAMS
+  // ==========================================
+  { keywords: ["upsc", "ias", "ips", "civil services", "cse"], slug: "upsc-coaching" },
+  { keywords: ["pcs", "uppsc", "bpsc", "mppsc", "ras", "state services"], slug: "state-pcs-coaching" },
+  { keywords: ["ssc", "cgl", "chsl", "mts", "ssc gd", "staff selection"], slug: "ssc-coaching" },
+  { keywords: ["bank", "banking", "ibps", "po", "clerk", "sbi", "rbi"], slug: "banking-coaching" },
+  { keywords: ["railway", "rrb", "ntpc", "group d", "alp"], slug: "railway-coaching" },
+  { keywords: ["nda", "national defence academy", "army entrance"], slug: "nda-coaching" },
+  { keywords: ["cds", "combined defence services"], slug: "cds-coaching" },
+  { keywords: ["afcat", "air force"], slug: "afcat-coaching" },
+  { keywords: ["ugc net", "net jrf", "ntanet"], slug: "ugc-net-coaching" },
+  { keywords: ["csir net", "science net"], slug: "csir-net-coaching" },
+  { keywords: ["ctet", "central teacher eligibility"], slug: "ctet-coaching" },
+  { keywords: ["tet", "uptet", "htet", "rtet", "teacher exam"], slug: "tet-coaching" },
+
+  // ==========================================
+  // 🎓 HIGHER EDUCATION & PROFESSIONAL
+  // ==========================================
+  { keywords: ["cat", "mba", "xat", "mat", "iim preparation"], slug: "cat-coaching" },
+  { keywords: ["gate", "mtech", "psu"], slug: "gate-coaching" },
+  { keywords: ["clat", "law", "llb", "nlu"], slug: "clat-coaching" },
+  { keywords: ["judiciary", "judge", "pcs j", "civil judge"], slug: "judiciary-coaching" },
+  { keywords: ["ca", "chartered accountant", "cpt", "ipcc", "ca final"], slug: "ca-coaching" },
+  { keywords: ["cs", "company secretary", "cseet"], slug: "cs-coaching" },
+  { keywords: ["cma", "icwa", "cost management"], slug: "cma-coaching" },
+
+  // ==========================================
+  // ✈️ STUDY ABROAD
+  // ==========================================
+  { keywords: ["ielts", "spoken english for abroad", "ielts band"], slug: "ielts-coaching" },
+  { keywords: ["toefl"], slug: "toefl-coaching" },
+  { keywords: ["pte", "pearson test"], slug: "pte-coaching" },
+  { keywords: ["sat", "undergrad abroad"], slug: "sat-coaching" },
+  { keywords: ["gre", "ms abroad"], slug: "gre-coaching" },
+  { keywords: ["gmat", "mba abroad"], slug: "gmat-coaching" },
+  { keywords: ["study abroad", "foreign university", "overseas consultant", "visa consultant"], slug: "study-abroad-consultants" },
+  { keywords: ["mbbs abroad", "medical abroad", "study medicine outside"], slug: "mbbs-abroad-consultancy" },
+
+  // ==========================================
+  // 💻 COMPUTER & TECHNOLOGY
+  // ==========================================
+  { keywords: ["coding", "c++", "java", "python", "c", "c programming"], slug: "coding-classes" },
+  { keywords: ["web development", "full stack", "frontend", "backend", "react", "html", "php"], slug: "web-development" },
+  { keywords: ["app development", "android", "ios", "flutter", "react native"], slug: "app-development" },
+  { keywords: ["testing", "qa", "manual testing", "selenium", "automation"], slug: "software-testing" },
+  { keywords: ["data science", "data analytics", "power bi", "tableau", "machine learning", "pandas"], slug: "data-science-training" },
+  { keywords: ["ai", "artificial intelligence", "ml", "deep learning"], slug: "ai-ml-courses" },
+  { keywords: ["cloud", "cloud computing", "azure", "gcp"], slug: "cloud-computing" },
+  { keywords: ["aws", "amazon web services"], slug: "aws-training" },
+  { keywords: ["devops", "docker", "kubernetes", "jenkins"], slug: "devops-training" },
+  { keywords: ["cyber security", "ethical hacking", "infosec", "penetration testing"], slug: "cyber-security-training" },
+  { keywords: ["ui ux", "figma", "user interface", "user experience"], slug: "ui-ux-design" },
+  { keywords: ["graphic design", "photoshop", "illustrator", "canva", "coreldraw"], slug: "graphic-design" },
+  { keywords: ["video editing", "premiere pro", "after effects", "final cut pro", "vlog editing"], slug: "video-editing" },
+  { keywords: ["animation", "vfx", "3d animation", "blender", "maya"], slug: "animation-vfx" },
+
+  // ==========================================
+  // 💼 BUSINESS & PROFESSIONAL SKILLS
+  // ==========================================
+  { keywords: ["digital marketing", "seo", "smm", "social media marketing", "google ads"], slug: "digital-marketing" },
+  { keywords: ["sales", "b2b sales", "cold calling"], slug: "sales-training" },
+  { keywords: ["stock market", "trading", "share market", "intraday", "options trading", "nifty"], slug: "stock-market-training" },
+  { keywords: ["financial modelling", "finance analytics"], slug: "financial-modelling" },
+  { keywords: ["tally", "gst", "accounting software", "tally erp9", "tally prime"], slug: "tally-gst-training" },
+  { keywords: ["business analytics", "business intelligence"], slug: "business-analytics" },
+  { keywords: ["project management", "pmp", "scrum", "agile"], slug: "project-management" },
+  { keywords: ["hr", "human resources", "payroll"], slug: "hr-training" },
+  { keywords: ["entrepreneurship", "startup", "business coaching"], slug: "entrepreneurship-training" },
+  { keywords: ["interview prep", "mock interview", "gd pi"], slug: "interview-preparation" },
+  { keywords: ["resume building", "cv maker"], slug: "resume-building" },
+  { keywords: ["career counselling", "career guidance", "what to do after 12th"], slug: "career-counselling" },
+
+  // ==========================================
+  // 🛠️ VOCATIONAL & LIFESTYLE
+  // ==========================================
+  { keywords: ["medical coding", "icd 10", "cpt coding"], slug: "medical-coding" },
+  { keywords: ["mlt", "dmlt", "bmlt", "lab technician", "pathology"], slug: "medical-lab-technician" },
+  { keywords: ["hotel management", "ihm", "hospitality"], slug: "hotel-management-coaching" },
+  { keywords: ["aviation", "cabin crew", "air hostess", "ground staff"], slug: "aviation-cabin-crew" },
+  { keywords: ["makeup", "beautician", "salon course", "bridal makeup", "hair styling"], slug: "beauty-makeup-courses" },
+  { keywords: ["baking", "cooking", "chef course", "culinary arts", "cake making"], slug: "culinary-baking-classes" },
+  { keywords: ["fashion design", "boutique", "tailoring", "stitching", "apparel design"], slug: "fashion-designing" },
+  { keywords: ["interior design", "architecture decor", "cad interior"], slug: "interior-designing" },
+
+  // ==========================================
+  // 🗣️ LANGUAGES
+  // ==========================================
+  { keywords: ["english", "spoken english", "fluent english", "communication skills", "grammar"], slug: "english-speaking" },
+  { keywords: ["hindi", "spoken hindi", "learn hindi"], slug: "hindi-speaking" },
+  { keywords: ["french", "learn french", "delf", "dalf"], slug: "french-classes" },
+  { keywords: ["german", "learn german", "goethe"], slug: "german-classes" },
+  { keywords: ["spanish", "learn spanish", "dele"], slug: "spanish-classes" },
+  { keywords: ["japanese", "jlpt", "learn japanese"], slug: "japanese-classes" },
+  { keywords: ["korean", "topik", "learn korean"], slug: "korean-classes" },
+
+  // ==========================================
+  // 🎨 ARTS & CREATIVITY
+  // ==========================================
+  { keywords: ["dance", "choreography", "hip hop", "classical dance", "kathak", "bharatanatyam", "salsa"], slug: "dance-classes" },
+  { keywords: ["music", "vocal", "hindustani", "carnatic"], slug: "music-classes" },
+  { keywords: ["singing", "vocal training"], slug: "singing-classes" },
+  { keywords: ["acting", "theatre", "drama", "drama school"], slug: "theatre-acting" },
+  { keywords: ["guitar", "acoustic", "electric guitar"], slug: "guitar-classes" },
+  { keywords: ["piano", "keyboard", "synthesizer"], slug: "piano-classes" },
+  { keywords: ["tabla", "dholak"], slug: "tabla-classes" },
+  { keywords: ["violin", "strings"], slug: "violin-classes" },
+  { keywords: ["drawing", "painting", "water color", "oil painting"], slug: "drawing-painting" },
+  { keywords: ["fine arts", "bfa prep"], slug: "fine-arts" },
+  { keywords: ["sketching", "pencil art", "portrait"], slug: "sketching" },
+  { keywords: ["art and craft", "origami", "diy"], slug: "art-craft-classes" },
+
+  // ==========================================
+  // 🏅 SPORTS & FITNESS
+  // ==========================================
+  { keywords: ["swimming", "swimmer", "pool"], slug: "swimming-classes" },
+  { keywords: ["cricket", "batting coaching", "bowling coaching"], slug: "cricket-academy" },
+  { keywords: ["football", "soccer"], slug: "football-academy" },
+  { keywords: ["basketball", "hoops"], slug: "basketball-academy" },
+  { keywords: ["badminton", "shuttle"], slug: "badminton-academy" },
+  { keywords: ["tennis", "lawn tennis"], slug: "tennis-academy" },
+  { keywords: ["gymnastics"], slug: "gymnastics" },
+  { keywords: ["skating", "roller skating"], slug: "skating-classes" },
+  { keywords: ["athletics", "running", "track and field"], slug: "athletics" },
+  { keywords: ["yoga", "meditation", "asanas"], slug: "yoga-classes" },
+  { keywords: ["gym", "fitness center", "workout", "bodybuilding", "personal trainer"], slug: "gym" },
+  { keywords: ["martial arts", "mma", "judo", "self defense"], slug: "martial-arts" },
+  { keywords: ["karate"], slug: "karate" },
+  { keywords: ["taekwondo"], slug: "taekwondo" },
+
+  // ==========================================
+  // 🧸 KIDS & HOBBY LEARNING
+  // ==========================================
+  { keywords: ["phonics", "reading for kids", "letter sounds"], slug: "phonics" },
+  { keywords: ["preschool", "play school", "kindergarten", "nursery"], slug: "preschool-programs" },
+  { keywords: ["handwriting", "calligraphy", "cursive"], slug: "handwriting-improvement" },
+  { keywords: ["abacus", "brain development", "mental math kids"], slug: "abacus-classes" },
+  { keywords: ["vedic math", "mental math", "speed math"], slug: "vedic-maths" },
+  { keywords: ["robotics", "stem", "lego", "arduino for kids"], slug: "robotics-classes" },
+  { keywords: ["coding for kids", "scratch", "whitehat", "kids programming"], slug: "coding-for-kids" },
+  { keywords: ["chess", "grandmaster"], slug: "chess-academy" },
+  { keywords: ["personality development", "soft skills", "grooming"], slug: "personality-development" },
+  { keywords: ["public speaking", "communication skills", "elocution"], slug: "public-speaking" },
+  { keywords: ["life coach", "mentoring", "personal growth"], slug: "life-coach" }
 ];
 
 const CITY_MAP = [
