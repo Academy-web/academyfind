@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { updateInstituteProfile } from "@/lib/User/manager/updateProfile";
-import { Save, Lock, Check, MapPin, Image as ImageIcon, IndianRupee, Link as LinkIcon, UploadCloud, Map, Video, Users, Trophy, ShieldCheck } from "lucide-react";
+import { Save, Lock, Check, MapPin, Image as ImageIcon, IndianRupee, Link as LinkIcon, UploadCloud, Map, Video, Users, Trophy, ShieldCheck, UsersRound } from "lucide-react";
 import { useState } from "react"
 import toast from "react-hot-toast";
 import VideoSettings from "./EditVideoLinks";
@@ -11,6 +11,8 @@ import { PLAN_LIMITS, PlanType } from "@/lib/plan_limits";
 import EditTeachers from "./EditTeacherProfile";
 import EditResultImages from "./EditResultImages";
 import LocationAutocomplete from "@/components/admin/AdminLocationAutoComplete";
+import { FaFacebook, FaInstagram, FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa";
+import ClassroomImages from "./EditClassroomImages";
 
 export default function EditProfileForm({
     institute, 
@@ -266,6 +268,46 @@ export default function EditProfileForm({
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h3 className="text-base font-bold text-slate-800 border-b pb-2 mb-4">Social Media Presence</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Instagram Profile URL</label>
+                            <div className="relative">
+                                <FaInstagram className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-pink-600" />
+                                <input type="url" name="instagramUrl" defaultValue={institute.instagramUrl || ""} placeholder="https://instagram.com/..." className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-pink-500 outline-none transition-all" />
+                            </div>
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Facebook Page URL</label>
+                            <div className="relative">
+                                <FaFacebook className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-600" />
+                                <input type="url" name="facebookUrl" defaultValue={institute.facebookUrl || ""} placeholder="https://facebook.com/..." className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                            </div>
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">YouTube Channel URL</label>
+                            <div className="relative">
+                                <FaYoutube className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-600" />
+                                <input type="url" name="youtubeUrl" defaultValue={institute.youtubeUrl || ""} placeholder="https://youtube.com/@..." className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-red-500 outline-none transition-all" />
+                            </div>
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">X (Twitter) URL</label>
+                            <div className="relative">
+                                <FaTwitter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-400" />
+                                <input type="url" name="twitterUrl" defaultValue={institute.twitterUrl || ""} placeholder="https://twitter.com/..." className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-400 outline-none transition-all" />
+                            </div>
+                        </div>
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Telegram URL</label>
+                            <div className="relative">
+                                <FaTelegram className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-400" />
+                                <input type="url" name="twitterUrl" defaultValue={institute.telegramUrl || ""} placeholder="https://t.me..." className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-400 outline-none transition-all" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* SUBMIT BUTTON */}
                 <div className="flex justify-end pt-4 border-t border-slate-100">
@@ -292,6 +334,25 @@ export default function EditProfileForm({
                     </h3>
                     <p className="text-xs text-slate-500 max-w-sm mt-1 mb-3">
                         Showcase your classroom dynamic and video lectures directly on your public profile page.
+                    </p>
+                    <Link href={`/manager/${institute.id}/subscription`} className="bg-slate-900 hover:bg-blue-600 text-white text-xs px-4 py-2 rounded-xl font-medium transition shadow-sm">
+                        Upgrade to Premium
+                    </Link>
+                </div>
+            )}
+
+            {isPremiumOrUltra ? (
+                <ClassroomImages instituteId={institute.id} currentImages={institute.classroomImages || []} maxLimit={limits.maxClassroom} />
+            ) : (
+                <div className="bg-slate-50/60 border border-dashed border-slate-200 rounded-3xl p-6 text-center flex flex-col items-center shadow-inner">
+                    <div className="w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center mb-3 shadow-sm text-slate-400">
+                        <Lock className="w-4 h-4" />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                        <UsersRound  className="w-4 h-4 text-amber-500" /> Classroom Images Locked
+                    </h3>
+                    <p className="text-xs text-slate-500 max-w-sm mt-1 mb-3">
+                        Showcase your classroom images directly on your public profile page.
                     </p>
                     <Link href={`/manager/${institute.id}/subscription`} className="bg-slate-900 hover:bg-blue-600 text-white text-xs px-4 py-2 rounded-xl font-medium transition shadow-sm">
                         Upgrade to Premium

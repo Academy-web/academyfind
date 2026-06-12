@@ -127,6 +127,12 @@ model Institute {
   planExpiresAt     DateTime?
   payments          SubscriptionPayment[]
 
+  facebookUrl       String?
+  instagramUrl      String?
+  twitterUrl        String?
+  youtubeUrl        String?
+  telegramUrl       String?
+
   @@index([cityId])
   @@index([slug])
 }

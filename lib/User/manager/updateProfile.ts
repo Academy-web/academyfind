@@ -39,7 +39,11 @@ export async function updateInstituteProfile(instituteId: string, formData: Form
         const imageFile = formData.get("imageFile") as File | null;
         const rawLat = formData.get("latitude") as string;
         const rawLng = formData.get("longitude") as string;
-
+        const facebookUrl = formData.get("facebookUrl") as string;
+        const instagramUrl = formData.get("instagramUrl") as string;
+        const twitterUrl = formData.get("twitterUrl") as string;
+        const youtubeUrl = formData.get("youtubeUrl") as string;
+        const telegramUrl = formData.get("telegramUrl") as string;
         const latitude = (rawLat && !isNaN(parseFloat(rawLat))) ? parseFloat(rawLat) : null;
         const longitude = (rawLng && !isNaN(parseFloat(rawLng))) ? parseFloat(rawLng) : null;
 
@@ -77,6 +81,11 @@ export async function updateInstituteProfile(instituteId: string, formData: Form
                 googleMapsUrl:googleMapsUrl,
                 latitude:latitude,
                 longitude:longitude,
+                facebookUrl: facebookUrl,
+                instagramUrl: instagramUrl,
+                twitterUrl: twitterUrl,
+                youtubeUrl: youtubeUrl,
+                telegramUrl: telegramUrl,
                 imageUrl:secureUrl,
                 ...categoryUpdates
             }

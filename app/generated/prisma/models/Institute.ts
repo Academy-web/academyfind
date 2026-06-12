@@ -73,6 +73,11 @@ export type InstituteMinAggregateOutputType = {
   subscriptionPlan: $Enums.SubscriptionPlan | null
   feeInfo: string | null
   planExpiresAt: Date | null
+  facebookUrl: string | null
+  instagramUrl: string | null
+  twitterUrl: string | null
+  youtubeUrl: string | null
+  telegramUrl: string | null
 }
 
 export type InstituteMaxAggregateOutputType = {
@@ -104,6 +109,11 @@ export type InstituteMaxAggregateOutputType = {
   subscriptionPlan: $Enums.SubscriptionPlan | null
   feeInfo: string | null
   planExpiresAt: Date | null
+  facebookUrl: string | null
+  instagramUrl: string | null
+  twitterUrl: string | null
+  youtubeUrl: string | null
+  telegramUrl: string | null
 }
 
 export type InstituteCountAggregateOutputType = {
@@ -139,6 +149,11 @@ export type InstituteCountAggregateOutputType = {
   feeInfo: number
   classroomImages: number
   planExpiresAt: number
+  facebookUrl: number
+  instagramUrl: number
+  twitterUrl: number
+  youtubeUrl: number
+  telegramUrl: number
   _all: number
 }
 
@@ -190,6 +205,11 @@ export type InstituteMinAggregateInputType = {
   subscriptionPlan?: true
   feeInfo?: true
   planExpiresAt?: true
+  facebookUrl?: true
+  instagramUrl?: true
+  twitterUrl?: true
+  youtubeUrl?: true
+  telegramUrl?: true
 }
 
 export type InstituteMaxAggregateInputType = {
@@ -221,6 +241,11 @@ export type InstituteMaxAggregateInputType = {
   subscriptionPlan?: true
   feeInfo?: true
   planExpiresAt?: true
+  facebookUrl?: true
+  instagramUrl?: true
+  twitterUrl?: true
+  youtubeUrl?: true
+  telegramUrl?: true
 }
 
 export type InstituteCountAggregateInputType = {
@@ -256,6 +281,11 @@ export type InstituteCountAggregateInputType = {
   feeInfo?: true
   classroomImages?: true
   planExpiresAt?: true
+  facebookUrl?: true
+  instagramUrl?: true
+  twitterUrl?: true
+  youtubeUrl?: true
+  telegramUrl?: true
   _all?: true
 }
 
@@ -378,6 +408,11 @@ export type InstituteGroupByOutputType = {
   feeInfo: string | null
   classroomImages: string[]
   planExpiresAt: Date | null
+  facebookUrl: string | null
+  instagramUrl: string | null
+  twitterUrl: string | null
+  youtubeUrl: string | null
+  telegramUrl: string | null
   _count: InstituteCountAggregateOutputType | null
   _avg: InstituteAvgAggregateOutputType | null
   _sum: InstituteSumAggregateOutputType | null
@@ -436,6 +471,11 @@ export type InstituteWhereInput = {
   feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
   planExpiresAt?: Prisma.DateTimeNullableFilter<"Institute"> | Date | string | null
+  facebookUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  instagramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  twitterUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  youtubeUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   city?: Prisma.XOR<Prisma.CityScalarRelationFilter, Prisma.CityWhereInput>
   categories?: Prisma.InstituteCategoryListRelationFilter
   managers?: Prisma.InstituteManagerListRelationFilter
@@ -482,6 +522,11 @@ export type InstituteOrderByWithRelationInput = {
   feeInfo?: Prisma.SortOrderInput | Prisma.SortOrder
   classroomImages?: Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  facebookUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   city?: Prisma.CityOrderByWithRelationInput
   categories?: Prisma.InstituteCategoryOrderByRelationAggregateInput
   managers?: Prisma.InstituteManagerOrderByRelationAggregateInput
@@ -531,6 +576,11 @@ export type InstituteWhereUniqueInput = Prisma.AtLeast<{
   feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
   planExpiresAt?: Prisma.DateTimeNullableFilter<"Institute"> | Date | string | null
+  facebookUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  instagramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  twitterUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  youtubeUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   city?: Prisma.XOR<Prisma.CityScalarRelationFilter, Prisma.CityWhereInput>
   categories?: Prisma.InstituteCategoryListRelationFilter
   managers?: Prisma.InstituteManagerListRelationFilter
@@ -577,6 +627,11 @@ export type InstituteOrderByWithAggregationInput = {
   feeInfo?: Prisma.SortOrderInput | Prisma.SortOrder
   classroomImages?: Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  facebookUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.InstituteCountOrderByAggregateInput
   _avg?: Prisma.InstituteAvgOrderByAggregateInput
   _max?: Prisma.InstituteMaxOrderByAggregateInput
@@ -620,6 +675,11 @@ export type InstituteScalarWhereWithAggregatesInput = {
   feeInfo?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
   planExpiresAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Institute"> | Date | string | null
+  facebookUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  instagramUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  twitterUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  youtubeUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
 }
 
 export type InstituteCreateInput = {
@@ -654,6 +714,11 @@ export type InstituteCreateInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -700,6 +765,11 @@ export type InstituteUncheckedCreateInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -744,6 +814,11 @@ export type InstituteUpdateInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -790,6 +865,11 @@ export type InstituteUncheckedUpdateInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -835,6 +915,11 @@ export type InstituteCreateManyInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
 }
 
 export type InstituteUpdateManyMutationInput = {
@@ -869,6 +954,11 @@ export type InstituteUpdateManyMutationInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type InstituteUncheckedUpdateManyInput = {
@@ -904,6 +994,11 @@ export type InstituteUncheckedUpdateManyInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -947,6 +1042,11 @@ export type InstituteCountOrderByAggregateInput = {
   feeInfo?: Prisma.SortOrder
   classroomImages?: Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrder
+  facebookUrl?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrder
 }
 
 export type InstituteAvgOrderByAggregateInput = {
@@ -987,6 +1087,11 @@ export type InstituteMaxOrderByAggregateInput = {
   subscriptionPlan?: Prisma.SortOrder
   feeInfo?: Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrder
+  facebookUrl?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrder
 }
 
 export type InstituteMinOrderByAggregateInput = {
@@ -1018,6 +1123,11 @@ export type InstituteMinOrderByAggregateInput = {
   subscriptionPlan?: Prisma.SortOrder
   feeInfo?: Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrder
+  facebookUrl?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrder
 }
 
 export type InstituteSumOrderByAggregateInput = {
@@ -1322,6 +1432,11 @@ export type InstituteCreateWithoutCityInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
@@ -1366,6 +1481,11 @@ export type InstituteUncheckedCreateWithoutCityInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -1440,6 +1560,11 @@ export type InstituteScalarWhereInput = {
   feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
   planExpiresAt?: Prisma.DateTimeNullableFilter<"Institute"> | Date | string | null
+  facebookUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  instagramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  twitterUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  youtubeUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
 }
 
 export type InstituteCreateWithoutCategoriesInput = {
@@ -1474,6 +1599,11 @@ export type InstituteCreateWithoutCategoriesInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
@@ -1519,6 +1649,11 @@ export type InstituteUncheckedCreateWithoutCategoriesInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
@@ -1578,6 +1713,11 @@ export type InstituteUpdateWithoutCategoriesInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
@@ -1623,6 +1763,11 @@ export type InstituteUncheckedUpdateWithoutCategoriesInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
@@ -1666,6 +1811,11 @@ export type InstituteCreateWithoutManagersInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
@@ -1711,6 +1861,11 @@ export type InstituteUncheckedCreateWithoutManagersInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
@@ -1770,6 +1925,11 @@ export type InstituteUpdateWithoutManagersInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
@@ -1815,6 +1975,11 @@ export type InstituteUncheckedUpdateWithoutManagersInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
@@ -1858,6 +2023,11 @@ export type InstituteCreateWithoutReviewsInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -1903,6 +2073,11 @@ export type InstituteUncheckedCreateWithoutReviewsInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
@@ -1962,6 +2137,11 @@ export type InstituteUpdateWithoutReviewsInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -2007,6 +2187,11 @@ export type InstituteUncheckedUpdateWithoutReviewsInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
@@ -2050,6 +2235,11 @@ export type InstituteCreateWithoutClaimsInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -2095,6 +2285,11 @@ export type InstituteUncheckedCreateWithoutClaimsInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -2154,6 +2349,11 @@ export type InstituteUpdateWithoutClaimsInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -2199,6 +2399,11 @@ export type InstituteUncheckedUpdateWithoutClaimsInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -2242,6 +2447,11 @@ export type InstituteCreateWithoutShortlistedByInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -2287,6 +2497,11 @@ export type InstituteUncheckedCreateWithoutShortlistedByInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -2346,6 +2561,11 @@ export type InstituteUpdateWithoutShortlistedByInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -2391,6 +2611,11 @@ export type InstituteUncheckedUpdateWithoutShortlistedByInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -2434,6 +2659,11 @@ export type InstituteCreateWithoutViewHistoryInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -2479,6 +2709,11 @@ export type InstituteUncheckedCreateWithoutViewHistoryInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -2538,6 +2773,11 @@ export type InstituteUpdateWithoutViewHistoryInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -2583,6 +2823,11 @@ export type InstituteUncheckedUpdateWithoutViewHistoryInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -2626,6 +2871,11 @@ export type InstituteCreateWithoutEnquiriesInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -2671,6 +2921,11 @@ export type InstituteUncheckedCreateWithoutEnquiriesInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -2730,6 +2985,11 @@ export type InstituteUpdateWithoutEnquiriesInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -2775,6 +3035,11 @@ export type InstituteUncheckedUpdateWithoutEnquiriesInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -2818,6 +3083,11 @@ export type InstituteCreateWithoutTeachersInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -2863,6 +3133,11 @@ export type InstituteUncheckedCreateWithoutTeachersInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -2922,6 +3197,11 @@ export type InstituteUpdateWithoutTeachersInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -2967,6 +3247,11 @@ export type InstituteUncheckedUpdateWithoutTeachersInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -3010,6 +3295,11 @@ export type InstituteCreateWithoutInstituteRequestInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -3055,6 +3345,11 @@ export type InstituteUncheckedCreateWithoutInstituteRequestInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -3114,6 +3409,11 @@ export type InstituteUpdateWithoutInstituteRequestInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -3159,6 +3459,11 @@ export type InstituteUncheckedUpdateWithoutInstituteRequestInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -3202,6 +3507,11 @@ export type InstituteCreateWithoutPaymentsInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
@@ -3247,6 +3557,11 @@ export type InstituteUncheckedCreateWithoutPaymentsInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
@@ -3306,6 +3621,11 @@ export type InstituteUpdateWithoutPaymentsInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
@@ -3351,6 +3671,11 @@ export type InstituteUncheckedUpdateWithoutPaymentsInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -3394,6 +3719,11 @@ export type InstituteCreateManyCityInput = {
   feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
   planExpiresAt?: Date | string | null
+  facebookUrl?: string | null
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  youtubeUrl?: string | null
+  telegramUrl?: string | null
 }
 
 export type InstituteUpdateWithoutCityInput = {
@@ -3428,6 +3758,11 @@ export type InstituteUpdateWithoutCityInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
@@ -3472,6 +3807,11 @@ export type InstituteUncheckedUpdateWithoutCityInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
@@ -3516,6 +3856,11 @@ export type InstituteUncheckedUpdateManyWithoutCityInput = {
   feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -3654,6 +3999,11 @@ export type InstituteSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   feeInfo?: boolean
   classroomImages?: boolean
   planExpiresAt?: boolean
+  facebookUrl?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  youtubeUrl?: boolean
+  telegramUrl?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
   categories?: boolean | Prisma.Institute$categoriesArgs<ExtArgs>
   managers?: boolean | Prisma.Institute$managersArgs<ExtArgs>
@@ -3701,6 +4051,11 @@ export type InstituteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   feeInfo?: boolean
   classroomImages?: boolean
   planExpiresAt?: boolean
+  facebookUrl?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  youtubeUrl?: boolean
+  telegramUrl?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -3737,6 +4092,11 @@ export type InstituteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   feeInfo?: boolean
   classroomImages?: boolean
   planExpiresAt?: boolean
+  facebookUrl?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  youtubeUrl?: boolean
+  telegramUrl?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -3773,9 +4133,14 @@ export type InstituteSelectScalar = {
   feeInfo?: boolean
   classroomImages?: boolean
   planExpiresAt?: boolean
+  facebookUrl?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  youtubeUrl?: boolean
+  telegramUrl?: boolean
 }
 
-export type InstituteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "phone" | "email" | "website" | "address" | "latitude" | "longitude" | "logo" | "coverImage" | "googlePlaceId" | "googleRating" | "googleReviewCount" | "cityId" | "isVerified" | "isFeatured" | "isActive" | "createdAt" | "updatedAt" | "imageUrl" | "averageRating" | "reviewCount" | "googleMapsUrl" | "placeTypes" | "gallery" | "subscriptionPlan" | "youtubeVideos" | "feeInfo" | "classroomImages" | "planExpiresAt", ExtArgs["result"]["institute"]>
+export type InstituteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "phone" | "email" | "website" | "address" | "latitude" | "longitude" | "logo" | "coverImage" | "googlePlaceId" | "googleRating" | "googleReviewCount" | "cityId" | "isVerified" | "isFeatured" | "isActive" | "createdAt" | "updatedAt" | "imageUrl" | "averageRating" | "reviewCount" | "googleMapsUrl" | "placeTypes" | "gallery" | "subscriptionPlan" | "youtubeVideos" | "feeInfo" | "classroomImages" | "planExpiresAt" | "facebookUrl" | "instagramUrl" | "twitterUrl" | "youtubeUrl" | "telegramUrl", ExtArgs["result"]["institute"]>
 export type InstituteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
   categories?: boolean | Prisma.Institute$categoriesArgs<ExtArgs>
@@ -3845,6 +4210,11 @@ export type $InstitutePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     feeInfo: string | null
     classroomImages: string[]
     planExpiresAt: Date | null
+    facebookUrl: string | null
+    instagramUrl: string | null
+    twitterUrl: string | null
+    youtubeUrl: string | null
+    telegramUrl: string | null
   }, ExtArgs["result"]["institute"]>
   composites: {}
 }
@@ -4311,6 +4681,11 @@ export interface InstituteFieldRefs {
   readonly feeInfo: Prisma.FieldRef<"Institute", 'String'>
   readonly classroomImages: Prisma.FieldRef<"Institute", 'String[]'>
   readonly planExpiresAt: Prisma.FieldRef<"Institute", 'DateTime'>
+  readonly facebookUrl: Prisma.FieldRef<"Institute", 'String'>
+  readonly instagramUrl: Prisma.FieldRef<"Institute", 'String'>
+  readonly twitterUrl: Prisma.FieldRef<"Institute", 'String'>
+  readonly youtubeUrl: Prisma.FieldRef<"Institute", 'String'>
+  readonly telegramUrl: Prisma.FieldRef<"Institute", 'String'>
 }
     
 

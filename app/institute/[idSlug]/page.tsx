@@ -7,7 +7,8 @@ import Breadcrumb from "@/components/navigation/BreadCrumbs";
 import Link from "next/link";
 import InstituteMap from "@/components/maps/InstituteMap";
 import ReviewForm from "@/components/reviews/ReviewForm";
-import { Star, Phone, MapPin, Mail, Globe, CheckCircle, Users, Trophy, PlayCircle, User } from "lucide-react"; 
+// 🚀 Naye icons import kiye hain social aur classrooms ke liye
+import { Star, Phone, MapPin, Mail, Globe, CheckCircle, Users, Trophy, PlayCircle, User, Presentation, IndianRupee } from "lucide-react"; 
 import Image from "next/image";
 import SmartButton from "@/components/ui/SmartButton";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,8 @@ import { headers } from "next/headers";
 import { auth } from "@/lib/auth/auth";
 import { trackVisitHistory } from "@/lib/User/user/user-activity";
 import { prisma } from "@/lib/prisma";
-import SaveButton from "@/components/ui/SaveButton"; // Fixed extension .tsx
+import SaveButton from "@/components/ui/SaveButton"; 
+import { FaFacebook, FaInstagram, FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export const revalidate = 86400;
 
@@ -145,10 +147,10 @@ export default async function InstitutePage({ params }: PageProps) {
 
           <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_350px]">
             <div>
-              <div className="rounded-3xl border bg-white p-8 shadow-sm">
+              <div className="rounded-3xl border bg-white p-6 md:p-8 shadow-sm">
                 <div className="flex flex-col gap-6 md:flex-row md:items-start">
                   
-                  <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-3xl border shadow-sm">
+                  <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-3xl border shadow-sm mx-auto md:mx-0">
                     <Image 
                       src={institute.logo ?? institute.imageUrl ?? "/inst.jpg"} 
                       alt={institute.name} 
@@ -158,11 +160,10 @@ export default async function InstitutePage({ params }: PageProps) {
                     />
                   </div>
 
-                  <div className="flex-1">
-                    {/* 🚀 FIX: Made this row completely flex so the save button is ALWAYS on the right */}
-                    <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
                       <div>
-                        <div className="flex flex-wrap items-center gap-2">
+                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
                           <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">
                             {institute.name}
                           </h1>
@@ -173,8 +174,8 @@ export default async function InstitutePage({ params }: PageProps) {
                           )}
                         </div>
 
-                        <div className="mt-3 flex flex-wrap items-center gap-3">
-                          <div className="flex flex-wrap gap-2">
+                        <div className="mt-3 flex flex-wrap items-center justify-center md:justify-start gap-3">
+                          <div className="flex flex-wrap justify-center gap-2">
                             {institute.categories.map((item: any) => (
                               <span
                                 key={item.category.id}
@@ -194,7 +195,6 @@ export default async function InstitutePage({ params }: PageProps) {
                         </div>
                       </div>
                       
-                      {/* 🚀 FIX: Save Button & Text wrapped in a col-flex */}
                       <div className="shrink-0 flex flex-col items-center justify-center gap-1.5 pt-1 relative z-20">
                         <SaveButton 
                           userId={session?.user?.id} 
@@ -204,7 +204,7 @@ export default async function InstitutePage({ params }: PageProps) {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 border border-slate-100">
+                    <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 border border-slate-100 text-left">
                       <div className="flex items-start gap-2.5 text-slate-600">
                         <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                         <span className="text-sm leading-relaxed">{institute.address || institute.city.name}</span>
@@ -232,35 +232,72 @@ export default async function InstitutePage({ params }: PageProps) {
                           </a>
                         )}
                       </div>
+
+
+                      {(institute.facebookUrl || institute.instagramUrl || institute.twitterUrl || institute.youtubeUrl || institute.telegramUrl) && (
+                        <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-slate-200/60 mt-1">
+                          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mr-1">Follow Us:</span>
+                          {institute.instagramUrl && (
+                            <a href={institute.instagramUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-pink-600 hover:bg-pink-50 hover:scale-105 transition-all shadow-xs">
+                              <FaInstagram className="h-4 w-4" />
+                            </a>
+                          )}
+                          {institute.facebookUrl && (
+                            <a href={institute.facebookUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-blue-600 hover:bg-blue-50 hover:scale-105 transition-all shadow-xs">
+                              <FaFacebook className="h-4 w-4" />
+                            </a>
+                          )}
+                          {institute.youtubeUrl && (
+                            <a href={institute.youtubeUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-red-600 hover:bg-red-50 hover:scale-105 transition-all shadow-xs">
+                              <FaYoutube className="h-4 w-4" />
+                            </a>
+                          )}
+                          {institute.twitterUrl && (
+                            <a href={institute.twitterUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-slate-800 hover:bg-slate-100 hover:scale-105 transition-all shadow-xs">
+                              <FaTwitter className="h-4 w-4" />
+                            </a>
+                          )}
+                          {institute.telegramUrl && (
+                            <a href={institute.telegramUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-slate-800 hover:bg-slate-100 hover:scale-105 transition-all shadow-xs">
+                              <FaTelegram className="h-4 w-4" />
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
 
+                {/* About Section */}
                 {institute.description ? (
-                  <p className="mt-8 leading-8 text-amber-700 bg-amber-50/50 p-5 border border-amber-100 rounded-2xl">
+                  <p className="mt-8 leading-8 text-amber-700 bg-amber-50/50 p-5 border border-amber-100 rounded-2xl text-sm md:text-base">
                     {institute.description}
                   </p>
                 ) : (
-                  <div className="mt-8 text-amber-700 bg-amber-50/50 p-5 border border-amber-100 rounded-2xl space-y-4">
-                    <p className="leading-8">
+                  <div className="mt-8 text-amber-700 bg-amber-50/50 p-5 border border-amber-100 rounded-2xl text-sm leading-7">
+                    <p>
                       <strong>{institute.name}</strong> located in {institute.city.name} is listed on AcademyFind to help students and parents discover educational and learning opportunities. Information displayed on this page has been compiled from publicly available sources and may be updated over time. For the latest details regarding courses, fees, schedules, admissions, and facilities, please contact the institute directly.
                     </p>
-                    
-                    {/* 🚀 FIX: Hidden if already claimed */}
-                    {!isAlreadyClaimed && (
-                        <div className="pt-4 border-t border-amber-200/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <p className="text-amber-800 text-sm sm:text-base leading-relaxed">
-                            <strong>Are you the owner or representative of this institute?</strong>{' '}
-                            Claim this profile to update information, add photos, and enhance your presence on AcademyFind.
-                        </p>
+                  </div>
+                )}
 
-                        <Link href={`/institute/${institute.id}-${institute.slug}/claim`} className="shrink-0">
-                            <Button className="bg-amber-600 hover:bg-amber-700 text-white cursor-pointer transition-colors px-6">
-                            Claim Profile
-                            </Button>
-                        </Link>
-                        </div>
-                    )}
+                {/* 🚀 BUG FIX: Claim Profile is now completely independent and checks zero managers correctly */}
+                {!isAlreadyClaimed && (
+                  <div className="mt-5 p-5 bg-blue-50 border border-blue-100 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="space-y-1">
+                      <p className="text-slate-900 font-bold flex items-center gap-1.5 text-sm md:text-base">
+                        <CheckCircle className="w-4 h-4 text-blue-500" /> Are you the owner or representative?
+                      </p>
+                      <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        Claim this profile to update listing information, manage classroom images, add faculty details, and respond to direct student leads.
+                      </p>
+                    </div>
+
+                    <Link href={`/institute/${institute.id}-${institute.slug}/claim`} className="shrink-0 w-full sm:w-auto">
+                      <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-colors px-6 font-bold w-full sm:w-auto rounded-xl">
+                        Claim Profile
+                      </Button>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -273,6 +310,15 @@ export default async function InstitutePage({ params }: PageProps) {
                 <p className="mt-2 text-sm text-slate-600">
                   Connect with experts and compare institutes before admission.
                 </p>
+                
+                {/* Display Dynamic starting fee info if available */}
+                {institute.feeInfo && (
+                    <div className="mt-4 p-3 bg-slate-50 border rounded-xl flex items-center justify-between">
+                        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Estimated Fees</span>
+                        <span className="text-sm font-bold text-slate-800 flex items-center gap-0.5"><IndianRupee className="w-3.5 h-3.5" />{institute.feeInfo}</span>
+                    </div>
+                )}
+
                 <Link href="/contact">
                   <SmartButton className="mt-5 w-full rounded-xl bg-amber-400 px-5 py-3 font-semibold text-black transition hover:bg-amber-500">
                     Enquire Now
@@ -297,7 +343,7 @@ export default async function InstitutePage({ params }: PageProps) {
         
         {/* Quick Facts */}
         <section>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-3xl border bg-white p-6 shadow-sm">
               <p className="text-sm text-slate-500">City</p>
               <h3 className="mt-2 text-2xl font-bold text-slate-800">{institute.city.name}</h3>
@@ -350,6 +396,32 @@ export default async function InstitutePage({ params }: PageProps) {
           </section>
         )}
 
+        {/* 🚀 NAYA INTEGRATION: CAMPUS & CLASSROOM IMAGES GALLERY */}
+        {institute.classroomImages && institute.classroomImages.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 bg-blue-100 text-blue-600 rounded-xl"><Presentation className="w-6 h-6" /></div>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900">Campus & Classrooms</h2>
+                <p className="text-slate-500 text-sm mt-1">Take a look inside our modern learning environments.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {institute.classroomImages.map((url: string, idx: number) => (
+                <div key={idx} className="relative aspect-4/3 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm group cursor-pointer">
+                  <img 
+                    src={url} 
+                    alt={`Classroom Infrastructure ${idx + 1}`} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* RESULT IMAGES / GALLERY */}
         {institute.gallery && institute.gallery.length > 0 && (
           <section>
@@ -357,7 +429,7 @@ export default async function InstitutePage({ params }: PageProps) {
               <div className="p-3 bg-amber-100 text-amber-600 rounded-xl"><Trophy className="w-6 h-6" /></div>
               <div>
                 <h2 className="text-3xl font-bold text-slate-900">Student Achievements</h2>
-                <p className="text-slate-500 text-sm mt-1">Glimpses of past results and campus.</p>
+                <p className="text-slate-500 text-sm mt-1">Glimpses of past results and milestones.</p>
               </div>
             </div>
 
@@ -366,10 +438,10 @@ export default async function InstitutePage({ params }: PageProps) {
                 <div key={idx} className="relative aspect-4/3 overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm group cursor-pointer">
                   <img 
                     src={url} 
-                    alt={`Result ${idx + 1}`} 
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    alt={`Result banner ${idx + 1}`} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
                 </div>
               ))}
             </div>
@@ -465,7 +537,6 @@ export default async function InstitutePage({ params }: PageProps) {
                   key={simInst.id} 
                   className="group flex flex-col rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  {/* Card Image */}
                   <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 relative">
                     <img 
                       src={simInst.imageUrl ?? simInst.logo ?? "/no_image/coaching_inst.PNG"} 
@@ -480,7 +551,6 @@ export default async function InstitutePage({ params }: PageProps) {
                     )}
                   </div>
                   
-                  {/* Card Content */}
                   <div className="p-5 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md line-clamp-1">
@@ -495,7 +565,6 @@ export default async function InstitutePage({ params }: PageProps) {
                       {simInst.address || simInst.city.name}
                     </p>
                     
-                    {/* Card Footer (Rating) */}
                     <div className="mt-auto pt-5 flex items-center gap-2">
                         <div className="flex items-center gap-1 bg-slate-50 border border-slate-100 px-2 py-1 rounded-lg">
                           <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
