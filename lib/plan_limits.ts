@@ -16,7 +16,7 @@ export const PLAN_LIMITS = {
         hasPriorityRanking: false,
     },
     VERIFIED: {
-        hasLeads: true,
+        hasLeads: false,
         hasVerifiedBadge: true,
         hasAnalytics: false,
         maxTeachers: 0,

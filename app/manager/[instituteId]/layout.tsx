@@ -72,13 +72,13 @@ export default async function ManagerDashBoardLayout({
                             icon={<LayoutDashboardIcon />} 
                             label="Dashboard"  
                         />
-                        <SidebarLink href={`/manager/${instituteId}/profile`} icon={<User />} label="Profile Data" />
+                        <SidebarLink href={`/manager/${instituteId}/profile`} icon={<User />} label="Profile Data" locked={plan == "BASIC"}/>
                         
                         <SidebarLink 
                             href={`/manager/${instituteId}/leads`} 
                             icon={<MessageSquare />} 
                             label="Student Leads" 
-                            locked={plan === "BASIC"} 
+                            locked={plan === "BASIC" || plan == "VERIFIED"} 
                         />
                         
                         <SidebarLink 

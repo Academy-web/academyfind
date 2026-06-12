@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { updateInstituteProfile } from "@/lib/User/manager/updateProfile";
-import { Save, Lock, Check, MapPin, Image as ImageIcon, IndianRupee, Link as LinkIcon, UploadCloud, Map } from "lucide-react";
+import { Save, Lock, Check, MapPin, Image as ImageIcon, IndianRupee, Link as LinkIcon, UploadCloud, Map, Video, Users, Trophy, ShieldCheck } from "lucide-react";
 import { useState } from "react"
 import toast from "react-hot-toast";
 import VideoSettings from "./EditVideoLinks";
@@ -11,9 +11,6 @@ import { PLAN_LIMITS, PlanType } from "@/lib/plan_limits";
 import EditTeachers from "./EditTeacherProfile";
 import EditResultImages from "./EditResultImages";
 import LocationAutocomplete from "@/components/admin/AdminLocationAutoComplete";
-
-// 🚀 Apna component import karein (path check kar lena)
-
 
 export default function EditProfileForm({
     institute, 
@@ -32,11 +29,13 @@ export default function EditProfileForm({
     const initialCategories = institute.categories?.map((c: any) => c.categoryId || c.id) || [];
     const [selectedCategories, setSelectedCategories] = useState<string[]>(initialCategories);
 
-    // 🚀 Location & Coordinate States
+    // Location & Coordinate States
     const [address, setAddress] = useState(institute.address || "");
     const [latitude, setLatitude] = useState(institute.latitude?.toString() || "");
     const [longitude, setLongitude] = useState(institute.longitude?.toString() || "");
+    
     const showActualImage = imagePreview.includes("cloudinary.com") || imagePreview.startsWith("blob:");
+    
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
@@ -47,11 +46,9 @@ export default function EditProfileForm({
         }
 
         setImageFile(file);
-        setImagePreview(URL.createObjectURL(file)); // Generate instant fast preview
+        setImagePreview(URL.createObjectURL(file)); 
     };
     
-
-    // Category Toggle Handler
     const toggleCategory = (categoryId: string) => {
         setSelectedCategories((prev) => 
             prev.includes(categoryId) 
@@ -60,7 +57,6 @@ export default function EditProfileForm({
         );
     };
 
-    // 🚀 Google Maps Se Location Aane Par State Update Handler
     const handleLocationSelect = (lat: number, lng: number, newAddress: string) => {
         setLatitude(lat.toString());
         setLongitude(lng.toString());
@@ -87,193 +83,167 @@ export default function EditProfileForm({
     }
 
     const limits = PLAN_LIMITS[institute.subscriptionPlan as PlanType] || PLAN_LIMITS.BASIC;
-    if (institute.subscriptionPlan === "BASIC") {
+    const isPremiumOrUltra = institute.subscriptionPlan === "PREMIUM" || institute.subscriptionPlan === "ULTRA";
+
+    // =======================================================
+    // 🚨 1. FULL PAGE LOCK FOR "BASIC" (FREE) PLAN
+    // =======================================================
+    if (institute.subscriptionPlan === "BASIC" || !institute.subscriptionPlan) {
         return (
-            <div className="min-h-[500px] flex flex-col items-center justify-center text-center p-8 bg-slate-50/50 rounded-3xl border border-dashed border-slate-200">
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
-                    <Lock className="w-8 h-8" />
+            <div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8 bg-white rounded-3xl border border-slate-200 shadow-sm max-w-3xl mx-auto">
+                <div className="w-20 h-20 bg-slate-50 border border-slate-100 text-slate-400 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                    <Lock className="w-10 h-10" />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-800 mb-2">Student Leads Locked</h2>
-                <p className="text-slate-500 max-w-md mb-6">
-                    Unlock direct student enquiries and lead generation. Upgrade to the <b>Verified, Premium  Plan</b> or <b>Featured </b>to see who is trying to contact your academy.
+                <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">Profile Editing is Locked</h2>
+                <p className="text-slate-500 max-w-md mb-8 text-sm md:text-base leading-relaxed">
+                    You are currently on the <b>Free (Basic)</b> tier. To take control of this listing, update details, and start receiving student leads, please verify your academy.
                 </p>
-                <Link href={`/manager/${institute.id}/subscription`} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-medium transition">
-                    View Upgrade Plans
+                <Link href={`/manager/${institute.id}/subscription`} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-2xl font-bold transition shadow-lg shadow-blue-600/20 flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5" /> Verify Academy Now
                 </Link>
             </div>
         );
     }
 
+    // =======================================================
+    // ✅ 2. FORM FOR VERIFIED, PREMIUM & ULTRA PLANS
+    // =======================================================
     return (
-        <div className="space-y-8 max-w-5xl mx-auto">
-            {/* 🚀 MAIN FORM */}
+        <div className="space-y-10 max-w-5xl mx-auto pb-16">
+            
+            {/* 🚀 MAIN FORM: Accessible to VERIFIED, PREMIUM, ULTRA */}
             <form action={handleSubmit} className="space-y-8 bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200">
-                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 space-y-4">
-                    <h3 className="font-bold text-slate-800 text-lg border-b pb-2 flex items-center gap-2">
-                        <ImageIcon className="w-5 h-5 text-purple-600" /> Main Display Image
+                
+                {/* Image Upload */}
+                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 space-y-4">
+                    <h3 className="font-bold text-slate-800 text-base border-b pb-2 flex items-center gap-2">
+                        <ImageIcon className="w-4 h-4 text-purple-600" /> Main Display Image
                     </h3>
                     
-                    <div className="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 rounded-xl space-y-4">
-                        <div className="w-full max-w-lg h-48 sm:h-64 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-center overflow-hidden relative shadow-inner p-4 text-center">
-                            
+                    <div className="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-xl space-y-4">
+                        <div className="w-full max-w-lg h-44 sm:h-56 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-center overflow-hidden relative shadow-inner p-4 text-center">
                             {showActualImage ? (
                                 <img src={imagePreview} alt="Institute Cover" className="w-full h-full object-cover absolute inset-0" />
                             ) : imagePreview ? (
-                                <div className="flex flex-col items-center gap-3 text-slate-500 w-full">
-                                    <ImageIcon className="w-8 h-8 text-slate-300" />
-                                    <div className="text-sm font-semibold text-slate-700">Google Places / External Reference Stored</div>
-                                    <div className="text-xs bg-white border border-slate-200 text-slate-500 px-3 py-2 rounded-lg w-full truncate font-mono select-all">
+                                <div className="flex flex-col items-center gap-2 text-slate-500 w-full">
+                                    <ImageIcon className="w-6 h-6 text-slate-300" />
+                                    <div className="text-xs font-semibold text-slate-700">External Reference Stored</div>
+                                    <div className="text-[10px] bg-white border border-slate-200 text-slate-500 px-2 py-1 rounded-md w-full truncate font-mono select-all">
                                         {imagePreview}
                                     </div>
-                                    <div className="text-[10px] text-slate-400">Preview disabled to prevent API billing. Upload a new image to replace.</div>
                                 </div>
                             ) : (
-                                <div className="text-sm text-slate-400 flex flex-col items-center gap-2">
-                                    <ImageIcon className="w-8 h-8 text-slate-300"/> 
+                                <div className="text-xs text-slate-400 flex flex-col items-center gap-1">
+                                    <ImageIcon className="w-6 h-6 text-slate-300"/> 
                                     <span>No Image Available</span>
                                 </div>
                             )}
-
                         </div>
 
-                        <label className="cursor-pointer bg-slate-900 hover:bg-purple-700 text-white text-sm px-6 py-2.5 rounded-xl font-semibold transition-all flex items-center gap-2">
-                            <UploadCloud className="w-4 h-4" />
+                        <label className="cursor-pointer bg-slate-900 hover:bg-purple-700 text-white text-xs px-5 py-2 rounded-xl font-semibold transition-all flex items-center gap-2">
+                            <UploadCloud className="w-3.5 h-3.5" />
                             Change Cover Image
                             <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
                         </label>
                     </div>
                 </div>
-                {/* ... (SECTION 1 & 2 SAME RAHENGE) ... */}
+
+                {/* Basic Details */}
                 <div>
-                    <h3 className="text-lg font-bold text-slate-800 border-b pb-3 mb-5">Basic Details</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Institute Name *</label>
-                            <input type="text" name="name" defaultValue={institute.name || ""} required className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                    <h3 className="text-base font-bold text-slate-800 border-b pb-2 mb-4">Basic Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Institute Name *</label>
+                            <input type="text" name="name" defaultValue={institute.name || ""} required className="w-full p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                         </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Public Email</label>
-                            <input type="email" name="email" defaultValue={institute.email || ""} className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Public Email</label>
+                            <input type="email" name="email" defaultValue={institute.email || ""} className="w-full p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                         </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Phone Number</label>
-                            <input type="text" name="phone" defaultValue={institute.phone || ""} className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Phone Number</label>
+                            <input type="text" name="phone" defaultValue={institute.phone || ""} className="w-full p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                         </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Website URL</label>
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Website URL</label>
                             <div className="relative">
-                                <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                <input type="url" name="website" defaultValue={institute.website || ""} placeholder="https://..." className="w-full pl-9 p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                                <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+                                <input type="url" name="website" defaultValue={institute.website || ""} placeholder="https://..." className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                             </div>
                         </div>
                     </div>
                 </div>
 
+                {/* Media & Pricing */}
                 <div>
-                    <h3 className="text-lg font-bold text-slate-800 border-b pb-3 mb-5">Media & Pricing</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Starting Fee Info</label>
-                            <div className="relative">
-                                <IndianRupee className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                                <input type="text" name="feeInfo" defaultValue={institute.feeInfo || ""} placeholder="e.g. Starting from ₹5,000/month" className="w-full pl-9 p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
-                            </div>
-                            <p className="text-xs text-slate-500">Give students an idea of your fee structure.</p>
+                    <h3 className="text-base font-bold text-slate-800 border-b pb-2 mb-4">Pricing Info</h3>
+                    <div className="space-y-1.5 max-w-md">
+                        <label className="text-xs font-semibold text-slate-600">Starting Fee Info</label>
+                        <div className="relative">
+                            <IndianRupee className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+                            <input type="text" name="feeInfo" defaultValue={institute.feeInfo || ""} placeholder="e.g. Starting from ₹5,000/month" className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                        </div>
                     </div>
                 </div>
-                    </div>
-                {/* 🚀 SECTION 3: Location Details (UPDATED) */}
+
+                {/* Location & Coordinates */}
                 <div>
-                    <h3 className="text-lg font-bold text-slate-800 border-b pb-3 mb-5 flex items-center gap-2">
-                        <Map className="w-5 h-5 text-blue-600" /> Location & Coordinates
+                    <h3 className="text-base font-bold text-slate-800 border-b pb-2 mb-4 flex items-center gap-1.5">
+                        <Map className="w-4 h-4 text-blue-600" /> Location & Coordinates
                     </h3>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 border border-slate-200 p-6 rounded-2xl mb-6">
-                        {/* 1. Google Places Search */}
-                        <div className="space-y-2 md:col-span-2">
-                            <label className="text-sm font-bold text-slate-700">Search to Auto-fill Address & Coordinates</label>
-                            {/* Aapka Autocomplete Component Yahan Hai */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 border border-slate-200 p-5 rounded-2xl mb-4">
+                        <div className="space-y-1.5 md:col-span-2">
+                            <label className="text-xs font-bold text-slate-600">Search to Auto-fill Address & Coordinates</label>
                             <div className="w-full [&>div]:w-full"> 
                                 <LocationAutocomplete onLocationSelect={handleLocationSelect} />
                             </div>
                         </div>
 
-                        {/* 2. Editable Address Box */}
-                        <div className="space-y-2 md:col-span-2">
-                            <label className="text-sm font-semibold text-slate-700">Full Address *</label>
+                        <div className="space-y-1.5 md:col-span-2">
+                            <label className="text-xs font-semibold text-slate-600">Full Address *</label>
                             <div className="relative">
-                                <MapPin className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
+                                <MapPin className="absolute left-3 top-3 w-3.5 h-3.5 text-slate-400" />
                                 <textarea 
                                     name="address" 
                                     value={address} 
                                     onChange={(e) => setAddress(e.target.value)}
                                     required
                                     rows={2}
-                                    className="w-full pl-9 p-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
+                                    className="w-full pl-9 p-2.5 text-sm rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
                                 />
                             </div>
                         </div>
 
-                        {/* 3. Editable Latitude */}
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Latitude</label>
-                            <input 
-                                type="text" 
-                                name="latitude" 
-                                value={latitude}
-                                onChange={(e) => setLatitude(e.target.value)}
-                                placeholder="e.g. 28.6139"
-                                className="w-full p-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm"
-                            />
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Latitude</label>
+                            <input type="text" name="latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} placeholder="e.g. 28.6139" className="w-full p-2.5 text-sm rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none font-mono" />
                         </div>
 
-                        {/* 4. Editable Longitude */}
-                        <div className="space-y-2">
-                            <label className="text-sm font-semibold text-slate-700">Longitude</label>
-                            <input 
-                                type="text" 
-                                name="longitude" 
-                                value={longitude}
-                                onChange={(e) => setLongitude(e.target.value)}
-                                placeholder="e.g. 77.2090"
-                                className="w-full p-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none font-mono text-sm"
-                            />
+                        <div className="space-y-1.5">
+                            <label className="text-xs font-semibold text-slate-600">Longitude</label>
+                            <input type="text" name="longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} placeholder="e.g. 77.2090" className="w-full p-2.5 text-sm rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500 outline-none font-mono" />
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2 md:col-span-2">
-                            <label className="text-sm font-semibold text-slate-700">Google Maps Share URL (Optional)</label>
-                            <input 
-                                type="url" 
-                                name="googleMapsUrl" 
-                                defaultValue={institute.googleMapsUrl || ""} 
-                                placeholder="https://maps.app.goo.gl/..."
-                                className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
-                            />
-                        </div>
+                    <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-600">Google Maps Share URL (Optional)</label>
+                        <input type="url" name="googleMapsUrl" defaultValue={institute.googleMapsUrl || ""} placeholder="https://maps.google.com/..." className="w-full p-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                     </div>
                 </div>
 
-                {/* ... (SECTION 4 & 5 SAME RAHENGE) ... */}
+                {/* About */}
                 <div>
-                    <h3 className="text-lg font-bold text-slate-800 border-b pb-3 mb-5">About</h3>
+                    <h3 className="text-base font-bold text-slate-800 border-b pb-2 mb-4">About</h3>
+                    <div className="space-y-1.5">
+                        <textarea name="description" rows={4} defaultValue={institute.description || ""} placeholder="Tell students about your courses, batches, and achievements..." className="w-full p-3 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none" />
+                    </div>
+                </div>
+
+                {/* Categories */}
+                <div>
+                    <h3 className="text-base font-bold text-slate-800 border-b pb-2 mb-4">Categories</h3>
                     <div className="space-y-2">
-                        <label className="text-sm font-semibold text-slate-700">About the Institute</label>
-                        <textarea 
-                            name="description" 
-                            rows={4}
-                            defaultValue={institute.description || ""} 
-                            placeholder="Tell students about your courses, batches, and achievements..."
-                            className="w-full p-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
-                        />
-                    </div>
-                </div>
-
-                <div>
-                    <h3 className="text-lg font-bold text-slate-800 border-b pb-3 mb-5">Categories</h3>
-                    <div className="space-y-3">
-                        <label className="text-sm font-semibold text-slate-700">Select applicable categories</label>
                         <div className="flex flex-wrap gap-2">
                             {allCategories?.map((cat) => {
                                 const isSelected = selectedCategories.includes(cat.id);
@@ -282,13 +252,13 @@ export default function EditProfileForm({
                                         type="button"
                                         key={cat.id}
                                         onClick={() => toggleCategory(cat.id)}
-                                        className={`px-4 py-2 rounded-full text-sm font-medium border transition-all flex items-center gap-2 ${
+                                        className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5 ${
                                             isSelected 
                                                 ? "bg-blue-50 border-blue-300 text-blue-700 shadow-sm" 
                                                 : "bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50"
                                         }`}
                                     >
-                                        {isSelected && <Check className="w-4 h-4 text-blue-600" />}
+                                        {isSelected && <Check className="w-3.5 h-3.5 text-blue-600" />}
                                         {cat.name}
                                     </button>
                                 );
@@ -297,36 +267,77 @@ export default function EditProfileForm({
                     </div>
                 </div>
 
-                {/* SUBMIT */}
-                <div className="flex justify-end pt-6 border-t border-slate-100">
-                    <Button 
-                        type="submit" 
-                        disabled={isLoading}
-                        className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl gap-2 px-8 py-6 font-bold text-base w-full sm:w-auto shadow-md"
-                    >
-                        {isLoading ? "Saving Details..." : <><Save className="w-5 h-5" /> Save Profile Details</>}
+                {/* SUBMIT BUTTON */}
+                <div className="flex justify-end pt-4 border-t border-slate-100">
+                    <Button type="submit" disabled={isLoading} className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl gap-2 px-6 shadow-sm">
+                        {isLoading ? "Saving Details..." : <><Save className="w-4 h-4" /> Save Profile Details</>}
                     </Button>
                 </div>
             </form>
 
-            {/* EXTERNAL COMPONENTS */}
-            {limits.maxVideos > 0 ? (
+            {/* ======================================================= */}
+            {/* 🚨 3. CONDITIONAL PREMIUM/ULTRA FEATURES SECTIONS        */}
+            {/* ======================================================= */}
+
+            {/* YouTube Videos Component */}
+            {isPremiumOrUltra ? (
                 <VideoSettings instituteId={institute.id} currentVideos={institute.youtubeVideos || []} maxLimit={limits.maxVideos} />
             ) : (
-                <div className="bg-slate-50 border border-dashed border-slate-300 rounded-2xl p-8 text-center flex flex-col items-center">
-                    <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center mb-3">
-                        <Lock className="w-6 h-6 text-slate-500" />
+                <div className="bg-slate-50/60 border border-dashed border-slate-200 rounded-3xl p-6 text-center flex flex-col items-center shadow-inner">
+                    <div className="w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center mb-3 shadow-sm text-slate-400">
+                        <Lock className="w-4 h-4" />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-800">YouTube Videos Locked</h3>
-                    <p className="text-sm text-slate-500 max-w-md mt-1 mb-4">You are currently on the Free Listing plan. Upgrade your plan to showcase your academy's YouTube videos.</p>
-                    <Link href={`/manager/${institute.id}/subscription`} className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-semibold transition">
-                        View Premium Plans
+                    <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                        <Video className="w-4 h-4 text-red-500" /> YouTube Video Integration Locked
+                    </h3>
+                    <p className="text-xs text-slate-500 max-w-sm mt-1 mb-3">
+                        Showcase your classroom dynamic and video lectures directly on your public profile page.
+                    </p>
+                    <Link href={`/manager/${institute.id}/subscription`} className="bg-slate-900 hover:bg-blue-600 text-white text-xs px-4 py-2 rounded-xl font-medium transition shadow-sm">
+                        Upgrade to Premium
                     </Link>
                 </div>
             )}
             
-            <EditResultImages instituteId={institute.id} currentImages={institute.gallery || []} maxLimit={limits.maxResults} />
-            <EditTeachers instituteId={institute.id} currentTeachers={institute.teachers || []} maxLimit={limits.maxTeachers} />
+            {/* Results Gallery Component */}
+            {isPremiumOrUltra ? (
+                <EditResultImages instituteId={institute.id} currentImages={institute.gallery || []} maxLimit={limits.maxResults} />
+            ) : (
+                <div className="bg-slate-50/60 border border-dashed border-slate-200 rounded-3xl p-6 text-center flex flex-col items-center shadow-inner">
+                    <div className="w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center mb-3 shadow-sm text-slate-400">
+                        <Lock className="w-4 h-4" />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                        <Trophy className="w-4 h-4 text-amber-500" /> Toppers & Results Gallery Locked
+                    </h3>
+                    <p className="text-xs text-slate-500 max-w-sm mt-1 mb-3">
+                        Publish images of top-ranking students, batch results, and milestone banners to build trust.
+                    </p>
+                    <Link href={`/manager/${institute.id}/subscription`} className="bg-slate-900 hover:bg-blue-600 text-white text-xs px-4 py-2 rounded-xl font-medium transition shadow-sm">
+                        Upgrade to Premium
+                    </Link>
+                </div>
+            )}
+
+            {/* Teacher Profiles Component */}
+            {isPremiumOrUltra ? (
+                <EditTeachers instituteId={institute.id} currentTeachers={institute.teachers || []} maxLimit={limits.maxTeachers} />
+            ) : (
+                <div className="bg-slate-50/60 border border-dashed border-slate-200 rounded-3xl p-6 text-center flex flex-col items-center shadow-inner">
+                    <div className="w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center mb-3 shadow-sm text-slate-400">
+                        <Lock className="w-4 h-4" />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                        <Users className="w-4 h-4 text-emerald-500" /> Faculty Profiles Locked
+                    </h3>
+                    <p className="text-xs text-slate-500 max-w-sm mt-1 mb-3">
+                        Introduce your experienced faculty members, their qualifications, and subjects taught.
+                    </p>
+                    <Link href={`/manager/${institute.id}/subscription`} className="bg-slate-900 hover:bg-blue-600 text-white text-xs px-4 py-2 rounded-xl font-medium transition shadow-sm">
+                        Upgrade to Premium
+                    </Link>
+                </div>
+            )}
         </div>
     );
 }
