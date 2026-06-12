@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { Save, ArrowLeft, Image as ImageIcon, UploadCloud, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import LocationAutocomplete from '@/components/admin/AdminLocationAutoComplete'
+import LocationAutocomplete from "../search/LocationAutoComplete";
 
 export default function AddInstituteForm({ 
     allCities, 
@@ -20,18 +20,11 @@ export default function AddInstituteForm({
     const [isLoading, setIsLoading] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-    // Image State
-    const [mainImageUrl, setMainImageUrl] = useState<string>("");
-    const [isUploadingImage, setIsUploadingImage] = useState(false);
-    const isCloudinaryImage = mainImageUrl.includes("cloudinary.com");
-
-    // Map/Location States (For Places API to populate)
+    // Map/Location States
     const [address, setAddress] = useState("");
     const [lat, setLat] = useState<string>("");
     const [lng, setLng] = useState<string>("");
 
-    // --- Google Places Mock Handler ---
-    // Jab aap apna LocationAutocomplete component layenge, toh uske onSelect prop me ye pass kijiye:
     const handlePlaceSelect = (lat: number, lng: number, formattedAddress: string) => {
         setAddress(formattedAddress);
         setLat(lat.toString());
@@ -39,11 +32,11 @@ export default function AddInstituteForm({
         toast.success("Location auto-filled from Google Places!");
     };
 
-    // Cloudinary Upload
+    // Cloudinary Upload States
     const [imageFile, setImageFile] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string>("");
+    const [isUploadingImage, setIsUploadingImage] = useState(false);
 
-    const showActualImage = imagePreview.includes("cloudinary.com") || imagePreview.startsWith("blob:");
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
@@ -71,17 +64,16 @@ export default function AddInstituteForm({
             formData.append("imageFile", imageFile);
         }
         
-        // Push controlled states to formData
         formData.set("address", address);
         formData.set("latitude", lat);
         formData.set("longitude", lng);
 
         const result = await createInstitute(formData, selectedCategories);
         if (result.success) {
-            toast.success(result.message || "Institue Created Successfully");
-            router.push(`/admin/institutes/${result.id}`); // Redirect to edit mode
+            toast.success(result.message || "Institute Created Successfully");
+            router.push(`/admin/institutes/${result.id}`); 
         } else {
-            toast.error(result.error || "Can't create institue");
+            toast.error(result.error || "Can't create institute");
             setIsLoading(false);
         }
     }
@@ -96,12 +88,13 @@ export default function AddInstituteForm({
                 </h3>
                 <div className="flex flex-col items-center p-6 bg-white border border-slate-200 rounded-xl space-y-4">
                     <div className="w-full max-w-lg h-48 sm:h-64 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-center overflow-hidden relative">
-                        {isCloudinaryImage ? (
-                            <img src={mainImageUrl} alt="Preview" className="w-full h-full object-cover" />
-                        ) : mainImageUrl ? (
-                            <div className="text-xs break-all px-4">{mainImageUrl}</div>
+                        {/* 🚀 FIX: Using imagePreview here instead of mainImageUrl */}
+                        {imagePreview ? (
+                            <img src={imagePreview} alt="Preview" className="w-full h-full object-cover absolute inset-0" />
                         ) : (
-                            <div className="text-sm text-slate-400 flex flex-col items-center"><ImageIcon className="w-8 h-8 mb-2"/> No Image</div>
+                            <div className="text-sm text-slate-400 flex flex-col items-center">
+                                <ImageIcon className="w-8 h-8 mb-2"/> No Image
+                            </div>
                         )}
                     </div>
                     <label className="cursor-pointer bg-slate-900 hover:bg-purple-700 text-white text-sm px-6 py-2.5 rounded-xl font-semibold transition-all">
@@ -111,7 +104,7 @@ export default function AddInstituteForm({
                 </div>
             </div>
 
-            {/* 2. Core & Location (Google Places + Manual) */}
+            {/* 2. Core & Location */}
             <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 space-y-4">
                 <h3 className="font-bold text-slate-800 text-lg border-b pb-2 flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-purple-600"/> Core Details & Google Places
@@ -131,12 +124,11 @@ export default function AddInstituteForm({
                     </div>
                 </div>
 
-                {/* 🚀 GOOGLE PLACES INTEGRATION SPOT */}
+                {/* GOOGLE PLACES INTEGRATION SPOT */}
                 <div className="p-4 bg-purple-50 rounded-xl border border-purple-100 mt-4 space-y-4">
                     <p className="text-xs text-purple-800 font-bold mb-2">Search to auto-fill Address, Lat & Lng:</p>
                         <LocationAutocomplete 
                         onLocationSelect={handlePlaceSelect} 
-                        className="w-full relative z-50" 
                     />
                 </div>
 
