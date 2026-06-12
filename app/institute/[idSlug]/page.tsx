@@ -238,7 +238,7 @@ export default async function InstitutePage({ params }: PageProps) {
                         <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-slate-200/60 mt-1">
                           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mr-1">Follow Us:</span>
                           {institute.whatsappUrl && (
-                            <a href={institute.whatsappUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-pink-600 hover:bg-pink-50 hover:scale-105 transition-all shadow-xs">
+                            <a href={institute.whatsappUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-green-500 hover:bg-pink-50 hover:scale-105 transition-all shadow-xs">
                               <FaWhatsapp className="h-4 w-4" />
                             </a>
                           )}
@@ -258,7 +258,7 @@ export default async function InstitutePage({ params }: PageProps) {
                             </a>
                           )}
                           {institute.linkedinUrl && (
-                            <a href={institute.linkedinUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-pink-600 hover:bg-pink-50 hover:scale-105 transition-all shadow-xs">
+                            <a href={institute.linkedinUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white border border-slate-200 text-blue-600 hover:bg-pink-50 hover:scale-105 transition-all shadow-xs">
                               <FaLinkedin className="h-4 w-4" />
                             </a>
                           )}
