@@ -23,6 +23,9 @@ const categories = [
           { name: "Class 12 Tuition", slug: "class-12-tuition" },
           { name: "Online Tuition", slug: "online-tuition" },
           { name: "Home Tuition", slug: "home-tuition" },
+          {name: "Nursery Tution", slug: "nursery-tuition"},
+          {name: "LKG Tution", slug: "lkg-tuition"},
+          {name: "Summer School", slug: "summer-school"},
         ],
       },
       {
