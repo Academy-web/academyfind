@@ -149,6 +149,7 @@ export default function AddInstituteForm({
                         <label className="text-xs font-bold text-slate-500">Plan</label>
                         <select name="subscriptionPlan" className="w-full p-2 border rounded-lg text-xs font-bold text-purple-700">
                             <option value="BASIC">BASIC</option>
+                            <option value="BASIC">Verified</option>
                             <option value="PREMIUM">PREMIUM</option>
                             <option value="ULTRA">ULTRA</option>
                         </select>

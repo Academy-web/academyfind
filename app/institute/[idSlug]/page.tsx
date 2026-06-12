@@ -81,7 +81,6 @@ export default async function InstitutePage({ params }: PageProps) {
   const displayRating = institute.googleRating ?? institute.averageRating ?? 0;
   const displayReviewCount = institute.googleReviewCount ?? institute.reviewCount ?? 0;
 
-  // 🚀 Logic to hide "Claim Profile" if a manager already exists
   const isAlreadyClaimed = institute.managers && institute.managers.length > 0;
 
   const primaryCategoryId = institute.categories[0]?.categoryId;

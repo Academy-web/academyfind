@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { v2 as cloudinary } from "cloudinary"
+import { sec } from "better-auth/plugins";
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -36,14 +37,14 @@ export async function addTeacher(instituteId: string, formData: FormData) {
 
         if (!name) return { success: false, error: "Teacher name is required." };
 
-        let imageUrl = null;
+        let securUrl = null;
         if (imageFile && imageFile.size > 0) {
             // Server side par Cloudinary upload
-            imageUrl = await uploadImageToCloudinary(imageFile, "teachers", `inst-${instituteId}-tch`);
+            securUrl = await uploadImageToCloudinary(imageFile, "teachers", `inst-${instituteId}-tch`);
         }
 
         await prisma.teacherProfile.create({
-            data: { name, subject, experience, imageUrl, instituteId }
+            data: { name, subject, experience, imageUrl:securUrl, instituteId }
         });
 
 
