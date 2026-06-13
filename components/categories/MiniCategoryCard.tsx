@@ -1,7 +1,7 @@
 interface Props {
   title: string;
   subtitle: string;
-  count: string;
+  count?: string;
   icon: React.ElementType;
 }
 

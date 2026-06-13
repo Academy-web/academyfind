@@ -20,7 +20,19 @@ export default async function CategoriesPage({
     include: {
       children: {
         include: {
-          children: true, 
+          children: {
+            include: {
+              _count: {
+                select: {
+                  institutes: {
+                    where: {
+                      institute: { isActive: true }
+                    }
+                  }
+                }
+              }
+            }
+          }, 
         },
       },
     },

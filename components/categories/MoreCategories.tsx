@@ -5,7 +5,7 @@ import MiniCategoryCard from "./MiniCategoryCard";
 const items = [
   { title: "CLAT", subtitle: "Law Entrance", count: "64", icon: Scale, slug: "clat-coaching" },
   { title: "CA / CS", subtitle: "Commerce", count: "112", icon: Calculator, slug: "ca-coaching" },
-  { title: "NID / NIFT", subtitle: "Design", count: "42", icon: GraduationCap, slug: "nift-coaching" },
+  { title: "NID / NIFT", subtitle: "Design", count: "42", icon: GraduationCap, slug: "fashion-designing" },
   { title: "IELTS / TOEFL", subtitle: "Study Abroad", count: "76", icon: Plane, slug: "ielts-coaching" },
   { title: "Railways", subtitle: "RRB Exams", count: "94", icon: Train, slug: "railway-coaching" },
   { title: "Defence", subtitle: "NDA & CDS", count: "58", icon: Shield, slug: "defence-coaching" },
@@ -29,8 +29,6 @@ export default function MoreCategories({ citySlug }: { citySlug?: string }) {
 
       <div className="mt-8 grid gap-4 lg:grid-cols-3">
         {items.map((item) => {
-          
-          // 🚀 THE MAGIC ROUTING LOGIC
           const targetUrl = citySlug 
             ? `/${item.slug}/${citySlug}` 
             : `/${item.slug}`;
@@ -40,7 +38,7 @@ export default function MoreCategories({ citySlug }: { citySlug?: string }) {
               <MiniCategoryCard
                 title={item.title}
                 subtitle={item.subtitle}
-                count={item.count}
+                //count={item.count}
                 icon={item.icon}
               />
             </Link>

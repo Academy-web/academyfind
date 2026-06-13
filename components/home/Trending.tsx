@@ -95,7 +95,7 @@ export function TrendingDestinations() {
           </div>
 
           <Link
-            href="/search"
+            href="/categories"
             className="hidden items-center gap-2 font-medium transition-colors hover:text-amber-500 md:flex"
           >
             View All

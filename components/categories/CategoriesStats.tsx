@@ -8,7 +8,7 @@ import {
 const stats = [
   {
     title: "Categories",
-    value: "65+",
+    value: "130+",
     icon: Layers3,
   },
   {
