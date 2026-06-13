@@ -1,4 +1,4 @@
-// app/actions/life-coach.ts ke andar add karein
+"use server"
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
