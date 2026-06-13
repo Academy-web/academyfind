@@ -94,7 +94,7 @@ export default async function SalesAssignmentsPage({
 
     // Build ownership map: instituteId -> other sales managers assigned
     const ownershipMap = new Map<string, { name: string; isYou: boolean }[]>();
-    allAssignmentsForOwnership.forEach(a => {
+    allAssignmentsForOwnership.forEach((a:any) => {
         const existing = ownershipMap.get(a.instituteId) || [];
         existing.push({
             name: a.salesManager.name || "Unknown",
@@ -199,7 +199,7 @@ export default async function SalesAssignmentsPage({
                                                 <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full border border-teal-100">
                                                     <User className="w-2.5 h-2.5" /> Assigned to you
                                                 </span>
-                                                {otherManagers.map((m, i) => (
+                                                {otherManagers.map((m:any, i:any) => (
                                                     <span key={i} className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
                                                         <User className="w-2.5 h-2.5" /> Also: {m.name}
                                                     </span>
