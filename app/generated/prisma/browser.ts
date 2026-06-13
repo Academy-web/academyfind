@@ -107,3 +107,13 @@ export type InstituteRequest = Prisma.InstituteRequestModel
  * 
  */
 export type SubscriptionPayment = Prisma.SubscriptionPaymentModel
+/**
+ * Model SalesAssignment
+ * 
+ */
+export type SalesAssignment = Prisma.SalesAssignmentModel
+/**
+ * Model SalesCategoryAssignment
+ * 
+ */
+export type SalesCategoryAssignment = Prisma.SalesCategoryAssignmentModel

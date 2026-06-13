@@ -401,7 +401,9 @@ export const ModelName = {
   TeacherProfile: 'TeacherProfile',
   ContactMessage: 'ContactMessage',
   InstituteRequest: 'InstituteRequest',
-  SubscriptionPayment: 'SubscriptionPayment'
+  SubscriptionPayment: 'SubscriptionPayment',
+  SalesAssignment: 'SalesAssignment',
+  SalesCategoryAssignment: 'SalesCategoryAssignment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -417,7 +419,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "institute" | "city" | "category" | "instituteCategory" | "instituteManager" | "review" | "instituteClaim" | "userShortlist" | "userHistory" | "instituteEnquiry" | "teacherProfile" | "contactMessage" | "instituteRequest" | "subscriptionPayment"
+    modelProps: "user" | "session" | "account" | "verification" | "institute" | "city" | "category" | "instituteCategory" | "instituteManager" | "review" | "instituteClaim" | "userShortlist" | "userHistory" | "instituteEnquiry" | "teacherProfile" | "contactMessage" | "instituteRequest" | "subscriptionPayment" | "salesAssignment" | "salesCategoryAssignment"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1753,6 +1755,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    SalesAssignment: {
+      payload: Prisma.$SalesAssignmentPayload<ExtArgs>
+      fields: Prisma.SalesAssignmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SalesAssignmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SalesAssignmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>
+        }
+        findFirst: {
+          args: Prisma.SalesAssignmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SalesAssignmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>
+        }
+        findMany: {
+          args: Prisma.SalesAssignmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>[]
+        }
+        create: {
+          args: Prisma.SalesAssignmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>
+        }
+        createMany: {
+          args: Prisma.SalesAssignmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SalesAssignmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>[]
+        }
+        delete: {
+          args: Prisma.SalesAssignmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>
+        }
+        update: {
+          args: Prisma.SalesAssignmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.SalesAssignmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SalesAssignmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SalesAssignmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.SalesAssignmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesAssignmentPayload>
+        }
+        aggregate: {
+          args: Prisma.SalesAssignmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSalesAssignment>
+        }
+        groupBy: {
+          args: Prisma.SalesAssignmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SalesAssignmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SalesAssignmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SalesAssignmentCountAggregateOutputType> | number
+        }
+      }
+    }
+    SalesCategoryAssignment: {
+      payload: Prisma.$SalesCategoryAssignmentPayload<ExtArgs>
+      fields: Prisma.SalesCategoryAssignmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SalesCategoryAssignmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SalesCategoryAssignmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>
+        }
+        findFirst: {
+          args: Prisma.SalesCategoryAssignmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SalesCategoryAssignmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>
+        }
+        findMany: {
+          args: Prisma.SalesCategoryAssignmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>[]
+        }
+        create: {
+          args: Prisma.SalesCategoryAssignmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>
+        }
+        createMany: {
+          args: Prisma.SalesCategoryAssignmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SalesCategoryAssignmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>[]
+        }
+        delete: {
+          args: Prisma.SalesCategoryAssignmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>
+        }
+        update: {
+          args: Prisma.SalesCategoryAssignmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.SalesCategoryAssignmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SalesCategoryAssignmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SalesCategoryAssignmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.SalesCategoryAssignmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SalesCategoryAssignmentPayload>
+        }
+        aggregate: {
+          args: Prisma.SalesCategoryAssignmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSalesCategoryAssignment>
+        }
+        groupBy: {
+          args: Prisma.SalesCategoryAssignmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SalesCategoryAssignmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SalesCategoryAssignmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SalesCategoryAssignmentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -2064,6 +2214,35 @@ export const SubscriptionPaymentScalarFieldEnum = {
 export type SubscriptionPaymentScalarFieldEnum = (typeof SubscriptionPaymentScalarFieldEnum)[keyof typeof SubscriptionPaymentScalarFieldEnum]
 
 
+export const SalesAssignmentScalarFieldEnum = {
+  id: 'id',
+  salesManagerId: 'salesManagerId',
+  instituteId: 'instituteId',
+  contactStatus: 'contactStatus',
+  interest: 'interest',
+  remark: 'remark',
+  onboardedPlan: 'onboardedPlan',
+  deadline: 'deadline',
+  contactedAt: 'contactedAt',
+  onboardedAt: 'onboardedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SalesAssignmentScalarFieldEnum = (typeof SalesAssignmentScalarFieldEnum)[keyof typeof SalesAssignmentScalarFieldEnum]
+
+
+export const SalesCategoryAssignmentScalarFieldEnum = {
+  id: 'id',
+  salesManagerId: 'salesManagerId',
+  categoryId: 'categoryId',
+  deadline: 'deadline',
+  createdAt: 'createdAt'
+} as const
+
+export type SalesCategoryAssignmentScalarFieldEnum = (typeof SalesCategoryAssignmentScalarFieldEnum)[keyof typeof SalesCategoryAssignmentScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -2182,6 +2361,34 @@ export type EnumSubscriptionPlanFieldRefInput<$PrismaModel> = FieldRefInputType<
  * Reference to a field of type 'SubscriptionPlan[]'
  */
 export type ListEnumSubscriptionPlanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SubscriptionPlan[]'>
+    
+
+
+/**
+ * Reference to a field of type 'ContactStatus'
+ */
+export type EnumContactStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ContactStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'ContactStatus[]'
+ */
+export type ListEnumContactStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ContactStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'InterestStatus'
+ */
+export type EnumInterestStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'InterestStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'InterestStatus[]'
+ */
+export type ListEnumInterestStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'InterestStatus[]'>
     
 
 /**
@@ -2312,6 +2519,8 @@ export type GlobalOmitConfig = {
   contactMessage?: Prisma.ContactMessageOmit
   instituteRequest?: Prisma.InstituteRequestOmit
   subscriptionPayment?: Prisma.SubscriptionPaymentOmit
+  salesAssignment?: Prisma.SalesAssignmentOmit
+  salesCategoryAssignment?: Prisma.SalesCategoryAssignmentOmit
 }
 
 /* Types for Logging */

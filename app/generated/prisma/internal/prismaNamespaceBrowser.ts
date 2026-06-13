@@ -68,7 +68,9 @@ export const ModelName = {
   TeacherProfile: 'TeacherProfile',
   ContactMessage: 'ContactMessage',
   InstituteRequest: 'InstituteRequest',
-  SubscriptionPayment: 'SubscriptionPayment'
+  SubscriptionPayment: 'SubscriptionPayment',
+  SalesAssignment: 'SalesAssignment',
+  SalesCategoryAssignment: 'SalesCategoryAssignment'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -357,6 +359,35 @@ export const SubscriptionPaymentScalarFieldEnum = {
 } as const
 
 export type SubscriptionPaymentScalarFieldEnum = (typeof SubscriptionPaymentScalarFieldEnum)[keyof typeof SubscriptionPaymentScalarFieldEnum]
+
+
+export const SalesAssignmentScalarFieldEnum = {
+  id: 'id',
+  salesManagerId: 'salesManagerId',
+  instituteId: 'instituteId',
+  contactStatus: 'contactStatus',
+  interest: 'interest',
+  remark: 'remark',
+  onboardedPlan: 'onboardedPlan',
+  deadline: 'deadline',
+  contactedAt: 'contactedAt',
+  onboardedAt: 'onboardedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SalesAssignmentScalarFieldEnum = (typeof SalesAssignmentScalarFieldEnum)[keyof typeof SalesAssignmentScalarFieldEnum]
+
+
+export const SalesCategoryAssignmentScalarFieldEnum = {
+  id: 'id',
+  salesManagerId: 'salesManagerId',
+  categoryId: 'categoryId',
+  deadline: 'deadline',
+  createdAt: 'createdAt'
+} as const
+
+export type SalesCategoryAssignmentScalarFieldEnum = (typeof SalesCategoryAssignmentScalarFieldEnum)[keyof typeof SalesCategoryAssignmentScalarFieldEnum]
 
 
 export const SortOrder = {

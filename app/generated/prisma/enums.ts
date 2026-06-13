@@ -13,6 +13,7 @@ export const Role = {
   USER: 'USER',
   CONTENT_WRITER: 'CONTENT_WRITER',
   INSTITUTE_MANAGER: 'INSTITUTE_MANAGER',
+  SALES_MANAGER: 'SALES_MANAGER',
   ADMIN: 'ADMIN'
 } as const
 
@@ -27,3 +28,20 @@ export const SubscriptionPlan = {
 } as const
 
 export type SubscriptionPlan = (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan]
+
+
+export const ContactStatus = {
+  NOT_CONTACTED: 'NOT_CONTACTED',
+  CONTACTED: 'CONTACTED',
+  ONBOARDED: 'ONBOARDED'
+} as const
+
+export type ContactStatus = (typeof ContactStatus)[keyof typeof ContactStatus]
+
+
+export const InterestStatus = {
+  INTERESTED: 'INTERESTED',
+  NOT_INTERESTED: 'NOT_INTERESTED'
+} as const
+
+export type InterestStatus = (typeof InterestStatus)[keyof typeof InterestStatus]

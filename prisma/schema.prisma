@@ -29,8 +29,10 @@ model User {
   shortlisted         UserShortlist[]
   viewHistory         UserHistory[]
   canAddInstitute     Boolean            @default(false)
-  instituteRequests   InstituteRequest[]
-  payments            SubscriptionPayment[]
+  instituteRequests          InstituteRequest[]
+  payments                   SubscriptionPayment[]
+  salesAssignments           SalesAssignment[]          @relation("SalesAssignments")
+  salesCategoryAssignments   SalesCategoryAssignment[]  @relation("SalesCategoryAssignments")
 
   @@map("user")
 }
@@ -126,6 +128,7 @@ model Institute {
   instituteRequest  InstituteRequest?
   planExpiresAt     DateTime?
   payments          SubscriptionPayment[]
+  salesAssignments  SalesAssignment[]
 
   facebookUrl       String?
   instagramUrl      String?
@@ -153,17 +156,18 @@ model City {
 }
 
 model Category {
-  id         String              @id @default(cuid())
-  name       String
-  slug       String              @unique
-  parentId   String?
-  createdAt  DateTime            @default(now())
-  updatedAt  DateTime            @updatedAt
-  isActive   Boolean             @default(true)
-  level      Int                 @default(0)
-  parent     Category?           @relation("CategoryHierarchy", fields: [parentId], references: [id])
-  children   Category[]          @relation("CategoryHierarchy")
-  institutes InstituteCategory[]
+  id                        String                    @id @default(cuid())
+  name                      String
+  slug                      String                    @unique
+  parentId                  String?
+  createdAt                 DateTime                  @default(now())
+  updatedAt                 DateTime                  @updatedAt
+  isActive                  Boolean                   @default(true)
+  level                     Int                       @default(0)
+  parent                    Category?                 @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children                  Category[]                @relation("CategoryHierarchy")
+  institutes                InstituteCategory[]
+  salesCategoryAssignments  SalesCategoryAssignment[]
 
   @@index([parentId])
 }
@@ -209,6 +213,7 @@ enum Role {
   USER
   CONTENT_WRITER
   INSTITUTE_MANAGER
+  SALES_MANAGER
   ADMIN
 }
 
@@ -343,4 +348,64 @@ model SubscriptionPayment {
   updatedAt       DateTime         @updatedAt
 
   @@map("subscription_payment")
+}
+
+// ==========================================
+// SALES MANAGER MODELS
+// ==========================================
+
+enum ContactStatus {
+  NOT_CONTACTED
+  CONTACTED
+  ONBOARDED
+}
+
+enum InterestStatus {
+  INTERESTED
+  NOT_INTERESTED
+}
+
+model SalesAssignment {
+  id              String            @id @default(cuid())
+
+  salesManagerId  String
+  salesManager    User              @relation("SalesAssignments", fields: [salesManagerId], references: [id], onDelete: Cascade)
+
+  instituteId     String            @unique
+  institute       Institute         @relation(fields: [instituteId], references: [id], onDelete: Cascade)
+
+  // Tracking
+  contactStatus   ContactStatus     @default(NOT_CONTACTED)
+  interest        InterestStatus?
+  remark          String?           @db.Text
+  onboardedPlan   SubscriptionPlan?
+
+  deadline        DateTime?
+  contactedAt     DateTime?
+  onboardedAt     DateTime?
+
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([salesManagerId])
+  @@index([instituteId])
+  @@index([contactStatus])
+  @@map("sales_assignment")
+}
+
+model SalesCategoryAssignment {
+  id              String    @id @default(cuid())
+
+  salesManagerId  String
+  salesManager    User      @relation("SalesCategoryAssignments", fields: [salesManagerId], references: [id], onDelete: Cascade)
+
+  categoryId      String
+  category        Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  deadline        DateTime?
+  createdAt       DateTime  @default(now())
+
+  @@unique([salesManagerId, categoryId])
+  @@index([salesManagerId])
+  @@map("sales_category_assignment")
 }
