@@ -36,7 +36,7 @@ export default async function AdminLifeCoachLeadsPage() {
                 <td colSpan={5} className="p-8 text-center text-slate-400 italic">No counseling requests found yet.</td>
               </tr>
             ) : (
-              requests.map((req) => (
+              requests.map((req: any) => (
                 <tr key={req.id} className="hover:bg-slate-50/50 transition-colors">
                   <td className="p-4 font-semibold text-slate-800">{req.fullName}</td>
                   <td className="p-4 text-sm text-slate-600 space-y-1">
