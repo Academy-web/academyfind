@@ -2,67 +2,36 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import InstituteCard from "@/components/institutes/InstituteCard";
+import { prisma } from "@/lib/prisma";
+import ScrollToTopButton from "./ScrollToTopButton";
 
-const institutes = [
-  {
-    id: "1",
-    slug: "allen-career-institute",
-    name: "ALLEN Career Institute",
-    description:
-      "Leading coaching institute for JEE and NEET preparation.",
-    city: {
-      name: "Kota",
-      slug: "kota",
-    },
-    averageRating: 4.8,
-    reviewCount: 12458,
-    image: null,
-  },
-  {
-    id: "2",
-    slug: "vision-ias",
-    name: "Vision IAS",
-    description:
-      "One of India's most trusted UPSC coaching institutes.",
-    city: {
-      name: "Delhi",
-      slug: "delhi",
-    },
-    averageRating: 4.7,
-    reviewCount: 8231,
-    image: null,
-  },
-  {
-    id: "3",
-    slug: "motion-education",
-    name: "Motion Education",
-    description:
-      "Popular choice among JEE aspirants with strong results.",
-    city: {
-      name: "Kota",
-      slug: "kota",
-    },
-    averageRating: 4.6,
-    reviewCount: 7120,
-    image: null,
-  },
-  {
-    id: "4",
-    slug: "aakash-institute",
-    name: "Aakash Institute",
-    description:
-      "Top medical entrance coaching institute across India.",
-    city: {
-      name: "Jaipur",
-      slug: "jaipur",
-    },
-    averageRating: 4.5,
-    reviewCount: 9421,
-    image: null,
-  },
-];
 
-export function FeaturedInstitutes() {
+export async function FeaturedInstitutes() {
+  const topInstitutes = await prisma.institute.findMany({
+    where:{
+      isActive:true,
+      googleRating:{gte:4.8}
+    },
+    include:{
+      city: true
+    },
+    take:20
+  })
+
+  const random4 = topInstitutes.sort(() => 0.5 - Math.random()).slice(0,4);
+  const institutes = random4.map((inst) => ({
+    id: inst.id,
+    slug: inst.slug,
+    name: inst.name,
+    description: inst.description || "Top rated institute for your preparation.",
+    city: {
+      name: inst.city?.name || "Unknown",
+      slug: inst.city?.slug || "unknown",
+    },
+    averageRating: inst.googleRating || 5,
+    reviewCount: inst.googleReviewCount || 0,
+    image: inst.imageUrl || null,
+  }));
   return (
     <section className="py-12 sm:py-16 lg:py-24">
       <div className="container mx-auto px-4">
@@ -83,24 +52,14 @@ export function FeaturedInstitutes() {
             </p>
           </div>
 
-          <Link
-            href="/institutes"
-            className="
-              hidden
-              items-center
-              gap-2
-              font-medium
-              transition-colors
-              hover:text-amber-500
-              md:flex
-            "
-          >
-            View All Institutes
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <ScrollToTopButton
+            className="hidden items-center gap-2 font-medium transition-colors hover:text-amber-500 md:flex"
+            content="View all Institutes"
+          />
         </div>
 
         {/* Institutes Grid */}
+        {institutes.length > 0 ? (
         <div
           className="
             grid
@@ -117,27 +76,17 @@ export function FeaturedInstitutes() {
             />
           ))}
         </div>
+        ): (
+          <p className="text-slate-500 italic">No 5-star rated institutes found yet.</p>
+        )}
 
         {/* Mobile CTA */}
         <div className="mt-8 flex justify-center md:hidden">
-          <Link
-            href="/institutes"
-            className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-xl
-              border
-              px-4
-              py-3
-              font-medium
-              transition-colors
-              hover:bg-amber-50
-            "
-          >
-            View All Institutes
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <ScrollToTopButton
+            className="inline-flex items-center gap-2 rounded-xl border px-4 py-3 font-medium transition-colors hover:bg-amber-50"
+            content="View All Institutes"
+          />
+            
         </div>
       </div>
     </section>
