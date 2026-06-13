@@ -48,7 +48,7 @@ export default async function SalesManagerDashboardPage({
             new Date(a.deadline) <= sevenDaysLater &&
             a.contactStatus !== "ONBOARDED"
         )
-        .sort((a, b) => new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime());
+        .sort((a:any, b:any) => new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime());
 
     // Recent activity (last 5 updated)
     const recentActivity = assignments.slice(0, 5);
