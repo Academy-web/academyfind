@@ -30,7 +30,7 @@ export async function getInstitutesByCategory(
 
   const [institutes, totalCount] = await prisma.$transaction([
     prisma.institute.findMany({
-      where: whereClause, // 👈 Yahan use kiya
+      where: {isActive: true}, 
       include: {
         city: true, 
       },
