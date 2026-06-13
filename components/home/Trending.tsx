@@ -31,7 +31,7 @@ const destinations = [
 
 const categories = [
   {
-    name: "JEE",
+    title: "JEE",
     href: "/jee-coaching",
   },
   {
