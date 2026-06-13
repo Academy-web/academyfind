@@ -3,42 +3,76 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 
 const destinations = [
   {
-    title: "JEE Coaching in Noida",
-    subtitle: "700+ Institutes",
+    title: "Best JEE Coaching in Noida",
+    subtitle: "500+ Institutes",
     href: "/jee-coaching/noida",
   },
   {
-    title: "NEET Coaching in Noida",
-    subtitle: "850+ Institutes",
+    title: "Top NEET Coaching in Noida",
+    subtitle: "450+ Institutes",
     href: "/neet-coaching/noida",
   },
   {
-    title: "UPSC Coaching in Noida",
+    title: "Highest rated BasketBall Academy in Noida",
+    subtitle: "80+ Academies",
+    href: "/basketball-academy/noida",
+  },
+  {
+    title: "Best Violin Classes in Noida",
+    subtitle: "70+ Classes",
+    href: "/violin-classes/noida",
+  },
+  {
+    title: "Class 10 Tuition In Noida",
     subtitle: "300+ Institutes",
-    href: "/upsc-coaching/noida",
-  },
-  {
-    title: "CAT Coaching in Noida",
-    subtitle: "450+ Institutes",
-    href: "/cat-coaching/noida",
-  },
-  {
-    title: "SSC Coaching in Noida",
-    subtitle: "600+ Institutes",
-    href: "/ssc-coaching/Noida",
+    href: "/class-10-tuition/noida",
   },
 ];
 
 const categories = [
-  "JEE",
-  "NEET",
-  "UPSC",
-  "SSC",
-  "CAT",
-  "CLAT",
-  "Banking",
-  "CUET",
+  {
+    name: "JEE",
+    href: "/jee-coaching",
+  },
+  {
+    title: "NEET",
+    href: "/neet-coaching",
+  },
+  {
+    title: "UPSC",
+    href: "/upsc-coaching",
+  },
+  {
+    title: "CLAT",
+    href: "/clat-coaching",
+  },
+  {
+    title: "Faishon Designing",
+    href: "/fashion-designing",
+  },
+  {
+    title: "Cricket",
+    href: "/cricket-academy",
+  },
+  {
+    title: "AWS Training",
+    href: "/aws-training",
+  },
+  {
+    title: "Graphic Designing",
+    href: "/graphic-designing",
+  },
+  {
+    title: "Karate",
+    href: "/karate",
+  },
+  {
+    title: "Class 6 Tuition",
+    href: "/class-6-tuition",
+  },
+
 ];
+
 
 export function TrendingDestinations() {
   return (
@@ -178,8 +212,8 @@ export function TrendingDestinations() {
               <div className="mt-5 flex flex-wrap gap-2">
                 {categories.map((category) => (
                   <Link
-                    key={category}
-                    href={`/search?q=${category}`}
+                    key={category.href}
+                    href={category.href}
                     className="
                       rounded-full
                       border
@@ -195,7 +229,7 @@ export function TrendingDestinations() {
                       sm:text-sm
                     "
                   >
-                    {category}
+                    {category.title}
                   </Link>
                 ))}
               </div>
@@ -206,7 +240,7 @@ export function TrendingDestinations() {
                 </p>
 
                 <p className="mt-1 text-sm text-muted-foreground">
-                  JEE Coaching in Kota and NEET Coaching in Delhi are trending.
+                  JEE Coaching in Noida and Dance Classes in Noida are trending.
                 </p>
               </div>
             </div>
