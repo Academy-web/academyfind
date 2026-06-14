@@ -220,7 +220,7 @@
             <div className="mt-8 flex flex-wrap items-center justify-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-5 py-2.5 text-sm shadow-sm transition-all hover:border-amber-300 hover:bg-amber-100/80">
             <span className="text-slate-600">Confused about what to choose in life?</span>
             <Link
-              href="/life-coach" /* Agar aapka path /user/life-coach hai toh isko update kar lena */
+              href="/user/life-coach" /* Agar aapka path /user/life-coach hai toh isko update kar lena */
               className="inline-flex items-center gap-1 font-bold text-amber-400 transition-colors hover:text-amber-500"
             >
               Ask our Life Coach
