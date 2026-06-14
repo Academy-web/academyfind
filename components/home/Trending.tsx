@@ -76,7 +76,7 @@ const categories = [
 
 export function TrendingDestinations() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24">
+    <section className="py-12 sm:py-16 lg:py-24 z-10">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">

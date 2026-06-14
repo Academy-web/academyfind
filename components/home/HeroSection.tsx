@@ -29,7 +29,7 @@
 
   export function HeroSection() {
     return (
-      <section className="relative overflow-hidden border-b bg-linear-to-b from-amber-50 via-background to-background">
+      <section className="relative border-b bg-linear-to-b from-amber-50 via-background to-background">
         {/* Background Glow */}
         <div
           className="
@@ -162,7 +162,7 @@
                   p-3
                   shadow-[0_20px_60px_rgba(251,191,36,0.15)]
                   backdrop-blur-sm
-
+                  overflow-visible
                   sm:p-4
                 "
               >
