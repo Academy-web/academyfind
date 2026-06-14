@@ -8,9 +8,9 @@ const destinations = [
     href: "/jee-coaching/noida",
   },
   {
-    title: "Top NEET Coaching in Noida",
+    title: "Top NEET Coaching in Greater Noida",
     subtitle: "450+ Institutes",
-    href: "/neet-coaching/noida",
+    href: "/neet-coaching/greater-noida",
   },
   {
     title: "Highest rated BasketBall Academy in Noida",
@@ -18,9 +18,9 @@ const destinations = [
     href: "/basketball-academy/noida",
   },
   {
-    title: "Best Violin Classes in Noida",
+    title: "Best Violin Classes in Greater Noida",
     subtitle: "70+ Classes",
-    href: "/violin-classes/noida",
+    href: "/violin-classes/greater-noida",
   },
   {
     title: "Class 10 Tuition In Noida",
