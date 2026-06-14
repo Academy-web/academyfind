@@ -1,149 +1,178 @@
-// "use client";
+"use client";
 
-// import { useEffect, useState } from "react";
-// import { usePathname } from "next/navigation";
-// import Link from "next/link";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
 
-// import {
-//   Dialog,
-//   DialogContent,
-//   DialogTitle,
-//   DialogDescription,
-//   DialogHeader
-// } from "@/components/ui/dialog";
+import { CheckCircle2 } from "lucide-react";
 
-// import { Button } from "@/components/ui/button";
-// import { Sparkles, ArrowRight } from "lucide-react";
+const plans = [
+  { 
+      id: "VERIFIED", 
+      name: "Verified", 
+      pricing: {
+          monthly: { original: 499, offer: 199 },
+          annual: { original: 4999, offer: 1999 }
+      },
+      desc: "Build trust and start capturing student leads.", 
+      features: [
+          "Edit Your Profile", 
+          "Verified Badge", 
+          "Direct Lead Generation"
+      ] 
+  },
+  { 
+      id: "PREMIUM", 
+      name: "Premium", 
+      pricing: {
+          monthly: { original: 999, offer: 499 },
+          annual: { original: 9999, offer: 4999 }
+      },
+      desc: "Showcase faculty, results, and track analytics.", 
+      features: [
+          "Everything in Verified", 
+          "Visit & Save Analytics", 
+          "Teacher Profiles (Up to 4)", 
+          "Videos & Results (Up to 4)"
+      ] 
+  },
+  { 
+      id: "ULTRA",
+      name: "Elite", 
+      pricing: {
+          monthly: { original: 2999, offer: 999 },
+          annual: { original: 29999, offer: 9999 }
+      },
+      desc: "Maximum visibility and top search rankings.", 
+      features: [
+          "Everything in Premium", 
+          "Top Priority Search Ranking", 
+          "Area-Specific Visibility", 
+          "Category-Specific Visibility"
+      ] 
+  },
+];
 
-// import { authClient } from "@/lib/auth/auth-client";
+export function PricingModal({ children }: { children: React.ReactNode }) {
+  const [isAnnual, setIsAnnual] = useState(false);
 
-// export function AuthPromptModal() {
-//   const pathname = usePathname();
-//   const { data: session } = authClient.useSession();
-//   const [open, setOpen] = useState(false);
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        {children}
+      </DialogTrigger>
 
-//   const [isAnnual, setIsAnnual] = useState(false);
-//     const [plan,setPlan] = useState();
-
-//     const planPriority: Record<string, number> = {
-//         BASIC: 0,
-//         VERIFIED: 1,
-//         PREMIUM: 2,
-//         ULTRA: 3,
-//     };
-//     const currentPlanRank = planPriority[currentPlan] ?? 0;
-
-//     const plans = [
-//         { 
-//             id: "VERIFIED", 
-//             name: "Verified", 
-//             pricing: {
-//                 monthly: { original: 499, offer: 199 },
-//                 annual: { original: 4999, offer: 1999 }
-//             },
-//             desc: "Build trust and start capturing student leads.", 
-//             features: [
-//                 "Edit Your Profile", 
-//                 "Verified Badge", 
-//                 "Direct Lead Generation"
-//             ] 
-//         },
-//         { 
-//             id: "PREMIUM", 
-//             name: "Premium", 
-//             pricing: {
-//                 monthly: { original: 999, offer: 499 },
-//                 annual: { original: 9999, offer: 4999 }
-//             },
-//             desc: "Showcase faculty, results, and track analytics.", 
-//             features: [
-//                 "Everything in Verified", 
-//                 "Visit & Save Analytics", 
-//                 "Teacher Profiles (Up to 4)", 
-//                 "Videos & Results (Up to 4)"
-//             ] 
-//         },
-//         { 
-//             id: "ULTRA",
-//             name: "Elite", 
-//             pricing: {
-//                 monthly: { original: 2999, offer: 999 },
-//                 annual: { original: 29999, offer: 9999 }
-//             },
-//             desc: "Maximum visibility and top search rankings.", 
-//             features: [
-//                 "Everything in Premium", 
-//                 "Top Priority Search Ranking", 
-//                 "Area-Specific Visibility", 
-//                 "Category-Specific Visibility"
-//             ] 
-//         },
-//     ];
-
-//   useEffect(() => {
-//     if (session?.user) {
-//       setOpen(false);
-//       return;
-//     }
-//   },[])
-
-
-
-//   if (!session?.user) return <>Please Login to see pricing</>;
-
-//   return (
-//     <Dialog open={open} onOpenChange={setOpen}>
-//       <DialogContent className="max-w-md rounded-3xl border-0 p-0 overflow-hidden">
+      <DialogContent className="rounded-[2rem] border-0 p-6 md:p-10 bg-white max-h-[90vh] overflow-y-auto overflow-x-hidden w-[95vw] max-w-5xl!
+      data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-bottom-4
+  data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-bottom-4
+  data-[state=closed]:duration-300 data-[state=open]:duration-300">
         
-//         {/* 🚀 FIX: Isko 'sr-only' de diya taaki Accessibility Warning na aaye aur HTML invalid na ho */}
-//         <DialogHeader className="sr-only">
-//           <DialogTitle></DialogTitle>
-//           <DialogDescription>
-//             Create your free account to save institutes, compare coaching centers, write reviews, and get personalized recommendations.
-//           </DialogDescription>
-//         </DialogHeader>
+        <DialogHeader className="sr-only">
+          <DialogTitle>Pricing Plans</DialogTitle>
+          <DialogDescription>
+            Upgrade your institute profile to get more leads.
+          </DialogDescription>
+        </DialogHeader>
 
-//         {/* 🎨 Aapka Beautiful Visual UI */}
-//         <div className="bg-linear-to-br from-amber-50 via-white to-orange-50 p-8">
-//           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100">
-//             <Sparkles className="h-7 w-7 text-amber-600" />
-//           </div>
+        {/* Header & Toggle */}
+        <div className="flex flex-col items-center mt-2 mb-10">
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-6">Choose Your Plan</h2>
+            
+            {/* Amber Toggle */}
+            <div className="bg-slate-100 p-1.5 rounded-full inline-flex relative shadow-inner border border-slate-200">
+                <button 
+                    onClick={() => setIsAnnual(false)} 
+                    className={`relative w-32 py-2 text-sm font-bold rounded-full transition-colors z-10 ${!isAnnual ? 'text-amber-900' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                    Monthly
+                </button>
+                <button 
+                    onClick={() => setIsAnnual(true)} 
+                    className={`relative w-32 py-2 text-sm font-bold rounded-full transition-colors z-10 ${isAnnual ? 'text-amber-900' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                    Annually
+                </button>
+                {/* Amber Animated Pill */}
+                <div 
+                    className={`absolute top-1.5 bottom-1.5 w-32 bg-amber-400 rounded-full shadow-sm transition-transform duration-300 ease-out ${isAnnual ? 'translate-x-full' : 'translate-x-0'}`} 
+                />
+            </div>
+        </div>
 
-//           <h2 className="text-center text-2xl font-bold text-slate-900">
-//             Want to Explore More?
-//           </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+            {plans.map((plan: any) => {
+                const priceData = isAnnual ? plan.pricing.annual : plan.pricing.monthly;
+                const isPremium = plan.id === "PREMIUM";
 
-//           <p className="mt-3 text-center text-sm text-zinc-600">
-//             Create your free account to save institutes,
-//             compare coaching centers, write reviews,
-//             and get personalized recommendations.
-//           </p>
+                return (
+                    <div 
+                        key={plan.id} 
+                        // 🚀 FIX: p-8 se p-5 kar diya, aur rounded-3xl se 2xl
+                        className={`relative p-5 rounded-2xl border-2 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                            isPremium ? 'border-amber-400 bg-amber-50/30' : 'border-slate-100 bg-white hover:border-amber-200'
+                        }`}
+                    >
+                        {isPremium && (
+                            // 🚀 FIX: Badge ko thoda chota kiya
+                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Most Popular
+                            </div>
+                        )}
 
-//           <div className="mt-6 flex flex-col gap-3">
-//             {/* Added onClick to close modal instantly when navigating */}
-//             <Link href="/register" onClick={() => setOpen(false)}>
-//               <Button className="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold">
-//                 Create Free Account
-//                 <ArrowRight className="ml-2 h-4 w-4" />
-//               </Button>
-//             </Link>
+                        <h3 className="text-lg font-extrabold text-slate-800">{plan.name}</h3>
+                        
+                        {/* 🚀 FIX: Margins kam kiye (mt-4 -> mt-2) */}
+                        <div className="mt-2 mb-1 flex items-baseline gap-2">
+                            <span className="text-3xl font-black text-amber-500">
+                                ₹{priceData.offer.toLocaleString('en-IN')}
+                            </span>
+                            <span className="text-xs text-slate-500 font-medium">
+                                /{isAnnual ? 'yr' : 'mo'}
+                            </span>
+                        </div>
+                        <div className="mb-2">
+                            <span className="text-xs text-slate-400 line-through font-semibold">
+                                ₹{priceData.original.toLocaleString('en-IN')}
+                            </span>
+                        </div>
+                        
+                        {/* 🚀 FIX: Height aur margin kam kiya */}
+                        <p className="text-xs text-slate-500 mt-1 mb-4 leading-relaxed font-medium">
+                            {plan.desc}
+                        </p>
+                        
+                        {/* 🚀 FIX: space-y-4 ko space-y-2.5 kiya */}
+                        <ul className="space-y-2.5 mb-5 flex-1">
+                            {plan.features.map((feature: any, i: any) => (
+                                <li key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
+                                    <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" /> 
+                                    <span className="leading-tight">{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
 
-//             <Link href="/login" onClick={() => setOpen(false)}>
-//               <Button
-//                 variant="outline"
-//                 className="w-full font-semibold"
-//               >
-//                 Login
-//               </Button>
-//             </Link>
-//           </div>
-
-//           <p className="mt-5 text-center text-xs text-zinc-500">
-//             Join thousands of students discovering the
-//             best coaching institutes.
-//           </p>
-//         </div>
-//       </DialogContent>
-//     </Dialog>
-//   );
-// }
+                        {/* 🚀 FIX: Button ki padding py-3 se py-2.5 ki */}
+                        {/* <DialogClose asChild className="transition">
+                        <button className={`w-full py-2.5 rounded-xl text-sm font-bold transition-colors ${
+                            isPremium 
+                            ? 'bg-amber-500 text-white hover:bg-amber-600' 
+                            : 'bg-amber-100 text-amber-700 hover:bg-amber-200'
+                        }`}>
+                            Get Started
+                        </button>
+                        </DialogClose> */}
+                    </div>
+                );
+            })}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { submitClaimRequest } from "@/lib/institutes/institute-claim";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -12,6 +12,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Link from "next/link";
+import { PricingModal } from "../manager/PricingPopUp";
 
 interface ClaimFormProps {
   instituteId: string;
@@ -98,10 +100,26 @@ export default function ClaimForm({ instituteId, instituteName, userId }: ClaimF
 
       {/* RIGHT PANEL: Clean Form */}
       <div className="lg:w-7/12 p-10 lg:p-12 bg-white">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-800">Your Details</h2>
-          <p className="text-slate-500 mt-1 text-sm">Please provide your official contact information.</p>
-        </div>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      {/* Left Side: Headings */}
+      <div>
+        <h2 className="text-2xl font-bold text-slate-800">Your Details</h2>
+        <p className="text-slate-500 mt-1 text-sm">
+          Please provide your official contact information.
+        </p>
+      </div>
+
+      {/* Right Side: View Pricing Link */}
+      <div className="sm:text-right">
+        <PricingModal>
+    <button className="inline-flex items-center gap-1 text-sm font-medium text-amber-500 transition-colors hover:text-amber-600 cursor-pointer">
+      View Pricing
+      <ArrowRight className="h-4 w-4" />
+    </button>
+  </PricingModal>
+      </div>
+    </div>
+        
         
         {errorMsg && (
           <div className="mb-6 p-4 bg-red-50 border border-red-100 text-red-600 rounded-xl text-sm font-medium flex items-center gap-2">
