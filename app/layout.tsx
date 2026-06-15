@@ -10,6 +10,7 @@ import { CursorGlow } from "@/components/ui/cursor-glow";
 import { AuthPromptModal } from "@/components/layout/auth-prompt-model";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import NextTopLoader from 'nextjs-toploader'
 import {Toaster} from 'react-hot-toast'
 import Script from "next/script";
@@ -62,6 +63,7 @@ export default function RootLayout({
         <Footer />
 
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
