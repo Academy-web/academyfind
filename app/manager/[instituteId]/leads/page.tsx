@@ -52,7 +52,7 @@ export default async function EnquiriesPage({ params }: { params: Promise<{ inst
                 </div>
             ) : (
                 <div className="grid gap-4">
-                    {institute.enquiries.map((enquiry) => (
+                    {institute.enquiries.map((enquiry: any) => (
                         <div key={enquiry.id} className="p-5 border border-slate-100 rounded-2xl shadow-sm bg-white hover:border-blue-100 transition-colors">
                             <div className="flex justify-between items-start mb-3">
                                 <div>

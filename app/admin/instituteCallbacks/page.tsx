@@ -53,7 +53,7 @@ export default async function AdminCallbacksPage() {
                   </td>
                 </tr>
               ) : (
-                callbacks.map((callback) => (
+                callbacks.map((callback: any) => (
                   <tr key={callback.id} className="hover:bg-slate-50/50 transition-colors group">
                     <td className="p-5 whitespace-nowrap">
                       <div className="flex items-center gap-2 text-slate-700 font-medium">
