@@ -2224,7 +2224,6 @@ export const InstituteEnquiryScalarFieldEnum = {
   id: 'id',
   instituteId: 'instituteId',
   name: 'name',
-  email: 'email',
   phone: 'phone',
   message: 'message',
   status: 'status',

@@ -17,6 +17,7 @@ import { trackVisitHistory } from "@/lib/User/user/user-activity";
 import { prisma } from "@/lib/prisma";
 import SaveButton from "@/components/ui/SaveButton"; 
 import { FaFacebook, FaInstagram, FaLinkedin, FaTelegram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import InstituteEnquiryForm from "@/components/manager/InstituteEnquiryForm";
 
 export const revalidate = 86400;
 
@@ -328,34 +329,13 @@ export default async function InstitutePage({ params }: PageProps) {
 
             {/* Sticky CTA */}
             <div>
-              <div className="sticky top-24 rounded-3xl border bg-white p-6 shadow-sm">
-                <h3 className="text-xl font-bold">Get Admission Guidance</h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  Connect with experts and compare institutes before admission.
-                </p>
-                
-                {/* Display Dynamic starting fee info if available */}
-                {institute.feeInfo && (
-                    <div className="mt-4 p-3 bg-slate-50 border rounded-xl flex items-center justify-between">
-                        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Estimated Fees</span>
-                        <span className="text-sm font-bold text-slate-800 flex items-center gap-0.5"><IndianRupee className="w-3.5 h-3.5" />{institute.feeInfo}</span>
-                    </div>
-                )}
-
-                <Link href="/contact">
-                  <SmartButton className="mt-5 w-full rounded-xl bg-amber-400 px-5 py-3 font-semibold text-black transition hover:bg-amber-500">
-                    Enquire Now
-                  </SmartButton>
-                </Link>
-                
-                {institute.googleMapsUrl && (
-                  <a href={institute.googleMapsUrl} target="_blank" rel="noopener noreferrer">
-                    <button className="mt-3 w-full rounded-xl border border-slate-200 bg-white px-5 py-3 font-medium text-slate-700 transition hover:bg-slate-50 flex items-center justify-center gap-2">
-                      <MapPin className="h-4 w-4 text-slate-400" />
-                      View on Maps
-                    </button>
-                  </a>
-                )}
+              {/* InstitutePage.tsx me jahan Sticky CTA tha usko isse replace karo */}
+              <div>
+                <InstituteEnquiryForm 
+                    instituteId={institute.id} 
+                    feeInfo={institute.feeInfo} 
+                    mapsUrl={institute.googleMapsUrl} 
+                />
               </div>
             </div>
           </div>

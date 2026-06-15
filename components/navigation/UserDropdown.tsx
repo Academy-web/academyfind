@@ -116,6 +116,15 @@ export default function UserDropdown({ user }: { user: any }) {
           </DropdownMenuItem>
         )}
 
+        {liveUserData?.role === 'INSTITUTE_MANAGER' && (
+          <DropdownMenuItem asChild className="rounded-xl cursor-pointer py-3 px-3 focus:bg-amber-50 focus:text-amber-700 transition-colors">
+            <Link href="/manager">
+              <Briefcase className="mr-3 h-4 w-4" />
+              <span className="font-medium text-sm">Manager Dashboard</span>
+            </Link>
+          </DropdownMenuItem>
+        )}
+
         {/* 🚀 ADD LISTING PASS - Strictly rendering via native Boolean DB query passed from Server Navbar */}
         {liveUserData?.canAddInstitute === true && (
           <DropdownMenuItem asChild className="rounded-xl cursor-pointer py-3 px-3 bg-emerald-50 hover:bg-emerald-100/80 text-emerald-700 focus:bg-emerald-100 focus:text-emerald-800 transition-colors">

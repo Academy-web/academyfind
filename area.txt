@@ -1,0 +1,114 @@
+const CITY_HUBS_NOIDA = [
+  // 1. DENSE COACHING HUBS
+  { name: "Sector 62", lat: 28.6215, lng: 77.3639, radius: 1500 },
+  { name: "Sector 15 & 16 Metro Hub", lat: 28.5785, lng: 77.3182, radius: 1500 },
+  { name: "Sector 18 (Atta Market)", lat: 28.5705, lng: 77.3260, radius: 1500 },
+  { name: "Sector 27 & 28", lat: 28.5802, lng: 77.3330, radius: 1500 },
+  { name: "Sector 50 & 51", lat: 28.5750, lng: 77.3690, radius: 1500 },
+  
+  // 2. MIXED RESIDENTIAL/COMMERCIAL CLUSTERS
+  { name: "Sector 11 & 12 Cluster", lat: 28.5992, lng: 77.3315, radius: 2000 },
+  { name: "Sector 22 & 24 Cluster", lat: 28.5940, lng: 77.3505, radius: 2000 },
+  { name: "Sector 34 & 35 (Near City Centre)", lat: 28.5772, lng: 77.3524, radius: 2000 },
+  { name: "Sector 41, 44 & 45 Area", lat: 28.5580, lng: 77.3450, radius: 2000 },
+  { name: "Sector 49 & 48 Barola Area", lat: 28.5570, lng: 77.3680, radius: 2000 },
+  { name: "Sector 55 & 56 Khora Border", lat: 28.6080, lng: 77.3480, radius: 2000 },
+  { name: "Sector 61 & 70 Cluster", lat: 28.5980, lng: 77.3750, radius: 2000 },
+  { name: "Sector 73, 74 & 75", lat: 28.5880, lng: 77.3890, radius: 2000 },
+  { name: "Sector 76, 77 & 78 Cluster", lat: 28.5720, lng: 77.3950, radius: 2000 },
+  { name: "Sector 93 & 82", lat: 28.5280, lng: 77.3910, radius: 2000 },
+  { name: "Sector 100, 104 & 107", lat: 28.5440, lng: 77.3730, radius: 2000 },
+  { name: "Sector 110 & Phase 2 Area", lat: 28.5350, lng: 77.4100, radius: 2000 }, 
+  { name: "Sector 119 & 120 Cluster", lat: 28.5910, lng: 77.4020, radius: 1500 }, 
+  { name: "Sector 121 & 122 Area", lat: 28.5990, lng: 77.4140, radius: 2000 }, 
+  { name: "Sector 137", lat: 28.5140, lng: 77.4120, radius: 2000 },
+  
+  // 3. NOIDA EXTENSION / GAUR CITY DENSE NODES
+  { name: "Gaur City / Sector 4 Noida Extension", lat: 28.6095, lng: 77.4410, radius: 2500 },
+  { name: "Techzone 4 / Knowledge Park 5 Node", lat: 28.5820, lng: 77.4560, radius: 2500 },
+  { name: "Sector 1 / Bisrakh (Deep Extension)", lat: 28.5950, lng: 77.4450, radius: 2000 },
+  { name: "Crossings Republik Border", lat: 28.6300, lng: 77.4350, radius: 1500 },
+
+  // 4. GREATER NOIDA MAJOR COACHING NODES
+  { name: "Pari Chowk & Alpha 1/2", lat: 28.4670, lng: 77.5120, radius: 2000 },
+  { name: "Beta 1 & Gamma 1", lat: 28.4810, lng: 77.5090, radius: 2000 },
+  { name: "Knowledge Park 1 & 2", lat: 28.4640, lng: 77.4910, radius: 2000 },
+  { name: "Knowledge Park 3 & Delta 1 Area", lat: 28.4830, lng: 77.4840, radius: 2000 },
+  { name: "Surajpur Area", lat: 28.5200, lng: 77.4900, radius: 2500 }, 
+  { name: "Kasna / UPSIDC Area", lat: 28.4230, lng: 77.5250, radius: 2000 }, 
+  { name: "Dadri Main Road / Ecotech II", lat: 28.5440, lng: 77.4850, radius: 2000 },
+
+  // 5. HIGH-DENSITY URBAN VILLAGES & LOCAL MARKETS
+  { name: "Bhangel Main Market", lat: 28.5365, lng: 77.4045, radius: 1200 },
+  { name: "Mamura Village", lat: 28.6035, lng: 77.3745, radius: 1200 },
+  { name: "Harola Sector 5 Market", lat: 28.5905, lng: 77.3265, radius: 1200 },
+  { name: "Nithari Sector 31 Area", lat: 28.5785, lng: 77.3455, radius: 1200 },
+  { name: "Chhalera Sector 44", lat: 28.5595, lng: 77.3540, radius: 1000 },
+
+  // 6. NEW EMERGING & TRANSIT NODES
+  { name: "Sector 63", lat: 28.6250, lng: 77.3820, radius: 1500 },
+  { name: "Sector 125 & 126", lat: 28.5440, lng: 77.3325, radius: 1500 },
+  { name: "Sector 102 & 101", lat: 28.5410, lng: 77.3910, radius: 1200 },
+  { name: "Khora Colony", lat: 28.6185, lng: 77.3400, radius: 1200 },
+  { name: "Sector 132 & 135", lat: 28.5020, lng: 77.3710, radius: 2000 },
+  { name: "Sector 150", lat: 28.4350, lng: 77.4650, radius: 2500 }, 
+  { name: "Botanical Garden / Sector 38", lat: 28.5640, lng: 77.3340, radius: 1500 },
+  { name: "Sector 16B", lat: 28.6040, lng: 77.4330, radius: 2000 },
+  { name: "Sector 142 & 143", lat: 28.5020, lng: 77.4080, radius: 2000 },
+  { name: "Sector 52 & 53 / Hoshyarpur", lat: 28.5840, lng: 77.3550, radius: 1500 },
+  { name: "Zeta, Eta & Omicron Cluster", lat: 28.5080, lng: 77.4980, radius: 2000 }
+];
+
+const CITY_HUBS_GREATER_NOIDA=[
+  { name: "Omega, Pi & Sigma Sectors", lat: 28.4500, lng: 77.5250, radius: 2500 },
+  { name: "Chi & Phi Sectors", lat: 28.4380, lng: 77.5300, radius: 2000 },
+  { name: "Zeta, Eta & Theta", lat: 28.5100, lng: 77.5250, radius: 2500 },
+  { name: "Omicron & Mu Sectors", lat: 28.5000, lng: 77.5420, radius: 2500 },
+  { name: "Site B Commercial Belt", lat: 28.4670, lng: 77.5250, radius: 1500 },
+  { name: "Xi & Xu Sectors", lat: 28.4810, lng: 77.5005, radius: 1800 },
+
+  
+  // North & Peripheral GN
+  { name: "Swarn Nagri", lat: 28.5370, lng: 77.5250, radius: 2500 },
+  { name: "Patwari (GN/Noida border)", lat: 28.5330, lng: 77.5120, radius: 2000 },
+  { name: "Rabupura & Dankaur belt", lat: 28.4100, lng: 77.5400, radius: 3500 },
+
+  // GN West Gaps
+  { name: "Sector 12 & 16B (GN West)", lat: 28.5800, lng: 77.4640, radius: 2500 },
+  { name: "Ecovillage 1, 2, 3 (GN West)", lat: 28.6020, lng: 77.4200, radius: 2500 },
+  { name: "Ecotech 2 & 3", lat: 28.5450, lng: 77.4600, radius: 2000 },
+  { name: "Nu 1 & 2 Sectors", lat: 28.4710, lng: 77.5390, radius: 1500 },
+
+]
+
+const CITY_HUBS = [
+
+  // 🎓 MAIN COACHING CORRIDOR (Highway belt — PCS, UGC-NET, nursing, pro courses)
+  { name: "Old Faridabad & Sector 8-12", lat: 28.4082, lng: 77.3156, radius: 2000 },
+  { name: "Sector 14 & 15 (Bata Chowk, Main Hub)", lat: 28.3907, lng: 77.3133, radius: 2000 },
+  { name: "Ajronda & Neelam Chowk", lat: 28.4162, lng: 77.3022, radius: 2000 },
+  { name: "Escorts Mujesar & Sector 16 South", lat: 28.3803, lng: 77.3205, radius: 1500 },
+
+  // 🏘️ NIT (New Industrial Town — biggest residential mass, tuition core)
+  { name: "NIT 1, 2 & 3 (Main Tuition Belt)", lat: 28.3860, lng: 77.3045, radius: 2500 },
+  { name: "NIT 4 & 5 / Dabua Colony", lat: 28.3700, lng: 77.3060, radius: 2000 },
+
+  // 🏘️ PLANNED SECTORS (Tuition Class 1-12 demand)
+  { name: "Sector 17, 19 & 21", lat: 28.3920, lng: 77.2950, radius: 2000 },
+  { name: "Sector 37, 44 & 45", lat: 28.3820, lng: 77.3400, radius: 2500 },
+  { name: "Sector 46, 56 & 57", lat: 28.3680, lng: 77.3500, radius: 2500 },
+  { name: "Sainik Colony & Sector 3-7 (West)", lat: 28.4040, lng: 77.2880, radius: 2000 },
+
+  // 🚀 GREATER FARIDABAD (Fastest growing — basketball, skating academies here too)
+  { name: "Greater Faridabad Sec 75-85 (Main)", lat: 28.3580, lng: 77.3700, radius: 3000 },
+  { name: "Tigaon Road & Sec 86-89 (East GF)", lat: 28.3700, lng: 77.4100, radius: 2500 },
+
+  // 🏙️ NORTH FARIDABAD (Delhi border — coaching near metro)
+  { name: "Sector 28-29 (Near Metro Station)", lat: 28.4353, lng: 77.3065, radius: 2000 },
+  { name: "NHPC Chowk & Mewla Maharajpur", lat: 28.4440, lng: 77.3050, radius: 2000 },
+  { name: "Badkhal Mor & Sector 37A", lat: 28.4280, lng: 77.3180, radius: 2000 },
+  { name: "Surajkund & Pali Road", lat: 28.4600, lng: 77.2820, radius: 2500 },
+
+  // 🏭 BALLABGARH (Sub-city — sizeable standalone population)
+  { name: "Ballabgarh Town", lat: 28.3410, lng: 77.3210, radius: 2500 },
+];

@@ -1,8 +1,8 @@
 import { prisma } from "@/lib/prisma";
-import { Lock, MessageSquare, Mail, Phone, Calendar } from "lucide-react";
+import { Lock, MessageSquare, Mail, Phone, Calendar, ArrowRight } from "lucide-react"; // 🚀 FIX: ArrowRight import kiya
 import Link from "next/link";
 import { format } from "date-fns";
-import { PLAN_LIMITS,PlanType } from "@/lib/plan_limits";
+import { PLAN_LIMITS, PlanType } from "@/lib/plan_limits";
 
 export default async function EnquiriesPage({ params }: { params: Promise<{ instituteId: string }> }) {
     const { instituteId } = await params;
@@ -61,22 +61,29 @@ export default async function EnquiriesPage({ params }: { params: Promise<{ inst
                                         {enquiry.status}
                                     </span>
                                 </div>
-                                <div className="text-xs text-slate-400 flex items-center gap-1">
-                                    <Calendar className="w-3 h-3" /> {format(new Date(enquiry.createdAt), "PPp")}
+                                
+                                {/* 🚀 FIX: Date aur View Details Button ka naya layout */}
+                                <div className="flex flex-col items-end gap-2">
+                                    <div className="text-xs text-slate-400 flex items-center gap-1">
+                                        <Calendar className="w-3 h-3" /> {format(new Date(enquiry.createdAt), "PPp")}
+                                    </div>
+                                    <Link 
+                                        href={`/manager/leads/${enquiry.id}`} 
+                                        className="text-sm text-blue-600 hover:text-blue-800 font-bold flex items-center gap-1 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors"
+                                    >
+                                        View Details <ArrowRight className="w-4 h-4" />
+                                    </Link>
                                 </div>
                             </div>
                             
-                            <p className="text-sm text-slate-700 bg-slate-50 p-3 rounded-xl mb-4 italic">
+                            <p className="text-sm text-slate-700 bg-slate-50 p-3 rounded-xl mb-4 italic line-clamp-2">
                                 "{enquiry.message || "No message provided."}"
                             </p>
                             
                             <div className="flex items-center gap-6 text-sm text-slate-600">
-                                <a href={`mailto:${enquiry.email}`} className="flex items-center gap-1.5 hover:text-blue-600">
-                                    <Mail className="w-4 h-4" /> {enquiry.email}
-                                </a>
-                                <a href={`tel:${enquiry.phone}`} className="flex items-center gap-1.5 hover:text-blue-600">
+                                <Link href={`tel:${enquiry.phone}`} className="flex items-center gap-1.5 hover:text-blue-600">
                                     <Phone className="w-4 h-4" /> {enquiry.phone}
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     ))}

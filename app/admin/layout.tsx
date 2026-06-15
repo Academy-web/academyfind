@@ -14,7 +14,8 @@ import {
     Contact,
     Pyramid,
     Briefcase,
-    LifeBuoy
+    LifeBuoy,
+    PhoneCall
 } from "lucide-react";
 
 export default async function AdminLayout({
@@ -67,6 +68,7 @@ export default async function AdminLayout({
                         <SidebarLink href="/admin/life-coach" icon={<LifeBuoy />} label="Life Coach" />
                         <SidebarLink href="/admin/claims" icon={<FileText />} label="Claim Requests" />
                         <SidebarLink href="/admin/instituteRequests" icon={<FileType2 />} label="Institute Requests" />
+                        <SidebarLink href="/admin/instituteCallbacks" icon={<PhoneCall />} label="Institute Callbacks" />                        
                         <SidebarLink href="/admin/contactmessages" icon={<Contact />} label="Contact Messages" />
                         <SidebarLink href="/admin/payments" icon={<Pyramid />} label="Payment Approvals" />
                         <SidebarLink href="/admin/institutes" icon={<Building2 />} label="All Institutes" />

@@ -105,12 +105,13 @@ export async function createInstitute(formData: FormData, selectedCategoryIds: s
 export async function updateInstituteByAdmin(
     instituteId: string, 
     formData: FormData, 
-    selectedCategoryIds: string[] // Client form se array aayega
+    selectedCategoryIds: string[] 
 ) {
     try {
         const name = formData.get("name") as string;
         const slug = formData.get("slug") as string;
         const description = formData.get("description") as string;
+        const feeInfo = formData.get("feeInfo") as string; // 🚀 Added Fee Info
         const phone = formData.get("phone") as string;
         const email = formData.get("email") as string;
         const website = formData.get("website") as string;
@@ -119,9 +120,19 @@ export async function updateInstituteByAdmin(
         const cityId = formData.get("cityId") as string;
         const subscriptionPlan = formData.get("subscriptionPlan") as any;
         
+        // 🚀 Added All Social Media Links
+        const whatsappUrl = formData.get("whatsappUrl") as string;
+        const instagramUrl = formData.get("instagramUrl") as string;
+        const facebookUrl = formData.get("facebookUrl") as string;
+        const youtubeUrl = formData.get("youtubeUrl") as string;
+        const linkedinUrl = formData.get("linkedinUrl") as string;
+        const twitterUrl = formData.get("twitterUrl") as string;
+        const telegramUrl = formData.get("telegramUrl") as string;
+
         // Checkboxes / Toggles values
         const isVerified = formData.get("isVerified") === "true";
         const isFeatured = formData.get("isFeatured") === "true";
+        const isPublished = formData.get("isPublished") === "true"; // 🚀 FIX: Removed typo "true;"
         const isActive = formData.get("isActive") === "true";
 
         const imageFile = formData.get("imageFile") as File || null;
@@ -137,6 +148,7 @@ export async function updateInstituteByAdmin(
         if (imageFile && imageFile.size > 0) {
             newImageUrl = await uploadImageToCloudinary(imageFile, "institutes", `inst-${slug}-${Date.now()}`);
         }
+
         await prisma.$transaction([
             // 1. Direct Model Values Update Karo
             prisma.institute.update({
@@ -145,6 +157,7 @@ export async function updateInstituteByAdmin(
                     name,
                     slug,
                     description,
+                    feeInfo, // 🚀 Added
                     phone,
                     email,
                     website,
@@ -152,14 +165,26 @@ export async function updateInstituteByAdmin(
                     googleMapsUrl,
                     cityId,
                     subscriptionPlan,
-                    imageUrl: newImageUrl,
+                    
+                    // 🚀 Added Social Links to DB
+                    whatsappUrl,
+                    instagramUrl,
+                    facebookUrl,
+                    youtubeUrl,
+                    linkedinUrl,
+                    twitterUrl,
+                    telegramUrl,
+
                     isVerified,
                     isFeatured,
-                    isActive,
+                    isPublished,
+                    isActive,    
                     latitude,
                     longitude,
                     googleRating,
                     googleReviewCount,
+                    
+                    ...(newImageUrl && { imageUrl: newImageUrl }) 
                 }
             }),
 

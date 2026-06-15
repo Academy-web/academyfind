@@ -10,66 +10,102 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// THE ULTIMATE 47-HUB GRID FOR NOIDA & GREATER NOIDA
 const CITY_HUBS = [
-  // 1. DENSE COACHING HUBS
-  { name: "Sector 62", lat: 28.6215, lng: 77.3639, radius: 1500 },
-  { name: "Sector 15 & 16 Metro Hub", lat: 28.5785, lng: 77.3182, radius: 1500 },
-  { name: "Sector 18 (Atta Market)", lat: 28.5705, lng: 77.3260, radius: 1500 },
-  { name: "Sector 27 & 28", lat: 28.5802, lng: 77.3330, radius: 1500 },
-  { name: "Sector 50 & 51", lat: 28.5750, lng: 77.3690, radius: 1500 },
-  
-  // 2. MIXED RESIDENTIAL/COMMERCIAL CLUSTERS
-  { name: "Sector 11 & 12 Cluster", lat: 28.5992, lng: 77.3315, radius: 2000 },
-  { name: "Sector 22 & 24 Cluster", lat: 28.5940, lng: 77.3505, radius: 2000 },
-  { name: "Sector 34 & 35 (Near City Centre)", lat: 28.5772, lng: 77.3524, radius: 2000 },
-  { name: "Sector 41, 44 & 45 Area", lat: 28.5580, lng: 77.3450, radius: 2000 },
-  { name: "Sector 49 & 48 Barola Area", lat: 28.5570, lng: 77.3680, radius: 2000 },
-  { name: "Sector 55 & 56 Khora Border", lat: 28.6080, lng: 77.3480, radius: 2000 },
-  { name: "Sector 61 & 70 Cluster", lat: 28.5980, lng: 77.3750, radius: 2000 },
-  { name: "Sector 73, 74 & 75", lat: 28.5880, lng: 77.3890, radius: 2000 },
-  { name: "Sector 76, 77 & 78 Cluster", lat: 28.5720, lng: 77.3950, radius: 2000 },
-  { name: "Sector 93 & 82", lat: 28.5280, lng: 77.3910, radius: 2000 },
-  { name: "Sector 100, 104 & 107", lat: 28.5440, lng: 77.3730, radius: 2000 },
-  { name: "Sector 110 & Phase 2 Area", lat: 28.5350, lng: 77.4100, radius: 2000 }, 
-  { name: "Sector 119 & 120 Cluster", lat: 28.5910, lng: 77.4020, radius: 1500 }, 
-  { name: "Sector 121 & 122 Area", lat: 28.5990, lng: 77.4140, radius: 2000 }, 
-  { name: "Sector 137", lat: 28.5140, lng: 77.4120, radius: 2000 },
-  
-  // 3. NOIDA EXTENSION / GAUR CITY DENSE NODES
-  { name: "Gaur City / Sector 4 Noida Extension", lat: 28.6095, lng: 77.4410, radius: 2500 },
-  { name: "Techzone 4 / Knowledge Park 5 Node", lat: 28.5820, lng: 77.4560, radius: 2500 },
-  { name: "Sector 1 / Bisrakh (Deep Extension)", lat: 28.5950, lng: 77.4450, radius: 2000 },
-  { name: "Crossings Republik Border", lat: 28.6300, lng: 77.4350, radius: 1500 },
 
-  // 4. GREATER NOIDA MAJOR COACHING NODES
-  { name: "Pari Chowk & Alpha 1/2", lat: 28.4670, lng: 77.5120, radius: 2000 },
-  { name: "Beta 1 & Gamma 1", lat: 28.4810, lng: 77.5090, radius: 2000 },
-  { name: "Knowledge Park 1 & 2", lat: 28.4640, lng: 77.4910, radius: 2000 },
-  { name: "Knowledge Park 3 & Delta 1 Area", lat: 28.4830, lng: 77.4840, radius: 2000 },
-  { name: "Surajpur Area", lat: 28.5200, lng: 77.4900, radius: 2500 }, 
-  { name: "Kasna / UPSIDC Area", lat: 28.4230, lng: 77.5250, radius: 2000 }, 
-  { name: "Dadri Main Road / Ecotech II", lat: 28.5440, lng: 77.4850, radius: 2000 },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // NORTH DELHI
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Mukherjee Nagar: most UPSC-dense area in India — tiny radius intentional
+  { name: "Mukherjee Nagar (UPSC Hub)", lat: 28.7057, lng: 77.2040, radius: 1200 },
+  { name: "Kamla Nagar & Civil Lines",   lat: 28.6860, lng: 77.2150, radius: 2000 },
+  { name: "Model Town & Adarsh Nagar",   lat: 28.7110, lng: 77.1930, radius: 2000 },
+  { name: "Burari & Jahangirpuri",        lat: 28.7380, lng: 77.2050, radius: 2500 },
+  { name: "Alipur & Badli",              lat: 28.7750, lng: 77.1500, radius: 3000 },
+  { name: "Narela & Bawana",             lat: 28.8050, lng: 77.0960, radius: 4000 },
 
-  // 5. HIGH-DENSITY URBAN VILLAGES & LOCAL MARKETS
-  { name: "Bhangel Main Market", lat: 28.5365, lng: 77.4045, radius: 1200 },
-  { name: "Mamura Village", lat: 28.6035, lng: 77.3745, radius: 1200 },
-  { name: "Harola Sector 5 Market", lat: 28.5905, lng: 77.3265, radius: 1200 },
-  { name: "Nithari Sector 31 Area", lat: 28.5785, lng: 77.3455, radius: 1200 },
-  { name: "Chhalera Sector 44", lat: 28.5595, lng: 77.3540, radius: 1000 },
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // NORTH-WEST DELHI / ROHINI
+  // Rohini = 25+ sectors = needs 5 separate hubs
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "Shalimar Bagh & Ashok Vihar",          lat: 28.7000, lng: 77.1590, radius: 2000 },
+  { name: "Pitampura & Netaji Subhash Place",      lat: 28.6980, lng: 77.1340, radius: 1500 },
+  { name: "Rohini Sector 7-11 (Core)",             lat: 28.7080, lng: 77.1150, radius: 2000 },
+  { name: "Rohini Sector 13-18",                   lat: 28.7350, lng: 77.1050, radius: 2500 },
+  { name: "Rohini Sector 21-25 & Kirari",          lat: 28.7480, lng: 77.0850, radius: 3000 },
+  { name: "Paschim Vihar & Madipur",               lat: 28.6670, lng: 77.1030, radius: 2000 },
+  { name: "Punjabi Bagh & Shivaji Park",           lat: 28.6700, lng: 77.1350, radius: 1500 },
 
-  // 6. NEW EMERGING & TRANSIT NODES
-  { name: "Sector 63", lat: 28.6250, lng: 77.3820, radius: 1500 },
-  { name: "Sector 125 & 126", lat: 28.5440, lng: 77.3325, radius: 1500 },
-  { name: "Sector 102 & 101", lat: 28.5410, lng: 77.3910, radius: 1200 },
-  { name: "Khora Colony", lat: 28.6185, lng: 77.3400, radius: 1200 },
-  { name: "Sector 132 & 135", lat: 28.5020, lng: 77.3710, radius: 2000 },
-  { name: "Sector 150", lat: 28.4350, lng: 77.4650, radius: 2500 }, 
-  { name: "Botanical Garden / Sector 38", lat: 28.5640, lng: 77.3340, radius: 1500 },
-  { name: "Sector 16B", lat: 28.6040, lng: 77.4330, radius: 2000 },
-  { name: "Sector 142 & 143", lat: 28.5020, lng: 77.4080, radius: 2000 },
-  { name: "Sector 52 & 53 / Hoshyarpur", lat: 28.5840, lng: 77.3550, radius: 1500 },
-  { name: "Zeta, Eta & Omicron Cluster", lat: 28.5080, lng: 77.4980, radius: 2000 }
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // WEST DELHI
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "Rajouri Garden & Tagore Garden", lat: 28.6490, lng: 77.1210, radius: 2000 },
+  { name: "Tilak Nagar & Subhash Nagar",    lat: 28.6430, lng: 77.1480, radius: 1500 },
+  { name: "Janakpuri",                      lat: 28.6290, lng: 77.0840, radius: 2000 },
+  { name: "Uttam Nagar & Dwarka Mor",       lat: 28.6160, lng: 77.0580, radius: 2000 },
+  { name: "Vikaspuri & Bindapur",           lat: 28.6060, lng: 77.0380, radius: 2000 },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SOUTH-WEST DELHI / DWARKA
+  // Dwarka is 23 sectors = 3 separate hubs needed
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "North Dwarka (Sec 6-9, 11-12)",       lat: 28.6000, lng: 77.0480, radius: 2500 },
+  { name: "Central Dwarka (Sec 10, 13, 17-18)",  lat: 28.5820, lng: 77.0570, radius: 2000 },
+  { name: "South Dwarka (Sec 19-23)",            lat: 28.5520, lng: 77.0560, radius: 2500 },
+  { name: "Bijwasan & Palam",                    lat: 28.5330, lng: 77.0700, radius: 3000 },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // CENTRAL DELHI
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "Karol Bagh",                        lat: 28.6530, lng: 77.1900, radius: 1500 },
+  { name: "Patel Nagar & Rajendra Nagar",      lat: 28.6400, lng: 77.1700, radius: 2000 },
+  { name: "Paharganj & Sadar Bazar",           lat: 28.6490, lng: 77.2130, radius: 1500 },
+  { name: "Chandni Chowk & Old Delhi",         lat: 28.6510, lng: 77.2310, radius: 1500 },
+  { name: "Connaught Place & Rajendra Place",  lat: 28.6360, lng: 77.2070, radius: 2000 },
+  { name: "ITO & Darya Ganj",                 lat: 28.6330, lng: 77.2440, radius: 1500 },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SOUTH DELHI
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "R.K. Puram & Vasant Vihar",         lat: 28.5720, lng: 77.1850, radius: 2000 },
+  { name: "Munirka & Vasant Kunj North",       lat: 28.5430, lng: 77.1680, radius: 2000 },
+  { name: "Hauz Khas & Green Park",            lat: 28.5530, lng: 77.2050, radius: 2000 },
+  { name: "Malviya Nagar & Saket",             lat: 28.5280, lng: 77.2100, radius: 2000 },
+  { name: "Lajpat Nagar & Defence Colony",     lat: 28.5690, lng: 77.2350, radius: 2000 },
+  { name: "Greater Kailash 1 & 2",             lat: 28.5370, lng: 77.2370, radius: 2000 },
+  { name: "Kalkaji & Govindpuri",              lat: 28.5140, lng: 77.2530, radius: 2000 },
+  { name: "Sangam Vihar & Khanpur",            lat: 28.5060, lng: 77.2350, radius: 2500 },
+  { name: "Nehru Place & Okhla Phase 1",       lat: 28.5480, lng: 77.2600, radius: 2000 },
+  { name: "Mehrauli & Chattarpur",             lat: 28.5010, lng: 77.1850, radius: 3000 },
+  { name: "Badarpur & Tughlakabad",            lat: 28.4950, lng: 77.2800, radius: 2500 },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // SOUTH-EAST DELHI
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "Jamia Nagar & Okhla Phase 2-3", lat: 28.5570, lng: 77.2900, radius: 2000 },
+  { name: "Jasola & Sarita Vihar",         lat: 28.5380, lng: 77.2900, radius: 1500 },
+  { name: "Shaheen Bagh",                  lat: 28.5490, lng: 77.3070, radius: 1500 },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // EAST DELHI
+  // Laxmi Nagar is East Delhi's Mukherjee Nagar — tight radius
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "Laxmi Nagar (Coaching Hub)",      lat: 28.6300, lng: 77.2720, radius: 1500 },
+  { name: "Krishna Nagar & Gandhi Nagar",    lat: 28.6580, lng: 77.2620, radius: 2000 },
+  { name: "Preet Vihar & Vivek Vihar",       lat: 28.6540, lng: 77.3000, radius: 2000 },
+  { name: "Mayur Vihar Phase 1",             lat: 28.6080, lng: 77.2960, radius: 1500 },
+  { name: "Mayur Vihar Phase 2 & 3",         lat: 28.6020, lng: 77.3200, radius: 2000 },
+  { name: "IP Extension & Patparganj",       lat: 28.6220, lng: 77.3130, radius: 2000 },
+  { name: "Kondli, Mandawali & Ghazipur",    lat: 28.6060, lng: 77.3450, radius: 2500 },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // NORTH-EAST DELHI
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  { name: "Shahdara & Vishwas Nagar",       lat: 28.6720, lng: 77.2870, radius: 2000 },
+  { name: "Dilshad Garden & Shastri Park",  lat: 28.6820, lng: 77.3150, radius: 2000 },
+  { name: "Yamuna Vihar & Bhajanpura",      lat: 28.7120, lng: 77.2820, radius: 2500 },
+  { name: "Mustafabad & Maujpur",           lat: 28.7000, lng: 77.2950, radius: 2000 },
+  { name: "Nand Nagri & Seemapuri",         lat: 28.6960, lng: 77.3200, radius: 2500 },
+  { name: "Wazirabad & Khajuri Khas",       lat: 28.7450, lng: 77.3020, radius: 3000 },
 ];
 
 // Helper function to calculate a strict bounding box (rectangle) from center lat/lng & radius
@@ -185,17 +221,18 @@ function getImageUrl(photoName: string) {
 async function importCategoryCity(category: any, city: any) {
   const cityKey = city.slug.toLowerCase().trim();
 
-  const hubs = cityKey === "noida" ? CITY_HUBS : [{ name: city.name, lat: null, lng: null, radius: null }];
+  const hubs = cityKey === "delhi" ? CITY_HUBS : [{ name: city.name, lat: null, lng: null, radius: null }];
 
   console.log(`\n🚀 Processing: ${category.name} -> ${city.name}`);
-  const educationalKeywords = ["coaching", "training", "classes", "academy", "tuition", "institute", "programs"];
+  const Keywords = ["coaching", "classes", "academy", "tuition", "institute"];
   const categoryNameLower = category.name.toLowerCase();
   
   // Check karte hain ki naam me inme se koi word hai kya?
-  const hasEducationalWord = educationalKeywords.some(word => categoryNameLower.includes(word));
+  const hasEducationalWord = Keywords.some(word => categoryNameLower.includes(word));
   
   // Agar nahi hai, toh "Institute" add kar do (best for Graphic Design, Video Editing etc.)
-  const searchQuery = hasEducationalWord ? category.name : `${category.name} Institute`;
+  const searchQuery = hasEducationalWord ? category.name : `${category.name} Classes`;
+  console.log("Search Query is -> -> ",searchQuery);
   const uniquePlaces = new Map<string, any>();
 
   console.log(`Processing ${hubs.length} hubs`);
@@ -295,41 +332,102 @@ async function main() {
 
   const selectedCategories = categories.filter((c) =>
   [
-    // Medical (Updated slug)
+    "jee-coaching",
+    "neet-coaching",
+    "upsc-coaching",
+    "cat-coaching",
+    "clat-coaching",
+    "cuet-coaching",
+    "ssc-coaching",
+    "banking-coaching",
+    "railway-coaching",
+    "defence-coaching",
+    "gate-coaching",
+    "law-coaching",
+    "ca-coaching",
+    "ielts-coaching",
+    "gre-coaching",
+    "coding-classes",
+    "cyber-security-training",
+    "english-learning",
+    "guitar-classes",
+    "piano-classes",
+    "tabla-classes",
+    "violin-classes",
+    "dance-classes",
+    "singing-classes",
+    "art-craft-classes",
+    "sketching",
+    "csir-net-coaching",
+    "ctet-coaching",
+    "cricket-academy",
+    "football-academy",
+    "swimming-classes",
+    "gym",
+    "yoga-classes",
+    "sat-coaching",
+    "aviation-cabin-crew",
+    "hotel-management-coaching",
+    "fashion-designing",
     "nursing-entrance-coaching",
-    // Nayi School Tuition Categories
-    "class-3-tuition", "class-4-tuition", 
-    "class-5-tuition", "class-6-tuition", "class-7-tuition", "class-8-tuition", 
-    "class-9-tuition", "class-10-tuition", "class-11-tuition", "class-12-tuition", 
-    // Government Exams, Defence & Teaching (New Additions)
-    "state-pcs-coaching", "nda-coaching", 
+    "class-1-tuition",
+    "class-2-tuition",
+    "class-3-tuition", 
+    "class-4-tuition", 
+    "class-5-tuition", 
+    "class-6-tuition", 
+    "class-7-tuition", 
+    "class-8-tuition", 
+    "class-9-tuition", 
+    "class-10-tuition", 
+    "class-11-tuition", 
+    "class-12-tuition", 
+    "state-pcs-coaching", 
+    "nda-coaching", 
     "ugc-net-coaching",  
-    // Study Abroad (New Additions)
-     "sat-coaching", 
-    // Computer & Tech, Design, Cloud (New Additions)
     "aws-training", 
-     "ui-ux-design", "graphic-design", "video-editing", "animation-vfx",
-    // Business & Professional Skills (Poori nayi section)
-    "digital-marketing", "sales-training", "stock-market-training",  "hr-training", 
+    "ui-ux-design", 
+    "graphic-design", 
+    "video-editing", 
+    "animation-vfx",
+    "digital-marketing", 
+    "sales-training",
+    "stock-market-training",  
+    "hr-training", 
     "interview-preparation", 
-    // Vocational & Job-Oriented (Poori nayi section)
-    "hotel-management-coaching", 
-    "aviation-cabin-crew", "beauty-makeup-courses",  
-    "fashion-designing", 
-    // Languages, Arts, Creativity (New Additions)
-    "korean-classes", "theatre-acting", "piano-classes", 
-     "violin-classes", "sketching", "art-craft-classes",
-    // Sports, Wellness & Combat (New Additions)
-    "basketball-academy", "skating-classes", 
+    "beauty-makeup-courses",  
+    "korean-classes", 
+    "theatre-acting", 
+    "basketball-academy", 
+    "skating-classes", 
     "karate",
-    // Kids, Hobby & Early Education (New Additions)
     "handwriting-improvement",
+    "foundation-courses",
+    "olympiad-coaching",
+    "tabla-classes",
+    "afcat-coaching",
+    "tet-coaching",
+    "cma-coaching",
+    "cs-coaching",
+    "judiciary-coaching",
+    "phonics",
+    "preschool-programs",
+    "personality-development",
+    "public-speaking",
+    "abacus-classes",
+    "vedic-maths",
+    "robotics-classes",
+    "martial-arts",
+    "badminton-academy",
+    "tennis-academy",
+    
+
   ].includes(c.slug)
 );
 
   const selectedCities = cities.filter((c) =>
     [
-      "noida",
+      "delhi",
     ].includes(c.slug)
   );
 

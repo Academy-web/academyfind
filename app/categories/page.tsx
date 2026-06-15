@@ -42,7 +42,7 @@ export default async function CategoriesPage({
     <>
       {/* 👇 3. citySlug sabko as prop bhej diya */}
       <CategoriesHero citySlug={citySlug} />
-      <CategoryStats />
+      <CategoryStats citySlug={citySlug}/>
       <CategoryContainer parentCategories={parentCategories} citySlug={citySlug} />
       <MoreCategories citySlug={citySlug} />  
       <CategoryCTA />
