@@ -15,7 +15,8 @@ import {
     Pyramid,
     Briefcase,
     LifeBuoy,
-    PhoneCall
+    PhoneCall,
+    IdCard
 } from "lucide-react";
 
 export default async function AdminLayout({
@@ -74,6 +75,7 @@ export default async function AdminLayout({
                         <SidebarLink href="/admin/institutes" icon={<Building2 />} label="All Institutes" />
                         <SidebarLink href="/admin/users" icon={<Users />} label="User Management" />
                         <SidebarLink href="/admin/sales_manager" icon={<Briefcase />} label="Sales Managers" />
+                        <SidebarLink href="/admin/careers" icon={<IdCard />} label="Careers" />
                         <div className="my-2 border-t border-slate-200"></div>
                         <SidebarLink href="/admin/categories" icon={<FolderTree />} label="Categories" />
                         <SidebarLink href="/admin/cities" icon={<MapPin />} label="Cities & Regions" />

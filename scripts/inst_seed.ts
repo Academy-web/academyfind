@@ -285,7 +285,7 @@ async function importCategoryCity(category: any, city: any) {
           phone: place.nationalPhoneNumber ?? null,
           googleRating: place.rating ?? 0,
           googleReviewCount: place.userRatingCount ?? 0,
-          imageUrl,
+          //imageUrl,
         },
         create: {
           name: place.displayName.text,
@@ -303,6 +303,13 @@ async function importCategoryCity(category: any, city: any) {
           cityId: city.id,
         },
       });
+
+      if (imageUrl && !institute.imageUrl?.includes("cloudinary.com")) {
+        await prisma.institute.update({
+          where: { id: institute.id },
+          data: { imageUrl },
+        });
+      }
 
       await prisma.instituteCategory.upsert({
         where: {
@@ -420,7 +427,7 @@ async function main() {
     "martial-arts",
     "badminton-academy",
     "tennis-academy",
-    
+
 
   ].includes(c.slug)
 );

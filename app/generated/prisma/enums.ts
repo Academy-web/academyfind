@@ -54,3 +54,14 @@ export const LifeCoachRequestStatus = {
 } as const
 
 export type LifeCoachRequestStatus = (typeof LifeCoachRequestStatus)[keyof typeof LifeCoachRequestStatus]
+
+
+export const JobApplicationStatus = {
+  NEW: 'NEW',
+  REVIEWING: 'REVIEWING',
+  SHORTLISTED: 'SHORTLISTED',
+  REJECTED: 'REJECTED',
+  HIRED: 'HIRED'
+} as const
+
+export type JobApplicationStatus = (typeof JobApplicationStatus)[keyof typeof JobApplicationStatus]

@@ -151,3 +151,13 @@ export type LifeCoachRequest = Prisma.LifeCoachRequestModel
  * 
  */
 export type AdminNotification = Prisma.AdminNotificationModel
+/**
+ * Model JobPosting
+ * 
+ */
+export type JobPosting = Prisma.JobPostingModel
+/**
+ * Model JobApplication
+ * 
+ */
+export type JobApplication = Prisma.JobApplicationModel

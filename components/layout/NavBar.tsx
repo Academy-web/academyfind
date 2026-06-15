@@ -13,6 +13,7 @@ import {
   Menu,
   User,
   Building,
+  IdCard,
 } from "lucide-react";
 // 👇 Hooks import kiye hain auto-close logic ke liye
 import { useState, useEffect } from "react";
@@ -99,10 +100,12 @@ export default function Navbar() {
           </Button>
 
           {/* Note: Compare button currently doesn't have a Link in your code */}
-          {/* <Button variant="ghost" className="gap-2">
-            <BarChart3 className="size-4" />
-            Compare
-          </Button> */}
+          <Button asChild variant="ghost" className="gap-2">
+            <Link href="/careers">
+              <IdCard className="size-4" />
+              Careers
+            </Link>
+          </Button>
 
           <Button asChild variant="ghost" className="gap-2">
             <Link href="/blog">
@@ -182,10 +185,12 @@ export default function Navbar() {
                   </Link>
                 </Button>
 
-                {/* <Button variant="ghost" className="justify-start gap-3">
-                  <BarChart3 className="size-4" />
-                  Compare
-                </Button> */}
+                <Button asChild variant="ghost" className="justify-start gap-3">
+                  <Link href="/careers">
+                    <IdCard className="size-4" />
+                    Careers
+                  </Link>
+                </Button>
 
                 <Button asChild variant="ghost" className="justify-start gap-3">
                   <Link href="/blog">

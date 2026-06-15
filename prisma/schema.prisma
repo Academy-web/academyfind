@@ -451,3 +451,67 @@ model AdminNotification {
   @@index([userId])
   @@map("admin_notification")
 }
+
+enum JobApplicationStatus {
+
+NEW
+
+REVIEWING
+
+SHORTLISTED
+
+REJECTED
+
+HIRED
+
+}
+
+model JobPosting {
+  id            String   @id @default(cuid())
+  title         String   
+  slug          String   @unique
+  department    String   
+  location      String
+  type          String   
+  experience    String?
+  description   String   @db.Text
+  responsibilities  String @db.Text
+  requirements  String   @db.Text
+  benefits      String?   @db.Text
+  isActive      Boolean  @default(true)
+  Salary        String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  applications  JobApplication[]
+
+  @@map("job_posting")
+  @@index([isActive])
+  @@index([department])
+}
+
+model JobApplication {
+  id          String     @id @default(cuid())
+  jobId       String
+  job         JobPosting @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  
+  name        String
+  email       String
+  phone       String
+  linkedinUrl String?
+  portfolioUrl String?
+  resumeUrl   String     
+  resumeFileName  String
+  coverLetter String?    @db.Text
+  status      JobApplicationStatus  @default(NEW)
+  notes           String? @db.Text
+  
+  createdAt   DateTime   @default(now())
+
+  @@index([jobId])
+  @@index([status])
+  @@map("job_application")
+}
+
+
+

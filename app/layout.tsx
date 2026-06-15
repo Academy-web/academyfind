@@ -25,6 +25,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "AcademyFind",
   description: "Academy Search Simplified",
+  // icons: {
+  //   icon: "/logo.png",
+  //   shortcut: "/logo.png",
+  //   apple: "/logo.png",
+  // },
 };
 
 export default function RootLayout({

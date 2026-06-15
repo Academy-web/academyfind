@@ -72,7 +72,9 @@ export const ModelName = {
   SalesAssignment: 'SalesAssignment',
   SalesCategoryAssignment: 'SalesCategoryAssignment',
   LifeCoachRequest: 'LifeCoachRequest',
-  AdminNotification: 'AdminNotification'
+  AdminNotification: 'AdminNotification',
+  JobPosting: 'JobPosting',
+  JobApplication: 'JobApplication'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -418,6 +420,46 @@ export const AdminNotificationScalarFieldEnum = {
 } as const
 
 export type AdminNotificationScalarFieldEnum = (typeof AdminNotificationScalarFieldEnum)[keyof typeof AdminNotificationScalarFieldEnum]
+
+
+export const JobPostingScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  department: 'department',
+  location: 'location',
+  type: 'type',
+  experience: 'experience',
+  description: 'description',
+  responsibilities: 'responsibilities',
+  requirements: 'requirements',
+  benefits: 'benefits',
+  isActive: 'isActive',
+  Salary: 'Salary',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type JobPostingScalarFieldEnum = (typeof JobPostingScalarFieldEnum)[keyof typeof JobPostingScalarFieldEnum]
+
+
+export const JobApplicationScalarFieldEnum = {
+  id: 'id',
+  jobId: 'jobId',
+  name: 'name',
+  email: 'email',
+  phone: 'phone',
+  linkedinUrl: 'linkedinUrl',
+  portfolioUrl: 'portfolioUrl',
+  resumeUrl: 'resumeUrl',
+  resumeFileName: 'resumeFileName',
+  coverLetter: 'coverLetter',
+  status: 'status',
+  notes: 'notes',
+  createdAt: 'createdAt'
+} as const
+
+export type JobApplicationScalarFieldEnum = (typeof JobApplicationScalarFieldEnum)[keyof typeof JobApplicationScalarFieldEnum]
 
 
 export const SortOrder = {
