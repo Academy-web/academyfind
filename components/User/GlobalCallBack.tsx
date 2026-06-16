@@ -45,7 +45,7 @@ export default function GlobalCallbackFAB() {
             {/* 🚀 FAB Button acts as the trigger */}
             <PopoverTrigger asChild>
                 <button 
-                    className="fixed bottom-6 right-6 z-50 flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-white rounded-full p-4 md:px-5 md:py-3 shadow-2xl hover:scale-105 transition-all duration-300 group"
+                    className="fixed bottom-6 right-6 z-1000 flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-white rounded-full p-4 md:px-5 md:py-3 shadow-2xl hover:scale-105 transition-all duration-300 group"
                 >
                     <div className="relative">
                         {/* 🚀 Icon swaps to 'X' when open */}
