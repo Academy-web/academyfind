@@ -55,9 +55,9 @@ export default function RootLayout({
 
         <main className="flex-1">
           {children}
+        <GlobalCallbackFAB />
         </main>
         </GoogleMapsProvider>
-        <GlobalCallbackFAB />
 
         <Toaster position="top-center" reverseOrder={false} />
         <AuthPromptModal />

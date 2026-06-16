@@ -41,11 +41,12 @@ export default function GlobalCallbackFAB() {
     };
 
     return (
+        <div className="fixed bottom-6 right-6 z-[1000]">
         <Popover open={isOpen} onOpenChange={setIsOpen}>
             {/* 🚀 FAB Button acts as the trigger */}
             <PopoverTrigger asChild>
                 <button 
-                    className="fixed bottom-6 right-6 z-1000 flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-white rounded-full p-4 md:px-5 md:py-3 shadow-2xl hover:scale-105 transition-all duration-300 group"
+                    className="flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-white rounded-full p-4 md:px-5 md:py-3 shadow-2xl hover:scale-105 transition-all duration-300 group"
                 >
                     <div className="relative">
                         {/* 🚀 Icon swaps to 'X' when open */}
@@ -68,9 +69,9 @@ export default function GlobalCallbackFAB() {
             <PopoverContent 
                 side="top" 
                 align="end" 
-                sideOffset={16}
-                className="w-[calc(100vw-32px)] sm:w-85 rounded-3xl p-0 overflow-hidden shadow-2xl border border-slate-200 z-50 mr-4 sm:mr-0 origin-bottom-right animate-in zoom-in-95 duration-200"
-            >
+                sideOffset={12}
+                collisionPadding={20}
+                className="w-[90vw] max-w-[340px] z-[1000] rounded-3xl p-0 overflow-hidden shadow-2xl border border-slate-200 origin-bottom-right animate-in zoom-in-95 duration-200"            >
                 <div className="bg-amber-400 p-5 text-white text-center relative">
                     <HeadphonesIcon className="w-8 h-8 mx-auto mb-2 opacity-90" />
                     <h3 className="text-xl font-extrabold tracking-tight">Need Help?</h3>
@@ -124,5 +125,6 @@ export default function GlobalCallbackFAB() {
                 </div>
             </PopoverContent>
         </Popover>
+        </div>
     );
 }
