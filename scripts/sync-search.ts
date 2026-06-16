@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { meili } from "@/lib/meilisearch";
 import dotenv from "dotenv"
+import { JobPosting } from "@/app/generated/prisma/client";
 
 dotenv.config()
 
@@ -84,7 +85,7 @@ async function main() {
     })),
 
     // --- 🚀 NEW: JOB POSTINGS ---
-    ...jobs.map((job) => ({
+    ...jobs.map((job: JobPosting) => ({
       id: `job-${job.id}`,
       type: "job",
       name: job.title, // 'title' ko 'name' me map kiya hai taaki search easily dhund le
