@@ -73,6 +73,7 @@ export async function getInstitutesByCategoryAndCity(
       
       if (sort === "rating") searchOptions.sort = ["googleRating:desc"];
       else if (sort === "reviews") searchOptions.sort = ["googleReviewCount:desc"];
+      else if (lat && lng) searchOptions.sort = [`_geoPoint(${lat}, ${lng}):asc`];
       else delete searchOptions.sort;
 
       searchRes = await meili.index("global_search").search(searchQuery, searchOptions);

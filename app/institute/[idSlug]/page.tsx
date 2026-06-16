@@ -220,10 +220,22 @@ export default async function InstitutePage({ params }: PageProps) {
                     </div>
 
                     <div className="mt-6 flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 border border-slate-100 text-left">
-                      <div className="flex items-start gap-2.5 text-slate-600">
+                      {/* <div className="flex items-start gap-2.5 text-slate-600">
                         <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                         <span className="text-sm leading-relaxed">{institute.address || institute.city.name}</span>
-                      </div>
+                      </div> */}
+                      <Link 
+                        href={institute.googleMapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${institute.name} ${institute.address || institute.city.name}`)}`}
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-start gap-2.5 text-slate-600 hover:text-amber-600 transition-colors group"
+                        title="View on Google Maps"
+                      >
+                        <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-500 group-hover:scale-110 transition-transform" />
+                        <span className="text-sm leading-relaxed underline-offset-4 group-hover:underline">
+                          {institute.address || institute.city.name}
+                        </span>
+                      </Link>  
 
                       <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-6 pt-2 border-t border-slate-200/60 mt-1">
                         {institute.phone && (

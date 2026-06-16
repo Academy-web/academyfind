@@ -46,10 +46,13 @@ export default function SubscriptionClient({ currentPlan,instituteId }: Subscrip
             },
             desc: "Showcase faculty, results, and track analytics.", 
             features: [
-                "Everything in Verified", 
+                 "Everything in Verified", 
+                "Add Social Media Links",
                 "Visit & Save Analytics", 
                 "Teacher Profiles (Up to 4)", 
-                "Videos & Results (Up to 4)"
+                "Videos Links (Up to 4)",
+                "Result Pics (Up to 4)",
+                "Classroom Pics (Up to 4)"
             ] 
         },
         { 

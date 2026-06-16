@@ -11,9 +11,7 @@ import RelatedCities from "@/components/City_Category/RelatedCities";
 import CityFAQ from "@/components/City_Category/CityFAQ";
 import CityCTA from "@/components/City_Category/CityCTA";
 import Pagination from "@/components/navigation/Pagination";
-import { trackVisitHistory } from "@/lib/User/user/user-activity";
 
-// Naya component import karein
 import MapToggleSection from "@/components/maps/MapToggleSection"; 
 
 export const revalidate = 86400;
@@ -32,6 +30,9 @@ interface PageProps {
     address?: string; 
     radius?: string;
     rating?: string;
+    userLat?: string;       // 🚀 NAYA ADD KIYA
+    userLng?: string;       // 🚀 NAYA ADD KIYA
+    closestUser?: string;   // 🚀 NAYA ADD KIYA
   }>;
 }
 
@@ -48,29 +49,33 @@ export async function generateMetadata({
   };
 }
 
-
 export default async function CategoryCityPage({
   params,
   searchParams,
 }: PageProps) {
   const { category, city } = await params;
-  // 👇 URL se lat, lng, aur address catch kiya
-  const { sort, page, q, lat, lng, address, radius, rating } = await searchParams;
+  
+  // 🚀 URL se sab kuch catch kiya
+  const { sort, page, q, lat, lng, address, radius, rating, userLat, userLng, closestUser } = await searchParams;
 
   const categoryName = formatSlug(category);
   const cityName = formatSlug(city);
 
   const currentPage = page ? parseInt(page, 10) : 1;
   
-  // 👇 Strings ko numbers me convert kiya backend ke liye
-  const parsedLat = lat ? parseFloat(lat) : undefined;
-  const parsedLng = lng ? parseFloat(lng) : undefined;
+  // 🚀 LOGIC: Check karo ki user ne konsa "Closest" button dabaya hai
+  const isClosestToMeActive = closestUser === "true";
+  const finalLat = isClosestToMeActive ? userLat : lat;
+  const finalLng = isClosestToMeActive ? userLng : lng;
 
-  const parsedRadius = radius ? parseInt(radius,10) : undefined
-  const minRating = rating ? parseFloat(rating) : undefined
+  const parsedLat = finalLat ? parseFloat(finalLat) : undefined;
+  const parsedLng = finalLng ? parseFloat(finalLng) : undefined;
 
-  // 👇 Backend function ko lat/lng paas kiye
-  const {institutes, totalPages, totalCount, exactAreaMatch} = await getInstitutesByCategoryAndCity(
+  const parsedRadius = radius ? parseInt(radius, 10) : undefined;
+  const minRating = rating ? parseFloat(rating) : undefined;
+
+  // 👇 Ab backend function ko sahi lat/lng jayenge
+  const { institutes, totalPages, totalCount, exactAreaMatch } = await getInstitutesByCategoryAndCity(
     category,
     city,
     sort,
@@ -96,59 +101,59 @@ export default async function CategoryCityPage({
       <CityHero categoryName={categoryName} cityName={cityName} totalCount={totalCount}/>
 
       <div className="flex flex-col lg:flex-row gap-8 relative mt-8">
-        <aside className="lg:w-64 shrink-0 relative lg:sticky lg:top-24 slef-start h-fit z-10 mb-6 lg:mb-0">
-        <div className="sticky top-24"> 
-          <CityFilters category={category} city={city} hasLocation={!!parsedLat} />
-        </div>
-      </aside>
+        <aside className="lg:w-64 shrink-0 relative lg:sticky lg:top-24 self-start h-fit z-10 mb-6 lg:mb-0">
+          <div className="sticky top-24"> 
+            <CityFilters category={category} city={city} hasLocation={!!lat} />
+          </div>
+        </aside>
 
-      <div className="flex-1 min-w-0 w-full">
+        <div className="flex-1 min-w-0 w-full">
 
-        <MapToggleSection
-          institutes={institutes.map((institute) => ({
-            id: institute.id,
-            name: institute.name,
-            latitude: institute.latitude,
-            longitude: institute.longitude,
-            slug: `${institute.id}-${institute.slug}`,
-          }))}
-        />
+          <MapToggleSection
+            institutes={institutes.map((institute) => ({
+              id: institute.id,
+              name: institute.name,
+              latitude: institute.latitude,
+              longitude: institute.longitude,
+              slug: `${institute.id}-${institute.slug}`,
+            }))}
+          />
 
-        {/* 🔴 Fallback Banner (Agar radius me kuch nahi mila) */}
-        {(q || address) && exactAreaMatch === false && (
-          <div className="mt-6 mb-2 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-amber-900 shadow-sm animate-in fade-in zoom-in duration-300">
-            <div className="flex items-start gap-4">
-              <span className="text-2xl mt-1">📍</span>
-              <div>
-                <h4 className="text-lg font-bold">
-                  Couldn't find verified {categoryName} institutes near "{displayLocationText}"
-                </h4>
-                <p className="mt-1 text-sm text-amber-700">
-                  Don't worry! We've found the best and highly-rated institutes in other areas of <strong>{cityName}</strong> for you.
-                </p>
+          {/* 🔴 Fallback Banner */}
+          {(q || address || isClosestToMeActive) && exactAreaMatch === false && (
+            <div className="mt-6 mb-2 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-amber-900 shadow-sm animate-in fade-in zoom-in duration-300">
+              <div className="flex items-start gap-4">
+                <span className="text-2xl mt-1">📍</span>
+                <div>
+                  <h4 className="text-lg font-bold">
+                    Couldn't find verified {categoryName} institutes near your exact location
+                  </h4>
+                  <p className="mt-1 text-sm text-amber-700">
+                    Don't worry! We've found the best and highly-rated institutes in other areas of <strong>{cityName}</strong> for you (Sorted by distance).
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* 🟢 Success Banner (Agar radius me mil gaya) */}
-        {(q || address) && exactAreaMatch === true && (
-          <div className="mt-6 mb-2 text-sm text-slate-500 flex items-center gap-2">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-            </span>
-            Showing results near: <span className="font-semibold text-slate-800 capitalize">"{displayLocationText}"</span>
-          </div>
-        )}
+          {/* 🟢 Success Banner */}
+          {(q || address || isClosestToMeActive) && exactAreaMatch === true && (
+            <div className="mt-6 mb-2 text-sm text-slate-500 flex items-center gap-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span>
+              Showing results near: <span className="font-semibold text-slate-800 capitalize">
+                "{isClosestToMeActive ? "Your Current Location" : displayLocationText}"
+              </span>
+            </div>
+          )}
 
-        <InstituteListing institutes={institutes} category={category}/>
+          <InstituteListing institutes={institutes} category={category}/>
 
-        <Pagination totalPages={totalPages} />
+          <Pagination totalPages={totalPages} />
+        </div>
       </div>
-      </div>
-
-      
 
       <CityAbout categoryName={categoryName} cityName={cityName} />
       <RelatedCities category={category} cityName={city} citySlug={city}/>

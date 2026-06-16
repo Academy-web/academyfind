@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   Select,
@@ -8,9 +9,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowDownUp, MapPin, Star, IndianRupee } from "lucide-react";
+import { ArrowDownUp, MapPin, Star, IndianRupee, Navigation, Loader2 } from "lucide-react";
 import { Button } from "../ui/button";
-import SmartButton from "../ui/SmartButton";
 
 interface Props {
   category: string;
@@ -23,30 +23,85 @@ export default function CityFilters({ category, city, hasLocation }: Props) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Current values from URL (Default 'all' set kiya hai UI match karne ke liye)
+  const [isLocating, setIsLocating] = useState(false);
+
+  // Current values from URL 
   const currentSort = searchParams.get("sort") || "relevance";
   const currentRadius = searchParams.get("radius") || "5";
   const currentRating = searchParams.get("rating") || "all";
   const currentFee = searchParams.get("fee") || "all";
+  
+  // States for the two 'Closest' buttons
   const isClosest = searchParams.get("closest") === "true";
+  const isClosestUser = searchParams.get("closestUser") === "true";
 
+  // 1. Purana filter: Closest from Selected Location
   const toggleClosest = () => {
-  const params = new URLSearchParams(searchParams.toString());
-  if (isClosest) {
-    params.delete("closest");
-  } else {
-    params.delete("sort");
-    params.set("closest", "true");
-  }
-  router.push(`${pathname}?${params.toString()}`);
-};
+    const params = new URLSearchParams(searchParams.toString());
+    if (isClosest) {
+      params.delete("closest");
+    } else {
+      params.delete("sort");
+      params.delete("closestUser"); // Dusra wala closest band kardo
+      params.delete("userLat");
+      params.delete("userLng");
+      params.set("closest", "true");
+    }
+    router.push(`${pathname}?${params.toString()}`);
+  };
 
-  // 🚀 Magic Function
+  // 2. Naya filter: Closest to Me (Live GPS)
+  const toggleClosestToMe = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    
+    // Agar pehle se ON hai toh OFF kardo
+    if (isClosestUser) {
+      params.delete("closestUser");
+      params.delete("userLat");
+      params.delete("userLng");
+      router.push(`${pathname}?${params.toString()}`);
+      return;
+    }
+
+    // ON karna hai toh GPS fetch karo
+    setIsLocating(true);
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          params.delete("sort");
+          params.delete("closest"); // Purana wala closest band kardo
+          params.set("closestUser", "true");
+          params.set("userLat", position.coords.latitude.toString());
+          params.set("userLng", position.coords.longitude.toString());
+          
+          router.push(`${pathname}?${params.toString()}`);
+          setIsLocating(false);
+        },
+        (error) => {
+          console.error(error);
+          alert("We couldn't fetch your location. Please allow location access in your browser.");
+          setIsLocating(false);
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by your browser.");
+      setIsLocating(false);
+    }
+  };
+
+  // 🚀 Magic Function (Updated to clear both closest flags if normal sort changes)
   const handleFilterChange = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
     
-    if (value && value !== "relevance" && value !== "all") {
+    // Agar manual Sort change ho raha hai toh dono closest hata do
+    if (key === "sort") {
       params.delete("closest");
+      params.delete("closestUser");
+      params.delete("userLat");
+      params.delete("userLng");
+    }
+
+    if (value && value !== "relevance" && value !== "all") {
       params.set(key, value);
     } else {
       params.delete(key);
@@ -126,18 +181,48 @@ export default function CityFilters({ category, city, hasLocation }: Props) {
         </SelectContent>
       </Select>
 
-      {hasLocation && (<Button 
-        variant={isClosest ? "default" : "outline"}
-        onClick={toggleClosest}
-        className={`rounded-full transition-all ${
-          isClosest 
-            ? "bg-amber-500 text-white hover:bg-amber-600" 
-            : "bg-white border-amber-200 text-slate-700 hover:bg-amber-50"
-        }`}
-      >
-        <MapPin className="mr-2 h-4 w-4" />
-        {isClosest ? "Sorted: Closest" : "Sort by Closest"}
-      </Button>)}
+      {/* Action Buttons Container */}
+      {/* Action Buttons Container */}
+      <div className="flex flex-col gap-3 mt-4">
+        {/* Old Button: Closest from selected location */}
+        {hasLocation && (
+          <Button 
+            variant="outline"
+            onClick={toggleClosest}
+            className={`w-full h-auto py-3 px-4 flex items-start justify-start rounded-2xl transition-all ${
+              isClosest 
+                ? "bg-amber-500 text-white hover:bg-amber-600 border-amber-500" 
+                : "bg-white border-amber-200 text-slate-700 hover:bg-amber-50"
+            }`}
+          >
+            <MapPin className="mr-3 h-4 w-4 shrink-0 mt-0.5" />
+            <span className="flex-1 whitespace-normal text-left leading-relaxed text-xs font-bold break-words">
+              {isClosest ? "Sorted: Closest from selected location" : "Sort by Closest from selected location"}
+            </span>
+          </Button>
+        )}
+
+        {/* New Button: Closest to Me */}
+        <Button 
+          variant="outline"
+          onClick={toggleClosestToMe}
+          disabled={isLocating}
+          className={`w-full h-auto py-3 px-4 flex items-start justify-start rounded-2xl transition-all ${
+            isClosestUser 
+              ? "bg-amber-500 text-white hover:bg-amber-600 border-amber-500" 
+              : "bg-white border-amber-200 text-slate-700 hover:bg-amber-50"
+          }`}
+        >
+          {isLocating ? (
+            <Loader2 className="mr-3 h-4 w-4 animate-spin shrink-0 mt-0.5" />
+          ) : (
+            <Navigation className="mr-3 h-4 w-4 shrink-0 mt-0.5" />
+          )}
+          <span className="flex-1 whitespace-normal text-left leading-relaxed text-xs font-bold break-words">
+            {isClosestUser ? "Sorted: Closest to Me" : "Sort by Closest to Me"}
+          </span>
+        </Button>
+      </div>
 
     </section>
   );
