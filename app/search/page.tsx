@@ -63,11 +63,15 @@ export default async function SearchPage({ searchParams }: Props) {
             currentCategory={category}
             currentRating={rating}
           />
+          
 
           <div className="space-y-14">
-            <SearchResultsHeader query={q} />
+            <SearchResultsHeader query={q} 
+               type={type} 
+               city={city} 
+               category={category} 
+               rating={rating}/>
 
-            {/* 🔥 Type parameter bhi pass kiya */}
             <InstituteResults query={q} type={type} city={city} category={category} rating={rating} />
 
             <RelatedCategories />
