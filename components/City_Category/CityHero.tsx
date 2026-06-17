@@ -11,7 +11,7 @@ export default function CityHero({
   totalCount: number;
 }) {
   return (
-    <section className="relative overflow-y-visible z-[101] rounded-3xl border border-amber-100 bg-linear-to-br from-amber-50 via-white to-orange-50 p-8 md:p-12 mb-12">
+    <section className="relative overflow-y-visible z-[101] rounded-3xl border border-amber-100 bg-linear-to-br from-amber-50 via-white to-orange-50 p-6 md:p-12 mb-12">
       
       {/* Glow */}
       <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-amber-400/20 blur-3xl" />
@@ -32,57 +32,48 @@ export default function CityHero({
           from the highest-rated institutes in {cityName}.
         </p>
 
-        {/* Stats */}
-        <div className="mt-10 grid grid-cols-3 gap-4 max-w-xl">
-          {/* Stat 1: Total Institutes (Dynamic) */}
-          <div className="rounded-2xl border border-amber-100 bg-white/80 p-6 backdrop-blur">
-            <Building2 className="h-5 w-5 text-amber-600" />
-            <p className="mt-2 text-2xl font-bold text-slate-900">
+        {/* 🚀 STATS SECTION - Mobile Squeeze Fixed */}
+        <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-2 sm:gap-4 max-w-xl">
+          
+          {/* Stat 1 */}
+          <div className="flex flex-col items-center justify-center sm:items-start sm:justify-start rounded-2xl border border-amber-100 bg-white/80 p-3 sm:p-6 backdrop-blur text-center sm:text-left">
+            <Building2 className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 mb-1 sm:mb-0" />
+            <p className="mt-1 sm:mt-2 text-lg sm:text-2xl font-bold text-slate-900">
               {totalCount}
             </p>
-            <p className="text-sm text-slate-500">
+            <p className="text-[10px] sm:text-sm text-slate-500 leading-tight">
               Institutes
             </p>
           </div>
 
-          {/* Stat 2: Verified Data (Logical Replacement) */}
-          <div className="rounded-2xl border border-amber-100 bg-white/80 p-6 backdrop-blur">
-            <ShieldCheck className="h-5 w-5 text-amber-600" />
-            <p className="mt-2 text-2xl font-bold text-slate-900">
+          {/* Stat 2 */}
+          <div className="flex flex-col items-center justify-center sm:items-start sm:justify-start rounded-2xl border border-amber-100 bg-white/80 p-3 sm:p-6 backdrop-blur text-center sm:text-left">
+            <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 mb-1 sm:mb-0" />
+            <p className="mt-1 sm:mt-2 text-lg sm:text-2xl font-bold text-slate-900">
               100%
             </p>
-            <p className="text-sm text-slate-500">
+            <p className="text-[10px] sm:text-sm text-slate-500 leading-tight">
               Verified Data
             </p>
           </div>
 
-          {/* Stat 3: Top Rated (Based on DB Sorting) */}
-          <div className="rounded-2xl border border-amber-100 bg-white/80 p-6 backdrop-blur">
-            <Star className="h-5 w-5 text-amber-600" />
-            <p className="mt-2 text-2xl font-bold text-slate-900">
+          {/* Stat 3 */}
+          <div className="flex flex-col items-center justify-center sm:items-start sm:justify-start rounded-2xl border border-amber-100 bg-white/80 p-3 sm:p-6 backdrop-blur text-center sm:text-left">
+            <Star className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 mb-1 sm:mb-0" />
+            <p className="mt-1 sm:mt-2 text-lg sm:text-2xl font-bold text-slate-900">
               Top
             </p>
-            <p className="text-sm text-slate-500">
+            <p className="text-[10px] sm:text-sm text-slate-500 leading-tight">
               Rated Choices
             </p>
           </div>
+
         </div>
-        <div
-                  className="
-                    mt-8
-                    rounded-3xl
-                    border
-                    border-amber-100
-                    bg-white/95
-                    p-2
-                    shadow-[0_20px_60px_rgba(251,191,36,0.15)]
-                    backdrop-blur-sm
-        
-                    sm:p-4
-                  "
-                >
-                  <SearchBar />
-                </div>
+
+        {/* Search Bar */}
+        <div className="mt-8 rounded-3xl border border-amber-100 bg-white/95 p-2 shadow-[0_20px_60px_rgba(251,191,36,0.15)] backdrop-blur-sm sm:p-4">
+          <SearchBar />
+        </div>
       </div>
     </section>
   );
