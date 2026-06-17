@@ -41,7 +41,7 @@ export default function GlobalCallbackFAB() {
     };
 
     return (
-        <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-[100]">
+        <div className="fixed bottom-3 right-3 md:bottom-6 md:right-6 z-[102]">
         <Popover open={isOpen} onOpenChange={setIsOpen}>
             {/* 🚀 FAB Button acts as the trigger */}
             <PopoverTrigger asChild>
