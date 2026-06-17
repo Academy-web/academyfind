@@ -99,6 +99,7 @@ async function main() {
     })),
   ];
 
+  await meili.createIndex("global_search", { primaryKey: "id" });
   const index = meili.index("global_search");
 
   console.log(`\nSyncing ${docs.length} total documents to Meilisearch...`);
@@ -115,7 +116,7 @@ async function main() {
     console.log(`✅ Pushed batch ${Math.floor(i / BATCH_SIZE) + 1} (${chunk.length} docs) - Task: ${response.taskUid}`);
     
     // Server ko zyada overload hone se bachane ke liye ek task complete hone ka wait karenge
-    await meili.tasks.waitForTask(response.taskUid);
+    await meili.tasks.waitForTask(response.taskUid,{ timeout: 60000 });
   }
 
   console.log(`\n🎉 ALL DONE! Successfully indexed ${docs.length} documents.`);

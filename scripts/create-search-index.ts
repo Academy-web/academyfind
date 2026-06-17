@@ -44,11 +44,11 @@ async function main() {
   ]);
 
   await Promise.all([
-    meili.tasks.waitForTask(searchableTask.taskUid),
-    meili.tasks.waitForTask(filterableTask.taskUid),
-    meili.tasks.waitForTask(sortableTask.taskUid),
-    meili.tasks.waitForTask(typoTask.taskUid),
-    meili.tasks.waitForTask(rankingTask.taskUid),
+    meili.tasks.waitForTask(searchableTask.taskUid,{ timeout: 60000 }),
+    meili.tasks.waitForTask(filterableTask.taskUid,{ timeout: 60000 }),
+    meili.tasks.waitForTask(sortableTask.taskUid,{ timeout: 60000 }),
+    meili.tasks.waitForTask(typoTask.taskUid,{ timeout: 60000 }),
+    meili.tasks.waitForTask(rankingTask.taskUid,{ timeout: 60000 }),
   ]);
 
   console.log("✅ global_search configured successfully");
