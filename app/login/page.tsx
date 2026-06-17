@@ -18,7 +18,7 @@ import { redirect, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { auth } from "@/lib/auth/auth";
 
-export default async function LoginPage() {
+export default function LoginPage() {
   const [method, setMethod] = useState<"email" | "phone">("email");
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");

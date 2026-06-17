@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import toast from 'react-hot-toast'
 
 
-export default async function RegisterPage() { // Component ka naam RegisterPage hona better hai
+export default function RegisterPage() { // Component ka naam RegisterPage hona better hai
   const [method, setMethod] = useState<"email" | "phone">("email");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);

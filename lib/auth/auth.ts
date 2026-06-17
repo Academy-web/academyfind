@@ -3,19 +3,13 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "@/lib/prisma";
 import { emailOTP } from "better-auth/plugins";
 import { Resend } from "resend";
-import nodemailer from "nodemailer"
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 dotenv.config();
-// 1. Initialize Resend here (Upar top level pe)
+
+// 1. Initialize Resend
+// (Make sure RESEND_API_KEY is properly set in your .env file)
 const resend = new Resend(process.env.RESEND_API_KEY!);
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_FROM,
-        pass: process.env.EMAIL_PASSWORD,
-    },
-})
 
 export const auth = betterAuth({
     database: prismaAdapter(prisma, {
@@ -79,10 +73,10 @@ export const auth = betterAuth({
                     htmlContent = `<p>We received a request to reset your password. Use this code to proceed:</p>`;
                 }
 
-                // 3. Resend ko bolkar Email Bhejo
+                // 3. Resend ko use karke Email bhejo
                 try {
-                    await transporter.sendMail({
-                        from: `"AcademyFind" <${process.env.EMAIL_USER}>`, // Dev testing ke liye Resend ka default
+                    const data = await resend.emails.send({
+                        from: 'AcademyFind <Verification@academyfind.com>', 
                         to: email,
                         subject: subject,
                         html: `
@@ -97,10 +91,10 @@ export const auth = betterAuth({
                         `,
                     });
 
-                        console.log(`✅ Successfully sent ${type} OTP to ${email}`);
+                    console.log(`✅ Successfully sent ${type} OTP via Resend to ${email}`);
                     
                 } catch (err) {
-                    console.error(`❌ Failed to send ${type} email:`, err);
+                    console.error(`❌ Failed to send ${type} email via Resend:`, err);
                 }
             }
         })

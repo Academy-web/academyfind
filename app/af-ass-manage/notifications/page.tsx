@@ -15,7 +15,7 @@ export default async function AdminNotificationsPage() {
         take: 50 // Sirf pichli 50 notifications dikhayenge
     });
 
-    const unreadCount = notifications.filter(n => !n.isRead).length;
+    const unreadCount = notifications.filter((n: any) => !n.isRead).length;
 
     return (
         <div className="max-w-5xl mx-auto p-6 lg:p-10">
@@ -55,7 +55,7 @@ export default async function AdminNotificationsPage() {
                 </div>
             ) : (
                 <div className="flex flex-col gap-4">
-                    {notifications.map((notification) => (
+                    {notifications.map((notification: any) => (
                         <div 
                             key={notification.id} 
                             className={`flex flex-col sm:flex-row gap-4 justify-between sm:items-center p-5 rounded-2xl border transition-all ${
