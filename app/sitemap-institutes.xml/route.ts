@@ -9,7 +9,7 @@ export async function GET() {
   });
 
   
-  const urls = institutes.map(inst => `
+  const urls = institutes.map((inst: any) => `
   <url>
     <loc>${baseUrl}/institute/${inst.id}-${inst.slug}</loc>
     <lastmod>${inst.updatedAt ? new Date(inst.updatedAt).toISOString() : new Date().toISOString()}</lastmod>

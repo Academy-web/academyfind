@@ -3,7 +3,7 @@ export async function GET() {
   
   const staticPages = ['', '/about', '/categories', '/cities', '/blog', '/contact', '/careers', '/user/life-coach','/privacy-policy','/terms-condition'];
   
-  const urls = staticPages.map(page => `
+  const urls = staticPages.map((page: any) => `
   <url>
     <loc>${baseUrl}${page}</loc>
     <changefreq>${page === '' ? 'daily' : 'weekly'}</changefreq>

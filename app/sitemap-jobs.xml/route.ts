@@ -9,7 +9,7 @@ export async function GET() {
     select: { slug: true, updatedAt: true, createdAt: true },
   });
 
-  const urls = jobs.map(job => `
+  const urls = jobs.map((job: any) => `
   <url>
     <loc>${baseUrl}/careers/${job.slug}</loc>
     <lastmod>${job.updatedAt ? new Date(job.updatedAt).toISOString() : new Date(job.createdAt).toISOString()}</lastmod>

@@ -9,7 +9,7 @@ export async function GET() {
   let urls = '';
 
   // 1. Only Category pages (/jee-coaching)
-  categories.forEach(cat => {
+  categories.forEach((cat: any) => {
     urls += `
   <url>
     <loc>${baseUrl}/${cat.slug}</loc>
@@ -19,8 +19,8 @@ export async function GET() {
   });
 
   // 2. Category + City pages (/jee-coaching/meerut)
-  categories.forEach(cat => {
-    cities.forEach(city => {
+  categories.forEach((cat: any) => {
+    cities.forEach((city: any) => {
       urls += `
   <url>
     <loc>${baseUrl}/${cat.slug}/${city.slug}</loc>
