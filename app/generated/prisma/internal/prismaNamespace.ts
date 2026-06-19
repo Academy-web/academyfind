@@ -2478,6 +2478,7 @@ export const ReviewScalarFieldEnum = {
   rating: 'rating',
   comment: 'comment',
   userId: 'userId',
+  status: 'status',
   instituteId: 'instituteId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -2835,6 +2836,20 @@ export type EnumInstituteModeFieldRefInput<$PrismaModel> = FieldRefInputType<$Pr
  * Reference to a field of type 'InstituteMode[]'
  */
 export type ListEnumInstituteModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'InstituteMode[]'>
+    
+
+
+/**
+ * Reference to a field of type 'ReviewStatus'
+ */
+export type EnumReviewStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ReviewStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'ReviewStatus[]'
+ */
+export type ListEnumReviewStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ReviewStatus[]'>
     
 
 

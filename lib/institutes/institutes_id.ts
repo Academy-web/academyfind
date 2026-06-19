@@ -20,6 +20,9 @@ export async function getInstituteById(
       },
 
       reviews: {
+        where: {
+            status: "APPROVED"
+          },
         include: {
           user: {
             select: {

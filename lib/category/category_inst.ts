@@ -29,6 +29,7 @@ export async function getInstitutesByCategory(
       filter: [
         `type = "institute"`,
         `isActive = true`, 
+        `isPublished = true`,
         `categorySlugs = "${categorySlug}"`
       ],
       limit: limit,
@@ -64,7 +65,8 @@ export async function getInstitutesByCategory(
     const dbInstitutes = await prisma.institute.findMany({
       where: { 
         id: { in: instituteIds },
-        isActive: true 
+        isActive: true ,
+        isPublished: true,
       },
       include: { city: true },
     });
@@ -98,6 +100,7 @@ export async function getInstitutesByCategory(
   // ==========================================
   const whereClause: any = {
     isActive: true,
+    isPublished: true,
     categories: {
       some: {
         category: {

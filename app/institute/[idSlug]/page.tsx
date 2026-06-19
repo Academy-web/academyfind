@@ -16,7 +16,6 @@ import { trackVisitHistory } from "@/lib/User/user/user-activity";
 import Breadcrumb from "@/components/navigation/BreadCrumbs";
 import InstituteMap from "@/components/maps/InstituteMap";
 import ReviewForm from "@/components/reviews/ReviewForm";
-import SmartButton from "@/components/ui/SmartButton";
 import { Button } from "@/components/ui/button";
 import SaveButton from "@/components/ui/SaveButton"; 
 import InstituteEnquiryForm from "@/components/manager/InstituteEnquiryForm";

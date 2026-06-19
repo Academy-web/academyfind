@@ -37,6 +37,7 @@ export async function getInstitutesByCategoryAndCity(
       filter: [
         `type = "institute"`,
         `isActive = true`, 
+        `isPublished = true`,
         `citySlug = "${citySlug}"`,
         `categorySlugs = "${categorySlug}"`
       ],
@@ -75,7 +76,8 @@ export async function getInstitutesByCategoryAndCity(
       // Fallback A (Radius hatao, par isActive rakho)
       searchOptions.filter = [
         `type = "institute"`,
-        `isActive = true`, 
+        `isActive = true`,
+        `isPublished = true`, 
         `citySlug = "${citySlug}"`,
         `categorySlugs = "${categorySlug}"`
       ];
@@ -109,7 +111,8 @@ export async function getInstitutesByCategoryAndCity(
     const dbInstitutes = await prisma.institute.findMany({
       where: { 
         id: { in: instituteIds },
-        isActive: true 
+        isActive: true ,
+        isPublished: true,
       },
       include: { city: true, reviews: true },
     });
@@ -153,6 +156,7 @@ export async function getInstitutesByCategoryAndCity(
   // Prisma Where Clause
   const prismaWhere: any = {
     isActive: true, 
+    isPublished: true,
     city: { slug: citySlug },
     categories: { some: { category: { slug: categorySlug } } },
   };

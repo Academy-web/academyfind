@@ -310,7 +310,7 @@ export function SearchBar() {
 
     // 3. 🧹 Magic Cleaner (Apply escapeRegExp here too)
     let cleanQuery = lowerInput;
-    const stopWords = ["best", "top", "in", "near", "me", "coaching", "coachings", "institute", "institutes", "classes"];
+    const stopWords = ["best", "top", "in", "near", "me", "coaching", "coachings", "institute", "institutes", "classes", "academy", "academies", "courses"];
     
     stopWords.forEach((kw) => {
       cleanQuery = cleanQuery.replace(new RegExp(`\\b${escapeRegExp(kw)}\\b`, "gi"), "");

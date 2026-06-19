@@ -65,7 +65,8 @@ export default async function SearchPage({ searchParams }: Props) {
     where: {
       institutes: {
         some: {
-          isActive: true
+          isActive: true,
+          isPublished: true,
         }
       }
     },

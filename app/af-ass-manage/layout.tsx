@@ -17,7 +17,8 @@ import {
     LifeBuoy,
     PhoneCall,
     IdCard,
-    BellIcon
+    BellIcon,
+    Star
 } from "lucide-react";
 import { Metadata } from "next";
 
@@ -79,6 +80,7 @@ export default async function AdminLayout({
                         <SidebarLink href="/af-ass-manage/notifications" icon={<BellIcon />} label="Notifications" />
                         <SidebarLink href="/af-ass-manage/life-coach" icon={<LifeBuoy />} label="Life Coach" />
                         <SidebarLink href="/af-ass-manage/claims" icon={<FileText />} label="Claim Requests" />
+                        <SidebarLink href="/af-ass-manage/reviews" icon={<Star />} label="Review Requests" />
                         <SidebarLink href="/af-ass-manage/instituteRequests" icon={<FileType2 />} label="Institute Requests" />
                         <SidebarLink href="/af-ass-manage/instituteCallbacks" icon={<PhoneCall />} label="Institute Callbacks" />                        
                         <SidebarLink href="/af-ass-manage/contactmessages" icon={<Contact />} label="Contact Messages" />

@@ -27,7 +27,7 @@ export async function approveInstituteRequest(requestId: string) {
             // 1. Institute ko public active karo
             prisma.institute.update({
                 where: { id: request.instituteId },
-                data: { isActive: true }
+                data: { isActive: true, isPublished: true }
             }),
             // 2. Request queue se delete karo
             prisma.instituteRequest.delete({

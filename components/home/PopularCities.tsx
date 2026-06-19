@@ -21,6 +21,16 @@ const cities = [
     name: "Faridabad",
     institutes: "1800+",
     href:"/categories?city=faridabad",
+  },
+  {
+    name: "Ghaziabad",
+    institutes: "3300+",
+    href:"/categories?city=ghaziabad",
+  },
+  {
+    name: "Meerut",
+    institutes: "1600+",
+    href:"/categories?city=meerut",
   }
 //   {
 //     name: "Jaipur",
