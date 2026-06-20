@@ -89,7 +89,7 @@ export default async function CompareHubPage() {
           </div>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {topComparisons.map((comp, i) => (
+            {topComparisons.map((comp: any, i:any) => (
               <Link key={comp.id} href={`/compare/${comp.slug}`} className="group">
                 <div className="relative flex h-full flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-100/60">
                   <div className="mb-5 flex items-center justify-between">
@@ -151,7 +151,7 @@ export default async function CompareHubPage() {
               title: 'Updated regularly',
               text: 'Comparisons refresh as institutes update their fees and facilities.',
             },
-          ].map((item) => (
+          ].map((item: any) => (
             <div key={item.title} className="rounded-2xl border border-stone-200 bg-white p-6">
               <item.icon className="mb-3 h-5 w-5 text-amber-500" />
               <p className="font-bold text-stone-800">{item.title}</p>
