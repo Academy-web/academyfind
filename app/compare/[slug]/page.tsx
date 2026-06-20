@@ -302,8 +302,8 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
             <SectionHeading title="Facilities" />
             <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
               {facilityNames.map((name: any, i: any) => {
-                const fa = a.facilities.find((f) => f.name === name)?.available ?? false;
-                const fb = b.facilities.find((f) => f.name === name)?.available ?? false;
+                const fa = a.facilities.find((f: any) => f.name === name)?.available ?? false;
+                const fb = b.facilities.find((f: any) => f.name === name)?.available ?? false;
                 return (
                   <ComparisonRow
                     key={name}
@@ -326,8 +326,8 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
             <SectionHeading title="Standout Numbers" />
             <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
               {statLabels.map((label: any, i: any) => {
-                const sa = a.highlightStats.find((s) => s.label === label);
-                const sb = b.highlightStats.find((s) => s.label === label);
+                const sa = a.highlightStats.find((s: any) => s.label === label);
+                const sb = b.highlightStats.find((s: any) => s.label === label);
                 return (
                   <ComparisonRow
                     key={label}
