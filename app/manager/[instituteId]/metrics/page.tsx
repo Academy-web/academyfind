@@ -40,7 +40,7 @@ export default async function InstituteAnalyticsPage({ params }: { params: { id:
   });
 
   // Data serialization for Client Component
-  const serializedDailyViews = rawDailyViews.map(v => ({
+  const serializedDailyViews = rawDailyViews.map((v: any) => ({
     date: v.date.toLocaleDateString('en-US', { day: 'numeric', month: 'short' }),
     views: v.viewCount
   }));
