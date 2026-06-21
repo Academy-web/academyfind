@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import SaveButton from "@/components/ui/SaveButton"; 
 import InstituteEnquiryForm from "@/components/manager/InstituteEnquiryForm";
 import ViewTracker from "@/components/manager/ViewTracker";
+import { getCachedInstituteById } from "@/lib/cachedQueries";
 
 export const revalidate = 86400;
 
@@ -84,21 +85,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function InstitutePage({ params }: PageProps) {
   const { idSlug } = await params;
   const id = extractId(idSlug);
-  const institute = await getInstituteById(id);
+  const institute = await getCachedInstituteById(id);
 
   if (!institute) notFound();
 
-  const session = await auth.api.getSession({ headers: await headers() });
+  // const session = await auth.api.getSession({ headers: await headers() });
   
-  // Track activity & saved state
-  let alreadySaved = false;
-  if (session?.user) {
-    await trackVisitHistory(session.user.id, institute.id).catch(console.error);
-    const savedEntry = await prisma.userShortlist.findUnique({
-      where: { userId_instituteId: { userId: session.user.id, instituteId: institute.id } }
-    });
-    alreadySaved = !!savedEntry;
-  }
+  // // Track activity & saved state
+  // let alreadySaved = false;
+  // if (session?.user) {
+  //   await trackVisitHistory(session.user.id, institute.id).catch(console.error);
+  //   const savedEntry = await prisma.userShortlist.findUnique({
+  //     where: { userId_instituteId: { userId: session.user.id, instituteId: institute.id } }
+  //   });
+  //   alreadySaved = !!savedEntry;
+  // }
 
   const displayRating = institute.googleRating ?? institute.averageRating ?? 0;
   const displayReviewCount = institute.googleReviewCount ?? institute.reviewCount ?? 0;
@@ -205,7 +206,7 @@ export default async function InstitutePage({ params }: PageProps) {
                         </div>
                       </div>
                       <div className="shrink-0 relative z-20">
-                        <SaveButton userId={session?.user?.id} instituteId={institute.id} isInitiallySaved={alreadySaved} />
+                        <SaveButton instituteId={institute.id} />
                       </div>
                     </div>
 
