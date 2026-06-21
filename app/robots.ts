@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://academyfind.com';
 
   return {
-    rules: {
+    rules: [{
       userAgent: '*',
       allow: '/',
       disallow: [
@@ -25,6 +25,15 @@ export default function robots(): MetadataRoute.Robots {
         '/*?q=',
       ],
     },
+    {
+        userAgent: 'GPTBot',
+        disallow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        disallow: '/',
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
   }
 }
