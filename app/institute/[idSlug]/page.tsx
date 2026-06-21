@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
-    alternates: { canonical: `https://www.academyfind.com/institute/${idSlug}` },
+    alternates: { canonical: `https://academyfind.com/institute/${idSlug}` },
     keywords: [
       `${institute.name} ${institute.city.name}`,
       `${institute.name} fees`,

@@ -21,6 +21,7 @@ import {
     Star
 } from "lucide-react";
 import { Metadata } from "next";
+import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
   title: "Admin Control Panel | AcademyFind",
@@ -57,6 +58,20 @@ export default async function AdminLayout({
         );
     }
 
+    const [
+        claimCount,
+        reviewCount,
+        notificationCount,
+        contactCount,
+        instituteReqCount
+    ] = await Promise.all([
+        prisma.instituteClaim.count({ where: { status: "PENDING" } }),
+        prisma.review.count({ where: { status: "PENDING" } }),
+        prisma.adminNotification.count({ where: { isRead: false } }),
+        prisma.contactMessage.count({ where: { isRead: false } }),
+        prisma.instituteRequest.count({ where: { status: "PENDING" } }),
+    ]);
+
     return (
         <div className="bg-slate-50 min-h-screen pb-12">
             <div className="container mx-auto max-w-350 pt-8 px-4 flex flex-col md:flex-row gap-8">
@@ -77,12 +92,12 @@ export default async function AdminLayout({
 
                     <nav className="flex flex-col gap-1.5">
                         <SidebarLink href="/af-ass-manage" icon={<LayoutDashboard />} label="Overview" exact />
-                        <SidebarLink href="/af-ass-manage/notifications" icon={<BellIcon />} label="Notifications" />
+                        <SidebarLink href="/af-ass-manage/notifications" icon={<BellIcon />} label="Notifications" count={notificationCount}/>
                         <SidebarLink href="/af-ass-manage/life-coach" icon={<LifeBuoy />} label="Life Coach" />
-                        <SidebarLink href="/af-ass-manage/claims" icon={<FileText />} label="Claim Requests" />
-                        <SidebarLink href="/af-ass-manage/reviews" icon={<Star />} label="Review Requests" />
-                        <SidebarLink href="/af-ass-manage/instituteRequests" icon={<FileType2 />} label="Institute Requests" />
-                        <SidebarLink href="/af-ass-manage/instituteCallbacks" icon={<PhoneCall />} label="Institute Callbacks" />                        
+                        <SidebarLink href="/af-ass-manage/claims" icon={<FileText />} label="Claim Requests" count={claimCount}/>
+                        <SidebarLink href="/af-ass-manage/reviews" icon={<Star />} label="Review Requests" count={reviewCount}/>
+                        <SidebarLink href="/af-ass-manage/instituteRequests" icon={<FileType2 />} label="Institute Requests" count={instituteReqCount}/>
+                        <SidebarLink href="/af-ass-manage/instituteCallbacks" icon={<PhoneCall />} label="Institute Callbacks" count={contactCount}/>                        
                         <SidebarLink href="/af-ass-manage/contactmessages" icon={<Contact />} label="Contact Messages" />
                         <SidebarLink href="/af-ass-manage/payments" icon={<Pyramid />} label="Payment Approvals" />
                         <SidebarLink href="/af-ass-manage/institutes" icon={<Building2 />} label="All Institutes" />

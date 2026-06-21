@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.academyfind.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://academyfind.com';
 
   return {
     rules: {
@@ -19,6 +19,10 @@ export default function robots(): MetadataRoute.Robots {
         '/login',
         '/register',
         '/*/claim',
+        '/*?sort=',        // 🆕
+        '/*?page=',        // 🆕 — pagination already in canonical via page 1 only
+        '/*?rating=',      // 🆕
+        '/*?q=',
       ],
     },
     sitemap: `${baseUrl}/sitemap.xml`,

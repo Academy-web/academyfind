@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryName = formatSlug(category); // e.g. "JEE Coaching"
   const cityName = formatSlug(city);         // e.g. "Meerut"
 
-  const canonicalUrl = `https://www.academyfind.com/${category}/${city}`;
+  const canonicalUrl = `https://academyfind.com/${category}/${city}`;
 
   // ── Title formulas (A/B test by adding variants here later) ──
   // Keep under 60 chars for Google to not truncate.
@@ -116,7 +116,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       images: [
         {
-          url: "https://www.academyfind.com/new-logo.png",
+          url: "https://academyfind.com/new-logo.png",
           width: 1200,
           height: 630,
           alt: `Best ${categoryName} in ${cityName} - AcademyFind`,

@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryName = formatSlug(category); // e.g. "IIT JEE Coaching"
 
   const currentYear = new Date().getFullYear();
-  const canonicalUrl = `https://www.academyfind.com/${category}`;
+  const canonicalUrl = `https://academyfind.com/${category}`;
 
   // Under 60 chars for desktop SERP
   const seoTitle = `Best ${categoryName} Institutes ${currentYear} | Fees, Reviews & Admissions`;
@@ -92,7 +92,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       images: [
         {
-          url: "https://www.academyfind.com/new-logo.png",
+          url: "https://academyfind.com/new-logo.png",
           width: 1200,
           height: 630,
           alt: `Best ${categoryName} Institutes in India - AcademyFind`,
