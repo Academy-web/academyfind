@@ -148,7 +148,7 @@ export default async function AdminInstitutesPage({
                                                 </div>
                                                 
                                                 <div className="mt-1">
-                                                    <ToggleStatusButton instituteId={institute.id} isActive={institute.isActive} />
+                                                    <ToggleStatusButton instituteId={institute.id} isActive={institute.isActive} isPublished={institute.isPublished}/>
                                                 </div>
                                             </div>
                                         </td>
