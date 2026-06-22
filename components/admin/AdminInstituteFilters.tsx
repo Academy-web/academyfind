@@ -54,7 +54,7 @@ export default function InstituteFilters({ cities, categories }: { cities: any[]
                 >
                     <option value="newest">Latest First</option>
                     <option value="oldest">Oldest First</option>
-                    <option value="views">🔥 Most Viewed</option>
+                    <option value="views"> Most Viewed</option>
                 </select>
             </div>
 
