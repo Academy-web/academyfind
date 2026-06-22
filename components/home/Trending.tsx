@@ -47,7 +47,7 @@ const categories = [
     href: "/clat-coaching",
   },
   {
-    title: "Faishon Designing",
+    title: "Fashion Designing",
     href: "/fashion-designing",
   },
   {
