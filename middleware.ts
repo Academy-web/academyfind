@@ -10,16 +10,17 @@ export function middleware(req: NextRequest) {
   const headersObj = Object.fromEntries(req.headers.entries());
 
   // Only log paths under attack to prevent log spam
+    
+
+
+  // ❌ 1. Empty UA is mostly a cheap scraper script. Block it.
+  if (!ua.trim()) {
     console.log("⚠️ INCOMING HEADERS:", JSON.stringify({
       ip: req.headers.get('x-forwarded-for'), // Client IP
       ua: req.headers.get('user-agent'),       // User Agent
       host: req.headers.get('host'),           // Target Host
       allHeaders: headersObj                       // Every header sent
     }));
-
-
-  // ❌ 1. Empty UA is mostly a cheap scraper script. Block it.
-  if (!ua.trim()) {
     return new NextResponse("Access Denied: Missing User-Agent", { status: 403 });
   }
 
