@@ -197,6 +197,9 @@ const CITY_MAP = [
   { keywords: ["noida"], slug: "noida" },
   { keywords: ["delhi", "new delhi"], slug: "delhi" },
   { keywords: ["Faridabad"], slug: "faridabad" },
+  { keywords: ["gurugram","gurgaon"], slug: "gurugram" },
+  { keywords: ["modinagar"], slug: "modinagar" },
+  { keywords: ["sonipat"], slug: "sonipat" },
 ];
 
 export function SearchBar() {
