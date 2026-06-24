@@ -31,12 +31,16 @@ async function main() {
       name: inst.name,
       slug: inst.slug,
       city: inst.city.name,
+      cityId: inst.city.id,
       citySlug: inst.city.slug,
       state: inst.city.state,
       description: inst.description ?? "",
       address: inst.address,
       categoryNames: inst.categories.map((c) => c.category.name),
       categorySlugs: inst.categories.map((c) => c.category.slug),
+      categoryIds: inst.categories.map((c) => c.categoryId),  // ← ADD THIS
+      subscriptionPlan: inst.subscriptionPlan,  // ← ADD THIS
+      isPublished: inst.isPublished,
       averageRating: inst.averageRating ?? 0,
       reviewCount: inst.reviewCount ?? 0,
       googleRating: inst.googleRating,             
@@ -57,7 +61,7 @@ async function main() {
       feeMax: inst.feeMax,
       hasOnlineClasses: inst.hasOnlineClasses,
       hasHostelFacility: inst.hasHostelFacility,
-      hasDemoClasses: inst.hasDemoClasses
+      hasDemoClasses: inst.hasDemoClasses,
     })),
 
     // --- CITIES ---

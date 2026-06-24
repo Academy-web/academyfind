@@ -2,8 +2,16 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
-import { ArrowLeft, Building2, Calendar, MessageSquare, Phone, User } from "lucide-react";
+import { ArrowLeft, Building2, Calendar, MessageSquare, Phone, User, History, Zap, Star, BadgeCheck } from "lucide-react";
 import CallbackControls from "@/components/admin/AdminCallbackControls";
+import LeadDistributionForm from "@/components/admin/AdminLeadDistributionFor";
+
+const PLAN_CONFIG = {
+  ULTRA:    { label: "Ultra",    icon: Zap,        badgeClass: "bg-purple-100 text-purple-700" },
+  PREMIUM:  { label: "Premium",  icon: Star,       badgeClass: "bg-blue-100 text-blue-700" },
+  VERIFIED: { label: "Verified", icon: BadgeCheck, badgeClass: "bg-emerald-100 text-emerald-700" },
+  BASIC:    { label: "Basic",    icon: Building2,  badgeClass: "bg-slate-100 text-slate-700" },
+};
 
 export default async function AdminCallbackDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -11,14 +19,18 @@ export default async function AdminCallbackDetailPage({ params }: { params: Prom
   const callback = await prisma.instituteEnquiry.findUnique({
     where: { id },
     include: {
-      institute: true, 
+      institute: true,
+      distributionLogs: {
+        include: { admin: { select: { id: true, name: true, email: true } } },
+        orderBy: { createdAt: 'desc' }
+      }
     }
   });
 
   if (!callback) return notFound();
 
   return (
-    <div className="p-6 md:p-10 max-w-4xl mx-auto space-y-6">
+    <div className="p-6 md:p-10 max-w-5xl mx-auto space-y-6">
       <Link href="/af-ass-manage/instituteCallbacks" className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
         <ArrowLeft className="w-4 h-4" /> Back to Callbacks
       </Link>
@@ -36,13 +48,13 @@ export default async function AdminCallbackDetailPage({ params }: { params: Prom
             </div>
           </div>
           
-          {/* 🚀 Naya Controls Component Lagaya */}
+          {/* Controls Component */}
           <div className="shrink-0">
              <CallbackControls id={callback.id} currentStatus={callback.status} />
           </div>
         </div>
 
-        {/* 🚀 Target Institute Link Card */}
+        {/* Target Institute Link Card */}
         <div className="mb-8">
           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Enquired For</h3>
           {callback.institute ? (
@@ -81,7 +93,7 @@ export default async function AdminCallbackDetailPage({ params }: { params: Prom
 
         {/* Message Box */}
         <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Student Message</h3>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-slate-700 leading-relaxed shadow-inner flex gap-3">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-slate-700 leading-relaxed shadow-inner flex gap-3 mb-8">
           <MessageSquare className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
           {callback.message ? (
             <p className="whitespace-pre-wrap">{callback.message}</p>
@@ -90,7 +102,79 @@ export default async function AdminCallbackDetailPage({ params }: { params: Prom
           )}
         </div>
 
+        {/* 🚀 Distribution History */}
+        {callback.distributionLogs && callback.distributionLogs.length > 0 && (
+          <div className="mb-8 pb-8 border-b border-slate-100">
+            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <History className="w-4 h-4 text-slate-500" /> Distribution History
+            </h3>
+            
+            <div className="space-y-3">
+              {callback.distributionLogs.map((log: any, idx: number) => {
+                const bulkFilters = typeof log.bulkFilters === 'string' ? JSON.parse(log.bulkFilters) : log.bulkFilters;
+                const isIndividual = log.mode === 'individual';
+
+                return (
+                  <div key={log.id} className="bg-gradient-to-r from-slate-50 to-white border border-slate-100 rounded-2xl p-4 hover:border-slate-200 transition">
+                    <div className="flex items-start justify-between gap-3 flex-wrap">
+                      <div>
+                        <p className="text-sm font-bold text-slate-900">
+                          {isIndividual ? '👤 Individual Selection' : '📊 Bulk Distribution'}
+                        </p>
+                        <p className="text-xs text-slate-500 mt-0.5">
+                          By <b>{log.admin?.name || log.admin?.email || 'Unknown'}</b> • {format(new Date(log.createdAt), "PPP 'at' p")}
+                        </p>
+                      </div>
+                      <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap">
+                        {log.targetCount} Institutes
+                      </span>
+                    </div>
+
+                    {!isIndividual && bulkFilters && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3 text-xs text-slate-600 bg-white rounded-lg p-3 border border-slate-100">
+                        {bulkFilters.plansAll ? (
+                          <div><b>Plans:</b> All Plans</div>
+                        ) : bulkFilters.plans?.length > 0 ? (
+                          <div><b>Plans:</b> {bulkFilters.plans.join(', ')}</div>
+                        ) : null}
+
+                        {bulkFilters.citiesAll ? (
+                          <div><b>Cities:</b> All Cities</div>
+                        ) : bulkFilters.cityIds?.length > 0 ? (
+                          <div><b>Cities:</b> {bulkFilters.cityIds.length} selected</div>
+                        ) : null}
+
+                        {bulkFilters.categoriesAll ? (
+                          <div><b>Categories:</b> All Categories</div>
+                        ) : bulkFilters.categoryIds?.length > 0 ? (
+                          <div><b>Categories:</b> {bulkFilters.categoryIds.length} selected</div>
+                        ) : null}
+
+                        {bulkFilters.search && (
+                          <div><b>Search:</b> "{bulkFilters.search}"</div>
+                        )}
+                      </div>
+                    )}
+
+                    {log.adminNote && (
+                      <div className="mt-3 p-2.5 bg-amber-50 border border-amber-100 rounded-lg text-xs text-amber-800">
+                        <b>Note:</b> {log.adminNote}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* 🚀 LEAD DISTRIBUTION FORM */}
+      <LeadDistributionForm
+        enquiryId={callback.id} 
+        originalInstituteId={callback.instituteId} 
+        studentName={callback.name} 
+      />
     </div>
   );
 }

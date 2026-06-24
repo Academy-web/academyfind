@@ -236,3 +236,8 @@ export type NotablePersons = Prisma.NotablePersonsModel
  * 
  */
 export type InstituteComparisonCache = Prisma.InstituteComparisonCacheModel
+/**
+ * Model LeadDistributionLog
+ * 
+ */
+export type LeadDistributionLog = Prisma.LeadDistributionLogModel

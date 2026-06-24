@@ -21,13 +21,17 @@ async function main() {
     "_geo",
     "googleRating",
     "isActive",
-    // 🚀 NAYE FILTERABLE ATTRIBUTES
     "mode",
     "hasOnlineClasses",
     "hasHostelFacility",
     "hasDemoClasses",
     "feeMin",
-    "feeMax"
+    "feeMax",
+    "subscriptionPlan",    // ← ADD THIS
+    "cityId",              // ← ADD THIS
+    "categoryIds",         // ← ADD THIS
+    "isPublished",         // ← ADD THIS
+    "prismaId" 
   ]);
 
   const sortableTask = await index.updateSortableAttributes([

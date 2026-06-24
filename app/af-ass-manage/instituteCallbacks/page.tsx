@@ -11,13 +11,14 @@ export default async function AdminCallbacksPage({
   const params = await searchParams;
   const currentFilter = params.status || 'ALL';
 
-  // Build filter condition
-  const whereCondition: any = {};
+  // 🚀 Sirf Original Leads dikhani hain Admin ko, copies nahi!
+  const whereCondition: any = {
+      isForwarded: false 
+  };
   
   if (currentFilter !== 'ALL') {
     if (currentFilter.startsWith('ASSIGNED_TO_')) {
-       // Optional: Agar future me Assigned to logic implement karna hai 
-       // toh yahan ayega. Abhi basic statuses chalate hain.
+       // Optional logic here
     } else {
       whereCondition.status = currentFilter;
     }
@@ -32,7 +33,17 @@ export default async function AdminCallbacksPage({
           id: true,
           name: true,
         }
-      }
+      },
+      // 🚀 BONUS: Hum ye count bhi manga lete hain taaki table me dikha sakein
+      // ki kya ye admin ne aage kisi ko distribute/sell kari hai ya nahi.
+      // (Agar iska koi child hoga matlab ye distribute hui hai)
+      // _count: {
+      //     select: {
+      //         // Prisma mein self-relation array ko access karne ke liye relation name chahiye
+      //         // Iske liye schema mein `children InstituteEnquiry[] @relation("ForwardedLeads")` type add karna hota hai.
+      //         // Abhi simple rakhte hain, hum detail page pe check karenge.
+      //     }
+      // }
     },
     orderBy: {
       createdAt: 'desc'
@@ -54,9 +65,9 @@ export default async function AdminCallbacksPage({
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-extrabold text-slate-900 flex items-center gap-3">
-            <MessageSquare className="w-8 h-8 text-amber-500" /> All Institute Callbacks
+            <MessageSquare className="w-8 h-8 text-amber-500" /> Original Callbacks
           </h1>
-          <p className="text-slate-500 mt-1">Manage and monitor student enquiries. (Showing: {currentFilter})</p>
+          <p className="text-slate-500 mt-1">Manage and monitor root student enquiries. (Showing: {currentFilter})</p>
         </div>
         <div className="bg-amber-100 text-amber-800 px-4 py-2 rounded-xl font-bold text-sm shrink-0">
           Total Leads: {callbacks.length}
@@ -90,8 +101,8 @@ export default async function AdminCallbacksPage({
               <tr>
                 <th className="p-5">Date</th>
                 <th className="p-5">Student Info</th>
-                <th className="p-5">Target Institute</th>
-                <th className="p-5">Status</th>
+                <th className="p-5">Original Target Institute</th>
+                <th className="p-5">Admin Status</th>
                 <th className="p-5 text-right">Action</th>
               </tr>
             </thead>

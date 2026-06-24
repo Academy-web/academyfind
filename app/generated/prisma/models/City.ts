@@ -46,13 +46,13 @@ export type CityMinAggregateOutputType = {
   country: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  bannerImage: string | null
   description: string | null
-  metaTitle: string | null
-  metaDescription: string | null
   latitude: number | null
   longitude: number | null
+  metaDescription: string | null
+  metaTitle: string | null
   population: number | null
-  bannerImage: string | null
 }
 
 export type CityMaxAggregateOutputType = {
@@ -63,13 +63,13 @@ export type CityMaxAggregateOutputType = {
   country: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  bannerImage: string | null
   description: string | null
-  metaTitle: string | null
-  metaDescription: string | null
   latitude: number | null
   longitude: number | null
+  metaDescription: string | null
+  metaTitle: string | null
   population: number | null
-  bannerImage: string | null
 }
 
 export type CityCountAggregateOutputType = {
@@ -80,13 +80,13 @@ export type CityCountAggregateOutputType = {
   country: number
   createdAt: number
   updatedAt: number
+  bannerImage: number
   description: number
-  metaTitle: number
-  metaDescription: number
   latitude: number
   longitude: number
+  metaDescription: number
+  metaTitle: number
   population: number
-  bannerImage: number
   _all: number
 }
 
@@ -111,13 +111,13 @@ export type CityMinAggregateInputType = {
   country?: true
   createdAt?: true
   updatedAt?: true
+  bannerImage?: true
   description?: true
-  metaTitle?: true
-  metaDescription?: true
   latitude?: true
   longitude?: true
+  metaDescription?: true
+  metaTitle?: true
   population?: true
-  bannerImage?: true
 }
 
 export type CityMaxAggregateInputType = {
@@ -128,13 +128,13 @@ export type CityMaxAggregateInputType = {
   country?: true
   createdAt?: true
   updatedAt?: true
+  bannerImage?: true
   description?: true
-  metaTitle?: true
-  metaDescription?: true
   latitude?: true
   longitude?: true
+  metaDescription?: true
+  metaTitle?: true
   population?: true
-  bannerImage?: true
 }
 
 export type CityCountAggregateInputType = {
@@ -145,13 +145,13 @@ export type CityCountAggregateInputType = {
   country?: true
   createdAt?: true
   updatedAt?: true
+  bannerImage?: true
   description?: true
-  metaTitle?: true
-  metaDescription?: true
   latitude?: true
   longitude?: true
+  metaDescription?: true
+  metaTitle?: true
   population?: true
-  bannerImage?: true
   _all?: true
 }
 
@@ -249,13 +249,13 @@ export type CityGroupByOutputType = {
   country: string
   createdAt: Date
   updatedAt: Date
+  bannerImage: string | null
   description: string | null
-  metaTitle: string | null
-  metaDescription: string | null
   latitude: number | null
   longitude: number | null
+  metaDescription: string | null
+  metaTitle: string | null
   population: number | null
-  bannerImage: string | null
   _count: CityCountAggregateOutputType | null
   _avg: CityAvgAggregateOutputType | null
   _sum: CitySumAggregateOutputType | null
@@ -289,13 +289,13 @@ export type CityWhereInput = {
   country?: Prisma.StringFilter<"City"> | string
   createdAt?: Prisma.DateTimeFilter<"City"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"City"> | Date | string
+  bannerImage?: Prisma.StringNullableFilter<"City"> | string | null
   description?: Prisma.StringNullableFilter<"City"> | string | null
-  metaTitle?: Prisma.StringNullableFilter<"City"> | string | null
-  metaDescription?: Prisma.StringNullableFilter<"City"> | string | null
   latitude?: Prisma.FloatNullableFilter<"City"> | number | null
   longitude?: Prisma.FloatNullableFilter<"City"> | number | null
+  metaDescription?: Prisma.StringNullableFilter<"City"> | string | null
+  metaTitle?: Prisma.StringNullableFilter<"City"> | string | null
   population?: Prisma.IntNullableFilter<"City"> | number | null
-  bannerImage?: Prisma.StringNullableFilter<"City"> | string | null
   institutes?: Prisma.InstituteListRelationFilter
   categoryContents?: Prisma.CategoryCityContentListRelationFilter
 }
@@ -308,13 +308,13 @@ export type CityOrderByWithRelationInput = {
   country?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  bannerImage?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
-  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
   latitude?: Prisma.SortOrderInput | Prisma.SortOrder
   longitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
   population?: Prisma.SortOrderInput | Prisma.SortOrder
-  bannerImage?: Prisma.SortOrderInput | Prisma.SortOrder
   institutes?: Prisma.InstituteOrderByRelationAggregateInput
   categoryContents?: Prisma.CategoryCityContentOrderByRelationAggregateInput
 }
@@ -330,13 +330,13 @@ export type CityWhereUniqueInput = Prisma.AtLeast<{
   country?: Prisma.StringFilter<"City"> | string
   createdAt?: Prisma.DateTimeFilter<"City"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"City"> | Date | string
+  bannerImage?: Prisma.StringNullableFilter<"City"> | string | null
   description?: Prisma.StringNullableFilter<"City"> | string | null
-  metaTitle?: Prisma.StringNullableFilter<"City"> | string | null
-  metaDescription?: Prisma.StringNullableFilter<"City"> | string | null
   latitude?: Prisma.FloatNullableFilter<"City"> | number | null
   longitude?: Prisma.FloatNullableFilter<"City"> | number | null
+  metaDescription?: Prisma.StringNullableFilter<"City"> | string | null
+  metaTitle?: Prisma.StringNullableFilter<"City"> | string | null
   population?: Prisma.IntNullableFilter<"City"> | number | null
-  bannerImage?: Prisma.StringNullableFilter<"City"> | string | null
   institutes?: Prisma.InstituteListRelationFilter
   categoryContents?: Prisma.CategoryCityContentListRelationFilter
 }, "id" | "slug">
@@ -349,13 +349,13 @@ export type CityOrderByWithAggregationInput = {
   country?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  bannerImage?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
-  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
   latitude?: Prisma.SortOrderInput | Prisma.SortOrder
   longitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
   population?: Prisma.SortOrderInput | Prisma.SortOrder
-  bannerImage?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CityCountOrderByAggregateInput
   _avg?: Prisma.CityAvgOrderByAggregateInput
   _max?: Prisma.CityMaxOrderByAggregateInput
@@ -374,13 +374,13 @@ export type CityScalarWhereWithAggregatesInput = {
   country?: Prisma.StringWithAggregatesFilter<"City"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"City"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"City"> | Date | string
+  bannerImage?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
   description?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
-  metaTitle?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
-  metaDescription?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
   latitude?: Prisma.FloatNullableWithAggregatesFilter<"City"> | number | null
   longitude?: Prisma.FloatNullableWithAggregatesFilter<"City"> | number | null
+  metaDescription?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
+  metaTitle?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
   population?: Prisma.IntNullableWithAggregatesFilter<"City"> | number | null
-  bannerImage?: Prisma.StringNullableWithAggregatesFilter<"City"> | string | null
 }
 
 export type CityCreateInput = {
@@ -391,13 +391,13 @@ export type CityCreateInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
   institutes?: Prisma.InstituteCreateNestedManyWithoutCityInput
   categoryContents?: Prisma.CategoryCityContentCreateNestedManyWithoutCityInput
 }
@@ -410,13 +410,13 @@ export type CityUncheckedCreateInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
   institutes?: Prisma.InstituteUncheckedCreateNestedManyWithoutCityInput
   categoryContents?: Prisma.CategoryCityContentUncheckedCreateNestedManyWithoutCityInput
 }
@@ -429,13 +429,13 @@ export type CityUpdateInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   institutes?: Prisma.InstituteUpdateManyWithoutCityNestedInput
   categoryContents?: Prisma.CategoryCityContentUpdateManyWithoutCityNestedInput
 }
@@ -448,13 +448,13 @@ export type CityUncheckedUpdateInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   institutes?: Prisma.InstituteUncheckedUpdateManyWithoutCityNestedInput
   categoryContents?: Prisma.CategoryCityContentUncheckedUpdateManyWithoutCityNestedInput
 }
@@ -467,13 +467,13 @@ export type CityCreateManyInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
 }
 
 export type CityUpdateManyMutationInput = {
@@ -484,13 +484,13 @@ export type CityUpdateManyMutationInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CityUncheckedUpdateManyInput = {
@@ -501,13 +501,13 @@ export type CityUncheckedUpdateManyInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CityScalarRelationFilter = {
@@ -523,13 +523,13 @@ export type CityCountOrderByAggregateInput = {
   country?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  bannerImage?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrder
-  metaDescription?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrder
+  metaTitle?: Prisma.SortOrder
   population?: Prisma.SortOrder
-  bannerImage?: Prisma.SortOrder
 }
 
 export type CityAvgOrderByAggregateInput = {
@@ -546,13 +546,13 @@ export type CityMaxOrderByAggregateInput = {
   country?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  bannerImage?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrder
-  metaDescription?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrder
+  metaTitle?: Prisma.SortOrder
   population?: Prisma.SortOrder
-  bannerImage?: Prisma.SortOrder
 }
 
 export type CityMinOrderByAggregateInput = {
@@ -563,13 +563,13 @@ export type CityMinOrderByAggregateInput = {
   country?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  bannerImage?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrder
-  metaDescription?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrder
+  metaTitle?: Prisma.SortOrder
   population?: Prisma.SortOrder
-  bannerImage?: Prisma.SortOrder
 }
 
 export type CitySumOrderByAggregateInput = {
@@ -614,13 +614,13 @@ export type CityCreateWithoutInstitutesInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
   categoryContents?: Prisma.CategoryCityContentCreateNestedManyWithoutCityInput
 }
 
@@ -632,13 +632,13 @@ export type CityUncheckedCreateWithoutInstitutesInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
   categoryContents?: Prisma.CategoryCityContentUncheckedCreateNestedManyWithoutCityInput
 }
 
@@ -666,13 +666,13 @@ export type CityUpdateWithoutInstitutesInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categoryContents?: Prisma.CategoryCityContentUpdateManyWithoutCityNestedInput
 }
 
@@ -684,13 +684,13 @@ export type CityUncheckedUpdateWithoutInstitutesInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   categoryContents?: Prisma.CategoryCityContentUncheckedUpdateManyWithoutCityNestedInput
 }
 
@@ -702,13 +702,13 @@ export type CityCreateWithoutCategoryContentsInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
   institutes?: Prisma.InstituteCreateNestedManyWithoutCityInput
 }
 
@@ -720,13 +720,13 @@ export type CityUncheckedCreateWithoutCategoryContentsInput = {
   country?: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  bannerImage?: string | null
   description?: string | null
-  metaTitle?: string | null
-  metaDescription?: string | null
   latitude?: number | null
   longitude?: number | null
+  metaDescription?: string | null
+  metaTitle?: string | null
   population?: number | null
-  bannerImage?: string | null
   institutes?: Prisma.InstituteUncheckedCreateNestedManyWithoutCityInput
 }
 
@@ -754,13 +754,13 @@ export type CityUpdateWithoutCategoryContentsInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   institutes?: Prisma.InstituteUpdateManyWithoutCityNestedInput
 }
 
@@ -772,13 +772,13 @@ export type CityUncheckedUpdateWithoutCategoryContentsInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   population?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  bannerImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   institutes?: Prisma.InstituteUncheckedUpdateManyWithoutCityNestedInput
 }
 
@@ -830,13 +830,13 @@ export type CitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   country?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  bannerImage?: boolean
   description?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
   latitude?: boolean
   longitude?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
   population?: boolean
-  bannerImage?: boolean
   institutes?: boolean | Prisma.City$institutesArgs<ExtArgs>
   categoryContents?: boolean | Prisma.City$categoryContentsArgs<ExtArgs>
   _count?: boolean | Prisma.CityCountOutputTypeDefaultArgs<ExtArgs>
@@ -850,13 +850,13 @@ export type CitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   country?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  bannerImage?: boolean
   description?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
   latitude?: boolean
   longitude?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
   population?: boolean
-  bannerImage?: boolean
 }, ExtArgs["result"]["city"]>
 
 export type CitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -867,13 +867,13 @@ export type CitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   country?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  bannerImage?: boolean
   description?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
   latitude?: boolean
   longitude?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
   population?: boolean
-  bannerImage?: boolean
 }, ExtArgs["result"]["city"]>
 
 export type CitySelectScalar = {
@@ -884,16 +884,16 @@ export type CitySelectScalar = {
   country?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  bannerImage?: boolean
   description?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
   latitude?: boolean
   longitude?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
   population?: boolean
-  bannerImage?: boolean
 }
 
-export type CityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "state" | "country" | "createdAt" | "updatedAt" | "description" | "metaTitle" | "metaDescription" | "latitude" | "longitude" | "population" | "bannerImage", ExtArgs["result"]["city"]>
+export type CityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "state" | "country" | "createdAt" | "updatedAt" | "bannerImage" | "description" | "latitude" | "longitude" | "metaDescription" | "metaTitle" | "population", ExtArgs["result"]["city"]>
 export type CityInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   institutes?: boolean | Prisma.City$institutesArgs<ExtArgs>
   categoryContents?: boolean | Prisma.City$categoryContentsArgs<ExtArgs>
@@ -916,13 +916,13 @@ export type $CityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     country: string
     createdAt: Date
     updatedAt: Date
+    bannerImage: string | null
     description: string | null
-    metaTitle: string | null
-    metaDescription: string | null
     latitude: number | null
     longitude: number | null
+    metaDescription: string | null
+    metaTitle: string | null
     population: number | null
-    bannerImage: string | null
   }, ExtArgs["result"]["city"]>
   composites: {}
 }
@@ -1355,13 +1355,13 @@ export interface CityFieldRefs {
   readonly country: Prisma.FieldRef<"City", 'String'>
   readonly createdAt: Prisma.FieldRef<"City", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"City", 'DateTime'>
+  readonly bannerImage: Prisma.FieldRef<"City", 'String'>
   readonly description: Prisma.FieldRef<"City", 'String'>
-  readonly metaTitle: Prisma.FieldRef<"City", 'String'>
-  readonly metaDescription: Prisma.FieldRef<"City", 'String'>
   readonly latitude: Prisma.FieldRef<"City", 'Float'>
   readonly longitude: Prisma.FieldRef<"City", 'Float'>
+  readonly metaDescription: Prisma.FieldRef<"City", 'String'>
+  readonly metaTitle: Prisma.FieldRef<"City", 'String'>
   readonly population: Prisma.FieldRef<"City", 'Int'>
-  readonly bannerImage: Prisma.FieldRef<"City", 'String'>
 }
     
 

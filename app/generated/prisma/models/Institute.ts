@@ -34,12 +34,12 @@ export type InstituteAvgAggregateOutputType = {
   averageRating: number | null
   reviewCount: number | null
   viewCount: number | null
-  establishedYear: number | null
-  totalStudents: number | null
-  totalBranches: number | null
-  feeMin: number | null
-  feeMax: number | null
   compareCount: number | null
+  establishedYear: number | null
+  feeMax: number | null
+  feeMin: number | null
+  totalBranches: number | null
+  totalStudents: number | null
 }
 
 export type InstituteSumAggregateOutputType = {
@@ -50,12 +50,12 @@ export type InstituteSumAggregateOutputType = {
   averageRating: number | null
   reviewCount: number | null
   viewCount: number | null
-  establishedYear: number | null
-  totalStudents: number | null
-  totalBranches: number | null
-  feeMin: number | null
-  feeMax: number | null
   compareCount: number | null
+  establishedYear: number | null
+  feeMax: number | null
+  feeMin: number | null
+  totalBranches: number | null
+  totalStudents: number | null
 }
 
 export type InstituteMinAggregateOutputType = {
@@ -78,7 +78,6 @@ export type InstituteMinAggregateOutputType = {
   isVerified: boolean | null
   isFeatured: boolean | null
   isActive: boolean | null
-  isPublished: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
   imageUrl: string | null
@@ -90,28 +89,29 @@ export type InstituteMinAggregateOutputType = {
   planExpiresAt: Date | null
   facebookUrl: string | null
   instagramUrl: string | null
+  telegramUrl: string | null
   twitterUrl: string | null
   youtubeUrl: string | null
-  telegramUrl: string | null
   linkedinUrl: string | null
   whatsappUrl: string | null
-  viewCount: number | null
+  isPublished: boolean | null
   mode: $Enums.InstituteMode | null
+  viewCount: number | null
   brochureUrl: string | null
-  establishedYear: number | null
-  totalStudents: number | null
-  totalBranches: number | null
-  feeMin: number | null
-  feeMax: number | null
-  refundPolicy: string | null
-  hasOnlineClasses: boolean | null
-  hasHostelFacility: boolean | null
-  hasDemoClasses: boolean | null
-  hasScholarship: boolean | null
-  hasCertification: boolean | null
-  metaTitle: string | null
-  metaDescription: string | null
   compareCount: number | null
+  establishedYear: number | null
+  feeMax: number | null
+  feeMin: number | null
+  hasCertification: boolean | null
+  hasDemoClasses: boolean | null
+  hasHostelFacility: boolean | null
+  hasOnlineClasses: boolean | null
+  hasScholarship: boolean | null
+  metaDescription: string | null
+  metaTitle: string | null
+  refundPolicy: string | null
+  totalBranches: number | null
+  totalStudents: number | null
 }
 
 export type InstituteMaxAggregateOutputType = {
@@ -134,7 +134,6 @@ export type InstituteMaxAggregateOutputType = {
   isVerified: boolean | null
   isFeatured: boolean | null
   isActive: boolean | null
-  isPublished: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
   imageUrl: string | null
@@ -146,28 +145,29 @@ export type InstituteMaxAggregateOutputType = {
   planExpiresAt: Date | null
   facebookUrl: string | null
   instagramUrl: string | null
+  telegramUrl: string | null
   twitterUrl: string | null
   youtubeUrl: string | null
-  telegramUrl: string | null
   linkedinUrl: string | null
   whatsappUrl: string | null
-  viewCount: number | null
+  isPublished: boolean | null
   mode: $Enums.InstituteMode | null
+  viewCount: number | null
   brochureUrl: string | null
-  establishedYear: number | null
-  totalStudents: number | null
-  totalBranches: number | null
-  feeMin: number | null
-  feeMax: number | null
-  refundPolicy: string | null
-  hasOnlineClasses: boolean | null
-  hasHostelFacility: boolean | null
-  hasDemoClasses: boolean | null
-  hasScholarship: boolean | null
-  hasCertification: boolean | null
-  metaTitle: string | null
-  metaDescription: string | null
   compareCount: number | null
+  establishedYear: number | null
+  feeMax: number | null
+  feeMin: number | null
+  hasCertification: boolean | null
+  hasDemoClasses: boolean | null
+  hasHostelFacility: boolean | null
+  hasOnlineClasses: boolean | null
+  hasScholarship: boolean | null
+  metaDescription: string | null
+  metaTitle: string | null
+  refundPolicy: string | null
+  totalBranches: number | null
+  totalStudents: number | null
 }
 
 export type InstituteCountAggregateOutputType = {
@@ -190,7 +190,6 @@ export type InstituteCountAggregateOutputType = {
   isVerified: number
   isFeatured: number
   isActive: number
-  isPublished: number
   createdAt: number
   updatedAt: number
   imageUrl: number
@@ -201,38 +200,39 @@ export type InstituteCountAggregateOutputType = {
   gallery: number
   subscriptionPlan: number
   youtubeVideos: number
-  feeInfo: number
   classroomImages: number
+  feeInfo: number
   planExpiresAt: number
   facebookUrl: number
   instagramUrl: number
+  telegramUrl: number
   twitterUrl: number
   youtubeUrl: number
-  telegramUrl: number
   linkedinUrl: number
   whatsappUrl: number
-  viewCount: number
+  isPublished: number
   mode: number
-  brochureUrl: number
+  viewCount: number
   affiliations: number
   awards: number
-  establishedYear: number
-  totalStudents: number
-  totalBranches: number
-  feeMin: number
-  feeMax: number
-  mediumOfInstruction: number
-  pros: number
-  cons: number
-  refundPolicy: number
-  hasOnlineClasses: number
-  hasHostelFacility: number
-  hasDemoClasses: number
-  hasScholarship: number
-  hasCertification: number
-  metaTitle: number
-  metaDescription: number
+  brochureUrl: number
   compareCount: number
+  cons: number
+  establishedYear: number
+  feeMax: number
+  feeMin: number
+  hasCertification: number
+  hasDemoClasses: number
+  hasHostelFacility: number
+  hasOnlineClasses: number
+  hasScholarship: number
+  mediumOfInstruction: number
+  metaDescription: number
+  metaTitle: number
+  pros: number
+  refundPolicy: number
+  totalBranches: number
+  totalStudents: number
   _all: number
 }
 
@@ -245,12 +245,12 @@ export type InstituteAvgAggregateInputType = {
   averageRating?: true
   reviewCount?: true
   viewCount?: true
-  establishedYear?: true
-  totalStudents?: true
-  totalBranches?: true
-  feeMin?: true
-  feeMax?: true
   compareCount?: true
+  establishedYear?: true
+  feeMax?: true
+  feeMin?: true
+  totalBranches?: true
+  totalStudents?: true
 }
 
 export type InstituteSumAggregateInputType = {
@@ -261,12 +261,12 @@ export type InstituteSumAggregateInputType = {
   averageRating?: true
   reviewCount?: true
   viewCount?: true
-  establishedYear?: true
-  totalStudents?: true
-  totalBranches?: true
-  feeMin?: true
-  feeMax?: true
   compareCount?: true
+  establishedYear?: true
+  feeMax?: true
+  feeMin?: true
+  totalBranches?: true
+  totalStudents?: true
 }
 
 export type InstituteMinAggregateInputType = {
@@ -289,7 +289,6 @@ export type InstituteMinAggregateInputType = {
   isVerified?: true
   isFeatured?: true
   isActive?: true
-  isPublished?: true
   createdAt?: true
   updatedAt?: true
   imageUrl?: true
@@ -301,28 +300,29 @@ export type InstituteMinAggregateInputType = {
   planExpiresAt?: true
   facebookUrl?: true
   instagramUrl?: true
+  telegramUrl?: true
   twitterUrl?: true
   youtubeUrl?: true
-  telegramUrl?: true
   linkedinUrl?: true
   whatsappUrl?: true
-  viewCount?: true
+  isPublished?: true
   mode?: true
+  viewCount?: true
   brochureUrl?: true
-  establishedYear?: true
-  totalStudents?: true
-  totalBranches?: true
-  feeMin?: true
-  feeMax?: true
-  refundPolicy?: true
-  hasOnlineClasses?: true
-  hasHostelFacility?: true
-  hasDemoClasses?: true
-  hasScholarship?: true
-  hasCertification?: true
-  metaTitle?: true
-  metaDescription?: true
   compareCount?: true
+  establishedYear?: true
+  feeMax?: true
+  feeMin?: true
+  hasCertification?: true
+  hasDemoClasses?: true
+  hasHostelFacility?: true
+  hasOnlineClasses?: true
+  hasScholarship?: true
+  metaDescription?: true
+  metaTitle?: true
+  refundPolicy?: true
+  totalBranches?: true
+  totalStudents?: true
 }
 
 export type InstituteMaxAggregateInputType = {
@@ -345,7 +345,6 @@ export type InstituteMaxAggregateInputType = {
   isVerified?: true
   isFeatured?: true
   isActive?: true
-  isPublished?: true
   createdAt?: true
   updatedAt?: true
   imageUrl?: true
@@ -357,28 +356,29 @@ export type InstituteMaxAggregateInputType = {
   planExpiresAt?: true
   facebookUrl?: true
   instagramUrl?: true
+  telegramUrl?: true
   twitterUrl?: true
   youtubeUrl?: true
-  telegramUrl?: true
   linkedinUrl?: true
   whatsappUrl?: true
-  viewCount?: true
+  isPublished?: true
   mode?: true
+  viewCount?: true
   brochureUrl?: true
-  establishedYear?: true
-  totalStudents?: true
-  totalBranches?: true
-  feeMin?: true
-  feeMax?: true
-  refundPolicy?: true
-  hasOnlineClasses?: true
-  hasHostelFacility?: true
-  hasDemoClasses?: true
-  hasScholarship?: true
-  hasCertification?: true
-  metaTitle?: true
-  metaDescription?: true
   compareCount?: true
+  establishedYear?: true
+  feeMax?: true
+  feeMin?: true
+  hasCertification?: true
+  hasDemoClasses?: true
+  hasHostelFacility?: true
+  hasOnlineClasses?: true
+  hasScholarship?: true
+  metaDescription?: true
+  metaTitle?: true
+  refundPolicy?: true
+  totalBranches?: true
+  totalStudents?: true
 }
 
 export type InstituteCountAggregateInputType = {
@@ -401,7 +401,6 @@ export type InstituteCountAggregateInputType = {
   isVerified?: true
   isFeatured?: true
   isActive?: true
-  isPublished?: true
   createdAt?: true
   updatedAt?: true
   imageUrl?: true
@@ -412,38 +411,39 @@ export type InstituteCountAggregateInputType = {
   gallery?: true
   subscriptionPlan?: true
   youtubeVideos?: true
-  feeInfo?: true
   classroomImages?: true
+  feeInfo?: true
   planExpiresAt?: true
   facebookUrl?: true
   instagramUrl?: true
+  telegramUrl?: true
   twitterUrl?: true
   youtubeUrl?: true
-  telegramUrl?: true
   linkedinUrl?: true
   whatsappUrl?: true
-  viewCount?: true
+  isPublished?: true
   mode?: true
-  brochureUrl?: true
+  viewCount?: true
   affiliations?: true
   awards?: true
-  establishedYear?: true
-  totalStudents?: true
-  totalBranches?: true
-  feeMin?: true
-  feeMax?: true
-  mediumOfInstruction?: true
-  pros?: true
-  cons?: true
-  refundPolicy?: true
-  hasOnlineClasses?: true
-  hasHostelFacility?: true
-  hasDemoClasses?: true
-  hasScholarship?: true
-  hasCertification?: true
-  metaTitle?: true
-  metaDescription?: true
+  brochureUrl?: true
   compareCount?: true
+  cons?: true
+  establishedYear?: true
+  feeMax?: true
+  feeMin?: true
+  hasCertification?: true
+  hasDemoClasses?: true
+  hasHostelFacility?: true
+  hasOnlineClasses?: true
+  hasScholarship?: true
+  mediumOfInstruction?: true
+  metaDescription?: true
+  metaTitle?: true
+  pros?: true
+  refundPolicy?: true
+  totalBranches?: true
+  totalStudents?: true
   _all?: true
 }
 
@@ -553,7 +553,6 @@ export type InstituteGroupByOutputType = {
   isVerified: boolean
   isFeatured: boolean
   isActive: boolean
-  isPublished: boolean
   createdAt: Date
   updatedAt: Date
   imageUrl: string | null
@@ -564,38 +563,39 @@ export type InstituteGroupByOutputType = {
   gallery: string[]
   subscriptionPlan: $Enums.SubscriptionPlan
   youtubeVideos: string[]
-  feeInfo: string | null
   classroomImages: string[]
+  feeInfo: string | null
   planExpiresAt: Date | null
   facebookUrl: string | null
   instagramUrl: string | null
+  telegramUrl: string | null
   twitterUrl: string | null
   youtubeUrl: string | null
-  telegramUrl: string | null
   linkedinUrl: string | null
   whatsappUrl: string | null
-  viewCount: number
+  isPublished: boolean
   mode: $Enums.InstituteMode
-  brochureUrl: string | null
+  viewCount: number
   affiliations: string[]
   awards: string[]
-  establishedYear: number | null
-  totalStudents: number | null
-  totalBranches: number | null
-  feeMin: number | null
-  feeMax: number | null
-  mediumOfInstruction: string[]
-  pros: string[]
-  cons: string[]
-  refundPolicy: string | null
-  hasOnlineClasses: boolean
-  hasHostelFacility: boolean
-  hasDemoClasses: boolean
-  hasScholarship: boolean
-  hasCertification: boolean
-  metaTitle: string | null
-  metaDescription: string | null
+  brochureUrl: string | null
   compareCount: number
+  cons: string[]
+  establishedYear: number | null
+  feeMax: number | null
+  feeMin: number | null
+  hasCertification: boolean
+  hasDemoClasses: boolean
+  hasHostelFacility: boolean
+  hasOnlineClasses: boolean
+  hasScholarship: boolean
+  mediumOfInstruction: string[]
+  metaDescription: string | null
+  metaTitle: string | null
+  pros: string[]
+  refundPolicy: string | null
+  totalBranches: number | null
+  totalStudents: number | null
   _count: InstituteCountAggregateOutputType | null
   _avg: InstituteAvgAggregateOutputType | null
   _sum: InstituteSumAggregateOutputType | null
@@ -641,7 +641,6 @@ export type InstituteWhereInput = {
   isVerified?: Prisma.BoolFilter<"Institute"> | boolean
   isFeatured?: Prisma.BoolFilter<"Institute"> | boolean
   isActive?: Prisma.BoolFilter<"Institute"> | boolean
-  isPublished?: Prisma.BoolFilter<"Institute"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Institute"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Institute"> | Date | string
   imageUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
@@ -652,62 +651,63 @@ export type InstituteWhereInput = {
   gallery?: Prisma.StringNullableListFilter<"Institute">
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFilter<"Institute"> | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.StringNullableListFilter<"Institute">
-  feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
+  feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   planExpiresAt?: Prisma.DateTimeNullableFilter<"Institute"> | Date | string | null
   facebookUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   instagramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   twitterUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   youtubeUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
-  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   linkedinUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   whatsappUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
-  viewCount?: Prisma.IntFilter<"Institute"> | number
+  isPublished?: Prisma.BoolFilter<"Institute"> | boolean
   mode?: Prisma.EnumInstituteModeFilter<"Institute"> | $Enums.InstituteMode
-  brochureUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  viewCount?: Prisma.IntFilter<"Institute"> | number
   affiliations?: Prisma.StringNullableListFilter<"Institute">
   awards?: Prisma.StringNullableListFilter<"Institute">
-  establishedYear?: Prisma.IntNullableFilter<"Institute"> | number | null
-  totalStudents?: Prisma.IntNullableFilter<"Institute"> | number | null
-  totalBranches?: Prisma.IntNullableFilter<"Institute"> | number | null
-  feeMin?: Prisma.IntNullableFilter<"Institute"> | number | null
-  feeMax?: Prisma.IntNullableFilter<"Institute"> | number | null
-  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
-  pros?: Prisma.StringNullableListFilter<"Institute">
-  cons?: Prisma.StringNullableListFilter<"Institute">
-  refundPolicy?: Prisma.StringNullableFilter<"Institute"> | string | null
-  hasOnlineClasses?: Prisma.BoolFilter<"Institute"> | boolean
-  hasHostelFacility?: Prisma.BoolFilter<"Institute"> | boolean
-  hasDemoClasses?: Prisma.BoolFilter<"Institute"> | boolean
-  hasScholarship?: Prisma.BoolFilter<"Institute"> | boolean
-  hasCertification?: Prisma.BoolFilter<"Institute"> | boolean
-  metaTitle?: Prisma.StringNullableFilter<"Institute"> | string | null
-  metaDescription?: Prisma.StringNullableFilter<"Institute"> | string | null
+  brochureUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   compareCount?: Prisma.IntFilter<"Institute"> | number
+  cons?: Prisma.StringNullableListFilter<"Institute">
+  establishedYear?: Prisma.IntNullableFilter<"Institute"> | number | null
+  feeMax?: Prisma.IntNullableFilter<"Institute"> | number | null
+  feeMin?: Prisma.IntNullableFilter<"Institute"> | number | null
+  hasCertification?: Prisma.BoolFilter<"Institute"> | boolean
+  hasDemoClasses?: Prisma.BoolFilter<"Institute"> | boolean
+  hasHostelFacility?: Prisma.BoolFilter<"Institute"> | boolean
+  hasOnlineClasses?: Prisma.BoolFilter<"Institute"> | boolean
+  hasScholarship?: Prisma.BoolFilter<"Institute"> | boolean
+  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
+  metaDescription?: Prisma.StringNullableFilter<"Institute"> | string | null
+  metaTitle?: Prisma.StringNullableFilter<"Institute"> | string | null
+  pros?: Prisma.StringNullableListFilter<"Institute">
+  refundPolicy?: Prisma.StringNullableFilter<"Institute"> | string | null
+  totalBranches?: Prisma.IntNullableFilter<"Institute"> | number | null
+  totalStudents?: Prisma.IntNullableFilter<"Institute"> | number | null
   city?: Prisma.XOR<Prisma.CityScalarRelationFilter, Prisma.CityWhereInput>
   categories?: Prisma.InstituteCategoryListRelationFilter
   managers?: Prisma.InstituteManagerListRelationFilter
   reviews?: Prisma.ReviewListRelationFilter
-  claims?: Prisma.InstituteClaimListRelationFilter
-  shortlistedBy?: Prisma.UserShortlistListRelationFilter
-  viewHistory?: Prisma.UserHistoryListRelationFilter
-  enquiries?: Prisma.InstituteEnquiryListRelationFilter
-  teachers?: Prisma.TeacherProfileListRelationFilter
-  instituteRequest?: Prisma.XOR<Prisma.InstituteRequestNullableScalarRelationFilter, Prisma.InstituteRequestWhereInput> | null
-  payments?: Prisma.SubscriptionPaymentListRelationFilter
-  salesAssignments?: Prisma.SalesAssignmentListRelationFilter
-  dailyViews?: Prisma.InstituteDailyViewListRelationFilter
-  facilities?: Prisma.InstituteFacilityListRelationFilter
-  batches?: Prisma.InstituteBatchListRelationFilter
-  highlightStats?: Prisma.InstituteHighlightStatListRelationFilter
-  achievements?: Prisma.InstituteAchievementListRelationFilter
-  faqs?: Prisma.InstituteFAQListRelationFilter
-  operatingHours?: Prisma.InstituteOperatingHourListRelationFilter
-  compareListItems?: Prisma.CompareListInstituteListRelationFilter
-  notablepersons?: Prisma.NotablePersonsListRelationFilter
   communityQuestions?: Prisma.CommunityQuestionListRelationFilter
+  compareListItems?: Prisma.CompareListInstituteListRelationFilter
+  achievements?: Prisma.InstituteAchievementListRelationFilter
+  batches?: Prisma.InstituteBatchListRelationFilter
+  claims?: Prisma.InstituteClaimListRelationFilter
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheListRelationFilter
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheListRelationFilter
+  dailyViews?: Prisma.InstituteDailyViewListRelationFilter
+  enquiries?: Prisma.InstituteEnquiryListRelationFilter
+  facilities?: Prisma.InstituteFacilityListRelationFilter
+  faqs?: Prisma.InstituteFAQListRelationFilter
+  highlightStats?: Prisma.InstituteHighlightStatListRelationFilter
+  operatingHours?: Prisma.InstituteOperatingHourListRelationFilter
+  instituteRequest?: Prisma.XOR<Prisma.InstituteRequestNullableScalarRelationFilter, Prisma.InstituteRequestWhereInput> | null
+  notablepersons?: Prisma.NotablePersonsListRelationFilter
+  salesAssignments?: Prisma.XOR<Prisma.SalesAssignmentNullableScalarRelationFilter, Prisma.SalesAssignmentWhereInput> | null
+  payments?: Prisma.SubscriptionPaymentListRelationFilter
+  teachers?: Prisma.TeacherProfileListRelationFilter
+  viewHistory?: Prisma.UserHistoryListRelationFilter
+  shortlistedBy?: Prisma.UserShortlistListRelationFilter
 }
 
 export type InstituteOrderByWithRelationInput = {
@@ -730,7 +730,6 @@ export type InstituteOrderByWithRelationInput = {
   isVerified?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
-  isPublished?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -741,62 +740,63 @@ export type InstituteOrderByWithRelationInput = {
   gallery?: Prisma.SortOrder
   subscriptionPlan?: Prisma.SortOrder
   youtubeVideos?: Prisma.SortOrder
-  feeInfo?: Prisma.SortOrderInput | Prisma.SortOrder
   classroomImages?: Prisma.SortOrder
+  feeInfo?: Prisma.SortOrderInput | Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrderInput | Prisma.SortOrder
   facebookUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   youtubeUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  telegramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   whatsappUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  viewCount?: Prisma.SortOrder
+  isPublished?: Prisma.SortOrder
   mode?: Prisma.SortOrder
-  brochureUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  viewCount?: Prisma.SortOrder
   affiliations?: Prisma.SortOrder
   awards?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrderInput | Prisma.SortOrder
-  totalStudents?: Prisma.SortOrderInput | Prisma.SortOrder
-  totalBranches?: Prisma.SortOrderInput | Prisma.SortOrder
-  feeMin?: Prisma.SortOrderInput | Prisma.SortOrder
-  feeMax?: Prisma.SortOrderInput | Prisma.SortOrder
-  mediumOfInstruction?: Prisma.SortOrder
-  pros?: Prisma.SortOrder
-  cons?: Prisma.SortOrder
-  refundPolicy?: Prisma.SortOrderInput | Prisma.SortOrder
-  hasOnlineClasses?: Prisma.SortOrder
-  hasHostelFacility?: Prisma.SortOrder
-  hasDemoClasses?: Prisma.SortOrder
-  hasScholarship?: Prisma.SortOrder
-  hasCertification?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
-  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  brochureUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  cons?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrderInput | Prisma.SortOrder
+  feeMax?: Prisma.SortOrderInput | Prisma.SortOrder
+  feeMin?: Prisma.SortOrderInput | Prisma.SortOrder
+  hasCertification?: Prisma.SortOrder
+  hasDemoClasses?: Prisma.SortOrder
+  hasHostelFacility?: Prisma.SortOrder
+  hasOnlineClasses?: Prisma.SortOrder
+  hasScholarship?: Prisma.SortOrder
+  mediumOfInstruction?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
+  pros?: Prisma.SortOrder
+  refundPolicy?: Prisma.SortOrderInput | Prisma.SortOrder
+  totalBranches?: Prisma.SortOrderInput | Prisma.SortOrder
+  totalStudents?: Prisma.SortOrderInput | Prisma.SortOrder
   city?: Prisma.CityOrderByWithRelationInput
   categories?: Prisma.InstituteCategoryOrderByRelationAggregateInput
   managers?: Prisma.InstituteManagerOrderByRelationAggregateInput
   reviews?: Prisma.ReviewOrderByRelationAggregateInput
-  claims?: Prisma.InstituteClaimOrderByRelationAggregateInput
-  shortlistedBy?: Prisma.UserShortlistOrderByRelationAggregateInput
-  viewHistory?: Prisma.UserHistoryOrderByRelationAggregateInput
-  enquiries?: Prisma.InstituteEnquiryOrderByRelationAggregateInput
-  teachers?: Prisma.TeacherProfileOrderByRelationAggregateInput
-  instituteRequest?: Prisma.InstituteRequestOrderByWithRelationInput
-  payments?: Prisma.SubscriptionPaymentOrderByRelationAggregateInput
-  salesAssignments?: Prisma.SalesAssignmentOrderByRelationAggregateInput
-  dailyViews?: Prisma.InstituteDailyViewOrderByRelationAggregateInput
-  facilities?: Prisma.InstituteFacilityOrderByRelationAggregateInput
-  batches?: Prisma.InstituteBatchOrderByRelationAggregateInput
-  highlightStats?: Prisma.InstituteHighlightStatOrderByRelationAggregateInput
-  achievements?: Prisma.InstituteAchievementOrderByRelationAggregateInput
-  faqs?: Prisma.InstituteFAQOrderByRelationAggregateInput
-  operatingHours?: Prisma.InstituteOperatingHourOrderByRelationAggregateInput
-  compareListItems?: Prisma.CompareListInstituteOrderByRelationAggregateInput
-  notablepersons?: Prisma.NotablePersonsOrderByRelationAggregateInput
   communityQuestions?: Prisma.CommunityQuestionOrderByRelationAggregateInput
+  compareListItems?: Prisma.CompareListInstituteOrderByRelationAggregateInput
+  achievements?: Prisma.InstituteAchievementOrderByRelationAggregateInput
+  batches?: Prisma.InstituteBatchOrderByRelationAggregateInput
+  claims?: Prisma.InstituteClaimOrderByRelationAggregateInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheOrderByRelationAggregateInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheOrderByRelationAggregateInput
+  dailyViews?: Prisma.InstituteDailyViewOrderByRelationAggregateInput
+  enquiries?: Prisma.InstituteEnquiryOrderByRelationAggregateInput
+  facilities?: Prisma.InstituteFacilityOrderByRelationAggregateInput
+  faqs?: Prisma.InstituteFAQOrderByRelationAggregateInput
+  highlightStats?: Prisma.InstituteHighlightStatOrderByRelationAggregateInput
+  operatingHours?: Prisma.InstituteOperatingHourOrderByRelationAggregateInput
+  instituteRequest?: Prisma.InstituteRequestOrderByWithRelationInput
+  notablepersons?: Prisma.NotablePersonsOrderByRelationAggregateInput
+  salesAssignments?: Prisma.SalesAssignmentOrderByWithRelationInput
+  payments?: Prisma.SubscriptionPaymentOrderByRelationAggregateInput
+  teachers?: Prisma.TeacherProfileOrderByRelationAggregateInput
+  viewHistory?: Prisma.UserHistoryOrderByRelationAggregateInput
+  shortlistedBy?: Prisma.UserShortlistOrderByRelationAggregateInput
 }
 
 export type InstituteWhereUniqueInput = Prisma.AtLeast<{
@@ -822,7 +822,6 @@ export type InstituteWhereUniqueInput = Prisma.AtLeast<{
   isVerified?: Prisma.BoolFilter<"Institute"> | boolean
   isFeatured?: Prisma.BoolFilter<"Institute"> | boolean
   isActive?: Prisma.BoolFilter<"Institute"> | boolean
-  isPublished?: Prisma.BoolFilter<"Institute"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Institute"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Institute"> | Date | string
   imageUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
@@ -833,62 +832,63 @@ export type InstituteWhereUniqueInput = Prisma.AtLeast<{
   gallery?: Prisma.StringNullableListFilter<"Institute">
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFilter<"Institute"> | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.StringNullableListFilter<"Institute">
-  feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
+  feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   planExpiresAt?: Prisma.DateTimeNullableFilter<"Institute"> | Date | string | null
   facebookUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   instagramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   twitterUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   youtubeUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
-  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   linkedinUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   whatsappUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
-  viewCount?: Prisma.IntFilter<"Institute"> | number
+  isPublished?: Prisma.BoolFilter<"Institute"> | boolean
   mode?: Prisma.EnumInstituteModeFilter<"Institute"> | $Enums.InstituteMode
-  brochureUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  viewCount?: Prisma.IntFilter<"Institute"> | number
   affiliations?: Prisma.StringNullableListFilter<"Institute">
   awards?: Prisma.StringNullableListFilter<"Institute">
-  establishedYear?: Prisma.IntNullableFilter<"Institute"> | number | null
-  totalStudents?: Prisma.IntNullableFilter<"Institute"> | number | null
-  totalBranches?: Prisma.IntNullableFilter<"Institute"> | number | null
-  feeMin?: Prisma.IntNullableFilter<"Institute"> | number | null
-  feeMax?: Prisma.IntNullableFilter<"Institute"> | number | null
-  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
-  pros?: Prisma.StringNullableListFilter<"Institute">
-  cons?: Prisma.StringNullableListFilter<"Institute">
-  refundPolicy?: Prisma.StringNullableFilter<"Institute"> | string | null
-  hasOnlineClasses?: Prisma.BoolFilter<"Institute"> | boolean
-  hasHostelFacility?: Prisma.BoolFilter<"Institute"> | boolean
-  hasDemoClasses?: Prisma.BoolFilter<"Institute"> | boolean
-  hasScholarship?: Prisma.BoolFilter<"Institute"> | boolean
-  hasCertification?: Prisma.BoolFilter<"Institute"> | boolean
-  metaTitle?: Prisma.StringNullableFilter<"Institute"> | string | null
-  metaDescription?: Prisma.StringNullableFilter<"Institute"> | string | null
+  brochureUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   compareCount?: Prisma.IntFilter<"Institute"> | number
+  cons?: Prisma.StringNullableListFilter<"Institute">
+  establishedYear?: Prisma.IntNullableFilter<"Institute"> | number | null
+  feeMax?: Prisma.IntNullableFilter<"Institute"> | number | null
+  feeMin?: Prisma.IntNullableFilter<"Institute"> | number | null
+  hasCertification?: Prisma.BoolFilter<"Institute"> | boolean
+  hasDemoClasses?: Prisma.BoolFilter<"Institute"> | boolean
+  hasHostelFacility?: Prisma.BoolFilter<"Institute"> | boolean
+  hasOnlineClasses?: Prisma.BoolFilter<"Institute"> | boolean
+  hasScholarship?: Prisma.BoolFilter<"Institute"> | boolean
+  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
+  metaDescription?: Prisma.StringNullableFilter<"Institute"> | string | null
+  metaTitle?: Prisma.StringNullableFilter<"Institute"> | string | null
+  pros?: Prisma.StringNullableListFilter<"Institute">
+  refundPolicy?: Prisma.StringNullableFilter<"Institute"> | string | null
+  totalBranches?: Prisma.IntNullableFilter<"Institute"> | number | null
+  totalStudents?: Prisma.IntNullableFilter<"Institute"> | number | null
   city?: Prisma.XOR<Prisma.CityScalarRelationFilter, Prisma.CityWhereInput>
   categories?: Prisma.InstituteCategoryListRelationFilter
   managers?: Prisma.InstituteManagerListRelationFilter
   reviews?: Prisma.ReviewListRelationFilter
-  claims?: Prisma.InstituteClaimListRelationFilter
-  shortlistedBy?: Prisma.UserShortlistListRelationFilter
-  viewHistory?: Prisma.UserHistoryListRelationFilter
-  enquiries?: Prisma.InstituteEnquiryListRelationFilter
-  teachers?: Prisma.TeacherProfileListRelationFilter
-  instituteRequest?: Prisma.XOR<Prisma.InstituteRequestNullableScalarRelationFilter, Prisma.InstituteRequestWhereInput> | null
-  payments?: Prisma.SubscriptionPaymentListRelationFilter
-  salesAssignments?: Prisma.SalesAssignmentListRelationFilter
-  dailyViews?: Prisma.InstituteDailyViewListRelationFilter
-  facilities?: Prisma.InstituteFacilityListRelationFilter
-  batches?: Prisma.InstituteBatchListRelationFilter
-  highlightStats?: Prisma.InstituteHighlightStatListRelationFilter
-  achievements?: Prisma.InstituteAchievementListRelationFilter
-  faqs?: Prisma.InstituteFAQListRelationFilter
-  operatingHours?: Prisma.InstituteOperatingHourListRelationFilter
-  compareListItems?: Prisma.CompareListInstituteListRelationFilter
-  notablepersons?: Prisma.NotablePersonsListRelationFilter
   communityQuestions?: Prisma.CommunityQuestionListRelationFilter
+  compareListItems?: Prisma.CompareListInstituteListRelationFilter
+  achievements?: Prisma.InstituteAchievementListRelationFilter
+  batches?: Prisma.InstituteBatchListRelationFilter
+  claims?: Prisma.InstituteClaimListRelationFilter
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheListRelationFilter
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheListRelationFilter
+  dailyViews?: Prisma.InstituteDailyViewListRelationFilter
+  enquiries?: Prisma.InstituteEnquiryListRelationFilter
+  facilities?: Prisma.InstituteFacilityListRelationFilter
+  faqs?: Prisma.InstituteFAQListRelationFilter
+  highlightStats?: Prisma.InstituteHighlightStatListRelationFilter
+  operatingHours?: Prisma.InstituteOperatingHourListRelationFilter
+  instituteRequest?: Prisma.XOR<Prisma.InstituteRequestNullableScalarRelationFilter, Prisma.InstituteRequestWhereInput> | null
+  notablepersons?: Prisma.NotablePersonsListRelationFilter
+  salesAssignments?: Prisma.XOR<Prisma.SalesAssignmentNullableScalarRelationFilter, Prisma.SalesAssignmentWhereInput> | null
+  payments?: Prisma.SubscriptionPaymentListRelationFilter
+  teachers?: Prisma.TeacherProfileListRelationFilter
+  viewHistory?: Prisma.UserHistoryListRelationFilter
+  shortlistedBy?: Prisma.UserShortlistListRelationFilter
 }, "id" | "googlePlaceId">
 
 export type InstituteOrderByWithAggregationInput = {
@@ -911,7 +911,6 @@ export type InstituteOrderByWithAggregationInput = {
   isVerified?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
-  isPublished?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -922,38 +921,39 @@ export type InstituteOrderByWithAggregationInput = {
   gallery?: Prisma.SortOrder
   subscriptionPlan?: Prisma.SortOrder
   youtubeVideos?: Prisma.SortOrder
-  feeInfo?: Prisma.SortOrderInput | Prisma.SortOrder
   classroomImages?: Prisma.SortOrder
+  feeInfo?: Prisma.SortOrderInput | Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrderInput | Prisma.SortOrder
   facebookUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   youtubeUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  telegramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   whatsappUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  viewCount?: Prisma.SortOrder
+  isPublished?: Prisma.SortOrder
   mode?: Prisma.SortOrder
-  brochureUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  viewCount?: Prisma.SortOrder
   affiliations?: Prisma.SortOrder
   awards?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrderInput | Prisma.SortOrder
-  totalStudents?: Prisma.SortOrderInput | Prisma.SortOrder
-  totalBranches?: Prisma.SortOrderInput | Prisma.SortOrder
-  feeMin?: Prisma.SortOrderInput | Prisma.SortOrder
-  feeMax?: Prisma.SortOrderInput | Prisma.SortOrder
-  mediumOfInstruction?: Prisma.SortOrder
-  pros?: Prisma.SortOrder
-  cons?: Prisma.SortOrder
-  refundPolicy?: Prisma.SortOrderInput | Prisma.SortOrder
-  hasOnlineClasses?: Prisma.SortOrder
-  hasHostelFacility?: Prisma.SortOrder
-  hasDemoClasses?: Prisma.SortOrder
-  hasScholarship?: Prisma.SortOrder
-  hasCertification?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
-  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  brochureUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  cons?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrderInput | Prisma.SortOrder
+  feeMax?: Prisma.SortOrderInput | Prisma.SortOrder
+  feeMin?: Prisma.SortOrderInput | Prisma.SortOrder
+  hasCertification?: Prisma.SortOrder
+  hasDemoClasses?: Prisma.SortOrder
+  hasHostelFacility?: Prisma.SortOrder
+  hasOnlineClasses?: Prisma.SortOrder
+  hasScholarship?: Prisma.SortOrder
+  mediumOfInstruction?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrderInput | Prisma.SortOrder
+  metaTitle?: Prisma.SortOrderInput | Prisma.SortOrder
+  pros?: Prisma.SortOrder
+  refundPolicy?: Prisma.SortOrderInput | Prisma.SortOrder
+  totalBranches?: Prisma.SortOrderInput | Prisma.SortOrder
+  totalStudents?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.InstituteCountOrderByAggregateInput
   _avg?: Prisma.InstituteAvgOrderByAggregateInput
   _max?: Prisma.InstituteMaxOrderByAggregateInput
@@ -984,7 +984,6 @@ export type InstituteScalarWhereWithAggregatesInput = {
   isVerified?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
   isFeatured?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
   isActive?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
-  isPublished?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Institute"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Institute"> | Date | string
   imageUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
@@ -995,38 +994,39 @@ export type InstituteScalarWhereWithAggregatesInput = {
   gallery?: Prisma.StringNullableListFilter<"Institute">
   subscriptionPlan?: Prisma.EnumSubscriptionPlanWithAggregatesFilter<"Institute"> | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.StringNullableListFilter<"Institute">
-  feeInfo?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
+  feeInfo?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   planExpiresAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Institute"> | Date | string | null
   facebookUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   instagramUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   twitterUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   youtubeUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
-  telegramUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   linkedinUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   whatsappUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
-  viewCount?: Prisma.IntWithAggregatesFilter<"Institute"> | number
+  isPublished?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
   mode?: Prisma.EnumInstituteModeWithAggregatesFilter<"Institute"> | $Enums.InstituteMode
-  brochureUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  viewCount?: Prisma.IntWithAggregatesFilter<"Institute"> | number
   affiliations?: Prisma.StringNullableListFilter<"Institute">
   awards?: Prisma.StringNullableListFilter<"Institute">
-  establishedYear?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
-  totalStudents?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
-  totalBranches?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
-  feeMin?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
-  feeMax?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
-  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
-  pros?: Prisma.StringNullableListFilter<"Institute">
-  cons?: Prisma.StringNullableListFilter<"Institute">
-  refundPolicy?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
-  hasOnlineClasses?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
-  hasHostelFacility?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
-  hasDemoClasses?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
-  hasScholarship?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
-  hasCertification?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
-  metaTitle?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
-  metaDescription?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  brochureUrl?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
   compareCount?: Prisma.IntWithAggregatesFilter<"Institute"> | number
+  cons?: Prisma.StringNullableListFilter<"Institute">
+  establishedYear?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
+  feeMax?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
+  feeMin?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
+  hasCertification?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
+  hasDemoClasses?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
+  hasHostelFacility?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
+  hasOnlineClasses?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
+  hasScholarship?: Prisma.BoolWithAggregatesFilter<"Institute"> | boolean
+  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
+  metaDescription?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  metaTitle?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  pros?: Prisma.StringNullableListFilter<"Institute">
+  refundPolicy?: Prisma.StringNullableWithAggregatesFilter<"Institute"> | string | null
+  totalBranches?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
+  totalStudents?: Prisma.IntNullableWithAggregatesFilter<"Institute"> | number | null
 }
 
 export type InstituteCreateInput = {
@@ -1048,7 +1048,6 @@ export type InstituteCreateInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -1059,62 +1058,63 @@ export type InstituteCreateInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateInput = {
@@ -1137,7 +1137,6 @@ export type InstituteUncheckedCreateInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -1148,61 +1147,62 @@ export type InstituteUncheckedCreateInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUpdateInput = {
@@ -1224,7 +1224,6 @@ export type InstituteUpdateInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1235,62 +1234,63 @@ export type InstituteUpdateInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateInput = {
@@ -1313,7 +1313,6 @@ export type InstituteUncheckedUpdateInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1324,61 +1323,62 @@ export type InstituteUncheckedUpdateInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateManyInput = {
@@ -1401,7 +1401,6 @@ export type InstituteCreateManyInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -1412,38 +1411,39 @@ export type InstituteCreateManyInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
 }
 
 export type InstituteUpdateManyMutationInput = {
@@ -1465,7 +1465,6 @@ export type InstituteUpdateManyMutationInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1476,38 +1475,39 @@ export type InstituteUpdateManyMutationInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type InstituteUncheckedUpdateManyInput = {
@@ -1530,7 +1530,6 @@ export type InstituteUncheckedUpdateManyInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1541,38 +1540,39 @@ export type InstituteUncheckedUpdateManyInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -1603,7 +1603,6 @@ export type InstituteCountOrderByAggregateInput = {
   isVerified?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
-  isPublished?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
@@ -1614,38 +1613,39 @@ export type InstituteCountOrderByAggregateInput = {
   gallery?: Prisma.SortOrder
   subscriptionPlan?: Prisma.SortOrder
   youtubeVideos?: Prisma.SortOrder
-  feeInfo?: Prisma.SortOrder
   classroomImages?: Prisma.SortOrder
+  feeInfo?: Prisma.SortOrder
   planExpiresAt?: Prisma.SortOrder
   facebookUrl?: Prisma.SortOrder
   instagramUrl?: Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrder
   twitterUrl?: Prisma.SortOrder
   youtubeUrl?: Prisma.SortOrder
-  telegramUrl?: Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrder
   whatsappUrl?: Prisma.SortOrder
-  viewCount?: Prisma.SortOrder
+  isPublished?: Prisma.SortOrder
   mode?: Prisma.SortOrder
-  brochureUrl?: Prisma.SortOrder
+  viewCount?: Prisma.SortOrder
   affiliations?: Prisma.SortOrder
   awards?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrder
-  totalStudents?: Prisma.SortOrder
-  totalBranches?: Prisma.SortOrder
-  feeMin?: Prisma.SortOrder
-  feeMax?: Prisma.SortOrder
-  mediumOfInstruction?: Prisma.SortOrder
-  pros?: Prisma.SortOrder
-  cons?: Prisma.SortOrder
-  refundPolicy?: Prisma.SortOrder
-  hasOnlineClasses?: Prisma.SortOrder
-  hasHostelFacility?: Prisma.SortOrder
-  hasDemoClasses?: Prisma.SortOrder
-  hasScholarship?: Prisma.SortOrder
-  hasCertification?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrder
-  metaDescription?: Prisma.SortOrder
+  brochureUrl?: Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  cons?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrder
+  feeMax?: Prisma.SortOrder
+  feeMin?: Prisma.SortOrder
+  hasCertification?: Prisma.SortOrder
+  hasDemoClasses?: Prisma.SortOrder
+  hasHostelFacility?: Prisma.SortOrder
+  hasOnlineClasses?: Prisma.SortOrder
+  hasScholarship?: Prisma.SortOrder
+  mediumOfInstruction?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrder
+  metaTitle?: Prisma.SortOrder
+  pros?: Prisma.SortOrder
+  refundPolicy?: Prisma.SortOrder
+  totalBranches?: Prisma.SortOrder
+  totalStudents?: Prisma.SortOrder
 }
 
 export type InstituteAvgOrderByAggregateInput = {
@@ -1656,12 +1656,12 @@ export type InstituteAvgOrderByAggregateInput = {
   averageRating?: Prisma.SortOrder
   reviewCount?: Prisma.SortOrder
   viewCount?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrder
-  totalStudents?: Prisma.SortOrder
-  totalBranches?: Prisma.SortOrder
-  feeMin?: Prisma.SortOrder
-  feeMax?: Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrder
+  feeMax?: Prisma.SortOrder
+  feeMin?: Prisma.SortOrder
+  totalBranches?: Prisma.SortOrder
+  totalStudents?: Prisma.SortOrder
 }
 
 export type InstituteMaxOrderByAggregateInput = {
@@ -1684,7 +1684,6 @@ export type InstituteMaxOrderByAggregateInput = {
   isVerified?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
-  isPublished?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
@@ -1696,28 +1695,29 @@ export type InstituteMaxOrderByAggregateInput = {
   planExpiresAt?: Prisma.SortOrder
   facebookUrl?: Prisma.SortOrder
   instagramUrl?: Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrder
   twitterUrl?: Prisma.SortOrder
   youtubeUrl?: Prisma.SortOrder
-  telegramUrl?: Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrder
   whatsappUrl?: Prisma.SortOrder
-  viewCount?: Prisma.SortOrder
+  isPublished?: Prisma.SortOrder
   mode?: Prisma.SortOrder
+  viewCount?: Prisma.SortOrder
   brochureUrl?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrder
-  totalStudents?: Prisma.SortOrder
-  totalBranches?: Prisma.SortOrder
-  feeMin?: Prisma.SortOrder
-  feeMax?: Prisma.SortOrder
-  refundPolicy?: Prisma.SortOrder
-  hasOnlineClasses?: Prisma.SortOrder
-  hasHostelFacility?: Prisma.SortOrder
-  hasDemoClasses?: Prisma.SortOrder
-  hasScholarship?: Prisma.SortOrder
-  hasCertification?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrder
-  metaDescription?: Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrder
+  feeMax?: Prisma.SortOrder
+  feeMin?: Prisma.SortOrder
+  hasCertification?: Prisma.SortOrder
+  hasDemoClasses?: Prisma.SortOrder
+  hasHostelFacility?: Prisma.SortOrder
+  hasOnlineClasses?: Prisma.SortOrder
+  hasScholarship?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrder
+  metaTitle?: Prisma.SortOrder
+  refundPolicy?: Prisma.SortOrder
+  totalBranches?: Prisma.SortOrder
+  totalStudents?: Prisma.SortOrder
 }
 
 export type InstituteMinOrderByAggregateInput = {
@@ -1740,7 +1740,6 @@ export type InstituteMinOrderByAggregateInput = {
   isVerified?: Prisma.SortOrder
   isFeatured?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
-  isPublished?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
@@ -1752,28 +1751,29 @@ export type InstituteMinOrderByAggregateInput = {
   planExpiresAt?: Prisma.SortOrder
   facebookUrl?: Prisma.SortOrder
   instagramUrl?: Prisma.SortOrder
+  telegramUrl?: Prisma.SortOrder
   twitterUrl?: Prisma.SortOrder
   youtubeUrl?: Prisma.SortOrder
-  telegramUrl?: Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrder
   whatsappUrl?: Prisma.SortOrder
-  viewCount?: Prisma.SortOrder
+  isPublished?: Prisma.SortOrder
   mode?: Prisma.SortOrder
+  viewCount?: Prisma.SortOrder
   brochureUrl?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrder
-  totalStudents?: Prisma.SortOrder
-  totalBranches?: Prisma.SortOrder
-  feeMin?: Prisma.SortOrder
-  feeMax?: Prisma.SortOrder
-  refundPolicy?: Prisma.SortOrder
-  hasOnlineClasses?: Prisma.SortOrder
-  hasHostelFacility?: Prisma.SortOrder
-  hasDemoClasses?: Prisma.SortOrder
-  hasScholarship?: Prisma.SortOrder
-  hasCertification?: Prisma.SortOrder
-  metaTitle?: Prisma.SortOrder
-  metaDescription?: Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrder
+  feeMax?: Prisma.SortOrder
+  feeMin?: Prisma.SortOrder
+  hasCertification?: Prisma.SortOrder
+  hasDemoClasses?: Prisma.SortOrder
+  hasHostelFacility?: Prisma.SortOrder
+  hasOnlineClasses?: Prisma.SortOrder
+  hasScholarship?: Prisma.SortOrder
+  metaDescription?: Prisma.SortOrder
+  metaTitle?: Prisma.SortOrder
+  refundPolicy?: Prisma.SortOrder
+  totalBranches?: Prisma.SortOrder
+  totalStudents?: Prisma.SortOrder
 }
 
 export type InstituteSumOrderByAggregateInput = {
@@ -1784,12 +1784,12 @@ export type InstituteSumOrderByAggregateInput = {
   averageRating?: Prisma.SortOrder
   reviewCount?: Prisma.SortOrder
   viewCount?: Prisma.SortOrder
-  establishedYear?: Prisma.SortOrder
-  totalStudents?: Prisma.SortOrder
-  totalBranches?: Prisma.SortOrder
-  feeMin?: Prisma.SortOrder
-  feeMax?: Prisma.SortOrder
   compareCount?: Prisma.SortOrder
+  establishedYear?: Prisma.SortOrder
+  feeMax?: Prisma.SortOrder
+  feeMin?: Prisma.SortOrder
+  totalBranches?: Prisma.SortOrder
+  totalStudents?: Prisma.SortOrder
 }
 
 export type InstituteListRelationFilter = {
@@ -1831,15 +1831,15 @@ export type InstituteCreateawardsInput = {
   set: string[]
 }
 
+export type InstituteCreateconsInput = {
+  set: string[]
+}
+
 export type InstituteCreatemediumOfInstructionInput = {
   set: string[]
 }
 
 export type InstituteCreateprosInput = {
-  set: string[]
-}
-
-export type InstituteCreateconsInput = {
   set: string[]
 }
 
@@ -1905,17 +1905,17 @@ export type InstituteUpdateawardsInput = {
   push?: string | string[]
 }
 
+export type InstituteUpdateconsInput = {
+  set?: string[]
+  push?: string | string[]
+}
+
 export type InstituteUpdatemediumOfInstructionInput = {
   set?: string[]
   push?: string | string[]
 }
 
 export type InstituteUpdateprosInput = {
-  set?: string[]
-  push?: string | string[]
-}
-
-export type InstituteUpdateconsInput = {
   set?: string[]
   push?: string | string[]
 }
@@ -2303,7 +2303,6 @@ export type InstituteCreateWithoutCityInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -2314,61 +2313,62 @@ export type InstituteCreateWithoutCityInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutCityInput = {
@@ -2390,7 +2390,6 @@ export type InstituteUncheckedCreateWithoutCityInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -2401,61 +2400,62 @@ export type InstituteUncheckedCreateWithoutCityInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutCityInput = {
@@ -2507,7 +2507,6 @@ export type InstituteScalarWhereInput = {
   isVerified?: Prisma.BoolFilter<"Institute"> | boolean
   isFeatured?: Prisma.BoolFilter<"Institute"> | boolean
   isActive?: Prisma.BoolFilter<"Institute"> | boolean
-  isPublished?: Prisma.BoolFilter<"Institute"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Institute"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Institute"> | Date | string
   imageUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
@@ -2518,38 +2517,39 @@ export type InstituteScalarWhereInput = {
   gallery?: Prisma.StringNullableListFilter<"Institute">
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFilter<"Institute"> | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.StringNullableListFilter<"Institute">
-  feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   classroomImages?: Prisma.StringNullableListFilter<"Institute">
+  feeInfo?: Prisma.StringNullableFilter<"Institute"> | string | null
   planExpiresAt?: Prisma.DateTimeNullableFilter<"Institute"> | Date | string | null
   facebookUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   instagramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   twitterUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   youtubeUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
-  telegramUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   linkedinUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   whatsappUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
-  viewCount?: Prisma.IntFilter<"Institute"> | number
+  isPublished?: Prisma.BoolFilter<"Institute"> | boolean
   mode?: Prisma.EnumInstituteModeFilter<"Institute"> | $Enums.InstituteMode
-  brochureUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
+  viewCount?: Prisma.IntFilter<"Institute"> | number
   affiliations?: Prisma.StringNullableListFilter<"Institute">
   awards?: Prisma.StringNullableListFilter<"Institute">
-  establishedYear?: Prisma.IntNullableFilter<"Institute"> | number | null
-  totalStudents?: Prisma.IntNullableFilter<"Institute"> | number | null
-  totalBranches?: Prisma.IntNullableFilter<"Institute"> | number | null
-  feeMin?: Prisma.IntNullableFilter<"Institute"> | number | null
-  feeMax?: Prisma.IntNullableFilter<"Institute"> | number | null
-  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
-  pros?: Prisma.StringNullableListFilter<"Institute">
-  cons?: Prisma.StringNullableListFilter<"Institute">
-  refundPolicy?: Prisma.StringNullableFilter<"Institute"> | string | null
-  hasOnlineClasses?: Prisma.BoolFilter<"Institute"> | boolean
-  hasHostelFacility?: Prisma.BoolFilter<"Institute"> | boolean
-  hasDemoClasses?: Prisma.BoolFilter<"Institute"> | boolean
-  hasScholarship?: Prisma.BoolFilter<"Institute"> | boolean
-  hasCertification?: Prisma.BoolFilter<"Institute"> | boolean
-  metaTitle?: Prisma.StringNullableFilter<"Institute"> | string | null
-  metaDescription?: Prisma.StringNullableFilter<"Institute"> | string | null
+  brochureUrl?: Prisma.StringNullableFilter<"Institute"> | string | null
   compareCount?: Prisma.IntFilter<"Institute"> | number
+  cons?: Prisma.StringNullableListFilter<"Institute">
+  establishedYear?: Prisma.IntNullableFilter<"Institute"> | number | null
+  feeMax?: Prisma.IntNullableFilter<"Institute"> | number | null
+  feeMin?: Prisma.IntNullableFilter<"Institute"> | number | null
+  hasCertification?: Prisma.BoolFilter<"Institute"> | boolean
+  hasDemoClasses?: Prisma.BoolFilter<"Institute"> | boolean
+  hasHostelFacility?: Prisma.BoolFilter<"Institute"> | boolean
+  hasOnlineClasses?: Prisma.BoolFilter<"Institute"> | boolean
+  hasScholarship?: Prisma.BoolFilter<"Institute"> | boolean
+  mediumOfInstruction?: Prisma.StringNullableListFilter<"Institute">
+  metaDescription?: Prisma.StringNullableFilter<"Institute"> | string | null
+  metaTitle?: Prisma.StringNullableFilter<"Institute"> | string | null
+  pros?: Prisma.StringNullableListFilter<"Institute">
+  refundPolicy?: Prisma.StringNullableFilter<"Institute"> | string | null
+  totalBranches?: Prisma.IntNullableFilter<"Institute"> | number | null
+  totalStudents?: Prisma.IntNullableFilter<"Institute"> | number | null
 }
 
 export type InstituteCreateWithoutCategoriesInput = {
@@ -2571,7 +2571,6 @@ export type InstituteCreateWithoutCategoriesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -2582,61 +2581,62 @@ export type InstituteCreateWithoutCategoriesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutCategoriesInput = {
@@ -2659,7 +2659,6 @@ export type InstituteUncheckedCreateWithoutCategoriesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -2670,60 +2669,61 @@ export type InstituteUncheckedCreateWithoutCategoriesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutCategoriesInput = {
@@ -2761,7 +2761,6 @@ export type InstituteUpdateWithoutCategoriesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2772,61 +2771,62 @@ export type InstituteUpdateWithoutCategoriesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutCategoriesInput = {
@@ -2849,7 +2849,6 @@ export type InstituteUncheckedUpdateWithoutCategoriesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -2860,60 +2859,61 @@ export type InstituteUncheckedUpdateWithoutCategoriesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutManagersInput = {
@@ -2935,7 +2935,6 @@ export type InstituteCreateWithoutManagersInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -2946,61 +2945,62 @@ export type InstituteCreateWithoutManagersInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutManagersInput = {
@@ -3023,7 +3023,6 @@ export type InstituteUncheckedCreateWithoutManagersInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -3034,60 +3033,61 @@ export type InstituteUncheckedCreateWithoutManagersInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutManagersInput = {
@@ -3125,7 +3125,6 @@ export type InstituteUpdateWithoutManagersInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3136,61 +3135,62 @@ export type InstituteUpdateWithoutManagersInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutManagersInput = {
@@ -3213,7 +3213,6 @@ export type InstituteUncheckedUpdateWithoutManagersInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3224,60 +3223,61 @@ export type InstituteUncheckedUpdateWithoutManagersInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutReviewsInput = {
@@ -3299,7 +3299,6 @@ export type InstituteCreateWithoutReviewsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -3310,61 +3309,62 @@ export type InstituteCreateWithoutReviewsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutReviewsInput = {
@@ -3387,7 +3387,6 @@ export type InstituteUncheckedCreateWithoutReviewsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -3398,60 +3397,61 @@ export type InstituteUncheckedCreateWithoutReviewsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutReviewsInput = {
@@ -3489,7 +3489,6 @@ export type InstituteUpdateWithoutReviewsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3500,61 +3499,62 @@ export type InstituteUpdateWithoutReviewsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutReviewsInput = {
@@ -3577,7 +3577,6 @@ export type InstituteUncheckedUpdateWithoutReviewsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3588,60 +3587,61 @@ export type InstituteUncheckedUpdateWithoutReviewsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutClaimsInput = {
@@ -3663,7 +3663,6 @@ export type InstituteCreateWithoutClaimsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -3674,61 +3673,62 @@ export type InstituteCreateWithoutClaimsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutClaimsInput = {
@@ -3751,7 +3751,6 @@ export type InstituteUncheckedCreateWithoutClaimsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -3762,60 +3761,61 @@ export type InstituteUncheckedCreateWithoutClaimsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutClaimsInput = {
@@ -3853,7 +3853,6 @@ export type InstituteUpdateWithoutClaimsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3864,61 +3863,62 @@ export type InstituteUpdateWithoutClaimsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutClaimsInput = {
@@ -3941,7 +3941,6 @@ export type InstituteUncheckedUpdateWithoutClaimsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -3952,60 +3951,61 @@ export type InstituteUncheckedUpdateWithoutClaimsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutShortlistedByInput = {
@@ -4027,7 +4027,6 @@ export type InstituteCreateWithoutShortlistedByInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -4038,61 +4037,62 @@ export type InstituteCreateWithoutShortlistedByInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutShortlistedByInput = {
@@ -4115,7 +4115,6 @@ export type InstituteUncheckedCreateWithoutShortlistedByInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -4126,60 +4125,61 @@ export type InstituteUncheckedCreateWithoutShortlistedByInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutShortlistedByInput = {
@@ -4217,7 +4217,6 @@ export type InstituteUpdateWithoutShortlistedByInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4228,61 +4227,62 @@ export type InstituteUpdateWithoutShortlistedByInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutShortlistedByInput = {
@@ -4305,7 +4305,6 @@ export type InstituteUncheckedUpdateWithoutShortlistedByInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4316,60 +4315,61 @@ export type InstituteUncheckedUpdateWithoutShortlistedByInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutViewHistoryInput = {
@@ -4391,7 +4391,6 @@ export type InstituteCreateWithoutViewHistoryInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -4402,61 +4401,62 @@ export type InstituteCreateWithoutViewHistoryInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutViewHistoryInput = {
@@ -4479,7 +4479,6 @@ export type InstituteUncheckedCreateWithoutViewHistoryInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -4490,60 +4489,61 @@ export type InstituteUncheckedCreateWithoutViewHistoryInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutViewHistoryInput = {
@@ -4581,7 +4581,6 @@ export type InstituteUpdateWithoutViewHistoryInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4592,61 +4591,62 @@ export type InstituteUpdateWithoutViewHistoryInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutViewHistoryInput = {
@@ -4669,7 +4669,6 @@ export type InstituteUncheckedUpdateWithoutViewHistoryInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4680,60 +4679,61 @@ export type InstituteUncheckedUpdateWithoutViewHistoryInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutEnquiriesInput = {
@@ -4755,7 +4755,6 @@ export type InstituteCreateWithoutEnquiriesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -4766,61 +4765,62 @@ export type InstituteCreateWithoutEnquiriesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutEnquiriesInput = {
@@ -4843,7 +4843,6 @@ export type InstituteUncheckedCreateWithoutEnquiriesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -4854,60 +4853,61 @@ export type InstituteUncheckedCreateWithoutEnquiriesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutEnquiriesInput = {
@@ -4945,7 +4945,6 @@ export type InstituteUpdateWithoutEnquiriesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -4956,61 +4955,62 @@ export type InstituteUpdateWithoutEnquiriesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutEnquiriesInput = {
@@ -5033,7 +5033,6 @@ export type InstituteUncheckedUpdateWithoutEnquiriesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -5044,60 +5043,61 @@ export type InstituteUncheckedUpdateWithoutEnquiriesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutTeachersInput = {
@@ -5119,7 +5119,6 @@ export type InstituteCreateWithoutTeachersInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -5130,61 +5129,62 @@ export type InstituteCreateWithoutTeachersInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutTeachersInput = {
@@ -5207,7 +5207,6 @@ export type InstituteUncheckedCreateWithoutTeachersInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -5218,60 +5217,61 @@ export type InstituteUncheckedCreateWithoutTeachersInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutTeachersInput = {
@@ -5309,7 +5309,6 @@ export type InstituteUpdateWithoutTeachersInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -5320,61 +5319,62 @@ export type InstituteUpdateWithoutTeachersInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutTeachersInput = {
@@ -5397,7 +5397,6 @@ export type InstituteUncheckedUpdateWithoutTeachersInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -5408,60 +5407,61 @@ export type InstituteUncheckedUpdateWithoutTeachersInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutInstituteRequestInput = {
@@ -5483,7 +5483,6 @@ export type InstituteCreateWithoutInstituteRequestInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -5494,61 +5493,62 @@ export type InstituteCreateWithoutInstituteRequestInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutInstituteRequestInput = {
@@ -5571,7 +5571,6 @@ export type InstituteUncheckedCreateWithoutInstituteRequestInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -5582,60 +5581,61 @@ export type InstituteUncheckedCreateWithoutInstituteRequestInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutInstituteRequestInput = {
@@ -5673,7 +5673,6 @@ export type InstituteUpdateWithoutInstituteRequestInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -5684,61 +5683,62 @@ export type InstituteUpdateWithoutInstituteRequestInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutInstituteRequestInput = {
@@ -5761,7 +5761,6 @@ export type InstituteUncheckedUpdateWithoutInstituteRequestInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -5772,60 +5771,61 @@ export type InstituteUncheckedUpdateWithoutInstituteRequestInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutPaymentsInput = {
@@ -5847,7 +5847,6 @@ export type InstituteCreateWithoutPaymentsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -5858,61 +5857,62 @@ export type InstituteCreateWithoutPaymentsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutPaymentsInput = {
@@ -5935,7 +5935,6 @@ export type InstituteUncheckedCreateWithoutPaymentsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -5946,60 +5945,61 @@ export type InstituteUncheckedCreateWithoutPaymentsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutPaymentsInput = {
@@ -6037,7 +6037,6 @@ export type InstituteUpdateWithoutPaymentsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -6048,61 +6047,62 @@ export type InstituteUpdateWithoutPaymentsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutPaymentsInput = {
@@ -6125,7 +6125,6 @@ export type InstituteUncheckedUpdateWithoutPaymentsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -6136,60 +6135,61 @@ export type InstituteUncheckedUpdateWithoutPaymentsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutSalesAssignmentsInput = {
@@ -6211,7 +6211,6 @@ export type InstituteCreateWithoutSalesAssignmentsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -6222,61 +6221,62 @@ export type InstituteCreateWithoutSalesAssignmentsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutSalesAssignmentsInput = {
@@ -6299,7 +6299,6 @@ export type InstituteUncheckedCreateWithoutSalesAssignmentsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -6310,60 +6309,61 @@ export type InstituteUncheckedCreateWithoutSalesAssignmentsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutSalesAssignmentsInput = {
@@ -6401,7 +6401,6 @@ export type InstituteUpdateWithoutSalesAssignmentsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -6412,61 +6411,62 @@ export type InstituteUpdateWithoutSalesAssignmentsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutSalesAssignmentsInput = {
@@ -6489,7 +6489,6 @@ export type InstituteUncheckedUpdateWithoutSalesAssignmentsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -6500,60 +6499,61 @@ export type InstituteUncheckedUpdateWithoutSalesAssignmentsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutDailyViewsInput = {
@@ -6575,7 +6575,6 @@ export type InstituteCreateWithoutDailyViewsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -6586,61 +6585,62 @@ export type InstituteCreateWithoutDailyViewsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutDailyViewsInput = {
@@ -6663,7 +6663,6 @@ export type InstituteUncheckedCreateWithoutDailyViewsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -6674,60 +6673,61 @@ export type InstituteUncheckedCreateWithoutDailyViewsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutDailyViewsInput = {
@@ -6765,7 +6765,6 @@ export type InstituteUpdateWithoutDailyViewsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -6776,61 +6775,62 @@ export type InstituteUpdateWithoutDailyViewsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutDailyViewsInput = {
@@ -6853,7 +6853,6 @@ export type InstituteUncheckedUpdateWithoutDailyViewsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -6864,60 +6863,61 @@ export type InstituteUncheckedUpdateWithoutDailyViewsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutFacilitiesInput = {
@@ -6939,7 +6939,6 @@ export type InstituteCreateWithoutFacilitiesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -6950,61 +6949,62 @@ export type InstituteCreateWithoutFacilitiesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutFacilitiesInput = {
@@ -7027,7 +7027,6 @@ export type InstituteUncheckedCreateWithoutFacilitiesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -7038,60 +7037,61 @@ export type InstituteUncheckedCreateWithoutFacilitiesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutFacilitiesInput = {
@@ -7129,7 +7129,6 @@ export type InstituteUpdateWithoutFacilitiesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -7140,61 +7139,62 @@ export type InstituteUpdateWithoutFacilitiesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutFacilitiesInput = {
@@ -7217,7 +7217,6 @@ export type InstituteUncheckedUpdateWithoutFacilitiesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -7228,60 +7227,61 @@ export type InstituteUncheckedUpdateWithoutFacilitiesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutBatchesInput = {
@@ -7303,7 +7303,6 @@ export type InstituteCreateWithoutBatchesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -7314,61 +7313,62 @@ export type InstituteCreateWithoutBatchesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutBatchesInput = {
@@ -7391,7 +7391,6 @@ export type InstituteUncheckedCreateWithoutBatchesInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -7402,60 +7401,61 @@ export type InstituteUncheckedCreateWithoutBatchesInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutBatchesInput = {
@@ -7493,7 +7493,6 @@ export type InstituteUpdateWithoutBatchesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -7504,61 +7503,62 @@ export type InstituteUpdateWithoutBatchesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutBatchesInput = {
@@ -7581,7 +7581,6 @@ export type InstituteUncheckedUpdateWithoutBatchesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -7592,60 +7591,61 @@ export type InstituteUncheckedUpdateWithoutBatchesInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutHighlightStatsInput = {
@@ -7667,7 +7667,6 @@ export type InstituteCreateWithoutHighlightStatsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -7678,61 +7677,62 @@ export type InstituteCreateWithoutHighlightStatsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutHighlightStatsInput = {
@@ -7755,7 +7755,6 @@ export type InstituteUncheckedCreateWithoutHighlightStatsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -7766,60 +7765,61 @@ export type InstituteUncheckedCreateWithoutHighlightStatsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutHighlightStatsInput = {
@@ -7857,7 +7857,6 @@ export type InstituteUpdateWithoutHighlightStatsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -7868,61 +7867,62 @@ export type InstituteUpdateWithoutHighlightStatsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutHighlightStatsInput = {
@@ -7945,7 +7945,6 @@ export type InstituteUncheckedUpdateWithoutHighlightStatsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -7956,60 +7955,61 @@ export type InstituteUncheckedUpdateWithoutHighlightStatsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutAchievementsInput = {
@@ -8031,7 +8031,6 @@ export type InstituteCreateWithoutAchievementsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -8042,61 +8041,62 @@ export type InstituteCreateWithoutAchievementsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutAchievementsInput = {
@@ -8119,7 +8119,6 @@ export type InstituteUncheckedCreateWithoutAchievementsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -8130,60 +8129,61 @@ export type InstituteUncheckedCreateWithoutAchievementsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutAchievementsInput = {
@@ -8221,7 +8221,6 @@ export type InstituteUpdateWithoutAchievementsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -8232,61 +8231,62 @@ export type InstituteUpdateWithoutAchievementsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutAchievementsInput = {
@@ -8309,7 +8309,6 @@ export type InstituteUncheckedUpdateWithoutAchievementsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -8320,60 +8319,61 @@ export type InstituteUncheckedUpdateWithoutAchievementsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutFaqsInput = {
@@ -8395,7 +8395,6 @@ export type InstituteCreateWithoutFaqsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -8406,61 +8405,62 @@ export type InstituteCreateWithoutFaqsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutFaqsInput = {
@@ -8483,7 +8483,6 @@ export type InstituteUncheckedCreateWithoutFaqsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -8494,60 +8493,61 @@ export type InstituteUncheckedCreateWithoutFaqsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutFaqsInput = {
@@ -8585,7 +8585,6 @@ export type InstituteUpdateWithoutFaqsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -8596,61 +8595,62 @@ export type InstituteUpdateWithoutFaqsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutFaqsInput = {
@@ -8673,7 +8673,6 @@ export type InstituteUncheckedUpdateWithoutFaqsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -8684,60 +8683,61 @@ export type InstituteUncheckedUpdateWithoutFaqsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutOperatingHoursInput = {
@@ -8759,7 +8759,6 @@ export type InstituteCreateWithoutOperatingHoursInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -8770,61 +8769,62 @@ export type InstituteCreateWithoutOperatingHoursInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutOperatingHoursInput = {
@@ -8847,7 +8847,6 @@ export type InstituteUncheckedCreateWithoutOperatingHoursInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -8858,60 +8857,61 @@ export type InstituteUncheckedCreateWithoutOperatingHoursInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutOperatingHoursInput = {
@@ -8949,7 +8949,6 @@ export type InstituteUpdateWithoutOperatingHoursInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -8960,61 +8959,62 @@ export type InstituteUpdateWithoutOperatingHoursInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutOperatingHoursInput = {
@@ -9037,7 +9037,6 @@ export type InstituteUncheckedUpdateWithoutOperatingHoursInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -9048,60 +9047,61 @@ export type InstituteUncheckedUpdateWithoutOperatingHoursInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutCompareListItemsInput = {
@@ -9123,7 +9123,6 @@ export type InstituteCreateWithoutCompareListItemsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -9134,61 +9133,62 @@ export type InstituteCreateWithoutCompareListItemsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutCompareListItemsInput = {
@@ -9211,7 +9211,6 @@ export type InstituteUncheckedCreateWithoutCompareListItemsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -9222,60 +9221,61 @@ export type InstituteUncheckedCreateWithoutCompareListItemsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutCompareListItemsInput = {
@@ -9313,7 +9313,6 @@ export type InstituteUpdateWithoutCompareListItemsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -9324,61 +9323,62 @@ export type InstituteUpdateWithoutCompareListItemsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutCompareListItemsInput = {
@@ -9401,7 +9401,6 @@ export type InstituteUncheckedUpdateWithoutCompareListItemsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -9412,60 +9411,61 @@ export type InstituteUncheckedUpdateWithoutCompareListItemsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutCommunityQuestionsInput = {
@@ -9487,7 +9487,6 @@ export type InstituteCreateWithoutCommunityQuestionsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -9498,61 +9497,62 @@ export type InstituteCreateWithoutCommunityQuestionsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
   compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutCommunityQuestionsInput = {
@@ -9575,7 +9575,6 @@ export type InstituteUncheckedCreateWithoutCommunityQuestionsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -9586,60 +9585,61 @@ export type InstituteUncheckedCreateWithoutCommunityQuestionsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
   compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutCommunityQuestionsInput = {
@@ -9677,7 +9677,6 @@ export type InstituteUpdateWithoutCommunityQuestionsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -9688,61 +9687,62 @@ export type InstituteUpdateWithoutCommunityQuestionsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
   compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutCommunityQuestionsInput = {
@@ -9765,7 +9765,6 @@ export type InstituteUncheckedUpdateWithoutCommunityQuestionsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -9776,60 +9775,61 @@ export type InstituteUncheckedUpdateWithoutCommunityQuestionsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
   compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutNotablepersonsInput = {
@@ -9851,7 +9851,6 @@ export type InstituteCreateWithoutNotablepersonsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -9862,61 +9861,62 @@ export type InstituteCreateWithoutNotablepersonsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutNotablepersonsInput = {
@@ -9939,7 +9939,6 @@ export type InstituteUncheckedCreateWithoutNotablepersonsInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -9950,60 +9949,61 @@ export type InstituteUncheckedCreateWithoutNotablepersonsInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutNotablepersonsInput = {
@@ -10041,7 +10041,6 @@ export type InstituteUpdateWithoutNotablepersonsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -10052,61 +10051,62 @@ export type InstituteUpdateWithoutNotablepersonsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutNotablepersonsInput = {
@@ -10129,7 +10129,6 @@ export type InstituteUncheckedUpdateWithoutNotablepersonsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -10140,60 +10139,61 @@ export type InstituteUncheckedUpdateWithoutNotablepersonsInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateWithoutComparisonsAsFirstInput = {
@@ -10215,7 +10215,6 @@ export type InstituteCreateWithoutComparisonsAsFirstInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -10226,61 +10225,62 @@ export type InstituteCreateWithoutComparisonsAsFirstInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutComparisonsAsFirstInput = {
@@ -10303,7 +10303,6 @@ export type InstituteUncheckedCreateWithoutComparisonsAsFirstInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -10314,60 +10313,61 @@ export type InstituteUncheckedCreateWithoutComparisonsAsFirstInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute2Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutComparisonsAsFirstInput = {
@@ -10394,7 +10394,6 @@ export type InstituteCreateWithoutComparisonsAsSecondInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -10405,61 +10404,62 @@ export type InstituteCreateWithoutComparisonsAsSecondInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   city: Prisma.CityCreateNestedOneWithoutInstitutesInput
   categories?: Prisma.InstituteCategoryCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheCreateNestedManyWithoutInstitute1Input
+  dailyViews?: Prisma.InstituteDailyViewCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteUncheckedCreateWithoutComparisonsAsSecondInput = {
@@ -10482,7 +10482,6 @@ export type InstituteUncheckedCreateWithoutComparisonsAsSecondInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -10493,60 +10492,61 @@ export type InstituteUncheckedCreateWithoutComparisonsAsSecondInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
   categories?: Prisma.InstituteCategoryUncheckedCreateNestedManyWithoutInstituteInput
   managers?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutInstituteInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutInstituteInput
-  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
-  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
-  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
-  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutInstituteInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
-  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
-  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
-  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
-  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
-  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutInstituteInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedCreateNestedManyWithoutInstituteInput
+  achievements?: Prisma.InstituteAchievementUncheckedCreateNestedManyWithoutInstituteInput
+  batches?: Prisma.InstituteBatchUncheckedCreateNestedManyWithoutInstituteInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutInstituteInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedCreateNestedManyWithoutInstitute1Input
+  dailyViews?: Prisma.InstituteDailyViewUncheckedCreateNestedManyWithoutInstituteInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedCreateNestedManyWithoutInstituteInput
+  facilities?: Prisma.InstituteFacilityUncheckedCreateNestedManyWithoutInstituteInput
+  faqs?: Prisma.InstituteFAQUncheckedCreateNestedManyWithoutInstituteInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedCreateNestedManyWithoutInstituteInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedCreateNestedManyWithoutInstituteInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedCreateNestedOneWithoutInstituteInput
+  notablepersons?: Prisma.NotablePersonsUncheckedCreateNestedManyWithoutInstituteInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedOneWithoutInstituteInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutInstituteInput
+  teachers?: Prisma.TeacherProfileUncheckedCreateNestedManyWithoutInstituteInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutInstituteInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutInstituteInput
 }
 
 export type InstituteCreateOrConnectWithoutComparisonsAsSecondInput = {
@@ -10584,7 +10584,6 @@ export type InstituteUpdateWithoutComparisonsAsFirstInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -10595,61 +10594,62 @@ export type InstituteUpdateWithoutComparisonsAsFirstInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutComparisonsAsFirstInput = {
@@ -10672,7 +10672,6 @@ export type InstituteUncheckedUpdateWithoutComparisonsAsFirstInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -10683,60 +10682,61 @@ export type InstituteUncheckedUpdateWithoutComparisonsAsFirstInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUpsertWithoutComparisonsAsSecondInput = {
@@ -10769,7 +10769,6 @@ export type InstituteUpdateWithoutComparisonsAsSecondInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -10780,61 +10779,62 @@ export type InstituteUpdateWithoutComparisonsAsSecondInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   city?: Prisma.CityUpdateOneRequiredWithoutInstitutesNestedInput
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutComparisonsAsSecondInput = {
@@ -10857,7 +10857,6 @@ export type InstituteUncheckedUpdateWithoutComparisonsAsSecondInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -10868,60 +10867,61 @@ export type InstituteUncheckedUpdateWithoutComparisonsAsSecondInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteCreateManyCityInput = {
@@ -10943,7 +10943,6 @@ export type InstituteCreateManyCityInput = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   imageUrl?: string | null
@@ -10954,38 +10953,39 @@ export type InstituteCreateManyCityInput = {
   gallery?: Prisma.InstituteCreategalleryInput | string[]
   subscriptionPlan?: $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteCreateyoutubeVideosInput | string[]
-  feeInfo?: string | null
   classroomImages?: Prisma.InstituteCreateclassroomImagesInput | string[]
+  feeInfo?: string | null
   planExpiresAt?: Date | string | null
   facebookUrl?: string | null
   instagramUrl?: string | null
+  telegramUrl?: string | null
   twitterUrl?: string | null
   youtubeUrl?: string | null
-  telegramUrl?: string | null
   linkedinUrl?: string | null
   whatsappUrl?: string | null
-  viewCount?: number
+  isPublished?: boolean
   mode?: $Enums.InstituteMode
-  brochureUrl?: string | null
+  viewCount?: number
   affiliations?: Prisma.InstituteCreateaffiliationsInput | string[]
   awards?: Prisma.InstituteCreateawardsInput | string[]
-  establishedYear?: number | null
-  totalStudents?: number | null
-  totalBranches?: number | null
-  feeMin?: number | null
-  feeMax?: number | null
-  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteCreateprosInput | string[]
-  cons?: Prisma.InstituteCreateconsInput | string[]
-  refundPolicy?: string | null
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: string | null
-  metaDescription?: string | null
+  brochureUrl?: string | null
   compareCount?: number
+  cons?: Prisma.InstituteCreateconsInput | string[]
+  establishedYear?: number | null
+  feeMax?: number | null
+  feeMin?: number | null
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: Prisma.InstituteCreatemediumOfInstructionInput | string[]
+  metaDescription?: string | null
+  metaTitle?: string | null
+  pros?: Prisma.InstituteCreateprosInput | string[]
+  refundPolicy?: string | null
+  totalBranches?: number | null
+  totalStudents?: number | null
 }
 
 export type InstituteUpdateWithoutCityInput = {
@@ -11007,7 +11007,6 @@ export type InstituteUpdateWithoutCityInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -11018,61 +11017,62 @@ export type InstituteUpdateWithoutCityInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateWithoutCityInput = {
@@ -11094,7 +11094,6 @@ export type InstituteUncheckedUpdateWithoutCityInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -11105,61 +11104,62 @@ export type InstituteUncheckedUpdateWithoutCityInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   categories?: Prisma.InstituteCategoryUncheckedUpdateManyWithoutInstituteNestedInput
   managers?: Prisma.InstituteManagerUncheckedUpdateManyWithoutInstituteNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutInstituteNestedInput
-  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
-  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
-  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
-  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
-  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
-  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
-  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
-  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutInstituteNestedInput
-  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
-  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
-  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
-  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
-  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
-  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
-  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
-  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
-  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
   communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutInstituteNestedInput
+  compareListItems?: Prisma.CompareListInstituteUncheckedUpdateManyWithoutInstituteNestedInput
+  achievements?: Prisma.InstituteAchievementUncheckedUpdateManyWithoutInstituteNestedInput
+  batches?: Prisma.InstituteBatchUncheckedUpdateManyWithoutInstituteNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutInstituteNestedInput
   comparisonsAsFirst?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute1NestedInput
   comparisonsAsSecond?: Prisma.InstituteComparisonCacheUncheckedUpdateManyWithoutInstitute2NestedInput
+  dailyViews?: Prisma.InstituteDailyViewUncheckedUpdateManyWithoutInstituteNestedInput
+  enquiries?: Prisma.InstituteEnquiryUncheckedUpdateManyWithoutInstituteNestedInput
+  facilities?: Prisma.InstituteFacilityUncheckedUpdateManyWithoutInstituteNestedInput
+  faqs?: Prisma.InstituteFAQUncheckedUpdateManyWithoutInstituteNestedInput
+  highlightStats?: Prisma.InstituteHighlightStatUncheckedUpdateManyWithoutInstituteNestedInput
+  operatingHours?: Prisma.InstituteOperatingHourUncheckedUpdateManyWithoutInstituteNestedInput
+  instituteRequest?: Prisma.InstituteRequestUncheckedUpdateOneWithoutInstituteNestedInput
+  notablepersons?: Prisma.NotablePersonsUncheckedUpdateManyWithoutInstituteNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateOneWithoutInstituteNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutInstituteNestedInput
+  teachers?: Prisma.TeacherProfileUncheckedUpdateManyWithoutInstituteNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutInstituteNestedInput
+  shortlistedBy?: Prisma.UserShortlistUncheckedUpdateManyWithoutInstituteNestedInput
 }
 
 export type InstituteUncheckedUpdateManyWithoutCityInput = {
@@ -11181,7 +11181,6 @@ export type InstituteUncheckedUpdateManyWithoutCityInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -11192,38 +11191,39 @@ export type InstituteUncheckedUpdateManyWithoutCityInput = {
   gallery?: Prisma.InstituteUpdategalleryInput | string[]
   subscriptionPlan?: Prisma.EnumSubscriptionPlanFieldUpdateOperationsInput | $Enums.SubscriptionPlan
   youtubeVideos?: Prisma.InstituteUpdateyoutubeVideosInput | string[]
-  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   classroomImages?: Prisma.InstituteUpdateclassroomImagesInput | string[]
+  feeInfo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   planExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   facebookUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  telegramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   whatsappUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isPublished?: Prisma.BoolFieldUpdateOperationsInput | boolean
   mode?: Prisma.EnumInstituteModeFieldUpdateOperationsInput | $Enums.InstituteMode
-  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  viewCount?: Prisma.IntFieldUpdateOperationsInput | number
   affiliations?: Prisma.InstituteUpdateaffiliationsInput | string[]
   awards?: Prisma.InstituteUpdateawardsInput | string[]
-  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
-  pros?: Prisma.InstituteUpdateprosInput | string[]
-  cons?: Prisma.InstituteUpdateconsInput | string[]
-  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  brochureUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   compareCount?: Prisma.IntFieldUpdateOperationsInput | number
+  cons?: Prisma.InstituteUpdateconsInput | string[]
+  establishedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  feeMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  hasCertification?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasDemoClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasHostelFacility?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasOnlineClasses?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  hasScholarship?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  mediumOfInstruction?: Prisma.InstituteUpdatemediumOfInstructionInput | string[]
+  metaDescription?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  metaTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pros?: Prisma.InstituteUpdateprosInput | string[]
+  refundPolicy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  totalBranches?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  totalStudents?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 
@@ -11235,50 +11235,48 @@ export type InstituteCountOutputType = {
   categories: number
   managers: number
   reviews: number
-  claims: number
-  shortlistedBy: number
-  viewHistory: number
-  enquiries: number
-  teachers: number
-  payments: number
-  salesAssignments: number
-  dailyViews: number
-  facilities: number
-  batches: number
-  highlightStats: number
-  achievements: number
-  faqs: number
-  operatingHours: number
-  compareListItems: number
-  notablepersons: number
   communityQuestions: number
+  compareListItems: number
+  achievements: number
+  batches: number
+  claims: number
   comparisonsAsFirst: number
   comparisonsAsSecond: number
+  dailyViews: number
+  enquiries: number
+  facilities: number
+  faqs: number
+  highlightStats: number
+  operatingHours: number
+  notablepersons: number
+  payments: number
+  teachers: number
+  viewHistory: number
+  shortlistedBy: number
 }
 
 export type InstituteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   categories?: boolean | InstituteCountOutputTypeCountCategoriesArgs
   managers?: boolean | InstituteCountOutputTypeCountManagersArgs
   reviews?: boolean | InstituteCountOutputTypeCountReviewsArgs
-  claims?: boolean | InstituteCountOutputTypeCountClaimsArgs
-  shortlistedBy?: boolean | InstituteCountOutputTypeCountShortlistedByArgs
-  viewHistory?: boolean | InstituteCountOutputTypeCountViewHistoryArgs
-  enquiries?: boolean | InstituteCountOutputTypeCountEnquiriesArgs
-  teachers?: boolean | InstituteCountOutputTypeCountTeachersArgs
-  payments?: boolean | InstituteCountOutputTypeCountPaymentsArgs
-  salesAssignments?: boolean | InstituteCountOutputTypeCountSalesAssignmentsArgs
-  dailyViews?: boolean | InstituteCountOutputTypeCountDailyViewsArgs
-  facilities?: boolean | InstituteCountOutputTypeCountFacilitiesArgs
-  batches?: boolean | InstituteCountOutputTypeCountBatchesArgs
-  highlightStats?: boolean | InstituteCountOutputTypeCountHighlightStatsArgs
-  achievements?: boolean | InstituteCountOutputTypeCountAchievementsArgs
-  faqs?: boolean | InstituteCountOutputTypeCountFaqsArgs
-  operatingHours?: boolean | InstituteCountOutputTypeCountOperatingHoursArgs
-  compareListItems?: boolean | InstituteCountOutputTypeCountCompareListItemsArgs
-  notablepersons?: boolean | InstituteCountOutputTypeCountNotablepersonsArgs
   communityQuestions?: boolean | InstituteCountOutputTypeCountCommunityQuestionsArgs
+  compareListItems?: boolean | InstituteCountOutputTypeCountCompareListItemsArgs
+  achievements?: boolean | InstituteCountOutputTypeCountAchievementsArgs
+  batches?: boolean | InstituteCountOutputTypeCountBatchesArgs
+  claims?: boolean | InstituteCountOutputTypeCountClaimsArgs
   comparisonsAsFirst?: boolean | InstituteCountOutputTypeCountComparisonsAsFirstArgs
   comparisonsAsSecond?: boolean | InstituteCountOutputTypeCountComparisonsAsSecondArgs
+  dailyViews?: boolean | InstituteCountOutputTypeCountDailyViewsArgs
+  enquiries?: boolean | InstituteCountOutputTypeCountEnquiriesArgs
+  facilities?: boolean | InstituteCountOutputTypeCountFacilitiesArgs
+  faqs?: boolean | InstituteCountOutputTypeCountFaqsArgs
+  highlightStats?: boolean | InstituteCountOutputTypeCountHighlightStatsArgs
+  operatingHours?: boolean | InstituteCountOutputTypeCountOperatingHoursArgs
+  notablepersons?: boolean | InstituteCountOutputTypeCountNotablepersonsArgs
+  payments?: boolean | InstituteCountOutputTypeCountPaymentsArgs
+  teachers?: boolean | InstituteCountOutputTypeCountTeachersArgs
+  viewHistory?: boolean | InstituteCountOutputTypeCountViewHistoryArgs
+  shortlistedBy?: boolean | InstituteCountOutputTypeCountShortlistedByArgs
 }
 
 /**
@@ -11315,99 +11313,8 @@ export type InstituteCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Typ
 /**
  * InstituteCountOutputType without action
  */
-export type InstituteCountOutputTypeCountClaimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteClaimWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountShortlistedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UserShortlistWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountViewHistoryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UserHistoryWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountEnquiriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteEnquiryWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountTeachersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TeacherProfileWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountPaymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SubscriptionPaymentWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountSalesAssignmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SalesAssignmentWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountDailyViewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteDailyViewWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountFacilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteFacilityWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountBatchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteBatchWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountHighlightStatsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteHighlightStatWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountAchievementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteAchievementWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountFaqsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteFAQWhereInput
-}
-
-/**
- * InstituteCountOutputType without action
- */
-export type InstituteCountOutputTypeCountOperatingHoursArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.InstituteOperatingHourWhereInput
+export type InstituteCountOutputTypeCountCommunityQuestionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CommunityQuestionWhereInput
 }
 
 /**
@@ -11420,15 +11327,22 @@ export type InstituteCountOutputTypeCountCompareListItemsArgs<ExtArgs extends ru
 /**
  * InstituteCountOutputType without action
  */
-export type InstituteCountOutputTypeCountNotablepersonsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NotablePersonsWhereInput
+export type InstituteCountOutputTypeCountAchievementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteAchievementWhereInput
 }
 
 /**
  * InstituteCountOutputType without action
  */
-export type InstituteCountOutputTypeCountCommunityQuestionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CommunityQuestionWhereInput
+export type InstituteCountOutputTypeCountBatchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteBatchWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountClaimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteClaimWhereInput
 }
 
 /**
@@ -11443,6 +11357,83 @@ export type InstituteCountOutputTypeCountComparisonsAsFirstArgs<ExtArgs extends 
  */
 export type InstituteCountOutputTypeCountComparisonsAsSecondArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.InstituteComparisonCacheWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountDailyViewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteDailyViewWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountEnquiriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteEnquiryWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountFacilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteFacilityWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountFaqsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteFAQWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountHighlightStatsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteHighlightStatWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountOperatingHoursArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.InstituteOperatingHourWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountNotablepersonsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.NotablePersonsWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountPaymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SubscriptionPaymentWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountTeachersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeacherProfileWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountViewHistoryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserHistoryWhereInput
+}
+
+/**
+ * InstituteCountOutputType without action
+ */
+export type InstituteCountOutputTypeCountShortlistedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserShortlistWhereInput
 }
 
 
@@ -11466,7 +11457,6 @@ export type InstituteSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   imageUrl?: boolean
@@ -11477,62 +11467,63 @@ export type InstituteSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   gallery?: boolean
   subscriptionPlan?: boolean
   youtubeVideos?: boolean
-  feeInfo?: boolean
   classroomImages?: boolean
+  feeInfo?: boolean
   planExpiresAt?: boolean
   facebookUrl?: boolean
   instagramUrl?: boolean
+  telegramUrl?: boolean
   twitterUrl?: boolean
   youtubeUrl?: boolean
-  telegramUrl?: boolean
   linkedinUrl?: boolean
   whatsappUrl?: boolean
-  viewCount?: boolean
+  isPublished?: boolean
   mode?: boolean
-  brochureUrl?: boolean
+  viewCount?: boolean
   affiliations?: boolean
   awards?: boolean
-  establishedYear?: boolean
-  totalStudents?: boolean
-  totalBranches?: boolean
-  feeMin?: boolean
-  feeMax?: boolean
-  mediumOfInstruction?: boolean
-  pros?: boolean
-  cons?: boolean
-  refundPolicy?: boolean
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
+  brochureUrl?: boolean
   compareCount?: boolean
+  cons?: boolean
+  establishedYear?: boolean
+  feeMax?: boolean
+  feeMin?: boolean
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
+  pros?: boolean
+  refundPolicy?: boolean
+  totalBranches?: boolean
+  totalStudents?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
   categories?: boolean | Prisma.Institute$categoriesArgs<ExtArgs>
   managers?: boolean | Prisma.Institute$managersArgs<ExtArgs>
   reviews?: boolean | Prisma.Institute$reviewsArgs<ExtArgs>
-  claims?: boolean | Prisma.Institute$claimsArgs<ExtArgs>
-  shortlistedBy?: boolean | Prisma.Institute$shortlistedByArgs<ExtArgs>
-  viewHistory?: boolean | Prisma.Institute$viewHistoryArgs<ExtArgs>
-  enquiries?: boolean | Prisma.Institute$enquiriesArgs<ExtArgs>
-  teachers?: boolean | Prisma.Institute$teachersArgs<ExtArgs>
-  instituteRequest?: boolean | Prisma.Institute$instituteRequestArgs<ExtArgs>
-  payments?: boolean | Prisma.Institute$paymentsArgs<ExtArgs>
-  salesAssignments?: boolean | Prisma.Institute$salesAssignmentsArgs<ExtArgs>
-  dailyViews?: boolean | Prisma.Institute$dailyViewsArgs<ExtArgs>
-  facilities?: boolean | Prisma.Institute$facilitiesArgs<ExtArgs>
-  batches?: boolean | Prisma.Institute$batchesArgs<ExtArgs>
-  highlightStats?: boolean | Prisma.Institute$highlightStatsArgs<ExtArgs>
-  achievements?: boolean | Prisma.Institute$achievementsArgs<ExtArgs>
-  faqs?: boolean | Prisma.Institute$faqsArgs<ExtArgs>
-  operatingHours?: boolean | Prisma.Institute$operatingHoursArgs<ExtArgs>
-  compareListItems?: boolean | Prisma.Institute$compareListItemsArgs<ExtArgs>
-  notablepersons?: boolean | Prisma.Institute$notablepersonsArgs<ExtArgs>
   communityQuestions?: boolean | Prisma.Institute$communityQuestionsArgs<ExtArgs>
+  compareListItems?: boolean | Prisma.Institute$compareListItemsArgs<ExtArgs>
+  achievements?: boolean | Prisma.Institute$achievementsArgs<ExtArgs>
+  batches?: boolean | Prisma.Institute$batchesArgs<ExtArgs>
+  claims?: boolean | Prisma.Institute$claimsArgs<ExtArgs>
   comparisonsAsFirst?: boolean | Prisma.Institute$comparisonsAsFirstArgs<ExtArgs>
   comparisonsAsSecond?: boolean | Prisma.Institute$comparisonsAsSecondArgs<ExtArgs>
+  dailyViews?: boolean | Prisma.Institute$dailyViewsArgs<ExtArgs>
+  enquiries?: boolean | Prisma.Institute$enquiriesArgs<ExtArgs>
+  facilities?: boolean | Prisma.Institute$facilitiesArgs<ExtArgs>
+  faqs?: boolean | Prisma.Institute$faqsArgs<ExtArgs>
+  highlightStats?: boolean | Prisma.Institute$highlightStatsArgs<ExtArgs>
+  operatingHours?: boolean | Prisma.Institute$operatingHoursArgs<ExtArgs>
+  instituteRequest?: boolean | Prisma.Institute$instituteRequestArgs<ExtArgs>
+  notablepersons?: boolean | Prisma.Institute$notablepersonsArgs<ExtArgs>
+  salesAssignments?: boolean | Prisma.Institute$salesAssignmentsArgs<ExtArgs>
+  payments?: boolean | Prisma.Institute$paymentsArgs<ExtArgs>
+  teachers?: boolean | Prisma.Institute$teachersArgs<ExtArgs>
+  viewHistory?: boolean | Prisma.Institute$viewHistoryArgs<ExtArgs>
+  shortlistedBy?: boolean | Prisma.Institute$shortlistedByArgs<ExtArgs>
   _count?: boolean | Prisma.InstituteCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -11556,7 +11547,6 @@ export type InstituteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   imageUrl?: boolean
@@ -11567,38 +11557,39 @@ export type InstituteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   gallery?: boolean
   subscriptionPlan?: boolean
   youtubeVideos?: boolean
-  feeInfo?: boolean
   classroomImages?: boolean
+  feeInfo?: boolean
   planExpiresAt?: boolean
   facebookUrl?: boolean
   instagramUrl?: boolean
+  telegramUrl?: boolean
   twitterUrl?: boolean
   youtubeUrl?: boolean
-  telegramUrl?: boolean
   linkedinUrl?: boolean
   whatsappUrl?: boolean
-  viewCount?: boolean
+  isPublished?: boolean
   mode?: boolean
-  brochureUrl?: boolean
+  viewCount?: boolean
   affiliations?: boolean
   awards?: boolean
-  establishedYear?: boolean
-  totalStudents?: boolean
-  totalBranches?: boolean
-  feeMin?: boolean
-  feeMax?: boolean
-  mediumOfInstruction?: boolean
-  pros?: boolean
-  cons?: boolean
-  refundPolicy?: boolean
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
+  brochureUrl?: boolean
   compareCount?: boolean
+  cons?: boolean
+  establishedYear?: boolean
+  feeMax?: boolean
+  feeMin?: boolean
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
+  pros?: boolean
+  refundPolicy?: boolean
+  totalBranches?: boolean
+  totalStudents?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -11622,7 +11613,6 @@ export type InstituteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   imageUrl?: boolean
@@ -11633,38 +11623,39 @@ export type InstituteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   gallery?: boolean
   subscriptionPlan?: boolean
   youtubeVideos?: boolean
-  feeInfo?: boolean
   classroomImages?: boolean
+  feeInfo?: boolean
   planExpiresAt?: boolean
   facebookUrl?: boolean
   instagramUrl?: boolean
+  telegramUrl?: boolean
   twitterUrl?: boolean
   youtubeUrl?: boolean
-  telegramUrl?: boolean
   linkedinUrl?: boolean
   whatsappUrl?: boolean
-  viewCount?: boolean
+  isPublished?: boolean
   mode?: boolean
-  brochureUrl?: boolean
+  viewCount?: boolean
   affiliations?: boolean
   awards?: boolean
-  establishedYear?: boolean
-  totalStudents?: boolean
-  totalBranches?: boolean
-  feeMin?: boolean
-  feeMax?: boolean
-  mediumOfInstruction?: boolean
-  pros?: boolean
-  cons?: boolean
-  refundPolicy?: boolean
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
+  brochureUrl?: boolean
   compareCount?: boolean
+  cons?: boolean
+  establishedYear?: boolean
+  feeMax?: boolean
+  feeMin?: boolean
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
+  pros?: boolean
+  refundPolicy?: boolean
+  totalBranches?: boolean
+  totalStudents?: boolean
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["institute"]>
 
@@ -11688,7 +11679,6 @@ export type InstituteSelectScalar = {
   isVerified?: boolean
   isFeatured?: boolean
   isActive?: boolean
-  isPublished?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   imageUrl?: boolean
@@ -11699,66 +11689,67 @@ export type InstituteSelectScalar = {
   gallery?: boolean
   subscriptionPlan?: boolean
   youtubeVideos?: boolean
-  feeInfo?: boolean
   classroomImages?: boolean
+  feeInfo?: boolean
   planExpiresAt?: boolean
   facebookUrl?: boolean
   instagramUrl?: boolean
+  telegramUrl?: boolean
   twitterUrl?: boolean
   youtubeUrl?: boolean
-  telegramUrl?: boolean
   linkedinUrl?: boolean
   whatsappUrl?: boolean
-  viewCount?: boolean
+  isPublished?: boolean
   mode?: boolean
-  brochureUrl?: boolean
+  viewCount?: boolean
   affiliations?: boolean
   awards?: boolean
-  establishedYear?: boolean
-  totalStudents?: boolean
-  totalBranches?: boolean
-  feeMin?: boolean
-  feeMax?: boolean
-  mediumOfInstruction?: boolean
-  pros?: boolean
-  cons?: boolean
-  refundPolicy?: boolean
-  hasOnlineClasses?: boolean
-  hasHostelFacility?: boolean
-  hasDemoClasses?: boolean
-  hasScholarship?: boolean
-  hasCertification?: boolean
-  metaTitle?: boolean
-  metaDescription?: boolean
+  brochureUrl?: boolean
   compareCount?: boolean
+  cons?: boolean
+  establishedYear?: boolean
+  feeMax?: boolean
+  feeMin?: boolean
+  hasCertification?: boolean
+  hasDemoClasses?: boolean
+  hasHostelFacility?: boolean
+  hasOnlineClasses?: boolean
+  hasScholarship?: boolean
+  mediumOfInstruction?: boolean
+  metaDescription?: boolean
+  metaTitle?: boolean
+  pros?: boolean
+  refundPolicy?: boolean
+  totalBranches?: boolean
+  totalStudents?: boolean
 }
 
-export type InstituteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "phone" | "email" | "website" | "address" | "latitude" | "longitude" | "logo" | "coverImage" | "googlePlaceId" | "googleRating" | "googleReviewCount" | "cityId" | "isVerified" | "isFeatured" | "isActive" | "isPublished" | "createdAt" | "updatedAt" | "imageUrl" | "averageRating" | "reviewCount" | "googleMapsUrl" | "placeTypes" | "gallery" | "subscriptionPlan" | "youtubeVideos" | "feeInfo" | "classroomImages" | "planExpiresAt" | "facebookUrl" | "instagramUrl" | "twitterUrl" | "youtubeUrl" | "telegramUrl" | "linkedinUrl" | "whatsappUrl" | "viewCount" | "mode" | "brochureUrl" | "affiliations" | "awards" | "establishedYear" | "totalStudents" | "totalBranches" | "feeMin" | "feeMax" | "mediumOfInstruction" | "pros" | "cons" | "refundPolicy" | "hasOnlineClasses" | "hasHostelFacility" | "hasDemoClasses" | "hasScholarship" | "hasCertification" | "metaTitle" | "metaDescription" | "compareCount", ExtArgs["result"]["institute"]>
+export type InstituteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "phone" | "email" | "website" | "address" | "latitude" | "longitude" | "logo" | "coverImage" | "googlePlaceId" | "googleRating" | "googleReviewCount" | "cityId" | "isVerified" | "isFeatured" | "isActive" | "createdAt" | "updatedAt" | "imageUrl" | "averageRating" | "reviewCount" | "googleMapsUrl" | "placeTypes" | "gallery" | "subscriptionPlan" | "youtubeVideos" | "classroomImages" | "feeInfo" | "planExpiresAt" | "facebookUrl" | "instagramUrl" | "telegramUrl" | "twitterUrl" | "youtubeUrl" | "linkedinUrl" | "whatsappUrl" | "isPublished" | "mode" | "viewCount" | "affiliations" | "awards" | "brochureUrl" | "compareCount" | "cons" | "establishedYear" | "feeMax" | "feeMin" | "hasCertification" | "hasDemoClasses" | "hasHostelFacility" | "hasOnlineClasses" | "hasScholarship" | "mediumOfInstruction" | "metaDescription" | "metaTitle" | "pros" | "refundPolicy" | "totalBranches" | "totalStudents", ExtArgs["result"]["institute"]>
 export type InstituteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   city?: boolean | Prisma.CityDefaultArgs<ExtArgs>
   categories?: boolean | Prisma.Institute$categoriesArgs<ExtArgs>
   managers?: boolean | Prisma.Institute$managersArgs<ExtArgs>
   reviews?: boolean | Prisma.Institute$reviewsArgs<ExtArgs>
-  claims?: boolean | Prisma.Institute$claimsArgs<ExtArgs>
-  shortlistedBy?: boolean | Prisma.Institute$shortlistedByArgs<ExtArgs>
-  viewHistory?: boolean | Prisma.Institute$viewHistoryArgs<ExtArgs>
-  enquiries?: boolean | Prisma.Institute$enquiriesArgs<ExtArgs>
-  teachers?: boolean | Prisma.Institute$teachersArgs<ExtArgs>
-  instituteRequest?: boolean | Prisma.Institute$instituteRequestArgs<ExtArgs>
-  payments?: boolean | Prisma.Institute$paymentsArgs<ExtArgs>
-  salesAssignments?: boolean | Prisma.Institute$salesAssignmentsArgs<ExtArgs>
-  dailyViews?: boolean | Prisma.Institute$dailyViewsArgs<ExtArgs>
-  facilities?: boolean | Prisma.Institute$facilitiesArgs<ExtArgs>
-  batches?: boolean | Prisma.Institute$batchesArgs<ExtArgs>
-  highlightStats?: boolean | Prisma.Institute$highlightStatsArgs<ExtArgs>
-  achievements?: boolean | Prisma.Institute$achievementsArgs<ExtArgs>
-  faqs?: boolean | Prisma.Institute$faqsArgs<ExtArgs>
-  operatingHours?: boolean | Prisma.Institute$operatingHoursArgs<ExtArgs>
-  compareListItems?: boolean | Prisma.Institute$compareListItemsArgs<ExtArgs>
-  notablepersons?: boolean | Prisma.Institute$notablepersonsArgs<ExtArgs>
   communityQuestions?: boolean | Prisma.Institute$communityQuestionsArgs<ExtArgs>
+  compareListItems?: boolean | Prisma.Institute$compareListItemsArgs<ExtArgs>
+  achievements?: boolean | Prisma.Institute$achievementsArgs<ExtArgs>
+  batches?: boolean | Prisma.Institute$batchesArgs<ExtArgs>
+  claims?: boolean | Prisma.Institute$claimsArgs<ExtArgs>
   comparisonsAsFirst?: boolean | Prisma.Institute$comparisonsAsFirstArgs<ExtArgs>
   comparisonsAsSecond?: boolean | Prisma.Institute$comparisonsAsSecondArgs<ExtArgs>
+  dailyViews?: boolean | Prisma.Institute$dailyViewsArgs<ExtArgs>
+  enquiries?: boolean | Prisma.Institute$enquiriesArgs<ExtArgs>
+  facilities?: boolean | Prisma.Institute$facilitiesArgs<ExtArgs>
+  faqs?: boolean | Prisma.Institute$faqsArgs<ExtArgs>
+  highlightStats?: boolean | Prisma.Institute$highlightStatsArgs<ExtArgs>
+  operatingHours?: boolean | Prisma.Institute$operatingHoursArgs<ExtArgs>
+  instituteRequest?: boolean | Prisma.Institute$instituteRequestArgs<ExtArgs>
+  notablepersons?: boolean | Prisma.Institute$notablepersonsArgs<ExtArgs>
+  salesAssignments?: boolean | Prisma.Institute$salesAssignmentsArgs<ExtArgs>
+  payments?: boolean | Prisma.Institute$paymentsArgs<ExtArgs>
+  teachers?: boolean | Prisma.Institute$teachersArgs<ExtArgs>
+  viewHistory?: boolean | Prisma.Institute$viewHistoryArgs<ExtArgs>
+  shortlistedBy?: boolean | Prisma.Institute$shortlistedByArgs<ExtArgs>
   _count?: boolean | Prisma.InstituteCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type InstituteIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -11775,26 +11766,26 @@ export type $InstitutePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     categories: Prisma.$InstituteCategoryPayload<ExtArgs>[]
     managers: Prisma.$InstituteManagerPayload<ExtArgs>[]
     reviews: Prisma.$ReviewPayload<ExtArgs>[]
-    claims: Prisma.$InstituteClaimPayload<ExtArgs>[]
-    shortlistedBy: Prisma.$UserShortlistPayload<ExtArgs>[]
-    viewHistory: Prisma.$UserHistoryPayload<ExtArgs>[]
-    enquiries: Prisma.$InstituteEnquiryPayload<ExtArgs>[]
-    teachers: Prisma.$TeacherProfilePayload<ExtArgs>[]
-    instituteRequest: Prisma.$InstituteRequestPayload<ExtArgs> | null
-    payments: Prisma.$SubscriptionPaymentPayload<ExtArgs>[]
-    salesAssignments: Prisma.$SalesAssignmentPayload<ExtArgs>[]
-    dailyViews: Prisma.$InstituteDailyViewPayload<ExtArgs>[]
-    facilities: Prisma.$InstituteFacilityPayload<ExtArgs>[]
-    batches: Prisma.$InstituteBatchPayload<ExtArgs>[]
-    highlightStats: Prisma.$InstituteHighlightStatPayload<ExtArgs>[]
-    achievements: Prisma.$InstituteAchievementPayload<ExtArgs>[]
-    faqs: Prisma.$InstituteFAQPayload<ExtArgs>[]
-    operatingHours: Prisma.$InstituteOperatingHourPayload<ExtArgs>[]
-    compareListItems: Prisma.$CompareListInstitutePayload<ExtArgs>[]
-    notablepersons: Prisma.$NotablePersonsPayload<ExtArgs>[]
     communityQuestions: Prisma.$CommunityQuestionPayload<ExtArgs>[]
+    compareListItems: Prisma.$CompareListInstitutePayload<ExtArgs>[]
+    achievements: Prisma.$InstituteAchievementPayload<ExtArgs>[]
+    batches: Prisma.$InstituteBatchPayload<ExtArgs>[]
+    claims: Prisma.$InstituteClaimPayload<ExtArgs>[]
     comparisonsAsFirst: Prisma.$InstituteComparisonCachePayload<ExtArgs>[]
     comparisonsAsSecond: Prisma.$InstituteComparisonCachePayload<ExtArgs>[]
+    dailyViews: Prisma.$InstituteDailyViewPayload<ExtArgs>[]
+    enquiries: Prisma.$InstituteEnquiryPayload<ExtArgs>[]
+    facilities: Prisma.$InstituteFacilityPayload<ExtArgs>[]
+    faqs: Prisma.$InstituteFAQPayload<ExtArgs>[]
+    highlightStats: Prisma.$InstituteHighlightStatPayload<ExtArgs>[]
+    operatingHours: Prisma.$InstituteOperatingHourPayload<ExtArgs>[]
+    instituteRequest: Prisma.$InstituteRequestPayload<ExtArgs> | null
+    notablepersons: Prisma.$NotablePersonsPayload<ExtArgs>[]
+    salesAssignments: Prisma.$SalesAssignmentPayload<ExtArgs> | null
+    payments: Prisma.$SubscriptionPaymentPayload<ExtArgs>[]
+    teachers: Prisma.$TeacherProfilePayload<ExtArgs>[]
+    viewHistory: Prisma.$UserHistoryPayload<ExtArgs>[]
+    shortlistedBy: Prisma.$UserShortlistPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -11816,7 +11807,6 @@ export type $InstitutePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     isVerified: boolean
     isFeatured: boolean
     isActive: boolean
-    isPublished: boolean
     createdAt: Date
     updatedAt: Date
     imageUrl: string | null
@@ -11827,38 +11817,39 @@ export type $InstitutePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     gallery: string[]
     subscriptionPlan: $Enums.SubscriptionPlan
     youtubeVideos: string[]
-    feeInfo: string | null
     classroomImages: string[]
+    feeInfo: string | null
     planExpiresAt: Date | null
     facebookUrl: string | null
     instagramUrl: string | null
+    telegramUrl: string | null
     twitterUrl: string | null
     youtubeUrl: string | null
-    telegramUrl: string | null
     linkedinUrl: string | null
     whatsappUrl: string | null
-    viewCount: number
+    isPublished: boolean
     mode: $Enums.InstituteMode
-    brochureUrl: string | null
+    viewCount: number
     affiliations: string[]
     awards: string[]
-    establishedYear: number | null
-    totalStudents: number | null
-    totalBranches: number | null
-    feeMin: number | null
-    feeMax: number | null
-    mediumOfInstruction: string[]
-    pros: string[]
-    cons: string[]
-    refundPolicy: string | null
-    hasOnlineClasses: boolean
-    hasHostelFacility: boolean
-    hasDemoClasses: boolean
-    hasScholarship: boolean
-    hasCertification: boolean
-    metaTitle: string | null
-    metaDescription: string | null
+    brochureUrl: string | null
     compareCount: number
+    cons: string[]
+    establishedYear: number | null
+    feeMax: number | null
+    feeMin: number | null
+    hasCertification: boolean
+    hasDemoClasses: boolean
+    hasHostelFacility: boolean
+    hasOnlineClasses: boolean
+    hasScholarship: boolean
+    mediumOfInstruction: string[]
+    metaDescription: string | null
+    metaTitle: string | null
+    pros: string[]
+    refundPolicy: string | null
+    totalBranches: number | null
+    totalStudents: number | null
   }, ExtArgs["result"]["institute"]>
   composites: {}
 }
@@ -12257,26 +12248,26 @@ export interface Prisma__InstituteClient<T, Null = never, ExtArgs extends runtim
   categories<T extends Prisma.Institute$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   managers<T extends Prisma.Institute$managersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$managersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteManagerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reviews<T extends Prisma.Institute$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  claims<T extends Prisma.Institute$claimsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$claimsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteClaimPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  shortlistedBy<T extends Prisma.Institute$shortlistedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$shortlistedByArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserShortlistPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  viewHistory<T extends Prisma.Institute$viewHistoryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$viewHistoryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  enquiries<T extends Prisma.Institute$enquiriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$enquiriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteEnquiryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  teachers<T extends Prisma.Institute$teachersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$teachersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  instituteRequest<T extends Prisma.Institute$instituteRequestArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$instituteRequestArgs<ExtArgs>>): Prisma.Prisma__InstituteRequestClient<runtime.Types.Result.GetResult<Prisma.$InstituteRequestPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  payments<T extends Prisma.Institute$paymentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubscriptionPaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  salesAssignments<T extends Prisma.Institute$salesAssignmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$salesAssignmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SalesAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  dailyViews<T extends Prisma.Institute$dailyViewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$dailyViewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteDailyViewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  facilities<T extends Prisma.Institute$facilitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$facilitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteFacilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  batches<T extends Prisma.Institute$batchesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$batchesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteBatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  highlightStats<T extends Prisma.Institute$highlightStatsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$highlightStatsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteHighlightStatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  achievements<T extends Prisma.Institute$achievementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$achievementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteAchievementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  faqs<T extends Prisma.Institute$faqsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$faqsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteFAQPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  operatingHours<T extends Prisma.Institute$operatingHoursArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$operatingHoursArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteOperatingHourPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  compareListItems<T extends Prisma.Institute$compareListItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$compareListItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CompareListInstitutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  notablepersons<T extends Prisma.Institute$notablepersonsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$notablepersonsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotablePersonsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   communityQuestions<T extends Prisma.Institute$communityQuestionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$communityQuestionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CommunityQuestionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  compareListItems<T extends Prisma.Institute$compareListItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$compareListItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CompareListInstitutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  achievements<T extends Prisma.Institute$achievementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$achievementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteAchievementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  batches<T extends Prisma.Institute$batchesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$batchesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteBatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  claims<T extends Prisma.Institute$claimsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$claimsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteClaimPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   comparisonsAsFirst<T extends Prisma.Institute$comparisonsAsFirstArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$comparisonsAsFirstArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteComparisonCachePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   comparisonsAsSecond<T extends Prisma.Institute$comparisonsAsSecondArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$comparisonsAsSecondArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteComparisonCachePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  dailyViews<T extends Prisma.Institute$dailyViewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$dailyViewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteDailyViewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  enquiries<T extends Prisma.Institute$enquiriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$enquiriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteEnquiryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  facilities<T extends Prisma.Institute$facilitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$facilitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteFacilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  faqs<T extends Prisma.Institute$faqsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$faqsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteFAQPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  highlightStats<T extends Prisma.Institute$highlightStatsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$highlightStatsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteHighlightStatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  operatingHours<T extends Prisma.Institute$operatingHoursArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$operatingHoursArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InstituteOperatingHourPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  instituteRequest<T extends Prisma.Institute$instituteRequestArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$instituteRequestArgs<ExtArgs>>): Prisma.Prisma__InstituteRequestClient<runtime.Types.Result.GetResult<Prisma.$InstituteRequestPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  notablepersons<T extends Prisma.Institute$notablepersonsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$notablepersonsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotablePersonsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  salesAssignments<T extends Prisma.Institute$salesAssignmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$salesAssignmentsArgs<ExtArgs>>): Prisma.Prisma__SalesAssignmentClient<runtime.Types.Result.GetResult<Prisma.$SalesAssignmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  payments<T extends Prisma.Institute$paymentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubscriptionPaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  teachers<T extends Prisma.Institute$teachersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$teachersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  viewHistory<T extends Prisma.Institute$viewHistoryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$viewHistoryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  shortlistedBy<T extends Prisma.Institute$shortlistedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Institute$shortlistedByArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserShortlistPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -12325,7 +12316,6 @@ export interface InstituteFieldRefs {
   readonly isVerified: Prisma.FieldRef<"Institute", 'Boolean'>
   readonly isFeatured: Prisma.FieldRef<"Institute", 'Boolean'>
   readonly isActive: Prisma.FieldRef<"Institute", 'Boolean'>
-  readonly isPublished: Prisma.FieldRef<"Institute", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Institute", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Institute", 'DateTime'>
   readonly imageUrl: Prisma.FieldRef<"Institute", 'String'>
@@ -12336,38 +12326,39 @@ export interface InstituteFieldRefs {
   readonly gallery: Prisma.FieldRef<"Institute", 'String[]'>
   readonly subscriptionPlan: Prisma.FieldRef<"Institute", 'SubscriptionPlan'>
   readonly youtubeVideos: Prisma.FieldRef<"Institute", 'String[]'>
-  readonly feeInfo: Prisma.FieldRef<"Institute", 'String'>
   readonly classroomImages: Prisma.FieldRef<"Institute", 'String[]'>
+  readonly feeInfo: Prisma.FieldRef<"Institute", 'String'>
   readonly planExpiresAt: Prisma.FieldRef<"Institute", 'DateTime'>
   readonly facebookUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly instagramUrl: Prisma.FieldRef<"Institute", 'String'>
+  readonly telegramUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly twitterUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly youtubeUrl: Prisma.FieldRef<"Institute", 'String'>
-  readonly telegramUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly linkedinUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly whatsappUrl: Prisma.FieldRef<"Institute", 'String'>
-  readonly viewCount: Prisma.FieldRef<"Institute", 'Int'>
+  readonly isPublished: Prisma.FieldRef<"Institute", 'Boolean'>
   readonly mode: Prisma.FieldRef<"Institute", 'InstituteMode'>
-  readonly brochureUrl: Prisma.FieldRef<"Institute", 'String'>
+  readonly viewCount: Prisma.FieldRef<"Institute", 'Int'>
   readonly affiliations: Prisma.FieldRef<"Institute", 'String[]'>
   readonly awards: Prisma.FieldRef<"Institute", 'String[]'>
-  readonly establishedYear: Prisma.FieldRef<"Institute", 'Int'>
-  readonly totalStudents: Prisma.FieldRef<"Institute", 'Int'>
-  readonly totalBranches: Prisma.FieldRef<"Institute", 'Int'>
-  readonly feeMin: Prisma.FieldRef<"Institute", 'Int'>
-  readonly feeMax: Prisma.FieldRef<"Institute", 'Int'>
-  readonly mediumOfInstruction: Prisma.FieldRef<"Institute", 'String[]'>
-  readonly pros: Prisma.FieldRef<"Institute", 'String[]'>
-  readonly cons: Prisma.FieldRef<"Institute", 'String[]'>
-  readonly refundPolicy: Prisma.FieldRef<"Institute", 'String'>
-  readonly hasOnlineClasses: Prisma.FieldRef<"Institute", 'Boolean'>
-  readonly hasHostelFacility: Prisma.FieldRef<"Institute", 'Boolean'>
-  readonly hasDemoClasses: Prisma.FieldRef<"Institute", 'Boolean'>
-  readonly hasScholarship: Prisma.FieldRef<"Institute", 'Boolean'>
-  readonly hasCertification: Prisma.FieldRef<"Institute", 'Boolean'>
-  readonly metaTitle: Prisma.FieldRef<"Institute", 'String'>
-  readonly metaDescription: Prisma.FieldRef<"Institute", 'String'>
+  readonly brochureUrl: Prisma.FieldRef<"Institute", 'String'>
   readonly compareCount: Prisma.FieldRef<"Institute", 'Int'>
+  readonly cons: Prisma.FieldRef<"Institute", 'String[]'>
+  readonly establishedYear: Prisma.FieldRef<"Institute", 'Int'>
+  readonly feeMax: Prisma.FieldRef<"Institute", 'Int'>
+  readonly feeMin: Prisma.FieldRef<"Institute", 'Int'>
+  readonly hasCertification: Prisma.FieldRef<"Institute", 'Boolean'>
+  readonly hasDemoClasses: Prisma.FieldRef<"Institute", 'Boolean'>
+  readonly hasHostelFacility: Prisma.FieldRef<"Institute", 'Boolean'>
+  readonly hasOnlineClasses: Prisma.FieldRef<"Institute", 'Boolean'>
+  readonly hasScholarship: Prisma.FieldRef<"Institute", 'Boolean'>
+  readonly mediumOfInstruction: Prisma.FieldRef<"Institute", 'String[]'>
+  readonly metaDescription: Prisma.FieldRef<"Institute", 'String'>
+  readonly metaTitle: Prisma.FieldRef<"Institute", 'String'>
+  readonly pros: Prisma.FieldRef<"Institute", 'String[]'>
+  readonly refundPolicy: Prisma.FieldRef<"Institute", 'String'>
+  readonly totalBranches: Prisma.FieldRef<"Institute", 'Int'>
+  readonly totalStudents: Prisma.FieldRef<"Institute", 'Int'>
 }
     
 
@@ -12841,358 +12832,27 @@ export type Institute$reviewsArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Institute.claims
+ * Institute.communityQuestions
  */
-export type Institute$claimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Institute$communityQuestionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the InstituteClaim
+   * Select specific fields to fetch from the CommunityQuestion
    */
-  select?: Prisma.InstituteClaimSelect<ExtArgs> | null
+  select?: Prisma.CommunityQuestionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the InstituteClaim
+   * Omit specific fields from the CommunityQuestion
    */
-  omit?: Prisma.InstituteClaimOmit<ExtArgs> | null
+  omit?: Prisma.CommunityQuestionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.InstituteClaimInclude<ExtArgs> | null
-  where?: Prisma.InstituteClaimWhereInput
-  orderBy?: Prisma.InstituteClaimOrderByWithRelationInput | Prisma.InstituteClaimOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteClaimWhereUniqueInput
+  include?: Prisma.CommunityQuestionInclude<ExtArgs> | null
+  where?: Prisma.CommunityQuestionWhereInput
+  orderBy?: Prisma.CommunityQuestionOrderByWithRelationInput | Prisma.CommunityQuestionOrderByWithRelationInput[]
+  cursor?: Prisma.CommunityQuestionWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.InstituteClaimScalarFieldEnum | Prisma.InstituteClaimScalarFieldEnum[]
-}
-
-/**
- * Institute.shortlistedBy
- */
-export type Institute$shortlistedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the UserShortlist
-   */
-  select?: Prisma.UserShortlistSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the UserShortlist
-   */
-  omit?: Prisma.UserShortlistOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserShortlistInclude<ExtArgs> | null
-  where?: Prisma.UserShortlistWhereInput
-  orderBy?: Prisma.UserShortlistOrderByWithRelationInput | Prisma.UserShortlistOrderByWithRelationInput[]
-  cursor?: Prisma.UserShortlistWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.UserShortlistScalarFieldEnum | Prisma.UserShortlistScalarFieldEnum[]
-}
-
-/**
- * Institute.viewHistory
- */
-export type Institute$viewHistoryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the UserHistory
-   */
-  select?: Prisma.UserHistorySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the UserHistory
-   */
-  omit?: Prisma.UserHistoryOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserHistoryInclude<ExtArgs> | null
-  where?: Prisma.UserHistoryWhereInput
-  orderBy?: Prisma.UserHistoryOrderByWithRelationInput | Prisma.UserHistoryOrderByWithRelationInput[]
-  cursor?: Prisma.UserHistoryWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.UserHistoryScalarFieldEnum | Prisma.UserHistoryScalarFieldEnum[]
-}
-
-/**
- * Institute.enquiries
- */
-export type Institute$enquiriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteEnquiry
-   */
-  select?: Prisma.InstituteEnquirySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteEnquiry
-   */
-  omit?: Prisma.InstituteEnquiryOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteEnquiryInclude<ExtArgs> | null
-  where?: Prisma.InstituteEnquiryWhereInput
-  orderBy?: Prisma.InstituteEnquiryOrderByWithRelationInput | Prisma.InstituteEnquiryOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteEnquiryWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteEnquiryScalarFieldEnum | Prisma.InstituteEnquiryScalarFieldEnum[]
-}
-
-/**
- * Institute.teachers
- */
-export type Institute$teachersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the TeacherProfile
-   */
-  select?: Prisma.TeacherProfileSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the TeacherProfile
-   */
-  omit?: Prisma.TeacherProfileOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.TeacherProfileInclude<ExtArgs> | null
-  where?: Prisma.TeacherProfileWhereInput
-  orderBy?: Prisma.TeacherProfileOrderByWithRelationInput | Prisma.TeacherProfileOrderByWithRelationInput[]
-  cursor?: Prisma.TeacherProfileWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.TeacherProfileScalarFieldEnum | Prisma.TeacherProfileScalarFieldEnum[]
-}
-
-/**
- * Institute.instituteRequest
- */
-export type Institute$instituteRequestArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteRequest
-   */
-  select?: Prisma.InstituteRequestSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteRequest
-   */
-  omit?: Prisma.InstituteRequestOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteRequestInclude<ExtArgs> | null
-  where?: Prisma.InstituteRequestWhereInput
-}
-
-/**
- * Institute.payments
- */
-export type Institute$paymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SubscriptionPayment
-   */
-  select?: Prisma.SubscriptionPaymentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SubscriptionPayment
-   */
-  omit?: Prisma.SubscriptionPaymentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SubscriptionPaymentInclude<ExtArgs> | null
-  where?: Prisma.SubscriptionPaymentWhereInput
-  orderBy?: Prisma.SubscriptionPaymentOrderByWithRelationInput | Prisma.SubscriptionPaymentOrderByWithRelationInput[]
-  cursor?: Prisma.SubscriptionPaymentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SubscriptionPaymentScalarFieldEnum | Prisma.SubscriptionPaymentScalarFieldEnum[]
-}
-
-/**
- * Institute.salesAssignments
- */
-export type Institute$salesAssignmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SalesAssignment
-   */
-  select?: Prisma.SalesAssignmentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SalesAssignment
-   */
-  omit?: Prisma.SalesAssignmentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SalesAssignmentInclude<ExtArgs> | null
-  where?: Prisma.SalesAssignmentWhereInput
-  orderBy?: Prisma.SalesAssignmentOrderByWithRelationInput | Prisma.SalesAssignmentOrderByWithRelationInput[]
-  cursor?: Prisma.SalesAssignmentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SalesAssignmentScalarFieldEnum | Prisma.SalesAssignmentScalarFieldEnum[]
-}
-
-/**
- * Institute.dailyViews
- */
-export type Institute$dailyViewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteDailyView
-   */
-  select?: Prisma.InstituteDailyViewSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteDailyView
-   */
-  omit?: Prisma.InstituteDailyViewOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteDailyViewInclude<ExtArgs> | null
-  where?: Prisma.InstituteDailyViewWhereInput
-  orderBy?: Prisma.InstituteDailyViewOrderByWithRelationInput | Prisma.InstituteDailyViewOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteDailyViewWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteDailyViewScalarFieldEnum | Prisma.InstituteDailyViewScalarFieldEnum[]
-}
-
-/**
- * Institute.facilities
- */
-export type Institute$facilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteFacility
-   */
-  select?: Prisma.InstituteFacilitySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteFacility
-   */
-  omit?: Prisma.InstituteFacilityOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteFacilityInclude<ExtArgs> | null
-  where?: Prisma.InstituteFacilityWhereInput
-  orderBy?: Prisma.InstituteFacilityOrderByWithRelationInput | Prisma.InstituteFacilityOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteFacilityWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteFacilityScalarFieldEnum | Prisma.InstituteFacilityScalarFieldEnum[]
-}
-
-/**
- * Institute.batches
- */
-export type Institute$batchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteBatch
-   */
-  select?: Prisma.InstituteBatchSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteBatch
-   */
-  omit?: Prisma.InstituteBatchOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteBatchInclude<ExtArgs> | null
-  where?: Prisma.InstituteBatchWhereInput
-  orderBy?: Prisma.InstituteBatchOrderByWithRelationInput | Prisma.InstituteBatchOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteBatchWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteBatchScalarFieldEnum | Prisma.InstituteBatchScalarFieldEnum[]
-}
-
-/**
- * Institute.highlightStats
- */
-export type Institute$highlightStatsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteHighlightStat
-   */
-  select?: Prisma.InstituteHighlightStatSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteHighlightStat
-   */
-  omit?: Prisma.InstituteHighlightStatOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteHighlightStatInclude<ExtArgs> | null
-  where?: Prisma.InstituteHighlightStatWhereInput
-  orderBy?: Prisma.InstituteHighlightStatOrderByWithRelationInput | Prisma.InstituteHighlightStatOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteHighlightStatWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteHighlightStatScalarFieldEnum | Prisma.InstituteHighlightStatScalarFieldEnum[]
-}
-
-/**
- * Institute.achievements
- */
-export type Institute$achievementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteAchievement
-   */
-  select?: Prisma.InstituteAchievementSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteAchievement
-   */
-  omit?: Prisma.InstituteAchievementOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteAchievementInclude<ExtArgs> | null
-  where?: Prisma.InstituteAchievementWhereInput
-  orderBy?: Prisma.InstituteAchievementOrderByWithRelationInput | Prisma.InstituteAchievementOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteAchievementWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteAchievementScalarFieldEnum | Prisma.InstituteAchievementScalarFieldEnum[]
-}
-
-/**
- * Institute.faqs
- */
-export type Institute$faqsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteFAQ
-   */
-  select?: Prisma.InstituteFAQSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteFAQ
-   */
-  omit?: Prisma.InstituteFAQOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteFAQInclude<ExtArgs> | null
-  where?: Prisma.InstituteFAQWhereInput
-  orderBy?: Prisma.InstituteFAQOrderByWithRelationInput | Prisma.InstituteFAQOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteFAQWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteFAQScalarFieldEnum | Prisma.InstituteFAQScalarFieldEnum[]
-}
-
-/**
- * Institute.operatingHours
- */
-export type Institute$operatingHoursArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the InstituteOperatingHour
-   */
-  select?: Prisma.InstituteOperatingHourSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the InstituteOperatingHour
-   */
-  omit?: Prisma.InstituteOperatingHourOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.InstituteOperatingHourInclude<ExtArgs> | null
-  where?: Prisma.InstituteOperatingHourWhereInput
-  orderBy?: Prisma.InstituteOperatingHourOrderByWithRelationInput | Prisma.InstituteOperatingHourOrderByWithRelationInput[]
-  cursor?: Prisma.InstituteOperatingHourWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.InstituteOperatingHourScalarFieldEnum | Prisma.InstituteOperatingHourScalarFieldEnum[]
+  distinct?: Prisma.CommunityQuestionScalarFieldEnum | Prisma.CommunityQuestionScalarFieldEnum[]
 }
 
 /**
@@ -13220,51 +12880,75 @@ export type Institute$compareListItemsArgs<ExtArgs extends runtime.Types.Extensi
 }
 
 /**
- * Institute.notablepersons
+ * Institute.achievements
  */
-export type Institute$notablepersonsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Institute$achievementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the NotablePersons
+   * Select specific fields to fetch from the InstituteAchievement
    */
-  select?: Prisma.NotablePersonsSelect<ExtArgs> | null
+  select?: Prisma.InstituteAchievementSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the NotablePersons
+   * Omit specific fields from the InstituteAchievement
    */
-  omit?: Prisma.NotablePersonsOmit<ExtArgs> | null
+  omit?: Prisma.InstituteAchievementOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.NotablePersonsInclude<ExtArgs> | null
-  where?: Prisma.NotablePersonsWhereInput
-  orderBy?: Prisma.NotablePersonsOrderByWithRelationInput | Prisma.NotablePersonsOrderByWithRelationInput[]
-  cursor?: Prisma.NotablePersonsWhereUniqueInput
+  include?: Prisma.InstituteAchievementInclude<ExtArgs> | null
+  where?: Prisma.InstituteAchievementWhereInput
+  orderBy?: Prisma.InstituteAchievementOrderByWithRelationInput | Prisma.InstituteAchievementOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteAchievementWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.NotablePersonsScalarFieldEnum | Prisma.NotablePersonsScalarFieldEnum[]
+  distinct?: Prisma.InstituteAchievementScalarFieldEnum | Prisma.InstituteAchievementScalarFieldEnum[]
 }
 
 /**
- * Institute.communityQuestions
+ * Institute.batches
  */
-export type Institute$communityQuestionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Institute$batchesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the CommunityQuestion
+   * Select specific fields to fetch from the InstituteBatch
    */
-  select?: Prisma.CommunityQuestionSelect<ExtArgs> | null
+  select?: Prisma.InstituteBatchSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the CommunityQuestion
+   * Omit specific fields from the InstituteBatch
    */
-  omit?: Prisma.CommunityQuestionOmit<ExtArgs> | null
+  omit?: Prisma.InstituteBatchOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CommunityQuestionInclude<ExtArgs> | null
-  where?: Prisma.CommunityQuestionWhereInput
-  orderBy?: Prisma.CommunityQuestionOrderByWithRelationInput | Prisma.CommunityQuestionOrderByWithRelationInput[]
-  cursor?: Prisma.CommunityQuestionWhereUniqueInput
+  include?: Prisma.InstituteBatchInclude<ExtArgs> | null
+  where?: Prisma.InstituteBatchWhereInput
+  orderBy?: Prisma.InstituteBatchOrderByWithRelationInput | Prisma.InstituteBatchOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteBatchWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.CommunityQuestionScalarFieldEnum | Prisma.CommunityQuestionScalarFieldEnum[]
+  distinct?: Prisma.InstituteBatchScalarFieldEnum | Prisma.InstituteBatchScalarFieldEnum[]
+}
+
+/**
+ * Institute.claims
+ */
+export type Institute$claimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteClaim
+   */
+  select?: Prisma.InstituteClaimSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteClaim
+   */
+  omit?: Prisma.InstituteClaimOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteClaimInclude<ExtArgs> | null
+  where?: Prisma.InstituteClaimWhereInput
+  orderBy?: Prisma.InstituteClaimOrderByWithRelationInput | Prisma.InstituteClaimOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteClaimWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteClaimScalarFieldEnum | Prisma.InstituteClaimScalarFieldEnum[]
 }
 
 /**
@@ -13313,6 +12997,308 @@ export type Institute$comparisonsAsSecondArgs<ExtArgs extends runtime.Types.Exte
   take?: number
   skip?: number
   distinct?: Prisma.InstituteComparisonCacheScalarFieldEnum | Prisma.InstituteComparisonCacheScalarFieldEnum[]
+}
+
+/**
+ * Institute.dailyViews
+ */
+export type Institute$dailyViewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteDailyView
+   */
+  select?: Prisma.InstituteDailyViewSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteDailyView
+   */
+  omit?: Prisma.InstituteDailyViewOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteDailyViewInclude<ExtArgs> | null
+  where?: Prisma.InstituteDailyViewWhereInput
+  orderBy?: Prisma.InstituteDailyViewOrderByWithRelationInput | Prisma.InstituteDailyViewOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteDailyViewWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteDailyViewScalarFieldEnum | Prisma.InstituteDailyViewScalarFieldEnum[]
+}
+
+/**
+ * Institute.enquiries
+ */
+export type Institute$enquiriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteEnquiry
+   */
+  select?: Prisma.InstituteEnquirySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteEnquiry
+   */
+  omit?: Prisma.InstituteEnquiryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteEnquiryInclude<ExtArgs> | null
+  where?: Prisma.InstituteEnquiryWhereInput
+  orderBy?: Prisma.InstituteEnquiryOrderByWithRelationInput | Prisma.InstituteEnquiryOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteEnquiryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteEnquiryScalarFieldEnum | Prisma.InstituteEnquiryScalarFieldEnum[]
+}
+
+/**
+ * Institute.facilities
+ */
+export type Institute$facilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteFacility
+   */
+  select?: Prisma.InstituteFacilitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteFacility
+   */
+  omit?: Prisma.InstituteFacilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteFacilityInclude<ExtArgs> | null
+  where?: Prisma.InstituteFacilityWhereInput
+  orderBy?: Prisma.InstituteFacilityOrderByWithRelationInput | Prisma.InstituteFacilityOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteFacilityWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteFacilityScalarFieldEnum | Prisma.InstituteFacilityScalarFieldEnum[]
+}
+
+/**
+ * Institute.faqs
+ */
+export type Institute$faqsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteFAQ
+   */
+  select?: Prisma.InstituteFAQSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteFAQ
+   */
+  omit?: Prisma.InstituteFAQOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteFAQInclude<ExtArgs> | null
+  where?: Prisma.InstituteFAQWhereInput
+  orderBy?: Prisma.InstituteFAQOrderByWithRelationInput | Prisma.InstituteFAQOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteFAQWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteFAQScalarFieldEnum | Prisma.InstituteFAQScalarFieldEnum[]
+}
+
+/**
+ * Institute.highlightStats
+ */
+export type Institute$highlightStatsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteHighlightStat
+   */
+  select?: Prisma.InstituteHighlightStatSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteHighlightStat
+   */
+  omit?: Prisma.InstituteHighlightStatOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteHighlightStatInclude<ExtArgs> | null
+  where?: Prisma.InstituteHighlightStatWhereInput
+  orderBy?: Prisma.InstituteHighlightStatOrderByWithRelationInput | Prisma.InstituteHighlightStatOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteHighlightStatWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteHighlightStatScalarFieldEnum | Prisma.InstituteHighlightStatScalarFieldEnum[]
+}
+
+/**
+ * Institute.operatingHours
+ */
+export type Institute$operatingHoursArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteOperatingHour
+   */
+  select?: Prisma.InstituteOperatingHourSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteOperatingHour
+   */
+  omit?: Prisma.InstituteOperatingHourOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteOperatingHourInclude<ExtArgs> | null
+  where?: Prisma.InstituteOperatingHourWhereInput
+  orderBy?: Prisma.InstituteOperatingHourOrderByWithRelationInput | Prisma.InstituteOperatingHourOrderByWithRelationInput[]
+  cursor?: Prisma.InstituteOperatingHourWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.InstituteOperatingHourScalarFieldEnum | Prisma.InstituteOperatingHourScalarFieldEnum[]
+}
+
+/**
+ * Institute.instituteRequest
+ */
+export type Institute$instituteRequestArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InstituteRequest
+   */
+  select?: Prisma.InstituteRequestSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InstituteRequest
+   */
+  omit?: Prisma.InstituteRequestOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InstituteRequestInclude<ExtArgs> | null
+  where?: Prisma.InstituteRequestWhereInput
+}
+
+/**
+ * Institute.notablepersons
+ */
+export type Institute$notablepersonsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the NotablePersons
+   */
+  select?: Prisma.NotablePersonsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the NotablePersons
+   */
+  omit?: Prisma.NotablePersonsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.NotablePersonsInclude<ExtArgs> | null
+  where?: Prisma.NotablePersonsWhereInput
+  orderBy?: Prisma.NotablePersonsOrderByWithRelationInput | Prisma.NotablePersonsOrderByWithRelationInput[]
+  cursor?: Prisma.NotablePersonsWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NotablePersonsScalarFieldEnum | Prisma.NotablePersonsScalarFieldEnum[]
+}
+
+/**
+ * Institute.salesAssignments
+ */
+export type Institute$salesAssignmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SalesAssignment
+   */
+  select?: Prisma.SalesAssignmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SalesAssignment
+   */
+  omit?: Prisma.SalesAssignmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SalesAssignmentInclude<ExtArgs> | null
+  where?: Prisma.SalesAssignmentWhereInput
+}
+
+/**
+ * Institute.payments
+ */
+export type Institute$paymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SubscriptionPayment
+   */
+  select?: Prisma.SubscriptionPaymentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SubscriptionPayment
+   */
+  omit?: Prisma.SubscriptionPaymentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SubscriptionPaymentInclude<ExtArgs> | null
+  where?: Prisma.SubscriptionPaymentWhereInput
+  orderBy?: Prisma.SubscriptionPaymentOrderByWithRelationInput | Prisma.SubscriptionPaymentOrderByWithRelationInput[]
+  cursor?: Prisma.SubscriptionPaymentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SubscriptionPaymentScalarFieldEnum | Prisma.SubscriptionPaymentScalarFieldEnum[]
+}
+
+/**
+ * Institute.teachers
+ */
+export type Institute$teachersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeacherProfile
+   */
+  select?: Prisma.TeacherProfileSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeacherProfile
+   */
+  omit?: Prisma.TeacherProfileOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeacherProfileInclude<ExtArgs> | null
+  where?: Prisma.TeacherProfileWhereInput
+  orderBy?: Prisma.TeacherProfileOrderByWithRelationInput | Prisma.TeacherProfileOrderByWithRelationInput[]
+  cursor?: Prisma.TeacherProfileWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeacherProfileScalarFieldEnum | Prisma.TeacherProfileScalarFieldEnum[]
+}
+
+/**
+ * Institute.viewHistory
+ */
+export type Institute$viewHistoryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserHistory
+   */
+  select?: Prisma.UserHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UserHistory
+   */
+  omit?: Prisma.UserHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserHistoryInclude<ExtArgs> | null
+  where?: Prisma.UserHistoryWhereInput
+  orderBy?: Prisma.UserHistoryOrderByWithRelationInput | Prisma.UserHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.UserHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserHistoryScalarFieldEnum | Prisma.UserHistoryScalarFieldEnum[]
+}
+
+/**
+ * Institute.shortlistedBy
+ */
+export type Institute$shortlistedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserShortlist
+   */
+  select?: Prisma.UserShortlistSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UserShortlist
+   */
+  omit?: Prisma.UserShortlistOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserShortlistInclude<ExtArgs> | null
+  where?: Prisma.UserShortlistWhereInput
+  orderBy?: Prisma.UserShortlistOrderByWithRelationInput | Prisma.UserShortlistOrderByWithRelationInput[]
+  cursor?: Prisma.UserShortlistWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserShortlistScalarFieldEnum | Prisma.UserShortlistScalarFieldEnum[]
 }
 
 /**

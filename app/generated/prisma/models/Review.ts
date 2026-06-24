@@ -39,10 +39,10 @@ export type ReviewMinAggregateOutputType = {
   rating: number | null
   comment: string | null
   userId: string | null
-  status: $Enums.ReviewStatus | null
   instituteId: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  status: $Enums.ReviewStatus | null
 }
 
 export type ReviewMaxAggregateOutputType = {
@@ -50,10 +50,10 @@ export type ReviewMaxAggregateOutputType = {
   rating: number | null
   comment: string | null
   userId: string | null
-  status: $Enums.ReviewStatus | null
   instituteId: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  status: $Enums.ReviewStatus | null
 }
 
 export type ReviewCountAggregateOutputType = {
@@ -61,10 +61,10 @@ export type ReviewCountAggregateOutputType = {
   rating: number
   comment: number
   userId: number
-  status: number
   instituteId: number
   createdAt: number
   updatedAt: number
+  status: number
   _all: number
 }
 
@@ -82,10 +82,10 @@ export type ReviewMinAggregateInputType = {
   rating?: true
   comment?: true
   userId?: true
-  status?: true
   instituteId?: true
   createdAt?: true
   updatedAt?: true
+  status?: true
 }
 
 export type ReviewMaxAggregateInputType = {
@@ -93,10 +93,10 @@ export type ReviewMaxAggregateInputType = {
   rating?: true
   comment?: true
   userId?: true
-  status?: true
   instituteId?: true
   createdAt?: true
   updatedAt?: true
+  status?: true
 }
 
 export type ReviewCountAggregateInputType = {
@@ -104,10 +104,10 @@ export type ReviewCountAggregateInputType = {
   rating?: true
   comment?: true
   userId?: true
-  status?: true
   instituteId?: true
   createdAt?: true
   updatedAt?: true
+  status?: true
   _all?: true
 }
 
@@ -202,10 +202,10 @@ export type ReviewGroupByOutputType = {
   rating: number
   comment: string | null
   userId: string
-  status: $Enums.ReviewStatus
   instituteId: string
   createdAt: Date
   updatedAt: Date
+  status: $Enums.ReviewStatus
   _count: ReviewCountAggregateOutputType | null
   _avg: ReviewAvgAggregateOutputType | null
   _sum: ReviewSumAggregateOutputType | null
@@ -236,10 +236,10 @@ export type ReviewWhereInput = {
   rating?: Prisma.IntFilter<"Review"> | number
   comment?: Prisma.StringNullableFilter<"Review"> | string | null
   userId?: Prisma.StringFilter<"Review"> | string
-  status?: Prisma.EnumReviewStatusFilter<"Review"> | $Enums.ReviewStatus
   instituteId?: Prisma.StringFilter<"Review"> | string
   createdAt?: Prisma.DateTimeFilter<"Review"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Review"> | Date | string
+  status?: Prisma.EnumReviewStatusFilter<"Review"> | $Enums.ReviewStatus
   institute?: Prisma.XOR<Prisma.InstituteScalarRelationFilter, Prisma.InstituteWhereInput>
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
@@ -249,10 +249,10 @@ export type ReviewOrderByWithRelationInput = {
   rating?: Prisma.SortOrder
   comment?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   instituteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   institute?: Prisma.InstituteOrderByWithRelationInput
   user?: Prisma.UserOrderByWithRelationInput
 }
@@ -266,10 +266,10 @@ export type ReviewWhereUniqueInput = Prisma.AtLeast<{
   rating?: Prisma.IntFilter<"Review"> | number
   comment?: Prisma.StringNullableFilter<"Review"> | string | null
   userId?: Prisma.StringFilter<"Review"> | string
-  status?: Prisma.EnumReviewStatusFilter<"Review"> | $Enums.ReviewStatus
   instituteId?: Prisma.StringFilter<"Review"> | string
   createdAt?: Prisma.DateTimeFilter<"Review"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Review"> | Date | string
+  status?: Prisma.EnumReviewStatusFilter<"Review"> | $Enums.ReviewStatus
   institute?: Prisma.XOR<Prisma.InstituteScalarRelationFilter, Prisma.InstituteWhereInput>
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id" | "userId_instituteId">
@@ -279,10 +279,10 @@ export type ReviewOrderByWithAggregationInput = {
   rating?: Prisma.SortOrder
   comment?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   instituteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   _count?: Prisma.ReviewCountOrderByAggregateInput
   _avg?: Prisma.ReviewAvgOrderByAggregateInput
   _max?: Prisma.ReviewMaxOrderByAggregateInput
@@ -298,19 +298,19 @@ export type ReviewScalarWhereWithAggregatesInput = {
   rating?: Prisma.IntWithAggregatesFilter<"Review"> | number
   comment?: Prisma.StringNullableWithAggregatesFilter<"Review"> | string | null
   userId?: Prisma.StringWithAggregatesFilter<"Review"> | string
-  status?: Prisma.EnumReviewStatusWithAggregatesFilter<"Review"> | $Enums.ReviewStatus
   instituteId?: Prisma.StringWithAggregatesFilter<"Review"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Review"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Review"> | Date | string
+  status?: Prisma.EnumReviewStatusWithAggregatesFilter<"Review"> | $Enums.ReviewStatus
 }
 
 export type ReviewCreateInput = {
   id?: string
   rating: number
   comment?: string | null
-  status?: $Enums.ReviewStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
   institute: Prisma.InstituteCreateNestedOneWithoutReviewsInput
   user: Prisma.UserCreateNestedOneWithoutReviewsInput
 }
@@ -320,19 +320,19 @@ export type ReviewUncheckedCreateInput = {
   rating: number
   comment?: string | null
   userId: string
-  status?: $Enums.ReviewStatus
   instituteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
 }
 
 export type ReviewUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   institute?: Prisma.InstituteUpdateOneRequiredWithoutReviewsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutReviewsNestedInput
 }
@@ -342,10 +342,10 @@ export type ReviewUncheckedUpdateInput = {
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   instituteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 export type ReviewCreateManyInput = {
@@ -353,19 +353,19 @@ export type ReviewCreateManyInput = {
   rating: number
   comment?: string | null
   userId: string
-  status?: $Enums.ReviewStatus
   instituteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
 }
 
 export type ReviewUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 export type ReviewUncheckedUpdateManyInput = {
@@ -373,10 +373,10 @@ export type ReviewUncheckedUpdateManyInput = {
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   instituteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 export type ReviewListRelationFilter = {
@@ -399,10 +399,10 @@ export type ReviewCountOrderByAggregateInput = {
   rating?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   instituteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
 }
 
 export type ReviewAvgOrderByAggregateInput = {
@@ -414,10 +414,10 @@ export type ReviewMaxOrderByAggregateInput = {
   rating?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   instituteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
 }
 
 export type ReviewMinOrderByAggregateInput = {
@@ -425,10 +425,10 @@ export type ReviewMinOrderByAggregateInput = {
   rating?: Prisma.SortOrder
   comment?: Prisma.SortOrder
   userId?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   instituteId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  status?: Prisma.SortOrder
 }
 
 export type ReviewSumOrderByAggregateInput = {
@@ -527,9 +527,9 @@ export type ReviewCreateWithoutUserInput = {
   id?: string
   rating: number
   comment?: string | null
-  status?: $Enums.ReviewStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
   institute: Prisma.InstituteCreateNestedOneWithoutReviewsInput
 }
 
@@ -537,10 +537,10 @@ export type ReviewUncheckedCreateWithoutUserInput = {
   id?: string
   rating: number
   comment?: string | null
-  status?: $Enums.ReviewStatus
   instituteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
 }
 
 export type ReviewCreateOrConnectWithoutUserInput = {
@@ -577,19 +577,19 @@ export type ReviewScalarWhereInput = {
   rating?: Prisma.IntFilter<"Review"> | number
   comment?: Prisma.StringNullableFilter<"Review"> | string | null
   userId?: Prisma.StringFilter<"Review"> | string
-  status?: Prisma.EnumReviewStatusFilter<"Review"> | $Enums.ReviewStatus
   instituteId?: Prisma.StringFilter<"Review"> | string
   createdAt?: Prisma.DateTimeFilter<"Review"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Review"> | Date | string
+  status?: Prisma.EnumReviewStatusFilter<"Review"> | $Enums.ReviewStatus
 }
 
 export type ReviewCreateWithoutInstituteInput = {
   id?: string
   rating: number
   comment?: string | null
-  status?: $Enums.ReviewStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
   user: Prisma.UserCreateNestedOneWithoutReviewsInput
 }
 
@@ -598,9 +598,9 @@ export type ReviewUncheckedCreateWithoutInstituteInput = {
   rating: number
   comment?: string | null
   userId: string
-  status?: $Enums.ReviewStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
 }
 
 export type ReviewCreateOrConnectWithoutInstituteInput = {
@@ -633,19 +633,19 @@ export type ReviewCreateManyUserInput = {
   id?: string
   rating: number
   comment?: string | null
-  status?: $Enums.ReviewStatus
   instituteId: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
 }
 
 export type ReviewUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   institute?: Prisma.InstituteUpdateOneRequiredWithoutReviewsNestedInput
 }
 
@@ -653,20 +653,20 @@ export type ReviewUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   instituteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 export type ReviewUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   instituteId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 export type ReviewCreateManyInstituteInput = {
@@ -674,18 +674,18 @@ export type ReviewCreateManyInstituteInput = {
   rating: number
   comment?: string | null
   userId: string
-  status?: $Enums.ReviewStatus
   createdAt?: Date | string
   updatedAt?: Date | string
+  status?: $Enums.ReviewStatus
 }
 
 export type ReviewUpdateWithoutInstituteInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   user?: Prisma.UserUpdateOneRequiredWithoutReviewsNestedInput
 }
 
@@ -694,9 +694,9 @@ export type ReviewUncheckedUpdateWithoutInstituteInput = {
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 export type ReviewUncheckedUpdateManyWithoutInstituteInput = {
@@ -704,9 +704,9 @@ export type ReviewUncheckedUpdateManyWithoutInstituteInput = {
   rating?: Prisma.IntFieldUpdateOperationsInput | number
   comment?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
-  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumReviewStatusFieldUpdateOperationsInput | $Enums.ReviewStatus
 }
 
 
@@ -716,10 +716,10 @@ export type ReviewSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   rating?: boolean
   comment?: boolean
   userId?: boolean
-  status?: boolean
   instituteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  status?: boolean
   institute?: boolean | Prisma.InstituteDefaultArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["review"]>
@@ -729,10 +729,10 @@ export type ReviewSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   rating?: boolean
   comment?: boolean
   userId?: boolean
-  status?: boolean
   instituteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  status?: boolean
   institute?: boolean | Prisma.InstituteDefaultArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["review"]>
@@ -742,10 +742,10 @@ export type ReviewSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   rating?: boolean
   comment?: boolean
   userId?: boolean
-  status?: boolean
   instituteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  status?: boolean
   institute?: boolean | Prisma.InstituteDefaultArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["review"]>
@@ -755,13 +755,13 @@ export type ReviewSelectScalar = {
   rating?: boolean
   comment?: boolean
   userId?: boolean
-  status?: boolean
   instituteId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  status?: boolean
 }
 
-export type ReviewOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rating" | "comment" | "userId" | "status" | "instituteId" | "createdAt" | "updatedAt", ExtArgs["result"]["review"]>
+export type ReviewOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rating" | "comment" | "userId" | "instituteId" | "createdAt" | "updatedAt" | "status", ExtArgs["result"]["review"]>
 export type ReviewInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   institute?: boolean | Prisma.InstituteDefaultArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -786,10 +786,10 @@ export type $ReviewPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     rating: number
     comment: string | null
     userId: string
-    status: $Enums.ReviewStatus
     instituteId: string
     createdAt: Date
     updatedAt: Date
+    status: $Enums.ReviewStatus
   }, ExtArgs["result"]["review"]>
   composites: {}
 }
@@ -1219,10 +1219,10 @@ export interface ReviewFieldRefs {
   readonly rating: Prisma.FieldRef<"Review", 'Int'>
   readonly comment: Prisma.FieldRef<"Review", 'String'>
   readonly userId: Prisma.FieldRef<"Review", 'String'>
-  readonly status: Prisma.FieldRef<"Review", 'ReviewStatus'>
   readonly instituteId: Prisma.FieldRef<"Review", 'String'>
   readonly createdAt: Prisma.FieldRef<"Review", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Review", 'DateTime'>
+  readonly status: Prisma.FieldRef<"Review", 'ReviewStatus'>
 }
     
 

@@ -12,6 +12,8 @@ export async function updateInstitutePlan(instituteId: string, selectedPlan: "BA
       data: { subscriptionPlan: selectedPlan }
     })
 
+    
+
     revalidatePath(`/manager/${instituteId}`)
     return { 
       success: true, 

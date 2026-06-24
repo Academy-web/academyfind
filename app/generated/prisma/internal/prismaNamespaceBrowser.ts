@@ -89,7 +89,8 @@ export const ModelName = {
   CommunityQuestion: 'CommunityQuestion',
   CommunityAnswer: 'CommunityAnswer',
   NotablePersons: 'NotablePersons',
-  InstituteComparisonCache: 'InstituteComparisonCache'
+  InstituteComparisonCache: 'InstituteComparisonCache',
+  LeadDistributionLog: 'LeadDistributionLog'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -193,7 +194,6 @@ export const InstituteScalarFieldEnum = {
   isVerified: 'isVerified',
   isFeatured: 'isFeatured',
   isActive: 'isActive',
-  isPublished: 'isPublished',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   imageUrl: 'imageUrl',
@@ -204,38 +204,39 @@ export const InstituteScalarFieldEnum = {
   gallery: 'gallery',
   subscriptionPlan: 'subscriptionPlan',
   youtubeVideos: 'youtubeVideos',
-  feeInfo: 'feeInfo',
   classroomImages: 'classroomImages',
+  feeInfo: 'feeInfo',
   planExpiresAt: 'planExpiresAt',
   facebookUrl: 'facebookUrl',
   instagramUrl: 'instagramUrl',
+  telegramUrl: 'telegramUrl',
   twitterUrl: 'twitterUrl',
   youtubeUrl: 'youtubeUrl',
-  telegramUrl: 'telegramUrl',
   linkedinUrl: 'linkedinUrl',
   whatsappUrl: 'whatsappUrl',
-  viewCount: 'viewCount',
+  isPublished: 'isPublished',
   mode: 'mode',
-  brochureUrl: 'brochureUrl',
+  viewCount: 'viewCount',
   affiliations: 'affiliations',
   awards: 'awards',
-  establishedYear: 'establishedYear',
-  totalStudents: 'totalStudents',
-  totalBranches: 'totalBranches',
-  feeMin: 'feeMin',
-  feeMax: 'feeMax',
-  mediumOfInstruction: 'mediumOfInstruction',
-  pros: 'pros',
+  brochureUrl: 'brochureUrl',
+  compareCount: 'compareCount',
   cons: 'cons',
-  refundPolicy: 'refundPolicy',
-  hasOnlineClasses: 'hasOnlineClasses',
-  hasHostelFacility: 'hasHostelFacility',
-  hasDemoClasses: 'hasDemoClasses',
-  hasScholarship: 'hasScholarship',
+  establishedYear: 'establishedYear',
+  feeMax: 'feeMax',
+  feeMin: 'feeMin',
   hasCertification: 'hasCertification',
-  metaTitle: 'metaTitle',
+  hasDemoClasses: 'hasDemoClasses',
+  hasHostelFacility: 'hasHostelFacility',
+  hasOnlineClasses: 'hasOnlineClasses',
+  hasScholarship: 'hasScholarship',
+  mediumOfInstruction: 'mediumOfInstruction',
   metaDescription: 'metaDescription',
-  compareCount: 'compareCount'
+  metaTitle: 'metaTitle',
+  pros: 'pros',
+  refundPolicy: 'refundPolicy',
+  totalBranches: 'totalBranches',
+  totalStudents: 'totalStudents'
 } as const
 
 export type InstituteScalarFieldEnum = (typeof InstituteScalarFieldEnum)[keyof typeof InstituteScalarFieldEnum]
@@ -249,13 +250,13 @@ export const CityScalarFieldEnum = {
   country: 'country',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
+  bannerImage: 'bannerImage',
   description: 'description',
-  metaTitle: 'metaTitle',
-  metaDescription: 'metaDescription',
   latitude: 'latitude',
   longitude: 'longitude',
-  population: 'population',
-  bannerImage: 'bannerImage'
+  metaDescription: 'metaDescription',
+  metaTitle: 'metaTitle',
+  population: 'population'
 } as const
 
 export type CityScalarFieldEnum = (typeof CityScalarFieldEnum)[keyof typeof CityScalarFieldEnum]
@@ -270,12 +271,12 @@ export const CategoryScalarFieldEnum = {
   updatedAt: 'updatedAt',
   isActive: 'isActive',
   level: 'level',
-  shortDescription: 'shortDescription',
+  bannerImage: 'bannerImage',
   description: 'description',
-  metaTitle: 'metaTitle',
-  metaDescription: 'metaDescription',
   icon: 'icon',
-  bannerImage: 'bannerImage'
+  metaDescription: 'metaDescription',
+  metaTitle: 'metaTitle',
+  shortDescription: 'shortDescription'
 } as const
 
 export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
@@ -318,10 +319,10 @@ export const ReviewScalarFieldEnum = {
   rating: 'rating',
   comment: 'comment',
   userId: 'userId',
-  status: 'status',
   instituteId: 'instituteId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  status: 'status'
 } as const
 
 export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
@@ -370,6 +371,9 @@ export const InstituteEnquiryScalarFieldEnum = {
   phone: 'phone',
   message: 'message',
   status: 'status',
+  isForwarded: 'isForwarded',
+  adminNote: 'adminNote',
+  parentId: 'parentId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -383,8 +387,8 @@ export const TeacherProfileScalarFieldEnum = {
   subject: 'subject',
   experience: 'experience',
   imageUrl: 'imageUrl',
-  qualification: 'qualification',
-  instituteId: 'instituteId'
+  instituteId: 'instituteId',
+  qualification: 'qualification'
 } as const
 
 export type TeacherProfileScalarFieldEnum = (typeof TeacherProfileScalarFieldEnum)[keyof typeof TeacherProfileScalarFieldEnum]
@@ -519,11 +523,11 @@ export const JobApplicationScalarFieldEnum = {
   linkedinUrl: 'linkedinUrl',
   portfolioUrl: 'portfolioUrl',
   resumeUrl: 'resumeUrl',
-  resumeFileName: 'resumeFileName',
   coverLetter: 'coverLetter',
   status: 'status',
   notes: 'notes',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  resumeFileName: 'resumeFileName'
 } as const
 
 export type JobApplicationScalarFieldEnum = (typeof JobApplicationScalarFieldEnum)[keyof typeof JobApplicationScalarFieldEnum]
@@ -714,12 +718,36 @@ export const InstituteComparisonCacheScalarFieldEnum = {
 export type InstituteComparisonCacheScalarFieldEnum = (typeof InstituteComparisonCacheScalarFieldEnum)[keyof typeof InstituteComparisonCacheScalarFieldEnum]
 
 
+export const LeadDistributionLogScalarFieldEnum = {
+  id: 'id',
+  enquiryId: 'enquiryId',
+  adminId: 'adminId',
+  mode: 'mode',
+  targetInstituteIds: 'targetInstituteIds',
+  targetCount: 'targetCount',
+  filters: 'filters',
+  bulkFilters: 'bulkFilters',
+  adminNote: 'adminNote',
+  createdAt: 'createdAt'
+} as const
+
+export type LeadDistributionLogScalarFieldEnum = (typeof LeadDistributionLogScalarFieldEnum)[keyof typeof LeadDistributionLogScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -736,4 +764,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

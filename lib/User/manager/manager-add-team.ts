@@ -40,12 +40,12 @@ export async function addTeamMember(instituteId: string, email: string) {
                     userId: userToAdd.id,
                 }
             }),
-            // Dusra kaam: User ka role upgrade karna
             prisma.user.update({
                 where: { id: userToAdd.id },
-                // Note: Aapke schema me jo role ka exact naam ho wahi likhna (e.g., 'MANAGER' ya 'INSTITUTE_MANAGER')
                 data: { role: "INSTITUTE_MANAGER" } 
             })
+
+            
         ]);
 
         // UI ko refresh karne ke liye

@@ -37,6 +37,8 @@ model User {
   compareLists             UserCompareList[]
   viewHistory              UserHistory[]
   shortlisted              UserShortlist[]
+  distributionLogs         LeadDistributionLog[]     @relation("AdminDistributionLogs")
+
 
   @@map("user")
 }
@@ -331,9 +333,13 @@ model InstituteEnquiry {
   phone       String
   message     String?
   status      String    @default("NEW")
+  isForwarded Boolean   @default(false)
+  adminNote   String?   @db.Text
+  parentId    String?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   institute   Institute @relation(fields: [instituteId], references: [id], onDelete: Cascade)
+  distributionLogs   LeadDistributionLog[] @relation("DistributionLogs")
 
   @@index([instituteId])
   @@map("institute_enquiry")
@@ -773,4 +779,31 @@ enum ReviewStatus {
   PENDING
   APPROVED
   REJECTED
+}
+
+model LeadDistributionLog {
+  id                 String   @id @default(cuid())
+  enquiryId          String
+  adminId            String
+  
+  mode               String   // "individual" or "bulk"
+  
+  // For individual mode
+  targetInstituteIds String[] // JSON array of institute IDs
+  targetCount        Int      // Number of institutes targeted
+  
+  // For bulk mode
+  filters            String?  // JSON object with plans, cities, categories, search
+  bulkFilters        Json?    // Structured filters for display
+  
+  adminNote          String?
+  createdAt          DateTime @default(now())
+  
+  // Relations
+  enquiry            InstituteEnquiry @relation("DistributionLogs", fields: [enquiryId], references: [id], onDelete: Cascade)
+  admin              User             @relation("AdminDistributionLogs", fields: [adminId], references: [id])
+
+  @@index([enquiryId])
+  @@index([adminId])
+  @@map("lead_distribution_log")
 }
