@@ -2,8 +2,7 @@ import { Scale, Sparkles } from "lucide-react";
 
 export default function CompareCTA() {
   return (
-    <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-400 to-orange-500 p-10 sm:p-12 text-center text-white shadow-xl">
-      {/* 🚀 Subtle Background Pattern/Glow */}
+    <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-amber-400 to-orange-500 p-10 sm:p-12 text-center text-white shadow-xl">
       <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 mix-blend-overlay"></div>
       <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white opacity-10 blur-3xl"></div>
       <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-white opacity-10 blur-3xl"></div>
