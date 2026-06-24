@@ -1,3 +1,4 @@
+import { auth } from "@/lib/auth/auth";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
@@ -22,7 +23,7 @@ export async function POST(req: Request) {
       where: { parentId: originalEnquiryId, instituteId: { in: targetInstituteIds } },
       select: { instituteId: true },
     });
-    const existingSet = new Set(existing.map(e => e.instituteId));
+    const existingSet = new Set(existing.map((e: { instituteId: string }) => e.instituteId));
     const targetIds = targetInstituteIds.filter((id: string) => !existingSet.has(id));
 
     if (targetIds.length === 0) {
@@ -46,6 +47,22 @@ export async function POST(req: Request) {
         adminNote: adminNote ? `[Forwarded] ${adminNote}` : undefined,
       })),
     });
+    const session = await auth.api.getSession({
+      headers: req.headers,
+    });
+
+    if (session?.user?.id) {
+      await prisma.leadDistributionLog.create({
+        data: {
+          enquiryId: originalEnquiryId,
+          adminId: session.user.id,
+          mode: "individual",
+          targetInstituteIds: targetIds,
+          targetCount: targetIds.length,
+          adminNote,
+        },
+      });
+    }
 
     return NextResponse.json({
       success: true,
