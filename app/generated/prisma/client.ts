@@ -241,3 +241,83 @@ export type InstituteComparisonCache = Prisma.InstituteComparisonCacheModel
  * 
  */
 export type LeadDistributionLog = Prisma.LeadDistributionLogModel
+/**
+ * Model BlogAuthorProfile
+ * 
+ */
+export type BlogAuthorProfile = Prisma.BlogAuthorProfileModel
+/**
+ * Model BlogCategory
+ * 
+ */
+export type BlogCategory = Prisma.BlogCategoryModel
+/**
+ * Model BlogTag
+ * 
+ */
+export type BlogTag = Prisma.BlogTagModel
+/**
+ * Model BlogPost
+ * 
+ */
+export type BlogPost = Prisma.BlogPostModel
+/**
+ * Model BlogSlugHistory
+ * 
+ */
+export type BlogSlugHistory = Prisma.BlogSlugHistoryModel
+/**
+ * Model BlogRevision
+ * 
+ */
+export type BlogRevision = Prisma.BlogRevisionModel
+/**
+ * Model BlogView
+ * 
+ */
+export type BlogView = Prisma.BlogViewModel
+/**
+ * Model BlogBookmark
+ * 
+ */
+export type BlogBookmark = Prisma.BlogBookmarkModel
+/**
+ * Model BlogAuthorFollower
+ * 
+ */
+export type BlogAuthorFollower = Prisma.BlogAuthorFollowerModel
+/**
+ * Model BlogSubscriber
+ * 
+ */
+export type BlogSubscriber = Prisma.BlogSubscriberModel
+/**
+ * Model BlogReport
+ * 
+ */
+export type BlogReport = Prisma.BlogReportModel
+/**
+ * Model BlogPostTag
+ * 
+ */
+export type BlogPostTag = Prisma.BlogPostTagModel
+/**
+ * Model BlogComment
+ * 
+ */
+export type BlogComment = Prisma.BlogCommentModel
+/**
+ * Model BlogReaction
+ * 
+ */
+export type BlogReaction = Prisma.BlogReactionModel
+/**
+ * Model BlogFAQ
+ * 
+ */
+export type BlogFAQ = Prisma.BlogFAQModel
+/**
+ * Model BlogBrand
+ * 
+ */
+export type BlogBrand = Prisma.BlogBrandModel

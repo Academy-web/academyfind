@@ -90,7 +90,23 @@ export const ModelName = {
   CommunityAnswer: 'CommunityAnswer',
   NotablePersons: 'NotablePersons',
   InstituteComparisonCache: 'InstituteComparisonCache',
-  LeadDistributionLog: 'LeadDistributionLog'
+  LeadDistributionLog: 'LeadDistributionLog',
+  BlogAuthorProfile: 'BlogAuthorProfile',
+  BlogCategory: 'BlogCategory',
+  BlogTag: 'BlogTag',
+  BlogPost: 'BlogPost',
+  BlogSlugHistory: 'BlogSlugHistory',
+  BlogRevision: 'BlogRevision',
+  BlogView: 'BlogView',
+  BlogBookmark: 'BlogBookmark',
+  BlogAuthorFollower: 'BlogAuthorFollower',
+  BlogSubscriber: 'BlogSubscriber',
+  BlogReport: 'BlogReport',
+  BlogPostTag: 'BlogPostTag',
+  BlogComment: 'BlogComment',
+  BlogReaction: 'BlogReaction',
+  BlogFAQ: 'BlogFAQ',
+  BlogBrand: 'BlogBrand'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -123,7 +139,8 @@ export const UserScalarFieldEnum = {
   lastLoginAt: 'lastLoginAt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  canAddInstitute: 'canAddInstitute'
+  canAddInstitute: 'canAddInstitute',
+  canWriteBlogs: 'canWriteBlogs'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -732,6 +749,277 @@ export const LeadDistributionLogScalarFieldEnum = {
 } as const
 
 export type LeadDistributionLogScalarFieldEnum = (typeof LeadDistributionLogScalarFieldEnum)[keyof typeof LeadDistributionLogScalarFieldEnum]
+
+
+export const BlogAuthorProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  displayName: 'displayName',
+  username: 'username',
+  designation: 'designation',
+  experience: 'experience',
+  specialization: 'specialization',
+  isVerified: 'isVerified',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  bio: 'bio',
+  avatarUrl: 'avatarUrl',
+  twitterUrl: 'twitterUrl',
+  linkedinUrl: 'linkedinUrl',
+  websiteUrl: 'websiteUrl',
+  followerCount: 'followerCount',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogAuthorProfileScalarFieldEnum = (typeof BlogAuthorProfileScalarFieldEnum)[keyof typeof BlogAuthorProfileScalarFieldEnum]
+
+
+export const BlogCategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  description: 'description',
+  color: 'color',
+  icon: 'icon',
+  order: 'order',
+  isActive: 'isActive',
+  postCount: 'postCount',
+  coverImage: 'coverImage',
+  metaImage: 'metaImage',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogCategoryScalarFieldEnum = (typeof BlogCategoryScalarFieldEnum)[keyof typeof BlogCategoryScalarFieldEnum]
+
+
+export const BlogTagScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  postCount: 'postCount'
+} as const
+
+export type BlogTagScalarFieldEnum = (typeof BlogTagScalarFieldEnum)[keyof typeof BlogTagScalarFieldEnum]
+
+
+export const BlogPostScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  excerpt: 'excerpt',
+  contentMarkdown: 'contentMarkdown',
+  contentHtml: 'contentHtml',
+  searchDocument: 'searchDocument',
+  coverImage: 'coverImage',
+  coverImageAlt: 'coverImageAlt',
+  coverImageWidth: 'coverImageWidth',
+  coverImageHeight: 'coverImageHeight',
+  readingTime: 'readingTime',
+  wordCount: 'wordCount',
+  version: 'version',
+  publishedVersion: 'publishedVersion',
+  featuredUntil: 'featuredUntil',
+  authorProfileId: 'authorProfileId',
+  categoryId: 'categoryId',
+  relatedInstituteId: 'relatedInstituteId',
+  brandId: 'brandId',
+  status: 'status',
+  visibility: 'visibility',
+  rejectionReason: 'rejectionReason',
+  reviewedById: 'reviewedById',
+  publishedById: 'publishedById',
+  lastEditedById: 'lastEditedById',
+  submittedAt: 'submittedAt',
+  reviewedAt: 'reviewedAt',
+  publishedAt: 'publishedAt',
+  scheduledAt: 'scheduledAt',
+  deletedAt: 'deletedAt',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  focusKeyword: 'focusKeyword',
+  tableOfContents: 'tableOfContents',
+  canonicalUrl: 'canonicalUrl',
+  robotsIndex: 'robotsIndex',
+  robotsFollow: 'robotsFollow',
+  ogImage: 'ogImage',
+  viewCount: 'viewCount',
+  likeCount: 'likeCount',
+  commentCount: 'commentCount',
+  bookmarkCount: 'bookmarkCount',
+  isFeatured: 'isFeatured',
+  featuredOrder: 'featuredOrder',
+  isPinned: 'isPinned',
+  allowComments: 'allowComments',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogPostScalarFieldEnum = (typeof BlogPostScalarFieldEnum)[keyof typeof BlogPostScalarFieldEnum]
+
+
+export const BlogSlugHistoryScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  oldSlug: 'oldSlug',
+  createdAt: 'createdAt'
+} as const
+
+export type BlogSlugHistoryScalarFieldEnum = (typeof BlogSlugHistoryScalarFieldEnum)[keyof typeof BlogSlugHistoryScalarFieldEnum]
+
+
+export const BlogRevisionScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  version: 'version',
+  coverImage: 'coverImage',
+  title: 'title',
+  excerpt: 'excerpt',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  contentMarkdown: 'contentMarkdown',
+  contentHtml: 'contentHtml',
+  createdById: 'createdById',
+  createdAt: 'createdAt'
+} as const
+
+export type BlogRevisionScalarFieldEnum = (typeof BlogRevisionScalarFieldEnum)[keyof typeof BlogRevisionScalarFieldEnum]
+
+
+export const BlogViewScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  userId: 'userId',
+  ipHash: 'ipHash',
+  sessionId: 'sessionId',
+  deviceType: 'deviceType',
+  browser: 'browser',
+  operatingSystem: 'operatingSystem',
+  country: 'country',
+  referrer: 'referrer',
+  utmSource: 'utmSource',
+  utmMedium: 'utmMedium',
+  utmCampaign: 'utmCampaign',
+  viewedAt: 'viewedAt'
+} as const
+
+export type BlogViewScalarFieldEnum = (typeof BlogViewScalarFieldEnum)[keyof typeof BlogViewScalarFieldEnum]
+
+
+export const BlogBookmarkScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  postId: 'postId',
+  createdAt: 'createdAt'
+} as const
+
+export type BlogBookmarkScalarFieldEnum = (typeof BlogBookmarkScalarFieldEnum)[keyof typeof BlogBookmarkScalarFieldEnum]
+
+
+export const BlogAuthorFollowerScalarFieldEnum = {
+  id: 'id',
+  authorProfileId: 'authorProfileId',
+  userId: 'userId',
+  createdAt: 'createdAt'
+} as const
+
+export type BlogAuthorFollowerScalarFieldEnum = (typeof BlogAuthorFollowerScalarFieldEnum)[keyof typeof BlogAuthorFollowerScalarFieldEnum]
+
+
+export const BlogSubscriberScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  isVerified: 'isVerified',
+  isActive: 'isActive',
+  verificationToken: 'verificationToken',
+  unsubscribeToken: 'unsubscribeToken',
+  verifiedAt: 'verifiedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type BlogSubscriberScalarFieldEnum = (typeof BlogSubscriberScalarFieldEnum)[keyof typeof BlogSubscriberScalarFieldEnum]
+
+
+export const BlogReportScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  userId: 'userId',
+  reason: 'reason',
+  message: 'message',
+  status: 'status',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt',
+  resolvedById: 'resolvedById'
+} as const
+
+export type BlogReportScalarFieldEnum = (typeof BlogReportScalarFieldEnum)[keyof typeof BlogReportScalarFieldEnum]
+
+
+export const BlogPostTagScalarFieldEnum = {
+  postId: 'postId',
+  tagId: 'tagId'
+} as const
+
+export type BlogPostTagScalarFieldEnum = (typeof BlogPostTagScalarFieldEnum)[keyof typeof BlogPostTagScalarFieldEnum]
+
+
+export const BlogCommentScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  userId: 'userId',
+  parentId: 'parentId',
+  content: 'content',
+  status: 'status',
+  isEdited: 'isEdited',
+  editedAt: 'editedAt',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogCommentScalarFieldEnum = (typeof BlogCommentScalarFieldEnum)[keyof typeof BlogCommentScalarFieldEnum]
+
+
+export const BlogReactionScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  userId: 'userId',
+  type: 'type',
+  createdAt: 'createdAt'
+} as const
+
+export type BlogReactionScalarFieldEnum = (typeof BlogReactionScalarFieldEnum)[keyof typeof BlogReactionScalarFieldEnum]
+
+
+export const BlogFAQScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  question: 'question',
+  answer: 'answer',
+  order: 'order'
+} as const
+
+export type BlogFAQScalarFieldEnum = (typeof BlogFAQScalarFieldEnum)[keyof typeof BlogFAQScalarFieldEnum]
+
+
+export const BlogBrandScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  slug: 'slug',
+  bio: 'bio',
+  avatarUrl: 'avatarUrl',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BlogBrandScalarFieldEnum = (typeof BlogBrandScalarFieldEnum)[keyof typeof BlogBrandScalarFieldEnum]
 
 
 export const SortOrder = {

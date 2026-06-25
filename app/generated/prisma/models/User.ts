@@ -39,6 +39,7 @@ export type UserMinAggregateOutputType = {
   createdAt: Date | null
   updatedAt: Date | null
   canAddInstitute: boolean | null
+  canWriteBlogs: boolean | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -56,6 +57,7 @@ export type UserMaxAggregateOutputType = {
   createdAt: Date | null
   updatedAt: Date | null
   canAddInstitute: boolean | null
+  canWriteBlogs: boolean | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -73,6 +75,7 @@ export type UserCountAggregateOutputType = {
   createdAt: number
   updatedAt: number
   canAddInstitute: number
+  canWriteBlogs: number
   _all: number
 }
 
@@ -92,6 +95,7 @@ export type UserMinAggregateInputType = {
   createdAt?: true
   updatedAt?: true
   canAddInstitute?: true
+  canWriteBlogs?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -109,6 +113,7 @@ export type UserMaxAggregateInputType = {
   createdAt?: true
   updatedAt?: true
   canAddInstitute?: true
+  canWriteBlogs?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -126,6 +131,7 @@ export type UserCountAggregateInputType = {
   createdAt?: true
   updatedAt?: true
   canAddInstitute?: true
+  canWriteBlogs?: true
   _all?: true
 }
 
@@ -216,6 +222,7 @@ export type UserGroupByOutputType = {
   createdAt: Date
   updatedAt: Date
   canAddInstitute: boolean
+  canWriteBlogs: boolean
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -254,6 +261,7 @@ export type UserWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   canAddInstitute?: Prisma.BoolFilter<"User"> | boolean
+  canWriteBlogs?: Prisma.BoolFilter<"User"> | boolean
   managedInstitutes?: Prisma.InstituteManagerListRelationFilter
   reviews?: Prisma.ReviewListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
@@ -270,6 +278,18 @@ export type UserWhereInput = {
   viewHistory?: Prisma.UserHistoryListRelationFilter
   shortlisted?: Prisma.UserShortlistListRelationFilter
   distributionLogs?: Prisma.LeadDistributionLogListRelationFilter
+  blogAuthorProfile?: Prisma.XOR<Prisma.BlogAuthorProfileNullableScalarRelationFilter, Prisma.BlogAuthorProfileWhereInput> | null
+  blogComments?: Prisma.BlogCommentListRelationFilter
+  blogReactions?: Prisma.BlogReactionListRelationFilter
+  blogViews?: Prisma.BlogViewListRelationFilter
+  blogBookmarks?: Prisma.BlogBookmarkListRelationFilter
+  followedAuthors?: Prisma.BlogAuthorFollowerListRelationFilter
+  reviewedPosts?: Prisma.BlogPostListRelationFilter
+  publishedPosts?: Prisma.BlogPostListRelationFilter
+  editedPosts?: Prisma.BlogPostListRelationFilter
+  blogRevisions?: Prisma.BlogRevisionListRelationFilter
+  blogReports?: Prisma.BlogReportListRelationFilter
+  resolvedBlogReports?: Prisma.BlogReportListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -287,6 +307,7 @@ export type UserOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   canAddInstitute?: Prisma.SortOrder
+  canWriteBlogs?: Prisma.SortOrder
   managedInstitutes?: Prisma.InstituteManagerOrderByRelationAggregateInput
   reviews?: Prisma.ReviewOrderByRelationAggregateInput
   accounts?: Prisma.AccountOrderByRelationAggregateInput
@@ -303,6 +324,18 @@ export type UserOrderByWithRelationInput = {
   viewHistory?: Prisma.UserHistoryOrderByRelationAggregateInput
   shortlisted?: Prisma.UserShortlistOrderByRelationAggregateInput
   distributionLogs?: Prisma.LeadDistributionLogOrderByRelationAggregateInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileOrderByWithRelationInput
+  blogComments?: Prisma.BlogCommentOrderByRelationAggregateInput
+  blogReactions?: Prisma.BlogReactionOrderByRelationAggregateInput
+  blogViews?: Prisma.BlogViewOrderByRelationAggregateInput
+  blogBookmarks?: Prisma.BlogBookmarkOrderByRelationAggregateInput
+  followedAuthors?: Prisma.BlogAuthorFollowerOrderByRelationAggregateInput
+  reviewedPosts?: Prisma.BlogPostOrderByRelationAggregateInput
+  publishedPosts?: Prisma.BlogPostOrderByRelationAggregateInput
+  editedPosts?: Prisma.BlogPostOrderByRelationAggregateInput
+  blogRevisions?: Prisma.BlogRevisionOrderByRelationAggregateInput
+  blogReports?: Prisma.BlogReportOrderByRelationAggregateInput
+  resolvedBlogReports?: Prisma.BlogReportOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -323,6 +356,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   canAddInstitute?: Prisma.BoolFilter<"User"> | boolean
+  canWriteBlogs?: Prisma.BoolFilter<"User"> | boolean
   managedInstitutes?: Prisma.InstituteManagerListRelationFilter
   reviews?: Prisma.ReviewListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
@@ -339,6 +373,18 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   viewHistory?: Prisma.UserHistoryListRelationFilter
   shortlisted?: Prisma.UserShortlistListRelationFilter
   distributionLogs?: Prisma.LeadDistributionLogListRelationFilter
+  blogAuthorProfile?: Prisma.XOR<Prisma.BlogAuthorProfileNullableScalarRelationFilter, Prisma.BlogAuthorProfileWhereInput> | null
+  blogComments?: Prisma.BlogCommentListRelationFilter
+  blogReactions?: Prisma.BlogReactionListRelationFilter
+  blogViews?: Prisma.BlogViewListRelationFilter
+  blogBookmarks?: Prisma.BlogBookmarkListRelationFilter
+  followedAuthors?: Prisma.BlogAuthorFollowerListRelationFilter
+  reviewedPosts?: Prisma.BlogPostListRelationFilter
+  publishedPosts?: Prisma.BlogPostListRelationFilter
+  editedPosts?: Prisma.BlogPostListRelationFilter
+  blogRevisions?: Prisma.BlogRevisionListRelationFilter
+  blogReports?: Prisma.BlogReportListRelationFilter
+  resolvedBlogReports?: Prisma.BlogReportListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -356,6 +402,7 @@ export type UserOrderByWithAggregationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   canAddInstitute?: Prisma.SortOrder
+  canWriteBlogs?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -379,6 +426,7 @@ export type UserScalarWhereWithAggregatesInput = {
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   canAddInstitute?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
+  canWriteBlogs?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
 }
 
 export type UserCreateInput = {
@@ -396,6 +444,7 @@ export type UserCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -412,6 +461,18 @@ export type UserCreateInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -429,6 +490,7 @@ export type UserUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -445,6 +507,18 @@ export type UserUncheckedCreateInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUpdateInput = {
@@ -462,6 +536,7 @@ export type UserUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -478,6 +553,18 @@ export type UserUpdateInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -495,6 +582,7 @@ export type UserUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -511,6 +599,18 @@ export type UserUncheckedUpdateInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -528,6 +628,7 @@ export type UserCreateManyInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
 }
 
 export type UserUpdateManyMutationInput = {
@@ -545,6 +646,7 @@ export type UserUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -562,6 +664,7 @@ export type UserUncheckedUpdateManyInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type UserCountOrderByAggregateInput = {
@@ -579,6 +682,7 @@ export type UserCountOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   canAddInstitute?: Prisma.SortOrder
+  canWriteBlogs?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
@@ -596,6 +700,7 @@ export type UserMaxOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   canAddInstitute?: Prisma.SortOrder
+  canWriteBlogs?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -613,6 +718,7 @@ export type UserMinOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   canAddInstitute?: Prisma.SortOrder
+  canWriteBlogs?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -879,6 +985,184 @@ export type UserUpdateOneRequiredWithoutDistributionLogsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutDistributionLogsInput, Prisma.UserUpdateWithoutDistributionLogsInput>, Prisma.UserUncheckedUpdateWithoutDistributionLogsInput>
 }
 
+export type UserCreateNestedOneWithoutBlogAuthorProfileInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogAuthorProfileInput, Prisma.UserUncheckedCreateWithoutBlogAuthorProfileInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogAuthorProfileInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBlogAuthorProfileNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogAuthorProfileInput, Prisma.UserUncheckedCreateWithoutBlogAuthorProfileInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogAuthorProfileInput
+  upsert?: Prisma.UserUpsertWithoutBlogAuthorProfileInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogAuthorProfileInput, Prisma.UserUpdateWithoutBlogAuthorProfileInput>, Prisma.UserUncheckedUpdateWithoutBlogAuthorProfileInput>
+}
+
+export type UserCreateNestedOneWithoutReviewedPostsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReviewedPostsInput, Prisma.UserUncheckedCreateWithoutReviewedPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewedPostsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutPublishedPostsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPublishedPostsInput, Prisma.UserUncheckedCreateWithoutPublishedPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPublishedPostsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutEditedPostsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutEditedPostsInput, Prisma.UserUncheckedCreateWithoutEditedPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutEditedPostsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutReviewedPostsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReviewedPostsInput, Prisma.UserUncheckedCreateWithoutReviewedPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewedPostsInput
+  upsert?: Prisma.UserUpsertWithoutReviewedPostsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReviewedPostsInput, Prisma.UserUpdateWithoutReviewedPostsInput>, Prisma.UserUncheckedUpdateWithoutReviewedPostsInput>
+}
+
+export type UserUpdateOneWithoutPublishedPostsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPublishedPostsInput, Prisma.UserUncheckedCreateWithoutPublishedPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPublishedPostsInput
+  upsert?: Prisma.UserUpsertWithoutPublishedPostsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPublishedPostsInput, Prisma.UserUpdateWithoutPublishedPostsInput>, Prisma.UserUncheckedUpdateWithoutPublishedPostsInput>
+}
+
+export type UserUpdateOneWithoutEditedPostsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutEditedPostsInput, Prisma.UserUncheckedCreateWithoutEditedPostsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutEditedPostsInput
+  upsert?: Prisma.UserUpsertWithoutEditedPostsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutEditedPostsInput, Prisma.UserUpdateWithoutEditedPostsInput>, Prisma.UserUncheckedUpdateWithoutEditedPostsInput>
+}
+
+export type UserCreateNestedOneWithoutBlogRevisionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogRevisionsInput, Prisma.UserUncheckedCreateWithoutBlogRevisionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogRevisionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBlogRevisionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogRevisionsInput, Prisma.UserUncheckedCreateWithoutBlogRevisionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogRevisionsInput
+  upsert?: Prisma.UserUpsertWithoutBlogRevisionsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogRevisionsInput, Prisma.UserUpdateWithoutBlogRevisionsInput>, Prisma.UserUncheckedUpdateWithoutBlogRevisionsInput>
+}
+
+export type UserCreateNestedOneWithoutBlogViewsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogViewsInput, Prisma.UserUncheckedCreateWithoutBlogViewsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogViewsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutBlogViewsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogViewsInput, Prisma.UserUncheckedCreateWithoutBlogViewsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogViewsInput
+  upsert?: Prisma.UserUpsertWithoutBlogViewsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogViewsInput, Prisma.UserUpdateWithoutBlogViewsInput>, Prisma.UserUncheckedUpdateWithoutBlogViewsInput>
+}
+
+export type UserCreateNestedOneWithoutBlogBookmarksInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogBookmarksInput, Prisma.UserUncheckedCreateWithoutBlogBookmarksInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogBookmarksInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBlogBookmarksNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogBookmarksInput, Prisma.UserUncheckedCreateWithoutBlogBookmarksInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogBookmarksInput
+  upsert?: Prisma.UserUpsertWithoutBlogBookmarksInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogBookmarksInput, Prisma.UserUpdateWithoutBlogBookmarksInput>, Prisma.UserUncheckedUpdateWithoutBlogBookmarksInput>
+}
+
+export type UserCreateNestedOneWithoutFollowedAuthorsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFollowedAuthorsInput, Prisma.UserUncheckedCreateWithoutFollowedAuthorsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFollowedAuthorsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutFollowedAuthorsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFollowedAuthorsInput, Prisma.UserUncheckedCreateWithoutFollowedAuthorsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFollowedAuthorsInput
+  upsert?: Prisma.UserUpsertWithoutFollowedAuthorsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFollowedAuthorsInput, Prisma.UserUpdateWithoutFollowedAuthorsInput>, Prisma.UserUncheckedUpdateWithoutFollowedAuthorsInput>
+}
+
+export type UserCreateNestedOneWithoutResolvedBlogReportsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutResolvedBlogReportsInput, Prisma.UserUncheckedCreateWithoutResolvedBlogReportsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutResolvedBlogReportsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutBlogReportsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogReportsInput, Prisma.UserUncheckedCreateWithoutBlogReportsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogReportsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutResolvedBlogReportsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutResolvedBlogReportsInput, Prisma.UserUncheckedCreateWithoutResolvedBlogReportsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutResolvedBlogReportsInput
+  upsert?: Prisma.UserUpsertWithoutResolvedBlogReportsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutResolvedBlogReportsInput, Prisma.UserUpdateWithoutResolvedBlogReportsInput>, Prisma.UserUncheckedUpdateWithoutResolvedBlogReportsInput>
+}
+
+export type UserUpdateOneRequiredWithoutBlogReportsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogReportsInput, Prisma.UserUncheckedCreateWithoutBlogReportsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogReportsInput
+  upsert?: Prisma.UserUpsertWithoutBlogReportsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogReportsInput, Prisma.UserUpdateWithoutBlogReportsInput>, Prisma.UserUncheckedUpdateWithoutBlogReportsInput>
+}
+
+export type UserCreateNestedOneWithoutBlogCommentsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogCommentsInput, Prisma.UserUncheckedCreateWithoutBlogCommentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogCommentsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBlogCommentsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogCommentsInput, Prisma.UserUncheckedCreateWithoutBlogCommentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogCommentsInput
+  upsert?: Prisma.UserUpsertWithoutBlogCommentsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogCommentsInput, Prisma.UserUpdateWithoutBlogCommentsInput>, Prisma.UserUncheckedUpdateWithoutBlogCommentsInput>
+}
+
+export type UserCreateNestedOneWithoutBlogReactionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogReactionsInput, Prisma.UserUncheckedCreateWithoutBlogReactionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogReactionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBlogReactionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBlogReactionsInput, Prisma.UserUncheckedCreateWithoutBlogReactionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBlogReactionsInput
+  upsert?: Prisma.UserUpsertWithoutBlogReactionsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBlogReactionsInput, Prisma.UserUpdateWithoutBlogReactionsInput>, Prisma.UserUncheckedUpdateWithoutBlogReactionsInput>
+}
+
 export type UserCreateWithoutSessionsInput = {
   id?: string
   name?: string | null
@@ -894,6 +1178,7 @@ export type UserCreateWithoutSessionsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -909,6 +1194,18 @@ export type UserCreateWithoutSessionsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -926,6 +1223,7 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -941,6 +1239,18 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -974,6 +1284,7 @@ export type UserUpdateWithoutSessionsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -989,6 +1300,18 @@ export type UserUpdateWithoutSessionsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -1006,6 +1329,7 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -1021,6 +1345,18 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutAccountsInput = {
@@ -1038,6 +1374,7 @@ export type UserCreateWithoutAccountsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
@@ -1053,6 +1390,18 @@ export type UserCreateWithoutAccountsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -1070,6 +1419,7 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
@@ -1085,6 +1435,18 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -1118,6 +1480,7 @@ export type UserUpdateWithoutAccountsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
@@ -1133,6 +1496,18 @@ export type UserUpdateWithoutAccountsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -1150,6 +1525,7 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
@@ -1165,6 +1541,18 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutManagedInstitutesInput = {
@@ -1182,6 +1570,7 @@ export type UserCreateWithoutManagedInstitutesInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
@@ -1197,6 +1586,18 @@ export type UserCreateWithoutManagedInstitutesInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutManagedInstitutesInput = {
@@ -1214,6 +1615,7 @@ export type UserUncheckedCreateWithoutManagedInstitutesInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
@@ -1229,6 +1631,18 @@ export type UserUncheckedCreateWithoutManagedInstitutesInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutManagedInstitutesInput = {
@@ -1262,6 +1676,7 @@ export type UserUpdateWithoutManagedInstitutesInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
@@ -1277,6 +1692,18 @@ export type UserUpdateWithoutManagedInstitutesInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutManagedInstitutesInput = {
@@ -1294,6 +1721,7 @@ export type UserUncheckedUpdateWithoutManagedInstitutesInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
@@ -1309,6 +1737,18 @@ export type UserUncheckedUpdateWithoutManagedInstitutesInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutReviewsInput = {
@@ -1326,6 +1766,7 @@ export type UserCreateWithoutReviewsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
@@ -1341,6 +1782,18 @@ export type UserCreateWithoutReviewsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutReviewsInput = {
@@ -1358,6 +1811,7 @@ export type UserUncheckedCreateWithoutReviewsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
@@ -1373,6 +1827,18 @@ export type UserUncheckedCreateWithoutReviewsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutReviewsInput = {
@@ -1406,6 +1872,7 @@ export type UserUpdateWithoutReviewsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
@@ -1421,6 +1888,18 @@ export type UserUpdateWithoutReviewsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReviewsInput = {
@@ -1438,6 +1917,7 @@ export type UserUncheckedUpdateWithoutReviewsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
@@ -1453,6 +1933,18 @@ export type UserUncheckedUpdateWithoutReviewsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutClaimsInput = {
@@ -1470,6 +1962,7 @@ export type UserCreateWithoutClaimsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -1485,6 +1978,18 @@ export type UserCreateWithoutClaimsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutClaimsInput = {
@@ -1502,6 +2007,7 @@ export type UserUncheckedCreateWithoutClaimsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -1517,6 +2023,18 @@ export type UserUncheckedCreateWithoutClaimsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutClaimsInput = {
@@ -1550,6 +2068,7 @@ export type UserUpdateWithoutClaimsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -1565,6 +2084,18 @@ export type UserUpdateWithoutClaimsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutClaimsInput = {
@@ -1582,6 +2113,7 @@ export type UserUncheckedUpdateWithoutClaimsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -1597,6 +2129,18 @@ export type UserUncheckedUpdateWithoutClaimsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutShortlistedInput = {
@@ -1614,6 +2158,7 @@ export type UserCreateWithoutShortlistedInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -1629,6 +2174,18 @@ export type UserCreateWithoutShortlistedInput = {
   compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutShortlistedInput = {
@@ -1646,6 +2203,7 @@ export type UserUncheckedCreateWithoutShortlistedInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -1661,6 +2219,18 @@ export type UserUncheckedCreateWithoutShortlistedInput = {
   compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutShortlistedInput = {
@@ -1694,6 +2264,7 @@ export type UserUpdateWithoutShortlistedInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -1709,6 +2280,18 @@ export type UserUpdateWithoutShortlistedInput = {
   compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutShortlistedInput = {
@@ -1726,6 +2309,7 @@ export type UserUncheckedUpdateWithoutShortlistedInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -1741,6 +2325,18 @@ export type UserUncheckedUpdateWithoutShortlistedInput = {
   compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutViewHistoryInput = {
@@ -1758,6 +2354,7 @@ export type UserCreateWithoutViewHistoryInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -1773,6 +2370,18 @@ export type UserCreateWithoutViewHistoryInput = {
   compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutViewHistoryInput = {
@@ -1790,6 +2399,7 @@ export type UserUncheckedCreateWithoutViewHistoryInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -1805,6 +2415,18 @@ export type UserUncheckedCreateWithoutViewHistoryInput = {
   compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutViewHistoryInput = {
@@ -1838,6 +2460,7 @@ export type UserUpdateWithoutViewHistoryInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -1853,6 +2476,18 @@ export type UserUpdateWithoutViewHistoryInput = {
   compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutViewHistoryInput = {
@@ -1870,6 +2505,7 @@ export type UserUncheckedUpdateWithoutViewHistoryInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -1885,6 +2521,18 @@ export type UserUncheckedUpdateWithoutViewHistoryInput = {
   compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutInstituteRequestsInput = {
@@ -1902,6 +2550,7 @@ export type UserCreateWithoutInstituteRequestsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -1917,6 +2566,18 @@ export type UserCreateWithoutInstituteRequestsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutInstituteRequestsInput = {
@@ -1934,6 +2595,7 @@ export type UserUncheckedCreateWithoutInstituteRequestsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -1949,6 +2611,18 @@ export type UserUncheckedCreateWithoutInstituteRequestsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutInstituteRequestsInput = {
@@ -1982,6 +2656,7 @@ export type UserUpdateWithoutInstituteRequestsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -1997,6 +2672,18 @@ export type UserUpdateWithoutInstituteRequestsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutInstituteRequestsInput = {
@@ -2014,6 +2701,7 @@ export type UserUncheckedUpdateWithoutInstituteRequestsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2029,6 +2717,18 @@ export type UserUncheckedUpdateWithoutInstituteRequestsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutPaymentsInput = {
@@ -2046,6 +2746,7 @@ export type UserCreateWithoutPaymentsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2061,6 +2762,18 @@ export type UserCreateWithoutPaymentsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutPaymentsInput = {
@@ -2078,6 +2791,7 @@ export type UserUncheckedCreateWithoutPaymentsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2093,6 +2807,18 @@ export type UserUncheckedCreateWithoutPaymentsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutPaymentsInput = {
@@ -2126,6 +2852,7 @@ export type UserUpdateWithoutPaymentsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -2141,6 +2868,18 @@ export type UserUpdateWithoutPaymentsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPaymentsInput = {
@@ -2158,6 +2897,7 @@ export type UserUncheckedUpdateWithoutPaymentsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2173,6 +2913,18 @@ export type UserUncheckedUpdateWithoutPaymentsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutSalesAssignmentsInput = {
@@ -2190,6 +2942,7 @@ export type UserCreateWithoutSalesAssignmentsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2205,6 +2958,18 @@ export type UserCreateWithoutSalesAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutSalesAssignmentsInput = {
@@ -2222,6 +2987,7 @@ export type UserUncheckedCreateWithoutSalesAssignmentsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2237,6 +3003,18 @@ export type UserUncheckedCreateWithoutSalesAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutSalesAssignmentsInput = {
@@ -2270,6 +3048,7 @@ export type UserUpdateWithoutSalesAssignmentsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -2285,6 +3064,18 @@ export type UserUpdateWithoutSalesAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSalesAssignmentsInput = {
@@ -2302,6 +3093,7 @@ export type UserUncheckedUpdateWithoutSalesAssignmentsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2317,6 +3109,18 @@ export type UserUncheckedUpdateWithoutSalesAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutSalesCategoryAssignmentsInput = {
@@ -2334,6 +3138,7 @@ export type UserCreateWithoutSalesCategoryAssignmentsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2349,6 +3154,18 @@ export type UserCreateWithoutSalesCategoryAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutSalesCategoryAssignmentsInput = {
@@ -2366,6 +3183,7 @@ export type UserUncheckedCreateWithoutSalesCategoryAssignmentsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2381,6 +3199,18 @@ export type UserUncheckedCreateWithoutSalesCategoryAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutSalesCategoryAssignmentsInput = {
@@ -2414,6 +3244,7 @@ export type UserUpdateWithoutSalesCategoryAssignmentsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -2429,6 +3260,18 @@ export type UserUpdateWithoutSalesCategoryAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSalesCategoryAssignmentsInput = {
@@ -2446,6 +3289,7 @@ export type UserUncheckedUpdateWithoutSalesCategoryAssignmentsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2461,6 +3305,18 @@ export type UserUncheckedUpdateWithoutSalesCategoryAssignmentsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutAdminNotificationsInput = {
@@ -2478,6 +3334,7 @@ export type UserCreateWithoutAdminNotificationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2493,6 +3350,18 @@ export type UserCreateWithoutAdminNotificationsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutAdminNotificationsInput = {
@@ -2510,6 +3379,7 @@ export type UserUncheckedCreateWithoutAdminNotificationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2525,6 +3395,18 @@ export type UserUncheckedCreateWithoutAdminNotificationsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutAdminNotificationsInput = {
@@ -2558,6 +3440,7 @@ export type UserUpdateWithoutAdminNotificationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -2573,6 +3456,18 @@ export type UserUpdateWithoutAdminNotificationsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAdminNotificationsInput = {
@@ -2590,6 +3485,7 @@ export type UserUncheckedUpdateWithoutAdminNotificationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2605,6 +3501,18 @@ export type UserUncheckedUpdateWithoutAdminNotificationsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutCompareListsInput = {
@@ -2622,6 +3530,7 @@ export type UserCreateWithoutCompareListsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2637,6 +3546,18 @@ export type UserCreateWithoutCompareListsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutCompareListsInput = {
@@ -2654,6 +3575,7 @@ export type UserUncheckedCreateWithoutCompareListsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2669,6 +3591,18 @@ export type UserUncheckedCreateWithoutCompareListsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutCompareListsInput = {
@@ -2702,6 +3636,7 @@ export type UserUpdateWithoutCompareListsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -2717,6 +3652,18 @@ export type UserUpdateWithoutCompareListsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCompareListsInput = {
@@ -2734,6 +3681,7 @@ export type UserUncheckedUpdateWithoutCompareListsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2749,6 +3697,18 @@ export type UserUncheckedUpdateWithoutCompareListsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutCommunityQuestionsInput = {
@@ -2766,6 +3726,7 @@ export type UserCreateWithoutCommunityQuestionsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2781,6 +3742,18 @@ export type UserCreateWithoutCommunityQuestionsInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutCommunityQuestionsInput = {
@@ -2798,6 +3771,7 @@ export type UserUncheckedCreateWithoutCommunityQuestionsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2813,6 +3787,18 @@ export type UserUncheckedCreateWithoutCommunityQuestionsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutCommunityQuestionsInput = {
@@ -2846,6 +3832,7 @@ export type UserUpdateWithoutCommunityQuestionsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -2861,6 +3848,18 @@ export type UserUpdateWithoutCommunityQuestionsInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCommunityQuestionsInput = {
@@ -2878,6 +3877,7 @@ export type UserUncheckedUpdateWithoutCommunityQuestionsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -2893,6 +3893,18 @@ export type UserUncheckedUpdateWithoutCommunityQuestionsInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutCommunityAnswersInput = {
@@ -2910,6 +3922,7 @@ export type UserCreateWithoutCommunityAnswersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -2925,6 +3938,18 @@ export type UserCreateWithoutCommunityAnswersInput = {
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutCommunityAnswersInput = {
@@ -2942,6 +3967,7 @@ export type UserUncheckedCreateWithoutCommunityAnswersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -2957,6 +3983,18 @@ export type UserUncheckedCreateWithoutCommunityAnswersInput = {
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutCommunityAnswersInput = {
@@ -2990,6 +4028,7 @@ export type UserUpdateWithoutCommunityAnswersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -3005,6 +4044,18 @@ export type UserUpdateWithoutCommunityAnswersInput = {
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCommunityAnswersInput = {
@@ -3022,6 +4073,7 @@ export type UserUncheckedUpdateWithoutCommunityAnswersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -3037,6 +4089,18 @@ export type UserUncheckedUpdateWithoutCommunityAnswersInput = {
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
   distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserCreateWithoutDistributionLogsInput = {
@@ -3054,6 +4118,7 @@ export type UserCreateWithoutDistributionLogsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
@@ -3069,6 +4134,18 @@ export type UserCreateWithoutDistributionLogsInput = {
   compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
   viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserUncheckedCreateWithoutDistributionLogsInput = {
@@ -3086,6 +4163,7 @@ export type UserUncheckedCreateWithoutDistributionLogsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
   reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
@@ -3101,6 +4179,18 @@ export type UserUncheckedCreateWithoutDistributionLogsInput = {
   compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
   viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
   shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
 }
 
 export type UserCreateOrConnectWithoutDistributionLogsInput = {
@@ -3134,6 +4224,7 @@ export type UserUpdateWithoutDistributionLogsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
@@ -3149,6 +4240,18 @@ export type UserUpdateWithoutDistributionLogsInput = {
   compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
   viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDistributionLogsInput = {
@@ -3166,6 +4269,7 @@ export type UserUncheckedUpdateWithoutDistributionLogsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
   managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
   reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
@@ -3181,6 +4285,2370 @@ export type UserUncheckedUpdateWithoutDistributionLogsInput = {
   compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
   viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
   shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutBlogAuthorProfileInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogAuthorProfileInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogAuthorProfileInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogAuthorProfileInput, Prisma.UserUncheckedCreateWithoutBlogAuthorProfileInput>
+}
+
+export type UserUpsertWithoutBlogAuthorProfileInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogAuthorProfileInput, Prisma.UserUncheckedUpdateWithoutBlogAuthorProfileInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogAuthorProfileInput, Prisma.UserUncheckedCreateWithoutBlogAuthorProfileInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogAuthorProfileInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogAuthorProfileInput, Prisma.UserUncheckedUpdateWithoutBlogAuthorProfileInput>
+}
+
+export type UserUpdateWithoutBlogAuthorProfileInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogAuthorProfileInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutReviewedPostsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutReviewedPostsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutReviewedPostsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutReviewedPostsInput, Prisma.UserUncheckedCreateWithoutReviewedPostsInput>
+}
+
+export type UserCreateWithoutPublishedPostsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutPublishedPostsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutPublishedPostsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPublishedPostsInput, Prisma.UserUncheckedCreateWithoutPublishedPostsInput>
+}
+
+export type UserCreateWithoutEditedPostsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutEditedPostsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutEditedPostsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutEditedPostsInput, Prisma.UserUncheckedCreateWithoutEditedPostsInput>
+}
+
+export type UserUpsertWithoutReviewedPostsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutReviewedPostsInput, Prisma.UserUncheckedUpdateWithoutReviewedPostsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutReviewedPostsInput, Prisma.UserUncheckedCreateWithoutReviewedPostsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutReviewedPostsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutReviewedPostsInput, Prisma.UserUncheckedUpdateWithoutReviewedPostsInput>
+}
+
+export type UserUpdateWithoutReviewedPostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutReviewedPostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUpsertWithoutPublishedPostsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPublishedPostsInput, Prisma.UserUncheckedUpdateWithoutPublishedPostsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPublishedPostsInput, Prisma.UserUncheckedCreateWithoutPublishedPostsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPublishedPostsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPublishedPostsInput, Prisma.UserUncheckedUpdateWithoutPublishedPostsInput>
+}
+
+export type UserUpdateWithoutPublishedPostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPublishedPostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUpsertWithoutEditedPostsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutEditedPostsInput, Prisma.UserUncheckedUpdateWithoutEditedPostsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutEditedPostsInput, Prisma.UserUncheckedCreateWithoutEditedPostsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutEditedPostsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutEditedPostsInput, Prisma.UserUncheckedUpdateWithoutEditedPostsInput>
+}
+
+export type UserUpdateWithoutEditedPostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutEditedPostsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutBlogRevisionsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogRevisionsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogRevisionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogRevisionsInput, Prisma.UserUncheckedCreateWithoutBlogRevisionsInput>
+}
+
+export type UserUpsertWithoutBlogRevisionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogRevisionsInput, Prisma.UserUncheckedUpdateWithoutBlogRevisionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogRevisionsInput, Prisma.UserUncheckedCreateWithoutBlogRevisionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogRevisionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogRevisionsInput, Prisma.UserUncheckedUpdateWithoutBlogRevisionsInput>
+}
+
+export type UserUpdateWithoutBlogRevisionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogRevisionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutBlogViewsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogViewsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogViewsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogViewsInput, Prisma.UserUncheckedCreateWithoutBlogViewsInput>
+}
+
+export type UserUpsertWithoutBlogViewsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogViewsInput, Prisma.UserUncheckedUpdateWithoutBlogViewsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogViewsInput, Prisma.UserUncheckedCreateWithoutBlogViewsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogViewsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogViewsInput, Prisma.UserUncheckedUpdateWithoutBlogViewsInput>
+}
+
+export type UserUpdateWithoutBlogViewsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogViewsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutBlogBookmarksInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogBookmarksInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogBookmarksInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogBookmarksInput, Prisma.UserUncheckedCreateWithoutBlogBookmarksInput>
+}
+
+export type UserUpsertWithoutBlogBookmarksInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogBookmarksInput, Prisma.UserUncheckedUpdateWithoutBlogBookmarksInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogBookmarksInput, Prisma.UserUncheckedCreateWithoutBlogBookmarksInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogBookmarksInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogBookmarksInput, Prisma.UserUncheckedUpdateWithoutBlogBookmarksInput>
+}
+
+export type UserUpdateWithoutBlogBookmarksInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogBookmarksInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutFollowedAuthorsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutFollowedAuthorsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutFollowedAuthorsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFollowedAuthorsInput, Prisma.UserUncheckedCreateWithoutFollowedAuthorsInput>
+}
+
+export type UserUpsertWithoutFollowedAuthorsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFollowedAuthorsInput, Prisma.UserUncheckedUpdateWithoutFollowedAuthorsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFollowedAuthorsInput, Prisma.UserUncheckedCreateWithoutFollowedAuthorsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFollowedAuthorsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFollowedAuthorsInput, Prisma.UserUncheckedUpdateWithoutFollowedAuthorsInput>
+}
+
+export type UserUpdateWithoutFollowedAuthorsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFollowedAuthorsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutResolvedBlogReportsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutResolvedBlogReportsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutResolvedBlogReportsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutResolvedBlogReportsInput, Prisma.UserUncheckedCreateWithoutResolvedBlogReportsInput>
+}
+
+export type UserCreateWithoutBlogReportsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogReportsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogReportsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogReportsInput, Prisma.UserUncheckedCreateWithoutBlogReportsInput>
+}
+
+export type UserUpsertWithoutResolvedBlogReportsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutResolvedBlogReportsInput, Prisma.UserUncheckedUpdateWithoutResolvedBlogReportsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutResolvedBlogReportsInput, Prisma.UserUncheckedCreateWithoutResolvedBlogReportsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutResolvedBlogReportsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutResolvedBlogReportsInput, Prisma.UserUncheckedUpdateWithoutResolvedBlogReportsInput>
+}
+
+export type UserUpdateWithoutResolvedBlogReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutResolvedBlogReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserUpsertWithoutBlogReportsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogReportsInput, Prisma.UserUncheckedUpdateWithoutBlogReportsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogReportsInput, Prisma.UserUncheckedCreateWithoutBlogReportsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogReportsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogReportsInput, Prisma.UserUncheckedUpdateWithoutBlogReportsInput>
+}
+
+export type UserUpdateWithoutBlogReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutBlogCommentsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogReactions?: Prisma.BlogReactionCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogCommentsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogReactions?: Prisma.BlogReactionUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogCommentsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogCommentsInput, Prisma.UserUncheckedCreateWithoutBlogCommentsInput>
+}
+
+export type UserUpsertWithoutBlogCommentsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogCommentsInput, Prisma.UserUncheckedUpdateWithoutBlogCommentsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogCommentsInput, Prisma.UserUncheckedCreateWithoutBlogCommentsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogCommentsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogCommentsInput, Prisma.UserUncheckedUpdateWithoutBlogCommentsInput>
+}
+
+export type UserUpdateWithoutBlogCommentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogCommentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogReactions?: Prisma.BlogReactionUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserCreateWithoutBlogReactionsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserUncheckedCreateWithoutBlogReactionsInput = {
+  id?: string
+  name?: string | null
+  email: string
+  phone?: string | null
+  passwordHash?: string | null
+  image?: string | null
+  role?: $Enums.Role
+  isActive?: boolean
+  emailVerified?: boolean
+  onboardingCompleted?: boolean
+  lastLoginAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  canAddInstitute?: boolean
+  canWriteBlogs?: boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedCreateNestedManyWithoutUserInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedCreateNestedManyWithoutUserInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedCreateNestedManyWithoutUserInput
+  claims?: Prisma.InstituteClaimUncheckedCreateNestedManyWithoutUserInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedCreateNestedManyWithoutUserInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedCreateNestedManyWithoutSalesManagerInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.SubscriptionPaymentUncheckedCreateNestedManyWithoutUserInput
+  compareLists?: Prisma.UserCompareListUncheckedCreateNestedManyWithoutUserInput
+  viewHistory?: Prisma.UserHistoryUncheckedCreateNestedManyWithoutUserInput
+  shortlisted?: Prisma.UserShortlistUncheckedCreateNestedManyWithoutUserInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedCreateNestedManyWithoutAdminInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedCreateNestedOneWithoutUserInput
+  blogComments?: Prisma.BlogCommentUncheckedCreateNestedManyWithoutUserInput
+  blogViews?: Prisma.BlogViewUncheckedCreateNestedManyWithoutUserInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedCreateNestedManyWithoutUserInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedCreateNestedManyWithoutUserInput
+  reviewedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutReviewedByInput
+  publishedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutPublishedByInput
+  editedPosts?: Prisma.BlogPostUncheckedCreateNestedManyWithoutLastEditedByInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedCreateNestedManyWithoutCreatedByInput
+  blogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutUserInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedCreateNestedManyWithoutResolvedByInput
+}
+
+export type UserCreateOrConnectWithoutBlogReactionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogReactionsInput, Prisma.UserUncheckedCreateWithoutBlogReactionsInput>
+}
+
+export type UserUpsertWithoutBlogReactionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBlogReactionsInput, Prisma.UserUncheckedUpdateWithoutBlogReactionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBlogReactionsInput, Prisma.UserUncheckedCreateWithoutBlogReactionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBlogReactionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBlogReactionsInput, Prisma.UserUncheckedUpdateWithoutBlogReactionsInput>
+}
+
+export type UserUpdateWithoutBlogReactionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUpdateManyWithoutResolvedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBlogReactionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  onboardingCompleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  canAddInstitute?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  canWriteBlogs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  managedInstitutes?: Prisma.InstituteManagerUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  adminNotifications?: Prisma.AdminNotificationUncheckedUpdateManyWithoutUserNestedInput
+  communityAnswers?: Prisma.CommunityAnswerUncheckedUpdateManyWithoutUserNestedInput
+  communityQuestions?: Prisma.CommunityQuestionUncheckedUpdateManyWithoutUserNestedInput
+  claims?: Prisma.InstituteClaimUncheckedUpdateManyWithoutUserNestedInput
+  instituteRequests?: Prisma.InstituteRequestUncheckedUpdateManyWithoutUserNestedInput
+  salesAssignments?: Prisma.SalesAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  salesCategoryAssignments?: Prisma.SalesCategoryAssignmentUncheckedUpdateManyWithoutSalesManagerNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.SubscriptionPaymentUncheckedUpdateManyWithoutUserNestedInput
+  compareLists?: Prisma.UserCompareListUncheckedUpdateManyWithoutUserNestedInput
+  viewHistory?: Prisma.UserHistoryUncheckedUpdateManyWithoutUserNestedInput
+  shortlisted?: Prisma.UserShortlistUncheckedUpdateManyWithoutUserNestedInput
+  distributionLogs?: Prisma.LeadDistributionLogUncheckedUpdateManyWithoutAdminNestedInput
+  blogAuthorProfile?: Prisma.BlogAuthorProfileUncheckedUpdateOneWithoutUserNestedInput
+  blogComments?: Prisma.BlogCommentUncheckedUpdateManyWithoutUserNestedInput
+  blogViews?: Prisma.BlogViewUncheckedUpdateManyWithoutUserNestedInput
+  blogBookmarks?: Prisma.BlogBookmarkUncheckedUpdateManyWithoutUserNestedInput
+  followedAuthors?: Prisma.BlogAuthorFollowerUncheckedUpdateManyWithoutUserNestedInput
+  reviewedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutReviewedByNestedInput
+  publishedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutPublishedByNestedInput
+  editedPosts?: Prisma.BlogPostUncheckedUpdateManyWithoutLastEditedByNestedInput
+  blogRevisions?: Prisma.BlogRevisionUncheckedUpdateManyWithoutCreatedByNestedInput
+  blogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutUserNestedInput
+  resolvedBlogReports?: Prisma.BlogReportUncheckedUpdateManyWithoutResolvedByNestedInput
 }
 
 
@@ -3205,6 +6673,17 @@ export type UserCountOutputType = {
   viewHistory: number
   shortlisted: number
   distributionLogs: number
+  blogComments: number
+  blogReactions: number
+  blogViews: number
+  blogBookmarks: number
+  followedAuthors: number
+  reviewedPosts: number
+  publishedPosts: number
+  editedPosts: number
+  blogRevisions: number
+  blogReports: number
+  resolvedBlogReports: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3224,6 +6703,17 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   viewHistory?: boolean | UserCountOutputTypeCountViewHistoryArgs
   shortlisted?: boolean | UserCountOutputTypeCountShortlistedArgs
   distributionLogs?: boolean | UserCountOutputTypeCountDistributionLogsArgs
+  blogComments?: boolean | UserCountOutputTypeCountBlogCommentsArgs
+  blogReactions?: boolean | UserCountOutputTypeCountBlogReactionsArgs
+  blogViews?: boolean | UserCountOutputTypeCountBlogViewsArgs
+  blogBookmarks?: boolean | UserCountOutputTypeCountBlogBookmarksArgs
+  followedAuthors?: boolean | UserCountOutputTypeCountFollowedAuthorsArgs
+  reviewedPosts?: boolean | UserCountOutputTypeCountReviewedPostsArgs
+  publishedPosts?: boolean | UserCountOutputTypeCountPublishedPostsArgs
+  editedPosts?: boolean | UserCountOutputTypeCountEditedPostsArgs
+  blogRevisions?: boolean | UserCountOutputTypeCountBlogRevisionsArgs
+  blogReports?: boolean | UserCountOutputTypeCountBlogReportsArgs
+  resolvedBlogReports?: boolean | UserCountOutputTypeCountResolvedBlogReportsArgs
 }
 
 /**
@@ -3348,6 +6838,83 @@ export type UserCountOutputTypeCountDistributionLogsArgs<ExtArgs extends runtime
   where?: Prisma.LeadDistributionLogWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBlogCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogCommentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBlogReactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogReactionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBlogViewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogViewWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBlogBookmarksArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogBookmarkWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFollowedAuthorsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogAuthorFollowerWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountReviewedPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogPostWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPublishedPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogPostWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountEditedPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogPostWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBlogRevisionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogRevisionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBlogReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogReportWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountResolvedBlogReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BlogReportWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -3364,6 +6931,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   createdAt?: boolean
   updatedAt?: boolean
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
   managedInstitutes?: boolean | Prisma.User$managedInstitutesArgs<ExtArgs>
   reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
@@ -3380,6 +6948,18 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   viewHistory?: boolean | Prisma.User$viewHistoryArgs<ExtArgs>
   shortlisted?: boolean | Prisma.User$shortlistedArgs<ExtArgs>
   distributionLogs?: boolean | Prisma.User$distributionLogsArgs<ExtArgs>
+  blogAuthorProfile?: boolean | Prisma.User$blogAuthorProfileArgs<ExtArgs>
+  blogComments?: boolean | Prisma.User$blogCommentsArgs<ExtArgs>
+  blogReactions?: boolean | Prisma.User$blogReactionsArgs<ExtArgs>
+  blogViews?: boolean | Prisma.User$blogViewsArgs<ExtArgs>
+  blogBookmarks?: boolean | Prisma.User$blogBookmarksArgs<ExtArgs>
+  followedAuthors?: boolean | Prisma.User$followedAuthorsArgs<ExtArgs>
+  reviewedPosts?: boolean | Prisma.User$reviewedPostsArgs<ExtArgs>
+  publishedPosts?: boolean | Prisma.User$publishedPostsArgs<ExtArgs>
+  editedPosts?: boolean | Prisma.User$editedPostsArgs<ExtArgs>
+  blogRevisions?: boolean | Prisma.User$blogRevisionsArgs<ExtArgs>
+  blogReports?: boolean | Prisma.User$blogReportsArgs<ExtArgs>
+  resolvedBlogReports?: boolean | Prisma.User$resolvedBlogReportsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -3398,6 +6978,7 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   createdAt?: boolean
   updatedAt?: boolean
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -3415,6 +6996,7 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   createdAt?: boolean
   updatedAt?: boolean
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -3432,9 +7014,10 @@ export type UserSelectScalar = {
   createdAt?: boolean
   updatedAt?: boolean
   canAddInstitute?: boolean
+  canWriteBlogs?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "passwordHash" | "image" | "role" | "isActive" | "emailVerified" | "onboardingCompleted" | "lastLoginAt" | "createdAt" | "updatedAt" | "canAddInstitute", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "passwordHash" | "image" | "role" | "isActive" | "emailVerified" | "onboardingCompleted" | "lastLoginAt" | "createdAt" | "updatedAt" | "canAddInstitute" | "canWriteBlogs", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   managedInstitutes?: boolean | Prisma.User$managedInstitutesArgs<ExtArgs>
   reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>
@@ -3452,6 +7035,18 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   viewHistory?: boolean | Prisma.User$viewHistoryArgs<ExtArgs>
   shortlisted?: boolean | Prisma.User$shortlistedArgs<ExtArgs>
   distributionLogs?: boolean | Prisma.User$distributionLogsArgs<ExtArgs>
+  blogAuthorProfile?: boolean | Prisma.User$blogAuthorProfileArgs<ExtArgs>
+  blogComments?: boolean | Prisma.User$blogCommentsArgs<ExtArgs>
+  blogReactions?: boolean | Prisma.User$blogReactionsArgs<ExtArgs>
+  blogViews?: boolean | Prisma.User$blogViewsArgs<ExtArgs>
+  blogBookmarks?: boolean | Prisma.User$blogBookmarksArgs<ExtArgs>
+  followedAuthors?: boolean | Prisma.User$followedAuthorsArgs<ExtArgs>
+  reviewedPosts?: boolean | Prisma.User$reviewedPostsArgs<ExtArgs>
+  publishedPosts?: boolean | Prisma.User$publishedPostsArgs<ExtArgs>
+  editedPosts?: boolean | Prisma.User$editedPostsArgs<ExtArgs>
+  blogRevisions?: boolean | Prisma.User$blogRevisionsArgs<ExtArgs>
+  blogReports?: boolean | Prisma.User$blogReportsArgs<ExtArgs>
+  resolvedBlogReports?: boolean | Prisma.User$resolvedBlogReportsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -3476,6 +7071,18 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     viewHistory: Prisma.$UserHistoryPayload<ExtArgs>[]
     shortlisted: Prisma.$UserShortlistPayload<ExtArgs>[]
     distributionLogs: Prisma.$LeadDistributionLogPayload<ExtArgs>[]
+    blogAuthorProfile: Prisma.$BlogAuthorProfilePayload<ExtArgs> | null
+    blogComments: Prisma.$BlogCommentPayload<ExtArgs>[]
+    blogReactions: Prisma.$BlogReactionPayload<ExtArgs>[]
+    blogViews: Prisma.$BlogViewPayload<ExtArgs>[]
+    blogBookmarks: Prisma.$BlogBookmarkPayload<ExtArgs>[]
+    followedAuthors: Prisma.$BlogAuthorFollowerPayload<ExtArgs>[]
+    reviewedPosts: Prisma.$BlogPostPayload<ExtArgs>[]
+    publishedPosts: Prisma.$BlogPostPayload<ExtArgs>[]
+    editedPosts: Prisma.$BlogPostPayload<ExtArgs>[]
+    blogRevisions: Prisma.$BlogRevisionPayload<ExtArgs>[]
+    blogReports: Prisma.$BlogReportPayload<ExtArgs>[]
+    resolvedBlogReports: Prisma.$BlogReportPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -3492,6 +7099,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     createdAt: Date
     updatedAt: Date
     canAddInstitute: boolean
+    canWriteBlogs: boolean
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -3902,6 +7510,18 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   viewHistory<T extends Prisma.User$viewHistoryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$viewHistoryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   shortlisted<T extends Prisma.User$shortlistedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$shortlistedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserShortlistPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   distributionLogs<T extends Prisma.User$distributionLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$distributionLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LeadDistributionLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  blogAuthorProfile<T extends Prisma.User$blogAuthorProfileArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogAuthorProfileArgs<ExtArgs>>): Prisma.Prisma__BlogAuthorProfileClient<runtime.Types.Result.GetResult<Prisma.$BlogAuthorProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  blogComments<T extends Prisma.User$blogCommentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogCommentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogCommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  blogReactions<T extends Prisma.User$blogReactionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogReactionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogReactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  blogViews<T extends Prisma.User$blogViewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogViewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogViewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  blogBookmarks<T extends Prisma.User$blogBookmarksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogBookmarksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogBookmarkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  followedAuthors<T extends Prisma.User$followedAuthorsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$followedAuthorsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogAuthorFollowerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reviewedPosts<T extends Prisma.User$reviewedPostsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewedPostsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogPostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  publishedPosts<T extends Prisma.User$publishedPostsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$publishedPostsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogPostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  editedPosts<T extends Prisma.User$editedPostsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$editedPostsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogPostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  blogRevisions<T extends Prisma.User$blogRevisionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogRevisionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogRevisionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  blogReports<T extends Prisma.User$blogReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$blogReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  resolvedBlogReports<T extends Prisma.User$resolvedBlogReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$resolvedBlogReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BlogReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3945,6 +7565,7 @@ export interface UserFieldRefs {
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly canAddInstitute: Prisma.FieldRef<"User", 'Boolean'>
+  readonly canWriteBlogs: Prisma.FieldRef<"User", 'Boolean'>
 }
     
 
@@ -4719,6 +8340,289 @@ export type User$distributionLogsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.LeadDistributionLogScalarFieldEnum | Prisma.LeadDistributionLogScalarFieldEnum[]
+}
+
+/**
+ * User.blogAuthorProfile
+ */
+export type User$blogAuthorProfileArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogAuthorProfile
+   */
+  select?: Prisma.BlogAuthorProfileSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogAuthorProfile
+   */
+  omit?: Prisma.BlogAuthorProfileOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogAuthorProfileInclude<ExtArgs> | null
+  where?: Prisma.BlogAuthorProfileWhereInput
+}
+
+/**
+ * User.blogComments
+ */
+export type User$blogCommentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogComment
+   */
+  select?: Prisma.BlogCommentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogComment
+   */
+  omit?: Prisma.BlogCommentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogCommentInclude<ExtArgs> | null
+  where?: Prisma.BlogCommentWhereInput
+  orderBy?: Prisma.BlogCommentOrderByWithRelationInput | Prisma.BlogCommentOrderByWithRelationInput[]
+  cursor?: Prisma.BlogCommentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogCommentScalarFieldEnum | Prisma.BlogCommentScalarFieldEnum[]
+}
+
+/**
+ * User.blogReactions
+ */
+export type User$blogReactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogReaction
+   */
+  select?: Prisma.BlogReactionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogReaction
+   */
+  omit?: Prisma.BlogReactionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogReactionInclude<ExtArgs> | null
+  where?: Prisma.BlogReactionWhereInput
+  orderBy?: Prisma.BlogReactionOrderByWithRelationInput | Prisma.BlogReactionOrderByWithRelationInput[]
+  cursor?: Prisma.BlogReactionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogReactionScalarFieldEnum | Prisma.BlogReactionScalarFieldEnum[]
+}
+
+/**
+ * User.blogViews
+ */
+export type User$blogViewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogView
+   */
+  select?: Prisma.BlogViewSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogView
+   */
+  omit?: Prisma.BlogViewOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogViewInclude<ExtArgs> | null
+  where?: Prisma.BlogViewWhereInput
+  orderBy?: Prisma.BlogViewOrderByWithRelationInput | Prisma.BlogViewOrderByWithRelationInput[]
+  cursor?: Prisma.BlogViewWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogViewScalarFieldEnum | Prisma.BlogViewScalarFieldEnum[]
+}
+
+/**
+ * User.blogBookmarks
+ */
+export type User$blogBookmarksArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogBookmark
+   */
+  select?: Prisma.BlogBookmarkSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogBookmark
+   */
+  omit?: Prisma.BlogBookmarkOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogBookmarkInclude<ExtArgs> | null
+  where?: Prisma.BlogBookmarkWhereInput
+  orderBy?: Prisma.BlogBookmarkOrderByWithRelationInput | Prisma.BlogBookmarkOrderByWithRelationInput[]
+  cursor?: Prisma.BlogBookmarkWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogBookmarkScalarFieldEnum | Prisma.BlogBookmarkScalarFieldEnum[]
+}
+
+/**
+ * User.followedAuthors
+ */
+export type User$followedAuthorsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogAuthorFollower
+   */
+  select?: Prisma.BlogAuthorFollowerSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogAuthorFollower
+   */
+  omit?: Prisma.BlogAuthorFollowerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogAuthorFollowerInclude<ExtArgs> | null
+  where?: Prisma.BlogAuthorFollowerWhereInput
+  orderBy?: Prisma.BlogAuthorFollowerOrderByWithRelationInput | Prisma.BlogAuthorFollowerOrderByWithRelationInput[]
+  cursor?: Prisma.BlogAuthorFollowerWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogAuthorFollowerScalarFieldEnum | Prisma.BlogAuthorFollowerScalarFieldEnum[]
+}
+
+/**
+ * User.reviewedPosts
+ */
+export type User$reviewedPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogPost
+   */
+  select?: Prisma.BlogPostSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogPost
+   */
+  omit?: Prisma.BlogPostOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogPostInclude<ExtArgs> | null
+  where?: Prisma.BlogPostWhereInput
+  orderBy?: Prisma.BlogPostOrderByWithRelationInput | Prisma.BlogPostOrderByWithRelationInput[]
+  cursor?: Prisma.BlogPostWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogPostScalarFieldEnum | Prisma.BlogPostScalarFieldEnum[]
+}
+
+/**
+ * User.publishedPosts
+ */
+export type User$publishedPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogPost
+   */
+  select?: Prisma.BlogPostSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogPost
+   */
+  omit?: Prisma.BlogPostOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogPostInclude<ExtArgs> | null
+  where?: Prisma.BlogPostWhereInput
+  orderBy?: Prisma.BlogPostOrderByWithRelationInput | Prisma.BlogPostOrderByWithRelationInput[]
+  cursor?: Prisma.BlogPostWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogPostScalarFieldEnum | Prisma.BlogPostScalarFieldEnum[]
+}
+
+/**
+ * User.editedPosts
+ */
+export type User$editedPostsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogPost
+   */
+  select?: Prisma.BlogPostSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogPost
+   */
+  omit?: Prisma.BlogPostOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogPostInclude<ExtArgs> | null
+  where?: Prisma.BlogPostWhereInput
+  orderBy?: Prisma.BlogPostOrderByWithRelationInput | Prisma.BlogPostOrderByWithRelationInput[]
+  cursor?: Prisma.BlogPostWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogPostScalarFieldEnum | Prisma.BlogPostScalarFieldEnum[]
+}
+
+/**
+ * User.blogRevisions
+ */
+export type User$blogRevisionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogRevision
+   */
+  select?: Prisma.BlogRevisionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogRevision
+   */
+  omit?: Prisma.BlogRevisionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogRevisionInclude<ExtArgs> | null
+  where?: Prisma.BlogRevisionWhereInput
+  orderBy?: Prisma.BlogRevisionOrderByWithRelationInput | Prisma.BlogRevisionOrderByWithRelationInput[]
+  cursor?: Prisma.BlogRevisionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogRevisionScalarFieldEnum | Prisma.BlogRevisionScalarFieldEnum[]
+}
+
+/**
+ * User.blogReports
+ */
+export type User$blogReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogReport
+   */
+  select?: Prisma.BlogReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogReport
+   */
+  omit?: Prisma.BlogReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogReportInclude<ExtArgs> | null
+  where?: Prisma.BlogReportWhereInput
+  orderBy?: Prisma.BlogReportOrderByWithRelationInput | Prisma.BlogReportOrderByWithRelationInput[]
+  cursor?: Prisma.BlogReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogReportScalarFieldEnum | Prisma.BlogReportScalarFieldEnum[]
+}
+
+/**
+ * User.resolvedBlogReports
+ */
+export type User$resolvedBlogReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BlogReport
+   */
+  select?: Prisma.BlogReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BlogReport
+   */
+  omit?: Prisma.BlogReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BlogReportInclude<ExtArgs> | null
+  where?: Prisma.BlogReportWhereInput
+  orderBy?: Prisma.BlogReportOrderByWithRelationInput | Prisma.BlogReportOrderByWithRelationInput[]
+  cursor?: Prisma.BlogReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BlogReportScalarFieldEnum | Prisma.BlogReportScalarFieldEnum[]
 }
 
 /**

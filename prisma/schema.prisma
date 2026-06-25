@@ -22,6 +22,7 @@ model User {
   createdAt                DateTime                  @default(now())
   updatedAt                DateTime                  @updatedAt
   canAddInstitute          Boolean                   @default(true)
+  canWriteBlogs            Boolean                   @default(true)
   managedInstitutes        InstituteManager[]
   reviews                  Review[]
   accounts                 Account[]
@@ -38,6 +39,18 @@ model User {
   viewHistory              UserHistory[]
   shortlisted              UserShortlist[]
   distributionLogs         LeadDistributionLog[]     @relation("AdminDistributionLogs")
+  blogAuthorProfile        BlogAuthorProfile?
+  blogComments             BlogComment[]
+  blogReactions            BlogReaction[]
+  blogViews                BlogView[] @relation("UserBlogViews")
+  blogBookmarks            BlogBookmark[] @relation("UserBookmarks")
+  followedAuthors          BlogAuthorFollower[] @relation("UserFollowedAuthors")
+  reviewedPosts            BlogPost[] @relation("PostReviewer")
+  publishedPosts           BlogPost[] @relation("PostPublisher")
+  editedPosts              BlogPost[] @relation("PostEditor")
+  blogRevisions            BlogRevision[] @relation("RevisionAuthor")
+  blogReports              BlogReport[]
+  resolvedBlogReports      BlogReport[] @relation("ResolvedBlogReports")
 
 
   @@map("user")
@@ -174,6 +187,7 @@ model Institute {
   teachers            TeacherProfile[]
   viewHistory         UserHistory[]
   shortlistedBy       UserShortlist[]
+  blogPosts           BlogPost[] @relation("InstituteBlogPosts")
 
   @@index([cityId])
   @@index([slug])
@@ -737,7 +751,6 @@ enum CategoryDomain {
 
 enum Role {
   USER
-  CONTENT_WRITER
   INSTITUTE_MANAGER
   ADMIN
   SALES_MANAGER
@@ -806,4 +819,716 @@ model LeadDistributionLog {
   @@index([enquiryId])
   @@index([adminId])
   @@map("lead_distribution_log")
+}
+
+
+model BlogAuthorProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+
+  displayName String
+  username    String @unique
+
+  designation String?
+
+  experience Int?
+
+  specialization String?
+
+  isVerified Boolean @default(false)
+
+  metaTitle String?
+
+  metaDescription String?
+
+  bio       String? @db.Text
+  avatarUrl String?
+
+  twitterUrl  String?
+  linkedinUrl String?
+  websiteUrl  String?
+
+  followerCount Int @default(0)
+
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  posts     BlogPost[]
+  followers BlogAuthorFollower[]
+
+  @@index([username])
+  @@index([isActive])
+  @@map("blog_author_profile")
+}
+
+model BlogCategory {
+  id   String @id @default(cuid())
+
+  name String @unique
+  slug String @unique
+
+  description String? @db.Text
+
+  color String?
+  icon  String?
+
+  order Int @default(0)
+
+  isActive Boolean @default(true)
+
+  postCount Int @default(0)
+
+  coverImage String?
+
+  metaImage String?
+
+  metaTitle String?
+
+  metaDescription String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts BlogPost[]
+
+  @@index([slug])
+  @@index([order])
+  @@index([isActive])
+
+  @@map("blog_category")
+}
+
+model BlogTag {
+  id String @id @default(cuid())
+
+  name String @unique
+  slug String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts BlogPostTag[]
+
+  postCount Int @default(0)
+
+  @@index([slug])
+
+  @@map("blog_tag")
+}
+
+model BlogPost {
+  id String @id @default(cuid())
+
+  title String
+  slug  String @unique
+
+  excerpt String?
+
+  //-----------------------------------
+  // Content
+  //-----------------------------------
+
+  contentMarkdown String @db.Text
+  contentHtml     String @db.Text
+
+  searchDocument String? @db.Text
+
+  //-----------------------------------
+  // Cover
+  //-----------------------------------
+
+  coverImage String?
+
+  coverImageAlt String?
+
+  coverImageWidth Int?
+
+  coverImageHeight Int?
+
+  //-----------------------------------
+  // Reading Stats
+  //-----------------------------------
+
+  readingTime Int?
+
+  wordCount Int?
+
+  version Int @default(1)
+
+  publishedVersion Int?
+
+  featuredUntil DateTime?
+
+  //-----------------------------------
+  // Relations
+  //-----------------------------------
+
+  authorProfileId String
+
+  authorProfile BlogAuthorProfile @relation(fields: [authorProfileId], references: [id])
+
+  categoryId String?
+
+  category BlogCategory? @relation(fields: [categoryId], references: [id])
+
+  relatedInstituteId String?
+
+  relatedInstitute Institute? @relation("InstituteBlogPosts",fields: [relatedInstituteId],references: [id])
+  brandId String?
+  brand BlogBrand? @relation ("BlogBrandPosts",fields: [brandId], references: [id])
+  //-----------------------------------
+  // Workflow
+  //-----------------------------------
+
+  status BlogStatus @default(DRAFT)
+  visibility BlogVisibility @default(PUBLIC)
+  rejectionReason String?
+  
+
+  //-----------------------------------
+  // Audit Trail
+  //-----------------------------------
+
+  reviewedById String?
+
+  reviewedBy User? @relation("PostReviewer",fields: [reviewedById],references: [id])
+
+  publishedById String?
+
+  publishedBy User? @relation("PostPublisher",fields: [publishedById],references: [id])
+
+  lastEditedById String?
+
+  lastEditedBy User? @relation("PostEditor",fields: [lastEditedById],references: [id])
+
+  //-----------------------------------
+  // Dates
+  //-----------------------------------
+
+  submittedAt DateTime?
+
+  reviewedAt DateTime?
+
+  publishedAt DateTime?
+
+  scheduledAt DateTime?
+
+  deletedAt DateTime?
+
+  //-----------------------------------
+  // SEO
+  //-----------------------------------
+
+  metaTitle String?
+
+  metaDescription String?
+
+  focusKeyword String?
+
+  tableOfContents Json?
+
+  canonicalUrl String?
+
+  robotsIndex Boolean @default(true)
+
+  robotsFollow Boolean @default(true)
+
+  ogImage String?
+
+  //-----------------------------------
+  // Counters
+  //-----------------------------------
+
+  viewCount Int @default(0)
+
+  likeCount Int @default(0)
+
+  commentCount Int @default(0)
+
+  bookmarkCount Int @default(0)
+
+  //-----------------------------------
+  // Display
+  //-----------------------------------
+
+  isFeatured Boolean @default(false)
+
+  featuredOrder Int @default(0)
+
+  isPinned Boolean @default(false)
+
+  allowComments Boolean @default(true)
+
+  //-----------------------------------
+  // Timestamps
+  //-----------------------------------
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  //-----------------------------------
+  // Relations
+  //-----------------------------------
+
+  tags BlogPostTag[]
+
+  comments BlogComment[]
+
+  reactions BlogReaction[]
+
+  slugHistory BlogSlugHistory[]
+
+  revisions BlogRevision[]
+
+  views BlogView[]
+
+  bookmarks BlogBookmark[]
+
+  reports BlogReport[]
+
+  faqs BlogFAQ[]
+
+  //-----------------------------------
+  // Indexes
+  //-----------------------------------
+
+  @@index([slug])
+
+  @@index([slug, status])
+
+  @@index([status])
+
+  @@index([publishedAt])
+
+  @@index([status, publishedAt])
+
+  @@index([categoryId, status, publishedAt])
+
+  @@index([authorProfileId])
+
+  @@index([brandId])
+
+  @@index([relatedInstituteId])
+
+  @@index([relatedInstituteId, status])
+
+  @@index([isFeatured, featuredOrder])
+
+  @@index([createdAt])
+
+  @@index([status, createdAt])
+
+  @@index([authorProfileId, status])
+
+  @@index([categoryId, createdAt])
+
+  @@index([status, visibility])
+
+  @@map("blog_post")
+}
+
+model BlogSlugHistory {
+  id        String   @id @default(cuid())
+  postId    String
+  oldSlug   String   @unique
+  createdAt DateTime @default(now())
+  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+  @@index([oldSlug])
+
+  @@map("blog_slug_history")
+}
+
+model BlogRevision {
+  id            String @id @default(cuid())
+  postId        String
+  version       Int
+  coverImage    String?
+  title         String
+  excerpt       String?
+  metaTitle     String?
+  metaDescription String?
+  contentMarkdown String @db.Text
+  contentHtml String @db.Text
+  createdById String
+  createdAt DateTime @default(now())
+  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  createdBy User @relation("RevisionAuthor", fields: [createdById], references: [id])
+
+  @@index([postId])
+
+  @@index([version])
+
+  @@index([createdById])
+
+  @@map("blog_revision")
+
+  @@unique([postId, version])
+}
+
+model BlogView {
+  id String @id @default(cuid())
+
+  postId String
+
+  userId String?
+
+  ipHash String?
+
+  sessionId String?
+
+  deviceType String?
+
+  browser String?
+
+  operatingSystem String?
+
+  country String?
+
+  referrer String?
+
+  utmSource String?
+
+  utmMedium String?
+
+  utmCampaign String?
+
+  viewedAt DateTime @default(now())
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  user User? @relation("UserBlogViews", fields: [userId], references: [id])
+
+  @@index([postId])
+
+  @@index([userId])
+
+  @@index([viewedAt])
+
+  @@map("blog_view")
+}
+
+model BlogBookmark {
+  id String @id @default(cuid())
+
+  userId String
+
+  postId String
+
+  createdAt DateTime @default(now())
+
+  user User @relation("UserBookmarks", fields: [userId], references: [id], onDelete: Cascade)
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, postId])
+
+  @@index([userId])
+
+  @@index([postId])
+
+  @@map("blog_bookmark")
+}
+
+model BlogAuthorFollower {
+  id String @id @default(cuid())
+
+  authorProfileId String
+
+  userId String
+
+  createdAt DateTime @default(now())
+
+  authorProfile BlogAuthorProfile @relation(fields: [authorProfileId], references: [id], onDelete: Cascade)
+
+  user User @relation("UserFollowedAuthors", fields: [userId], references: [id], onDelete: Cascade)
+
+
+  @@unique([authorProfileId, userId])
+
+  @@index([authorProfileId])
+
+  @@index([userId])
+
+  @@map("blog_author_follower")
+}
+
+model BlogSubscriber {
+  id String @id @default(cuid())
+
+  email String @unique
+
+  isVerified Boolean @default(false)
+
+  isActive Boolean @default(true)
+
+  verificationToken String? @unique
+
+  unsubscribeToken String? @unique
+
+  verifiedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@index([email])
+
+  @@index([isActive])
+
+  @@map("blog_subscriber")
+
+  @@index([createdAt])
+}
+
+model BlogReport {
+  id String @id @default(cuid())
+
+  postId String
+
+  userId String
+
+  reason ReportReason
+
+  message String? @db.Text
+
+  status ReportStatus @default(PENDING)
+
+  createdAt DateTime @default(now())
+  resolvedAt DateTime?
+
+  resolvedById String?
+
+  resolvedBy User? @relation("ResolvedBlogReports", fields: [resolvedById], references: [id])
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+
+  @@index([userId])
+
+  @@index([status])
+
+  @@index([createdAt])
+
+  @@index([resolvedById])
+
+  @@map("blog_report")
+
+  
+}
+
+model BlogPostTag {
+  postId String
+  tagId  String
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  tag BlogTag @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+
+  @@index([tagId])
+
+  @@map("blog_post_tag")
+}
+
+model BlogComment {
+  id String @id @default(cuid())
+
+  postId String
+
+  userId String
+
+  parentId String?
+
+  content String @db.Text
+
+  status CommentStatus @default(PENDING)
+
+  isEdited Boolean @default(false)
+
+  editedAt DateTime?
+
+  deletedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  updatedAt DateTime @updatedAt
+
+  //------------------------------------
+  // Relations
+  //------------------------------------
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  parent BlogComment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Restrict)
+
+
+  replies BlogComment[] @relation("CommentReplies")
+
+  //------------------------------------
+  // Indexes
+  //------------------------------------
+
+  @@index([postId])
+
+  @@index([userId])
+
+  @@index([parentId])
+
+  @@index([status])
+
+  @@index([createdAt])
+
+  @@index([postId, status])
+
+  @@map("blog_comment")
+}
+
+model BlogReaction {
+  id String @id @default(cuid())
+
+  postId String
+
+  userId String
+
+  type ReactionType @default(LIKE)
+
+  createdAt DateTime @default(now())
+
+  //------------------------------------
+  // Relations
+  //------------------------------------
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  //------------------------------------
+  // Constraints
+  //------------------------------------
+
+  @@unique([postId, userId])
+
+  @@index([postId])
+
+  @@index([userId])
+
+  @@index([type])
+
+  @@map("blog_reaction")
+}
+
+model BlogFAQ {
+  id        String @id @default(cuid())
+
+  postId    String
+
+  question  String
+
+  answer    String
+
+  order     Int @default(0)
+
+  post BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+  @@index([order])
+  @@map("blog_faq")
+}
+
+enum BlogStatus {
+  DRAFT
+
+  PENDING_REVIEW
+
+  SCHEDULED
+
+  PUBLISHED
+
+  REJECTED
+
+  ARCHIVED
+}
+
+enum BlogVisibility {
+  PUBLIC
+
+  UNLISTED
+
+  PRIVATE
+}
+
+enum CommentStatus {
+  PENDING
+
+  APPROVED
+
+  REJECTED
+}
+
+enum ReactionType {
+  LIKE
+
+  HELPFUL
+
+  INSIGHTFUL
+
+  LOVE
+}
+
+enum ReportStatus {
+  PENDING
+
+  REVIEWED
+
+  DISMISSED
+
+  ACTION_TAKEN
+}
+
+enum ReportReason {
+  SPAM
+
+  MISINFORMATION
+
+  COPYRIGHT
+
+  HARASSMENT
+
+  OFFENSIVE
+
+  OTHER
+}
+
+model BlogBrand {
+  id String @id @default(cuid())
+
+  name String
+
+  slug String @unique
+
+  bio String? @db.Text
+
+  avatarUrl String?
+
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts BlogPost[] @relation("BlogBrandPosts")
+
+  @@index([slug])
+  @@map("blog_brand")
 }

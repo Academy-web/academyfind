@@ -33,7 +33,6 @@ export type CategoryDomain = (typeof CategoryDomain)[keyof typeof CategoryDomain
 
 export const Role = {
   USER: 'USER',
-  CONTENT_WRITER: 'CONTENT_WRITER',
   INSTITUTE_MANAGER: 'INSTITUTE_MANAGER',
   ADMIN: 'ADMIN',
   SALES_MANAGER: 'SALES_MANAGER'
@@ -96,3 +95,65 @@ export const ReviewStatus = {
 } as const
 
 export type ReviewStatus = (typeof ReviewStatus)[keyof typeof ReviewStatus]
+
+
+export const BlogStatus = {
+  DRAFT: 'DRAFT',
+  PENDING_REVIEW: 'PENDING_REVIEW',
+  SCHEDULED: 'SCHEDULED',
+  PUBLISHED: 'PUBLISHED',
+  REJECTED: 'REJECTED',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type BlogStatus = (typeof BlogStatus)[keyof typeof BlogStatus]
+
+
+export const BlogVisibility = {
+  PUBLIC: 'PUBLIC',
+  UNLISTED: 'UNLISTED',
+  PRIVATE: 'PRIVATE'
+} as const
+
+export type BlogVisibility = (typeof BlogVisibility)[keyof typeof BlogVisibility]
+
+
+export const CommentStatus = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type CommentStatus = (typeof CommentStatus)[keyof typeof CommentStatus]
+
+
+export const ReactionType = {
+  LIKE: 'LIKE',
+  HELPFUL: 'HELPFUL',
+  INSIGHTFUL: 'INSIGHTFUL',
+  LOVE: 'LOVE'
+} as const
+
+export type ReactionType = (typeof ReactionType)[keyof typeof ReactionType]
+
+
+export const ReportStatus = {
+  PENDING: 'PENDING',
+  REVIEWED: 'REVIEWED',
+  DISMISSED: 'DISMISSED',
+  ACTION_TAKEN: 'ACTION_TAKEN'
+} as const
+
+export type ReportStatus = (typeof ReportStatus)[keyof typeof ReportStatus]
+
+
+export const ReportReason = {
+  SPAM: 'SPAM',
+  MISINFORMATION: 'MISINFORMATION',
+  COPYRIGHT: 'COPYRIGHT',
+  HARASSMENT: 'HARASSMENT',
+  OFFENSIVE: 'OFFENSIVE',
+  OTHER: 'OTHER'
+} as const
+
+export type ReportReason = (typeof ReportReason)[keyof typeof ReportReason]
