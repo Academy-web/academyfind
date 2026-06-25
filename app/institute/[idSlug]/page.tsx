@@ -41,7 +41,7 @@ function isCloudinaryImage(url?: string | null) {
 function getSafeImageUrl(logo?: string | null, imageUrl?: string | null) {
   if (isCloudinaryImage(logo)) return logo!;
   if (isCloudinaryImage(imageUrl)) return imageUrl!;
-  return "https://www.academyfind.com/inst.jpg"; 
+  return `${process.env.NEXT_PUBLIC_BASE_URL}/no_image/coaching_inst.PNG`; 
 }
 
 function getYouTubeId(url: string) {
