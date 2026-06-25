@@ -85,7 +85,7 @@ export async function POST(req: Request) {
 
     await prisma.instituteEnquiry.update({
       where: { id: originalEnquiryId },
-      data: { isForwarded: true, adminNote },
+      data: { status: "FORWARDED" },
     });
 
     const result = await prisma.instituteEnquiry.createMany({
@@ -96,7 +96,7 @@ export async function POST(req: Request) {
         message: originalEnquiry.message,
         parentId: originalEnquiryId,
         status: "NEW",
-        isForwarded: false,
+        isForwarded: true,
         adminNote: adminNote ? `[Forwarded] ${adminNote}` : undefined,
       })),
     });
