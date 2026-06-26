@@ -1,4 +1,4 @@
-import BlogCard from "./BlogCard";
+import BlogCard from "./cards/BlogCard";
 
 const blogs = [
   {
