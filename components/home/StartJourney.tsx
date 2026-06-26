@@ -3,6 +3,7 @@
 import { ArrowRight, Compass } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export function StartJourney() {
   
@@ -13,6 +14,12 @@ export function StartJourney() {
       behavior: "smooth",
     });
   };
+
+  const router = useRouter();
+
+  const handleCompareClick = () => {
+    router.push("/compare");
+  }
 
   return (
     <section className="py-12 sm:py-16 lg:py-24">
@@ -88,7 +95,7 @@ export function StartJourney() {
 
             {/* 2. Compare Institutes - Coming Soon */}
             <Button
-              disabled // 👈 Button click disable kar diya
+            onClick={handleCompareClick}
               variant="outline"
               size="lg"
               className="
@@ -96,11 +103,9 @@ export function StartJourney() {
                 text-sm
                 font-semibold
                 sm:px-8
-                opacity-60 // 👈 Thoda transparent feel dene ke liye
-                cursor-not-allowed // 👈 Mouse pointer update karne ke liye
               "
             >
-              Compare (Coming Soon)
+              Compare Institutes
             </Button>
           </div>
 
