@@ -112,7 +112,7 @@ export async function saveAdminBlogPost(
 
     const uniqueTagNames = [
       ...new Map(
-        value.tagNames.map((name) => [name.toLocaleLowerCase(), name.trim()]),
+        value.tagNames.map((name: string) => [name.toLocaleLowerCase(), name.trim()]),
       ).values(),
     ];
 
@@ -176,7 +176,7 @@ export async function saveAdminBlogPost(
 
     const post = await prisma.$transaction(async (tx) => {
       const tags = await Promise.all(
-        uniqueTagNames.map((name) => {
+        uniqueTagNames.map((name: string) => {
           const slug = slugify(name, { lower: true, strict: true, trim: true });
           if (!slug) throw new Error(`Invalid tag: ${name}`);
 
@@ -200,7 +200,7 @@ export async function saveAdminBlogPost(
             },
             faqs: {
               deleteMany: {},
-              create: value.faqs.map((faq, order) => ({ ...faq, order })),
+              create: value.faqs.map((faq: { question: string; answer: string }, order: number) => ({ ...faq, order })),
             },
           },
           select: { id: true, slug: true },
@@ -212,10 +212,10 @@ export async function saveAdminBlogPost(
           ...sharedData,
           authorProfileId: null,
           tags: {
-            create: tags.map((tag) => ({ tagId: tag.id })),
+            create: tags.map((tag: { id: string }) => ({ tagId: tag.id })),
           },
           faqs: {
-            create: value.faqs.map((faq, order) => ({ ...faq, order })),
+            create: value.faqs.map((faq: { question: string; answer: string }, order: number) => ({ ...faq, order })),
           },
         },
         select: { id: true, slug: true },
