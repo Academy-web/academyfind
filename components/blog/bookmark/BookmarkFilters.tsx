@@ -1,5 +1,7 @@
 "use client";
 
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search } from "lucide-react";
 import {
   usePathname,
@@ -66,7 +68,7 @@ export default function BookmarkFilters({
         <div className="relative">
           <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
 
-          <input
+          <Input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search bookmarks..."
@@ -75,39 +77,40 @@ export default function BookmarkFilters({
         </div>
 
         {/* Category */}
-        <select
-          value={searchParams.get("category") ?? ""}
-          onChange={(e) =>
-            updateParam("category", e.target.value)
-          }
-          className="rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-amber-500"
+        <Select
+          value={searchParams.get("category") ?? "all"}
+          onValueChange={(value: string) => updateParam("category", value === "all" ? "" : value)}
         >
-          <option value="">All Categories</option>
-
-          {categories.map((category: { id: string; name: string; slug: string }) => (
-            <option
-              key={category.id}
-              value={category.slug}
-            >
-              {category.name}
-            </option>
+            <SelectTrigger className="h-auto py-3 px-4 border-slate-300 rounded-xl focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-left">
+              <SelectValue placeholder="All Categories" />
+            </SelectTrigger>
+            
+            <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
+                {categories.map((category: { id: string; name: string; slug: string }) => (                
+                    <SelectItem  key={category.id} value={category.slug}>
+                        {category.name}
+                    </SelectItem>
           ))}
-        </select>
+            </SelectContent>
+        </Select>
 
         {/* Sort */}
-        <select
+        <Select
           value={searchParams.get("sort") ?? "saved"}
-          onChange={(e) =>
-            updateParam("sort", e.target.value)
-          }
-          className="rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-amber-500"
+          onValueChange={(value: string) => updateParam("sort", value === "all" ? "" : value)}
         >
-          <option value="saved">Recently Saved</option>
-          <option value="latest">Recently Published</option>
-          <option value="popular">Most Viewed</option>
-          <option value="liked">Most Liked</option>
-          <option value="comments">Most Discussed</option>
-        </select>
+          <SelectTrigger className="h-auto py-3 px-4 border-slate-300 rounded-xl focus:ring-1 focus:ring-amber-500 focus:border-amber-500 text-left">
+            <SelectValue placeholder="Sort by" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="saved">Recently Saved</SelectItem>
+            <SelectItem value="latest">Recently Published</SelectItem>
+            <SelectItem value="popular">Most Viewed</SelectItem>
+            <SelectItem value="liked">Most Liked</SelectItem>
+            <SelectItem value="comments">Most Discussed</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );
