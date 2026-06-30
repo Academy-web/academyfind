@@ -196,7 +196,7 @@ export async function saveAdminBlogPost(
             ...sharedData,
             tags: {
               deleteMany: {},
-              create: tags.map((tag) => ({ tagId: tag.id })),
+              create: tags.map((tag: { id: string }) => ({ tagId: tag.id })),
             },
             faqs: {
               deleteMany: {},
