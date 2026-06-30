@@ -138,7 +138,7 @@ export default function MyPostsGrid({
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-5">
               <div className="flex gap-3">
                 <Link
-                  href={`/admin/blog/edit/${post.id}`}
+                  href={`/blog/edit/${post.id}`}
                   className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-amber-600"
                 >
                   <Pencil className="h-4 w-4" />

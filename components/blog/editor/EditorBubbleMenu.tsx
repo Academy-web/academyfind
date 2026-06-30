@@ -1,0 +1,250 @@
+"use client";
+
+import { useCallback } from "react";
+import type { Editor } from "@tiptap/react";
+import { BubbleMenu } from "@tiptap/react/menus";
+import type { BubbleMenuProps } from "@tiptap/react/menus";
+
+import {
+  Bold,
+  Italic,
+  Underline,
+  Strikethrough,
+  Highlighter,
+  Code2,
+  Eraser,
+  Subscript as SubscriptIcon,
+  Superscript as SuperscriptIcon,
+  Baseline,
+} from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import LinkPopover from "./LinkPopover";
+
+type Props = {
+  editor: Editor;
+};
+
+// Preset colors for text and highlights
+const TEXT_COLORS = [
+  { name: "Default", value: "inherit" },
+  { name: "Red", value: "#ef4444" },
+  { name: "Blue", value: "#3b82f6" },
+  { name: "Green", value: "#22c55e" },
+  { name: "Amber", value: "#f59e0b" },
+  { name: "Purple", value: "#a855f7" },
+];
+
+const HIGHLIGHT_COLORS = [
+  { name: "Yellow", value: "#fef08a" },
+  { name: "Green", value: "#bbf7d0" },
+  { name: "Blue", value: "#bfdbfe" },
+  { name: "Pink", value: "#fbcfe8" },
+  { name: "Purple", value: "#e9d5ff" },
+];
+
+export default function EditorBubbleMenu({ editor }: Props) {
+  if (!editor) return null;
+
+  // Performance Optimization: Prevent recreating function on every render
+  const shouldShowMenu: BubbleMenuProps["shouldShow"] = useCallback(
+    ({ editor: currentEditor, state }) => {
+      const { selection } = state;
+      const { empty, from, to } = selection;
+
+      if (empty) return false;
+
+      if (
+        currentEditor.isActive("codeBlockLowlight") ||
+        currentEditor.isActive("image") ||
+        currentEditor.isActive("youtube") ||
+        currentEditor.isActive("link")
+      ) {
+        return false;
+      }
+
+      return from !== to;
+    },
+    []
+  );
+
+  return (
+    <BubbleMenu
+      editor={editor}
+      shouldShow={shouldShowMenu}
+      updateDelay={150}
+      appendTo={() => document.body}
+      options={{
+        placement: "top",
+      }}
+    >
+      <div className="flex items-center gap-1 rounded-xl border border-slate-200 bg-white p-2 shadow-xl select-none pointer-events-auto flex-wrap max-w-md md:max-w-none">
+        {/* Core Formatting */}
+        <Button
+          type="button"
+          variant={editor.isActive("bold") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleBold().run()}
+        >
+          <Bold className="h-4 w-4" />
+        </Button>
+
+        <Button
+          type="button"
+          variant={editor.isActive("italic") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+        >
+          <Italic className="h-4 w-4" />
+        </Button>
+
+        <Button
+          type="button"
+          variant={editor.isActive("underline") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+        >
+          <Underline className="h-4 w-4" />
+        </Button>
+
+        <Button
+          type="button"
+          variant={editor.isActive("strike") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleStrike().run()}
+        >
+          <Strikethrough className="h-4 w-4" />
+        </Button>
+
+        {/* Script Variants */}
+        <Button
+          type="button"
+          variant={editor.isActive("subscript") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleSubscript().run()}
+        >
+          <SubscriptIcon className="h-4 w-4" />
+        </Button>
+
+        <Button
+          type="button"
+          variant={editor.isActive("superscript") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleSuperscript().run()}
+        >
+          <SuperscriptIcon className="h-4 w-4" />
+        </Button>
+
+        <Button
+          type="button"
+          variant={editor.isActive("code") ? "default" : "ghost"}
+          size="icon"
+          onClick={() => editor.chain().focus().toggleCode().run()}
+        >
+          <Code2 className="h-4 w-4" />
+        </Button>
+
+        <LinkPopover editor={editor} />
+
+        {/* Text Color Picker */}
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button type="button" variant="ghost" size="icon">
+              <Baseline className="h-4 w-4" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-40 p-2 flex flex-col gap-1">
+            {TEXT_COLORS.map((color: { value: string; name: string }) => (
+              <button
+                key={color.value}
+                className="text-left text-xs p-1.5 hover:bg-slate-100 rounded transition-colors"
+                onClick={() => {
+                  if (color.value === "inherit") {
+                    editor.chain().focus().unsetColor().run();
+                  } else {
+                    editor.chain().focus().setColor(color.value).run();
+                  }
+                }}
+              >
+                <span
+                  className="inline-block w-3 h-3 rounded-full border border-slate-300 mr-2 align-middle"
+                  style={{ backgroundColor: color.value }}
+                />
+                {color.name}
+              </button>
+            ))}
+          </PopoverContent>
+        </Popover>
+
+        {/* Highlight Color Picker */}
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button
+              type="button"
+              variant={editor.isActive("highlight") ? "default" : "ghost"}
+              size="icon"
+            >
+              <Highlighter className="h-4 w-4" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-40 p-2 flex flex-col gap-1">
+            <button
+              className="text-left text-xs p-1.5 hover:bg-slate-100 rounded transition-colors"
+              onClick={() => editor.chain().focus().unsetHighlight().run()}
+            >
+              <span className="inline-block w-3 h-3 rounded-full border border-dashed border-slate-400 mr-2 align-middle bg-transparent" />
+              None
+            </button>
+            {HIGHLIGHT_COLORS.map((color: { value: string; name: string }) => (
+              <button
+                key={color.value}
+                className="text-left text-xs p-1.5 hover:bg-slate-100 rounded transition-colors"
+                onClick={() =>
+                  editor
+                    .chain()
+                    .focus()
+                    .toggleHighlight({ color: color.value })
+                    .run()
+                }
+              >
+                <span
+                  className="inline-block w-3 h-3 rounded border border-slate-300 mr-2 align-middle"
+                  style={{ backgroundColor: color.value }}
+                />
+                {color.name}
+              </button>
+            ))}
+          </PopoverContent>
+        </Popover>
+
+        {/* Visual Separation Segment */}
+        <Separator orientation="vertical" className="h-6 mx-1 bg-slate-200" />
+
+        {/* Destructive Clearing Action */}
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className="text-red-500 hover:text-red-600 hover:bg-red-50"
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .unsetAllMarks()
+              .clearNodes()
+              .setParagraph()
+              .run()
+          }
+        >
+          <Eraser className="h-4 w-4" />
+        </Button>
+      </div>
+    </BubbleMenu>
+  );
+}

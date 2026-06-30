@@ -142,3 +142,34 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* Scope inline code styles so they don't break code blocks */
+.prose :not(pre) > code {
+  @apply rounded bg-slate-100 px-1.5 py-1 text-sm text-slate-900 border border-slate-200/60 font-mono;
+}
+
+/* Syntax Highlighting Theme (VS Code / Dark+ inspired) */
+.prose pre code {
+  @apply text-slate-200 bg-transparent p-0 border-0 text-sm leading-relaxed font-mono;
+}
+.hljs-keyword, .hljs-selector-tag { @apply text-pink-400 font-semibold; }
+.hljs-string, .hljs-value { @apply text-emerald-400; }
+.hljs-comment { @apply text-slate-500 italic; }
+.hljs-number, .hljs-literal { @apply text-amber-400; }
+.hljs-function, .hljs-title { @apply text-blue-400; }
+.hljs-params { @apply text-slate-300; }
+.hljs-attr { @apply text-sky-400; }
+
+/* Fix Tiptap Task Lists breaking with prose bullet points */
+.prose ul[data-type="taskList"] {
+  @apply list-none pl-0 my-4 gap-2 flex flex-col;
+}
+.prose ul[data-type="taskList"] li {
+  @apply flex items-start gap-3 m-0;
+}
+.prose ul[data-type="taskList"] input[type="checkbox"] {
+  @apply mt-1.5 h-4 w-4 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer;
+}
+.prose ul[data-type="taskList"] [data-checked="true"] > div {
+  @apply line-through text-slate-400 transition-all;
+}
