@@ -768,6 +768,10 @@ export const BlogAuthorProfileScalarFieldEnum = {
   linkedinUrl: 'linkedinUrl',
   websiteUrl: 'websiteUrl',
   followerCount: 'followerCount',
+  postCount: 'postCount',
+  totalViews: 'totalViews',
+  totalLikes: 'totalLikes',
+  totalComments: 'totalComments',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
