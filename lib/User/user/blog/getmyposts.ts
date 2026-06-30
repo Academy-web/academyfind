@@ -1,4 +1,3 @@
-import { Prisma } from "@/app/generated/prisma/client";
 import { BlogStatus } from "@/app/generated/prisma/enums";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
@@ -20,7 +19,7 @@ export async function getMyPosts({
     redirect("/login");
   }
 
-  const where: Prisma.BlogPostWhereInput = {
+  const where = {
     authorProfile: {
       userId,
     },
