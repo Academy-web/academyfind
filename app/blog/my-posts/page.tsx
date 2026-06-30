@@ -1,17 +1,20 @@
-// app/blog/my-posts/page.tsx
-
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+
 import Breadcrumb from "@/components/blog/article/BreadCrumb";
 import NewsletterCTA from "@/components/blog/article/NewsLetterCTA";
-import SearchPagination from "@/components/blog/search/SearchPagination";
 
 import MyPostsHero from "@/components/blog/my-posts/MyPostsHero";
 import MyPostsStats from "@/components/blog/my-posts/MyPostsStats";
 import MyPostsFilters from "@/components/blog/my-posts/MyPostsFilters";
 import MyPostsGrid from "@/components/blog/my-posts/MyPostsGrid";
 import MyPostsEmptyState from "@/components/blog/my-posts/MyPostsEmptyState";
+import SearchPagination from "@/components/blog/search/SearchPagination";
 
+import { getCachedSession } from "@/lib/auth/session";
 import { getMyPosts } from "@/lib/User/user/blog/getmyposts";
+
+import { BlogStatus } from "@/app/generated/prisma/enums";
 
 export const metadata: Metadata = {
   title: "My Posts | AcademyFind Blog",
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
 type Props = {
   searchParams: Promise<{
     page?: string;
-    status?: "DRAFT" | "PUBLISHED" | "SCHEDULED" | "ARCHIVED";
+    status?: BlogStatus;
   }>;
 };
 
@@ -35,9 +38,16 @@ export default async function MyPostsPage({
 }: Props) {
   const params = await searchParams;
 
+  const session = await getCachedSession();
+
+  if (!session?.user?.id) {
+    redirect("/login");
+  }
+
   const page = Number(params.page ?? "1");
 
   const data = await getMyPosts({
+    userId: session.user.id,
     page,
     limit: 8,
     status: params.status,
@@ -62,8 +72,10 @@ export default async function MyPostsPage({
       <div className="mt-10">
         <MyPostsStats
           draft={data.stats.draft}
-          published={data.stats.published}
+          pendingReview={data.stats.pendingReview}
           scheduled={data.stats.scheduled}
+          published={data.stats.published}
+          rejected={data.stats.rejected}
           archived={data.stats.archived}
         />
       </div>

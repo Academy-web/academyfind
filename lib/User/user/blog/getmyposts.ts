@@ -1,28 +1,28 @@
+import { Prisma } from "@/app/generated/prisma/client";
 import { BlogStatus } from "@/app/generated/prisma/enums";
-import { getCachedSession } from "@/lib/auth/session";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 
 type GetMyPostsParams = {
+  userId: string;
   page?: number;
   limit?: number;
   status?: BlogStatus;
 };
 
 export async function getMyPosts({
+  userId,
   page = 1,
   limit = 9,
   status,
-}: GetMyPostsParams = {}) {
-  const session = await getCachedSession();
-
-  if (!session?.user?.id) {
+}: GetMyPostsParams) {
+  if (!userId) {
     redirect("/login");
   }
 
-  const where = {
+  const where: Prisma.BlogPostWhereInput = {
     authorProfile: {
-      userId: session.user.id,
+      userId,
     },
 
     ...(status && {
@@ -57,13 +57,19 @@ export async function getMyPosts({
 
       where: {
         authorProfile: {
-          userId: session.user.id,
+          userId,
         },
       },
 
       _count: true,
     }),
   ]);
+
+  const totalPages = Math.ceil(total / limit);
+
+  const statsMap = Object.fromEntries(
+    stats.map((item) => [item.status, item._count])
+  );
 
   return {
     posts,
@@ -74,30 +80,24 @@ export async function getMyPosts({
 
     limit,
 
-    totalPages: Math.ceil(total / limit),
+    totalPages,
 
-    hasNextPage: page < Math.ceil(total / limit),
+    hasNextPage: page < totalPages,
 
     hasPreviousPage: page > 1,
 
     stats: {
-      draft:
-        stats.find((s) => s.status === "DRAFT")?._count ?? 0,
+      draft: statsMap.DRAFT ?? 0,
 
-      published:
-        stats.find((s) => s.status === "PUBLISHED")?._count ?? 0,
+      pendingReview: statsMap.PENDING_REVIEW ?? 0,
 
-      scheduled:
-        stats.find((s) => s.status === "SCHEDULED")?._count ?? 0,
+      scheduled: statsMap.SCHEDULED ?? 0,
 
-      archived:
-        stats.find((s) => s.status === "ARCHIVED")?._count ?? 0,
+      published: statsMap.PUBLISHED ?? 0,
 
-      pendingReview:
-        stats.find((s) => s.status === "PENDING_REVIEW")?._count ?? 0,
+      rejected: statsMap.REJECTED ?? 0,
 
-      rejected:
-        stats.find((s) => s.status === "REJECTED")?._count ?? 0,
+      archived: statsMap.ARCHIVED ?? 0,
     },
   };
 }
