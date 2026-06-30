@@ -132,7 +132,7 @@ export default async function AdminBlogPage({
   ]);
 
   const counts = Object.fromEntries(
-    groupedStatuses.map((item) => [item.status, item._count]),
+    groupedStatuses.map((item: { status: string; _count: number }) => [item.status, item._count]),
   );
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
@@ -208,7 +208,7 @@ export default async function AdminBlogPage({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value={ALL}>All statuses</SelectItem>
-            {Object.values(BlogStatus).map((item) => (
+            {Object.values(BlogStatus).map((item: string) => (
               <SelectItem key={item} value={item}>
                 {item.toLocaleLowerCase().replaceAll("_", " ")}
               </SelectItem>
@@ -221,7 +221,7 @@ export default async function AdminBlogPage({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value={ALL}>All brands</SelectItem>
-            {brands.map((brand) => (
+            {brands.map((brand: { id: string; name: string }) => (
               <SelectItem key={brand.id} value={brand.id}>
                 {brand.name}
               </SelectItem>
