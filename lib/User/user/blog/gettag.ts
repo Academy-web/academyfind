@@ -86,20 +86,20 @@ export async function getTagBySlug(slug: string) {
       return null;
     }
 
-    const posts = tag.posts.map((item) => item.post);
+    const posts = tag.posts.map((item: { post: any }) => item.post);
 
     const totalViews = posts.reduce(
-      (sum, post) => sum + post.viewCount,
+      (sum: number, post: any) => sum + post.viewCount,
       0
     );
 
     const totalLikes = posts.reduce(
-      (sum, post) => sum + post.likeCount,
+      (sum: number, post: any) => sum + post.likeCount,
       0
     );
 
     const totalComments = posts.reduce(
-      (sum, post) => sum + post.commentCount,
+      (sum: number, post: any) => sum + post.commentCount,
       0
     );
 

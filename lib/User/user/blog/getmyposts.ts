@@ -68,7 +68,7 @@ export async function getMyPosts({
   const totalPages = Math.ceil(total / limit);
 
   const statsMap = Object.fromEntries(
-    stats.map((item) => [item.status, item._count])
+    stats.map((item: { status: string; _count: number }) => [item.status, item._count])
   );
 
   return {

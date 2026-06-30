@@ -77,17 +77,17 @@ export async function getCategoryBySlug(slug: string) {
     }
 
     const totalViews = category.posts.reduce(
-      (sum, post) => sum + post.viewCount,
+      (sum: number, post: any) => sum + post.viewCount,
       0
     );
 
     const totalLikes = category.posts.reduce(
-      (sum, post) => sum + post.likeCount,
+      (sum: number, post: any) => sum + post.likeCount,
       0
     );
 
     const totalComments = category.posts.reduce(
-      (sum, post) => sum + post.commentCount,
+      (sum: number, post: any) => sum + post.commentCount,
       0
     );
 

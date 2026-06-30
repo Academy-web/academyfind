@@ -78,17 +78,17 @@ export async function getAuthorByUsername(username: string) {
     }
 
     const totalViews = author.posts.reduce(
-      (sum, post) => sum + post.viewCount,
+      (sum: number, post: any) => sum + post.viewCount,
       0
     );
 
     const totalLikes = author.posts.reduce(
-      (sum, post) => sum + post.likeCount,
+      (sum: number, post: any) => sum + post.likeCount,
       0
     );
 
     const totalComments = author.posts.reduce(
-      (sum, post) => sum + post.commentCount,
+      (sum: number, post: any) => sum + post.commentCount,
       0
     );
 
