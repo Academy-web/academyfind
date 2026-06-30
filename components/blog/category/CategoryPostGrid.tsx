@@ -1,5 +1,5 @@
 import BlogCard from "../cards/BlogCard";
-import { BlogCardPost } from "../types/BlogCard";
+import { BlogCardPost } from "@/types/BlogCard";
 
 type CategoryPostGridProps = {
   posts: BlogCardPost[];

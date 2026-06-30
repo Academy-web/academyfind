@@ -1,3 +1,4 @@
+import { BlogSearchDocument } from "@/types/BlogSearchDocument";
 import { meili } from "@/lib/meilisearch";
 import { prisma } from "@/lib/prisma";
 
@@ -50,25 +51,31 @@ export async function searchBlogPosts({
         sortOption = undefined;
     }
 
-    const results = await index.search(query, {
-      filter: filters,
-      sort: sortOption,
-      hitsPerPage: limit,
-      page,
-    });
+    const results = await index.search<BlogSearchDocument>(query, {
+    filter: filters,
+    sort: sortOption,
+    hitsPerPage: limit,
+    page,
+});
 
     return {
-      posts: results.hits,
+      posts: results.hits.map((hit: BlogSearchDocument) => ({
+    ...hit,
 
-      total: results.totalHits ?? 0,
+        publishedAt: hit.publishedAt
+            ? new Date(hit.publishedAt)
+            : null,
+    })),
+
+      total: results.estimatedTotalHits ?? 0,
 
       page,
 
       limit,
 
-      totalPages: results.totalPages ?? 1,
+      totalPages: Math.ceil((results.estimatedTotalHits ?? 0) / limit) || 1,
 
-      hasNextPage: page < (results.totalPages ?? 1),
+      hasNextPage: page < (Math.ceil((results.estimatedTotalHits ?? 0) / limit) || 1),
 
       hasPreviousPage: page > 1,
     };

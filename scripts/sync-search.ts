@@ -119,9 +119,9 @@ async function main() {
       jobType: job.type,
       description: job.description,
       url: `/careers/${job.slug}`,
-    }),
+    })),
 
-    // --- BLOG POSTS ---
+      // --- BLOG POSTS ---
   ...blogPosts.map((post) => ({
     id: `blog-${post.id}`,
     prismaId: post.id,
@@ -182,7 +182,6 @@ async function main() {
 
     url: `/blog/${post.slug}`,
   })),
-  ),
   ];
 
   await meili.createIndex("global_search", { primaryKey: "id" });

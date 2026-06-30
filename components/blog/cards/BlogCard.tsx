@@ -7,7 +7,7 @@ import {
   Heart,
   MessageCircle,
 } from "lucide-react";
-import { BlogCardPost } from "../types/BlogCard";
+import { BlogCardPost } from "@/types/BlogCard";
 
 type BlogCardProps = {
   post: BlogCardPost;
