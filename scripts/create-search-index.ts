@@ -12,6 +12,10 @@ async function main() {
     "description",
     "categoryNames",
     "state",
+    "title",
+    "excerpt",
+    "content",
+    "tags",
   ]);
 
   const filterableTask = await index.updateFilterableAttributes([
@@ -31,7 +35,9 @@ async function main() {
     "cityId",              // ← ADD THIS
     "categoryIds",         // ← ADD THIS
     "isPublished",         // ← ADD THIS
-    "prismaId" 
+    "prismaId" ,
+    "tagSlugs",
+    "categorySlug",
   ]);
 
   const sortableTask = await index.updateSortableAttributes([
@@ -42,7 +48,10 @@ async function main() {
     // 🚀 NAYE SORTABLE ATTRIBUTES (For "Sort By" Dropdown)
     "viewCount",
     "compareCount",
-    "feeMin"
+    "feeMin",
+    "publishedAt",
+    "likeCount",
+    "commentCount",
   ]);
 
   const typoTask = await index.updateTypoTolerance({

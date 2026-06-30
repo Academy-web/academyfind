@@ -5,6 +5,13 @@ import { JobPosting } from "@/app/generated/prisma/client";
 
 dotenv.config()
 
+function stripHtml(html: string) {
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 async function main() {
   console.log("Fetching data from database...");
 
@@ -19,8 +26,25 @@ async function main() {
   const cities = await prisma.city.findMany();
   const categories = await prisma.category.findMany({ where: { isActive: true } });
   const jobs = await prisma.jobPosting.findMany({ where: { isActive: true } });
+  const blogPosts = await prisma.blogPost.findMany({ 
+    where: {
+      status: "PUBLISHED",
+      visibility: "PUBLIC",
+    },
+    include: {
+      category: true,
+      brand: true,
+      tags: {
+        include:{
+          tag: true
+        }
+      },
+      authorProfile: true,
 
-  console.log(`Found: ${institutes.length} Institutes, ${cities.length} Cities, ${categories.length} Categories, ${jobs.length} Jobs`);
+    },
+  });
+
+  console.log(`Found: ${institutes.length} Institutes, ${cities.length} Cities, ${categories.length} Categories, ${jobs.length} Jobs,, ${blogPosts.length} Blog Posts`);
 
   const docs = [
     // --- INSTITUTES ---
@@ -95,7 +119,70 @@ async function main() {
       jobType: job.type,
       description: job.description,
       url: `/careers/${job.slug}`,
-    })),
+    }),
+
+    // --- BLOG POSTS ---
+  ...blogPosts.map((post) => ({
+    id: `blog-${post.id}`,
+    prismaId: post.id,
+
+    type: "blog",
+
+    title: post.title,
+    name: post.title, 
+
+    slug: post.slug,
+
+    excerpt: post.excerpt ?? "",
+    content: stripHtml(post.contentHtml ?? ""),
+    categorySlug: post.category?.slug,
+    categoryName: post.category?.name,
+
+    coverImage: post.coverImage,
+    coverImageAlt: post.coverImageAlt,
+
+    readingTime: post.readingTime,
+
+    publishedAt: post.publishedAt?.getTime(),
+
+    viewCount: post.viewCount,
+    likeCount: post.likeCount,
+    commentCount: post.commentCount,
+
+    authorProfile: post.authorProfile
+      ? {
+          displayName: post.authorProfile.displayName,
+          username: post.authorProfile.username,
+          avatarUrl: post.authorProfile.avatarUrl,
+          isVerified: post.authorProfile.isVerified,
+        }
+      : null,
+
+      authorUsername: post.authorProfile?.username,
+
+    category: post.category
+      ? {
+          id: post.category.id,
+          name: post.category.name,
+          slug: post.category.slug,
+        }
+      : null,
+
+    brand: post.brand
+      ? {
+          id: post.brand.id,
+          name: post.brand.name,
+          slug: post.brand.slug,
+          avatarUrl: post.brand.avatarUrl,
+        }
+      : null,
+
+    tags: post.tags.map((t) => t.tag.name),
+    tagSlugs: post.tags.map((t) => t.tag.slug),
+
+    url: `/blog/${post.slug}`,
+  })),
+  ),
   ];
 
   await meili.createIndex("global_search", { primaryKey: "id" });

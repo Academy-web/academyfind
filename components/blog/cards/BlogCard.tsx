@@ -7,37 +7,10 @@ import {
   Heart,
   MessageCircle,
 } from "lucide-react";
+import { BlogCardPost } from "../types/BlogCard";
 
 type BlogCardProps = {
-  post: {
-    id: string;
-    title: string;
-    slug: string;
-    excerpt: string | null;
-
-    coverImage: string | null;
-    coverImageAlt: string | null;
-
-    readingTime: number | null;
-    publishedAt: Date | null;
-
-    viewCount: number;
-    likeCount: number;
-    commentCount: number;
-
-    category: {
-      id: string;
-      name: string;
-      slug: string;
-    } | null;
-
-    brand: {
-      id: string;
-      name: string;
-      slug: string;
-      avatarUrl: string | null;
-    } | null;
-  };
+  post: BlogCardPost;
 };
 
 export default function BlogCard({ post }: BlogCardProps) {
