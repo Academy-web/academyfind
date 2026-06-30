@@ -849,7 +849,11 @@ model BlogAuthorProfile {
   websiteUrl  String?
 
   followerCount Int @default(0)
-
+  postCount Int @default(0)
+  totalViews Int @default(0)
+  totalLikes Int @default(0)
+  totalComments Int @default(0)
+  
   isActive Boolean @default(true)
 
   createdAt DateTime @default(now())

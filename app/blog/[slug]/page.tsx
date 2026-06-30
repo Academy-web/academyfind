@@ -13,7 +13,8 @@ import ShareButtons from "@/components/blog/article/ShareButtons";
 import StickyCTA from "@/components/blog/article/StickyCTA";
 import TableOfContents from "@/components/blog/article/TableOfContents";
 import { getCachedSession } from "@/lib/auth/session";
-import { getBlogPostBySlug, getisBookmarked, getRelatedInstitute, getUserReaction, getRelatedPosts } from "@/lib/User/user/blog/getpost";
+import { getBlogPostBySlug, getisBookmarked, getRelatedInstitute, getUserReaction, getRelatedPosts, incrementBlogViewCount } from "@/lib/User/user/blog/blogpost";
+import { notFound } from "next/navigation";
 
 
 type Props = {
@@ -32,20 +33,26 @@ export default async function BlogDetailPage({
   params,
 }: Props) {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const [post, session] = await Promise.all([
+  getBlogPostBySlug(slug),
+  getCachedSession(),
+]);
   if (!post) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <h1 className="text-2xl font-bold text-slate-900">Post not found</h1>
-      </div>
+      notFound()
     );
   }
-  const userReaction = await getUserReaction(post?.id || "");
-  const hasBookmarked = await getisBookmarked(post?.id || "");
-  const relatedInstitute = await getRelatedInstitute(post?.relatedInstituteId);
-  const relatedPosts = await getRelatedPosts(post?.id || "", post?.categoryId || "");
-  const session = await getCachedSession();
+
   const userId = session?.user?.id;
+
+  const [userReaction, hasBookmarked, relatedInstitute, relatedPosts] = await Promise.all([
+    userId ? getUserReaction(post.id || "", userId) : null,
+    userId ? getisBookmarked(post.id || "", userId) : null,
+    getRelatedInstitute(post.relatedInstituteId || ""),
+    getRelatedPosts(post.id || "", post.categoryId || ""),
+  ]);
+
+  void incrementBlogViewCount(post.id || "");
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -88,7 +95,7 @@ export default async function BlogDetailPage({
               hasLikedInitially={userReaction === "LIKE"}
               hasHelpfullyInitially={userReaction === "HELPFUL"}
               hasLovedInitially={userReaction === "LOVE"}
-              hasBookmarkedInitially={hasBookmarked}
+              hasBookmarkedInitially={hasBookmarked === true}
               isLoggedIn={!!userId} 
             />
           </aside>

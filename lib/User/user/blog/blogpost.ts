@@ -1,8 +1,6 @@
-import { getCachedSession } from "@/lib/auth/session";
 import { prisma } from "@/lib/prisma";
 
 export async function getBlogPostBySlug(slug: string) {
-    // Fetch the blog post data based on the slug
     try{
         const response = await prisma.blogPost.findUnique({
             where: {
@@ -59,20 +57,17 @@ export async function getBlogPostBySlug(slug: string) {
     }
 }
 
-export async function getUserReaction(postId: string) {
+export async function getUserReaction(postId: string, userId: string) {
     try{
         if(!postId){
             return false;
         }
-        const session = await getCachedSession( );
-        if(!session?.user?.id){
-            return false;
-        }
+
         const response = await prisma.blogReaction.findUnique({
             where: {
                 postId_userId: {
                     postId: postId,
-                    userId: session.user.id,
+                    userId: userId,
                 }
             },
             select: {
@@ -86,19 +81,15 @@ export async function getUserReaction(postId: string) {
     }
 }
 
-export async function getisBookmarked(postId: string) {
+export async function getisBookmarked(postId: string, userId: string) {
     try{
         if(!postId){
-            return false;
-        }
-        const session = await getCachedSession();
-        if(!session?.user?.id){
             return false;
         }
         const response = await prisma.blogBookmark.findUnique({
             where: {
                 userId_postId: {
-                    userId: session.user.id,
+                    userId: userId,
                     postId: postId,
                 }
             }
@@ -172,3 +163,22 @@ export async function getRelatedPosts(postId: string, categoryId: string) {
         return [];
     }
 }
+
+export async function incrementBlogViewCount(postId: string) {
+    try {
+        if (!postId) {
+            return;
+        }
+
+        await prisma.blogPost.update({
+            where: { id: postId, status: "PUBLISHED" },
+            data: {
+                viewCount: {
+                    increment: 1
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Error incrementing blog view count:", error);
+    }
+};

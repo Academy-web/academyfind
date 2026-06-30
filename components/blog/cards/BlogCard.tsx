@@ -1,82 +1,121 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  CalendarDays,
+  Clock3,
+  Eye,
+  Heart,
+  MessageCircle,
+} from "lucide-react";
 
-interface BlogCardProps {
-  title: string;
-  slug: string;
-  category: string;
-  readTime: string;
-}
+type BlogCardProps = {
+  post: {
+    id: string;
+    title: string;
+    slug: string;
+    excerpt: string | null;
 
-export default function BlogCard({
-  title,
-  slug,
-  category,
-  readTime,
-}: BlogCardProps) {
+    coverImage: string | null;
+    coverImageAlt: string | null;
+
+    readingTime: number | null;
+    publishedAt: Date | null;
+
+    viewCount: number;
+    likeCount: number;
+    commentCount: number;
+
+    category: {
+      id: string;
+      name: string;
+      slug: string;
+    } | null;
+
+    brand: {
+      id: string;
+      name: string;
+      slug: string;
+      avatarUrl: string | null;
+    } | null;
+  };
+};
+
+export default function BlogCard({ post }: BlogCardProps) {
   return (
-    <Link
-      href={`/blog/${slug}`}
-      className="
-        group
-        overflow-hidden
-        rounded-3xl
-        border
-        border-amber-100
-        bg-white
-        shadow-sm
-        transition-all
-        duration-300
-        hover:-translate-y-1
-        hover:shadow-lg
-      "
-    >
-      <div className="relative h-52 overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
-          alt={title}
-          fill
-          className="
-            object-cover
-            transition-transform
-            duration-700
-            group-hover:scale-105
-          "
-        />
+    <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <Link href={`/blog/${post.slug}`}>
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <Image
+            src={post.coverImage || "/images/blog-placeholder.jpg"}
+            alt={post.coverImageAlt || post.title}
+            fill
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
+
+          {post.category && (
+            <span className="absolute left-4 top-4 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-white">
+              {post.category.name}
+            </span>
+          )}
+        </div>
+      </Link>
+
+      <div className="p-6">
+        <Link href={`/blog/${post.slug}`}>
+          <h2 className="line-clamp-2 text-xl font-bold text-slate-900 transition group-hover:text-amber-600">
+            {post.title}
+          </h2>
+        </Link>
+
+        {post.excerpt && (
+          <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">
+            {post.excerpt}
+          </p>
+        )}
+
+        <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-slate-500">
+          {post.publishedAt && (
+            <span className="flex items-center gap-1">
+              <CalendarDays className="h-4 w-4" />
+              {post.publishedAt.toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
+            </span>
+          )}
+
+          {post.readingTime && (
+            <span className="flex items-center gap-1">
+              <Clock3 className="h-4 w-4" />
+              {post.readingTime} min
+            </span>
+          )}
+        </div>
+
+        <div className="mt-6 flex items-center justify-between border-t pt-4 text-sm text-slate-500">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1">
+              <Eye className="h-4 w-4" />
+              {post.viewCount.toLocaleString()}
+            </span>
+
+            <span className="flex items-center gap-1">
+              <Heart className="h-4 w-4" />
+              {post.likeCount}
+            </span>
+
+            <span className="flex items-center gap-1">
+              <MessageCircle className="h-4 w-4" />
+              {post.commentCount}
+            </span>
+          </div>
+
+          <span className="font-semibold text-amber-600 group-hover:translate-x-1 transition">
+            Read →
+          </span>
+        </div>
       </div>
-
-      <div className="p-5">
-        <span
-          className="
-            rounded-full
-            bg-amber-100
-            px-3
-            py-1
-            text-xs
-            font-medium
-            text-amber-700
-          "
-        >
-          {category}
-        </span>
-
-        <h3
-          className="
-            mt-4
-            line-clamp-2
-            text-lg
-            font-semibold
-            transition-colors
-            group-hover:text-amber-500
-          "
-        >
-          {title}
-        </h3>
-
-        <p className="mt-4 text-sm text-muted-foreground">
-          {readTime}
-        </p>
-      </div>
-    </Link>
+    </article>
   );
 }
