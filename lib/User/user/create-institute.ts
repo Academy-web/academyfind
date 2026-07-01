@@ -40,12 +40,15 @@ export async function addInstitute(userId: string, formData: FormData,selectedCa
         const googleMapsUrl = formData.get("googleMapsUrl") as string;
         const cityId = formData.get("cityId") as string;
         const imageFile = formData.get("imageFile") as File;
+        const ownerName = (formData.get("ownerName") as string)?.trim();
+        const ownerPhone = (formData.get("ownerPhone") as string)?.trim();
+        const ownerDesignation = (formData.get("ownerDesignation") as string)?.trim();
 
         const latitude = formData.get("latitude") ? parseFloat(formData.get("latitude") as string) : null;
         const longitude = formData.get("longitude") ? parseFloat(formData.get("longitude") as string) : null;
 
-        if (!name || !cityId || !address) {
-            return { success: false, error: "Name, City, and Address are required." };
+        if (!name || !cityId || !address || !ownerName || !ownerPhone || !ownerDesignation) {
+            return { success: false, error: "Institute and owner details are required." };
         }
 
         let slug = generateSlug(name);
@@ -88,7 +91,7 @@ export async function addInstitute(userId: string, formData: FormData,selectedCa
                 data: {
                     type: "NEW_INSTITUTE_REQUEST",
                     title: "New Institute Request",
-                    message: `${name} has been requested to be added as a new institute.`,
+                    message: `${name} has been requested by ${ownerName} (${ownerDesignation}) to be added as a new institute.`,
                 }
             });
 
@@ -100,6 +103,9 @@ export async function addInstitute(userId: string, formData: FormData,selectedCa
                 data: {
                     userId: userId,
                     instituteId: institute.id,
+                    ownerName,
+                    ownerPhone,
+                    ownerDesignation,
                     status: "PENDING"
                 }
             });

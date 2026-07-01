@@ -42,6 +42,19 @@ export async function approveInstituteRequest(requestId: string) {
             prisma.user.update({
                 where: { id: request.userId },
                 data: { canAddInstitute: true }
+            }),
+            prisma.instituteManager.upsert({
+                where: {
+                    userId_instituteId: {
+                        userId: request.userId,
+                        instituteId: request.instituteId
+                    }
+                },
+                update: {},
+                create: {
+                    userId: request.userId,
+                    instituteId: request.instituteId
+                }
             })
         ];
 

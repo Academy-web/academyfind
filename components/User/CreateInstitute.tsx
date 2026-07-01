@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea"; 
 import toast from "react-hot-toast";
-import { Save, Image as ImageIcon, UploadCloud, MapPin, Landmark, LayoutGrid, CheckCircle, Globe } from "lucide-react";
+import { Save, Image as ImageIcon, UploadCloud, MapPin, Landmark, LayoutGrid, CheckCircle, Globe, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import LocationAutocomplete from "../search/LocationAutoComplete";
 import { addInstitute } from "@/lib/User/user/create-institute"; 
@@ -88,6 +88,27 @@ export default function CreateInstituteForm({
 
     return (
         <form onSubmit={handleFormSubmit} className="space-y-8 max-w-4xl mx-auto pb-16">
+
+            {/* 0. Owner Details */}
+            <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-xs space-y-6">
+                <h3 className="font-bold text-slate-800 text-lg flex items-center gap-2">
+                    <User className="w-5 h-5 text-emerald-500" /> 0. Owner Details
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-slate-500 uppercase">Owner Name *</label>
+                        <Input name="ownerName" required placeholder="Owner full name" />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-slate-500 uppercase">Owner Phone *</label>
+                        <Input name="ownerPhone" type="tel" required placeholder="e.g., 9876543210" maxLength={15} />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-slate-500 uppercase">Designation *</label>
+                        <Input name="ownerDesignation" required placeholder="Owner / Founder / Director" />
+                    </div>
+                </div>
+            </div>
             
             {/* INSTRUCTION BANNER */}
             <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl flex gap-3 text-sm text-emerald-900 shadow-xs animate-in fade-in duration-300">
@@ -134,7 +155,7 @@ export default function CreateInstituteForm({
                         name="description" 
                         required 
                         placeholder="Tell students about your teaching methodology, facilities, and why they should choose your institute..." 
-                        className="min-h-[150px] resize-none" 
+                        className="min-h-37.5 resize-none" 
                     />
                 </div>
             </div>

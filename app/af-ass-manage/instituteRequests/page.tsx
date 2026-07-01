@@ -154,6 +154,20 @@ export default async function AdminApprovalsPage({
                                         </div>
                                     )}
 
+                                    {(req.ownerName || req.ownerPhone || req.ownerDesignation) && (
+                                        <div className="bg-sky-50 border border-sky-200 p-3 rounded-xl flex items-start gap-3">
+                                            <UserCheck className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
+                                            <div>
+                                                <h4 className="text-xs font-bold text-sky-900 uppercase">Owner Details</h4>
+                                                <div className="text-xs text-sky-800 mt-1 grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-1">
+                                                    <p>Name: <span className="font-semibold">{req.ownerName || "N/A"}</span></p>
+                                                    <p>Phone: <span className="font-semibold">{req.ownerPhone || "N/A"}</span></p>
+                                                    <p>Designation: <span className="font-semibold">{req.ownerDesignation || "N/A"}</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+
                                     <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-700">
                                         <div className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-emerald-500" /> {req.institute.city.name}</div>
                                         <div className="flex items-center gap-1.5"><BadgeIndianRupee className="w-4 h-4 text-amber-500" /> Fees: {req.institute.feeInfo || "N/A"}</div>
