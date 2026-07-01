@@ -2,6 +2,9 @@
 
 import { prisma } from "@/lib/prisma"; // Apne prisma client ka path check kar lena
 import { revalidatePath } from "next/cache";
+import {
+  CLAIM_PENDING_STATUS,
+} from "@/lib/institutes/institute-workflow";
 
 export async function submitClaimRequest(formData: FormData) {
   try {
@@ -19,12 +22,30 @@ export async function submitClaimRequest(formData: FormData) {
       return { success: false, error: "Please fill all required fields." };
     }
 
+    const [user, institute, existingManager] = await Promise.all([
+      prisma.user.findUnique({ where: { id: userId }, select: { id: true } }),
+      prisma.institute.findUnique({ where: { id: instituteId }, select: { id: true } }),
+      prisma.instituteManager.findFirst({ where: { instituteId } }),
+    ]);
+
+    if (!user) {
+      return { success: false, error: "User not found." };
+    }
+
+    if (!institute) {
+      return { success: false, error: "Institute not found." };
+    }
+
+    if (existingManager) {
+      return { success: false, error: "This institute already has a verified manager." };
+    }
+
     // Check agar user ne pehle se claim request daali hui hai (Pending state me)
     const existingClaim = await prisma.instituteClaim.findFirst({
       where: {
         instituteId: instituteId,
         userId: userId,
-        status: "PENDING",
+        status: CLAIM_PENDING_STATUS,
       },
     });
 
@@ -42,12 +63,16 @@ export async function submitClaimRequest(formData: FormData) {
         phone,
         role,
         message,
-        status: "PENDING", // By default PENDING jayega admin approval ke liye
+        status: CLAIM_PENDING_STATUS, // By default PENDING jayega admin approval ke liye
       },
     });
 
-    // Institute page ko revalidate karna taaki cache clear ho jaye
+    // Institute page, claim page, aur admin queue ko revalidate karna taaki cache clear ho jaye
     revalidatePath(`/institute/${instituteId}`);
+    revalidatePath("/institute/[idSlug]");
+    revalidatePath(`/user/create-institute/${instituteId}/claim`);
+    revalidatePath("/af-ass-manage/claims");
+    revalidatePath("/af-ass-manage");
 
     return { success: true };
   } catch (error) {

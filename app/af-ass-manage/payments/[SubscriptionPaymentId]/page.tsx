@@ -17,7 +17,7 @@ export default async function PaymentDetailPage({ params }: { params: Promise<{ 
 
     return (
         <div className="max-w-4xl mx-auto space-y-6 pb-12 font-sans animate-in fade-in duration-300">
-            <Link href="/af-ass-manage/payments " className="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm">
+            <Link href="/af-ass-manage/payments" className="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back to Payments
             </Link>
 
@@ -81,7 +81,7 @@ export default async function PaymentDetailPage({ params }: { params: Promise<{ 
                         <p className="text-sm text-slate-500 font-bold uppercase tracking-wider mb-3">User Uploaded Proof</p>
                         {payment.proofImageUrl ? (
                             <a href={payment.proofImageUrl} target="_blank" rel="noreferrer" className="block border-2 border-slate-200 rounded-3xl overflow-hidden hover:border-blue-400 transition-colors shadow-sm relative group">
-                                <img src={payment.proofImageUrl} alt="Proof" className="w-full object-contain max-h-[400px]" />
+                                <img src={payment.proofImageUrl} alt="Proof" className="w-full object-contain max-h-100" />
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                     <span className="text-white font-bold inline-flex items-center bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
                                         <ExternalLink className="w-4 h-4 mr-2" /> Click to enlarge

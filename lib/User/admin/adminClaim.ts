@@ -2,6 +2,11 @@
 
 import { prisma } from "../../prisma"
 import { revalidatePath } from "next/cache"
+import {
+    CLAIM_APPROVED_STATUS,
+    CLAIM_REJECTED_STATUS,
+    validateClaimTransition,
+} from "@/lib/institutes/institute-workflow"
 
 export async function getInstituteClaims () {
     try{
@@ -22,17 +27,23 @@ export async function getInstituteClaims () {
 export async function updateClaimStatus(claimId: string, status: "APPROVED" | "REJECTED"){
     try {
         const claim = await prisma.instituteClaim.findUnique({
-            where:{id: claimId}
+            where:{id: claimId},
+            include: { user: true, institute: true }
         })
 
         if(!claim){
-            return { success: false, error: "Claim not found" }
+            return { success: false, error: "Claim not found", statusCode: 404 }
+        }
+
+        const transition = validateClaimTransition(claim.status, status)
+        if(!transition.success){
+            return transition
         }
 
         if(status === "REJECTED"){
             await prisma.instituteClaim.update({
                 where:{id:claimId},
-                data:{status: "REJECTED"}
+                data:{status: CLAIM_REJECTED_STATUS}
             })
         }
 
@@ -40,7 +51,7 @@ export async function updateClaimStatus(claimId: string, status: "APPROVED" | "R
             await prisma.$transaction([
                 prisma.instituteClaim.update({
                     where: {id: claimId},
-                    data:{status: "APPROVED"}
+                    data:{status: CLAIM_APPROVED_STATUS}
                 }),
 
                 prisma.user.update({
@@ -64,6 +75,9 @@ export async function updateClaimStatus(claimId: string, status: "APPROVED" | "R
             ])
         }
         revalidatePath("/af-ass-manage/claims")
+        revalidatePath("/af-ass-manage")
+        revalidatePath("/profile")
+        revalidatePath("/institute/[idSlug]")
         return { success: true, message: `Claim ${status.toLowerCase()} successfully!` }
     }catch(err){
         console.error("Error fetching claims:", err)

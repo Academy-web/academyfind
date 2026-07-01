@@ -2,6 +2,11 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import {
+    PAYMENT_APPROVED_STATUS,
+    PAYMENT_REJECTED_STATUS,
+    validatePaymentTransition,
+} from "@/lib/institutes/institute-workflow";
 
 export async function approvePayment(paymentId: string) {
     try{
@@ -10,7 +15,12 @@ export async function approvePayment(paymentId: string) {
             include: { institute: true }
         });
 
-        if (!payment || payment.status !== "PENDING") return { success: false, error: "Payment not found" };
+        if (!payment) return { success: false, error: "Payment not found", statusCode: 404 };
+
+        const transition = validatePaymentTransition(payment.status, "APPROVED");
+        if (!transition.success) {
+            return transition;
+        }
 
         const expiryDate = new Date();
         if (payment.billingCycle === "MONTHLY") {
@@ -22,7 +32,7 @@ export async function approvePayment(paymentId: string) {
         await prisma.$transaction([
             prisma.subscriptionPayment.update({
                 where: { id: paymentId },
-                data: { status: "APPROVED" }
+                data: { status: PAYMENT_APPROVED_STATUS }
             }),
             prisma.institute.update({
                 where: { id: payment.instituteId },
@@ -34,7 +44,9 @@ export async function approvePayment(paymentId: string) {
         ]);
 
         revalidatePath("/af-ass-manage/payments");
-        revalidatePath(`/af-ass-manage/payment/${paymentId}`);
+        revalidatePath(`/af-ass-manage/payments/${paymentId}`);
+        revalidatePath("/af-ass-manage");
+        revalidatePath(`/manager/${payment.instituteId}/subscription`);
         return { success: true, message: "Payment approved and plan activated!" };
     }catch(err){
         console.error(err);
@@ -48,15 +60,21 @@ export async function rejectPayment(paymentId: string) {
           const payment = await prisma.subscriptionPayment.findUnique({
           where: { id: paymentId },
     });
-        if (!payment) return { success: false, error: "Payment not found" };
+        if (!payment) return { success: false, error: "Payment not found", statusCode: 404 };
+
+        const transition = validatePaymentTransition(payment.status, "REJECTED");
+        if (!transition.success) {
+            return transition;
+        }
 
         await prisma.subscriptionPayment.update({
             where: { id: paymentId },
-            data: { status: "REJECTED" },
+            data: { status: PAYMENT_REJECTED_STATUS },
         });
 
         revalidatePath("/af-ass-manage/payments");
         revalidatePath(`/af-ass-manage/payments/${paymentId}`)
+        revalidatePath("/af-ass-manage");
         return { success: true, message: "Payment rejected." };
     }catch(err){
         console.error(err);
