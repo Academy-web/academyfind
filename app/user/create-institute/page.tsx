@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button"; // Adjust path based on your setup
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "List Your Institute | AcademyFind",
@@ -24,27 +24,30 @@ export default async function UserCreateInstitutePage() {
 
     if (!session) redirect('/login');
 
-    // 2. Fetch User along with their managed institutes
+    // 2. Fetch User alongside their InstituteManager relation map
     const user = await prisma.user.findUnique({
         where: { id: session.user.id },
         include: {
-            managedInstitutes: true // Ensure this matches your schema's user-to-institute relation name
+            managedInstitutes: true 
         }
     });
 
     if (!user) redirect('/login');
 
-    // Fetch the latest request made by this user
+    // Fetch the absolute newest request context
     const latestReq = await prisma.instituteRequest.findFirst({
         where: { userId: user.id },
         orderBy: { createdAt: "desc" }
     });
 
-    // 3. Handle RESTRICTED Permissions (canAddInstitute === false)
+
+    // ==========================================
+    // CASE A: User has NO permission to add (Strict Early Returns)
+    // ==========================================
     if (!user.canAddInstitute) {
         if (latestReq?.status === "REJECTED") {
             return (
-                <div className="container mx-auto py-10 px-4 space-y-8 font-sans">
+                <div className="container mx-auto py-10 px-4 font-sans">
                     <div className="flex flex-col items-center justify-center text-center p-8 bg-red-50 border-2 border-red-200 rounded-3xl max-w-2xl mx-auto shadow-sm">
                         <h1 className="text-2xl font-bold text-red-700 mb-2">Institute Request Rejected</h1>
                         <p className="text-red-600 mb-6 font-medium">
@@ -86,7 +89,6 @@ export default async function UserCreateInstitutePage() {
             );
         }
 
-        // Fallback for restricted users without recent requests
         return (
             <div className="container mx-auto py-10 px-4 font-sans">
                 <div className="flex flex-col items-center justify-center text-center p-8 bg-slate-50 border rounded-3xl max-w-2xl mx-auto">
@@ -97,83 +99,80 @@ export default async function UserCreateInstitutePage() {
         );
     }
 
-    // 4. Handle ALLOWED Permissions (canAddInstitute === true) but has past requests
+
+    // ==========================================
+    // CASE B: User CAN add (Form renders, Banner shows logic)
+    // ==========================================
+    const allCities = await prisma.city.findMany({ orderBy: { name: 'asc' } });
+    const allCategories = await prisma.category.findMany({ orderBy: { name: 'asc' } });
+
+    // Determine conditional banner states
+    let bannerComponent = null;
+
     if (latestReq?.status === "REJECTED") {
-        return (
-            <div className="container mx-auto py-10 px-4 space-y-8 font-sans">
-                <div className="flex flex-col items-center justify-center text-center p-8 bg-red-50 border-2 border-red-200 rounded-3xl max-w-2xl mx-auto shadow-sm">
-                    <h1 className="text-2xl font-bold text-red-700 mb-2">Institute Request Rejected</h1>
-                    <p className="text-red-600 mb-6 font-medium">
-                        Unfortunately, your previous submission did not meet our guidelines and was not approved by the admin team.
-                    </p>
-                    <p className="text-sm text-slate-500">
-                        Please contact support for more details or if you believe this was a mistake.
-                    </p>
-                </div>
+        bannerComponent = (
+            <div className="flex flex-col items-center justify-center text-center p-6 bg-amber-50 border border-amber-200 rounded-2xl max-w-4xl mx-auto mb-8 shadow-sm">
+                <h2 className="text-lg font-bold text-amber-800 mb-1">Your Last Request Was Rejected</h2>
+                <p className="text-sm text-amber-700 font-medium">
+                    Your previous submission did not meet our guidelines. However, you can use the form below to submit a clean new institute listing request.
+                </p>
             </div>
         );
-    }
+    } 
+    
+    else if (latestReq?.status === "APPROVED") {
+        // Look up against the complete mapping database layer array
+        const isAlreadyManager = user.managedInstitutes.some(
+            (manager: { instituteId: string }) => manager.instituteId === latestReq.instituteId
+        );
 
-    if (latestReq?.status === "APPROVED") {
-        // Look up if user manages this approved institute
-        const isManager = user.managedInstitutes?.some((inst: { instituteId: string }) => inst.instituteId === latestReq.instituteId);
-
-        if (isManager) {
-            return (
-                <div className="container mx-auto py-10 px-4 space-y-8 font-sans">
-                    <div className="flex flex-col items-center justify-center text-center p-8 bg-emerald-50 border-2 border-emerald-200 rounded-3xl max-w-2xl mx-auto shadow-sm">
-                        <h1 className="text-2xl font-bold text-emerald-700 mb-2">Institute Request Approved</h1>
-                        <p className="text-emerald-600 mb-6 font-medium">
-                            Congratulations! Your request to add an institute has been approved by the admin team.
-                        </p>
-                        <p className="text-sm text-slate-500">
-                            You can now proceed to manage your institute's profile and listings.
-                        </p>
-                        <Link href="/manager" passHref legacyBehavior>
-                            <Button className="mt-4 bg-emerald-600 text-white hover:bg-emerald-700 transition">
-                                Go to Dashboard
-                            </Button>
-                        </Link>
-                    </div>
+        if (isAlreadyManager) {
+            bannerComponent = (
+                <div className="flex flex-col items-center justify-center text-center p-6 bg-emerald-50 border border-emerald-200 rounded-2xl max-w-4xl mx-auto mb-8 shadow-sm">
+                    <h2 className="text-lg font-bold text-emerald-800 mb-1">Your Last Request Was Approved!</h2>
+                    <p className="text-sm text-emerald-700 font-medium mb-3">
+                        You have successfully claimed and are recognized as a manager for this institute. You can access your management zone now.
+                    </p>
+                    <Link href="/manager" passHref legacyBehavior>
+                        <Button className="bg-emerald-600 text-white hover:bg-emerald-700 transition size-sm">
+                            Go to Dashboard
+                        </Button>
+                    </Link>
                 </div>
             );
         } else {
-            return (
-                <div className="container mx-auto py-10 px-4 space-y-8 font-sans">
-                    <div className="flex flex-col items-center justify-center text-center p-8 bg-emerald-50 border-2 border-emerald-200 rounded-3xl max-w-2xl mx-auto shadow-sm">
-                        <h1 className="text-2xl font-bold text-emerald-700 mb-2">Institute Request Approved</h1>
-                        <p className="text-emerald-600 mb-6 font-medium">
-                            Congratulations! Your request to add an institute has been approved by the admin team.
-                        </p>
-                        <p className="text-sm text-slate-500 mb-2">
-                            But you haven't been assigned as a manager for this institute. Either you have not claimed the institute or the admin has not assigned you as a manager.
-                        </p>
-                        <p className="text-sm text-slate-500">
-                            If you believe this is an error, please reach out to our support team.
-                        </p>
-                        <Link href={`/user/create-institute/${latestReq.instituteId}/claim`} passHref legacyBehavior>
-                            <Button className="mt-4 bg-emerald-600 text-white hover:bg-emerald-700 transition">
-                                Claim if you haven't already
-                            </Button>
-                        </Link>
-                    </div>
+            bannerComponent = (
+                <div className="flex flex-col items-center justify-center text-center p-6 bg-sky-50 border border-sky-200 rounded-2xl max-w-4xl mx-auto mb-8 shadow-sm">
+                    <h2 className="text-lg font-bold text-sky-800 mb-1">Request Approved but Unclaimed</h2>
+                    <p className="text-sm text-sky-700 font-medium mb-3">
+                        Great news! Your request was approved, but you have not claimed ownership rights yet. Please fill out the claim application form.
+                    </p>
+                    <Link href={`/user/create-institute/${latestReq.instituteId}/claim`} passHref legacyBehavior>
+                        <Button className="bg-sky-600 text-white hover:bg-sky-700 transition size-sm">
+                            Claim Your Institute Now
+                        </Button>
+                    </Link>
                 </div>
             );
         }
     }
 
-    // 5. Default State: Render form if user is allowed and has no blocks
-    const allCities = await prisma.city.findMany({ orderBy: { name: 'asc' } });
-    const allCategories = await prisma.category.findMany({ orderBy: { name: 'asc' } });
-
     return (
         <div className="container mx-auto py-10 px-4">
-            <h1 className="text-3xl font-bold mb-8">List Your Institute</h1>
-            <CreateInstituteForm 
-                userId={user.id} 
-                allCities={allCities} 
-                allCategories={allCategories} 
-            />
+            {/* Conditional Notification Banner if history rules match */}
+            {bannerComponent}
+
+            {/* Always Available Creation Interface for Authorized Users */}
+            <div className="max-w-4xl mx-auto">
+                <h1 className="text-3xl font-bold mb-2 text-slate-800">List Your Institute</h1>
+                <p className="text-slate-500 mb-8">Fill up the form parameters below to propose a new corporate institute request listing.</p>
+                
+                <CreateInstituteForm 
+                    userId={user.id} 
+                    allCities={allCities} 
+                    allCategories={allCategories} 
+                />
+            </div>
         </div>
     );
 }
