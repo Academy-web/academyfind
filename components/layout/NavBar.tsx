@@ -45,7 +45,7 @@ export default function Navbar({ session }: { session: any }) {
 
   return (
     <header className="sticky top-0 z-[110] border-b border-zinc-200/60 bg-white/70 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-285 items-center justify-between px-4 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-1150 items-center justify-between px-4 py-4 lg:px-8">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
