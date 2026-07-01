@@ -3,16 +3,14 @@ import { notFound, redirect } from "next/navigation";
 import ClaimForm from "@/components/institute/ClaimForm";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth/auth";
-import extractId from "@/lib/extractId"; // 👈 ID extract karne ka function
 import { Metadata } from "next";
 
 export async function generateMetadata({ 
   params 
 }: { 
-  params: Promise<{ idSlug: string }> 
+  params: Promise<{ id: string }> 
 }): Promise<Metadata> {
-  const { idSlug } = await params;
-  const id = extractId(idSlug);
+  const { id } = await params;
   
   // Tab title ke liye institute ka naam nikal rahe hain
   const institute = await prisma.institute.findUnique({
