@@ -13,32 +13,15 @@ export default async function BlogLayout({
 }>) {
   const session = await getCachedSession();
 
-  type BlogAuthorProfileLink = {
-    username: string;
-    displayName: string;
-  };
-
-  const userWithBlogProfile = session?.user?.id
-    ? await prisma.user.findUnique({
-        where: { id: session.user.id },
+  const authorProfile = session?.user?.id
+    ? await prisma.blogAuthorProfile.findUnique({
+        where: { userId: session.user.id },
         select: {
-          blogAuthorProfile: {
-            select: {
-              username: true,
-              displayName: true,
-            },
-          },
+          username: true,
+          displayName: true,
         },
       })
     : null;
-
-  const authorProfile: BlogAuthorProfileLink | null =
-    userWithBlogProfile?.blogAuthorProfile
-      ? {
-          username: userWithBlogProfile.blogAuthorProfile.username,
-          displayName: userWithBlogProfile.blogAuthorProfile.displayName,
-        }
-      : null;
 
   return (
     <div className="bg-slate-50/50">
