@@ -147,15 +147,15 @@ export default function CreateInstituteForm({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-slate-500 uppercase">Phone Number *</label>
-                        <Input name="phone" type="tel" required placeholder="e.g., +91 9876543210" />
+                        <Input name="phone" type="tel" required placeholder="e.g., 9876543210" maxLength={10} />
                     </div>
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-slate-500 uppercase">Official Email ID *</label>
-                        <Input name="email" type="email" required placeholder="e.g., info@academy.com" />
+                        <Input name="email" type="email" required placeholder="e.g., info@academy.com" maxLength={255} />
                     </div>
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-slate-500 uppercase">Website URL</label>
-                        <Input name="website" type="url" placeholder="https://www.academy.com (Optional)" />
+                        <Input name="website" type="url" placeholder="https://www.academy.com (Optional)" maxLength={255} />
                     </div>
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-slate-500 uppercase">Google Maps URL</label>
