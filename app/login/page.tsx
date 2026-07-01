@@ -183,11 +183,11 @@ export default function LoginPage() {
           {/* Stats */}
           <div className="mt-14 flex flex-wrap gap-4">
             <div className="rounded-2xl bg-white/15 px-5 py-4 backdrop-blur-md">
-              <p className="text-2xl font-bold">24,000+</p>
+              <p className="text-2xl font-bold">47,000+</p>
               <p className="text-sm text-orange-100">Institutes</p>
             </div>
             <div className="rounded-2xl bg-white/15 px-5 py-4 backdrop-blur-md">
-              <p className="text-2xl font-bold">4</p>
+              <p className="text-2xl font-bold">6+</p>
               <p className="text-sm text-orange-100">Cities</p>
             </div>
             <div className="rounded-2xl bg-white/15 px-5 py-4 backdrop-blur-md">
