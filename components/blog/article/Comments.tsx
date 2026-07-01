@@ -1,10 +1,11 @@
-
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { MessageCircle, Send } from "lucide-react";
 import type { BlogComment, User } from "@/app/generated/prisma/client";
+import { addBlogComment } from "@/lib/User/user/blog/comment";
+import toast from "react-hot-toast";
 
 type CommentItem = Pick<
   BlogComment,
@@ -14,38 +15,58 @@ type CommentItem = Pick<
 };
 
 interface CommentsProps {
+  postId: string;
   comments: CommentItem[];
   canComment?: boolean;
-  onSubmit?: (content: string) => Promise<void>;
 }
 
 export default function Comments({
+  postId,
   comments,
   canComment = false,
-  onSubmit,
 }: CommentsProps) {
   const [content, setContent] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [currentComments, setCurrentComments] = useState<CommentItem[]>(comments);
+
+  // Keep local comments in sync if server props change
+  useEffect(() => {
+    setCurrentComments(comments);
+  }, [comments]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!onSubmit || !content.trim()) return;
+    const trimmed = content.trim();
+    if (!trimmed) return;
+
     setSubmitting(true);
     try {
-      await onSubmit(content.trim());
-      setContent("");
+      const res = await addBlogComment(postId, trimmed);
+      if (res.success && res.comment) {
+        // Optimistically prepend the comment to the list
+        setCurrentComments((prev) => [res.comment as CommentItem, ...prev]);
+        setContent("");
+        toast.success("Comment posted successfully!");
+      } else {
+        toast.error(res.error || "Failed to post comment.");
+      }
+    } catch (err) {
+      toast.error("An error occurred while posting the comment.");
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <section className="mt-16 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+    <section
+      id="comments-section"
+      className="mt-16 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8scroll-mt-24"
+    >
       <div className="mb-8 flex items-center gap-3">
         <MessageCircle className="h-6 w-6 text-amber-500" />
         <div>
           <h2 className="text-2xl font-bold text-slate-900">
-            Comments ({comments.length})
+            Comments ({currentComments.length})
           </h2>
           <p className="text-sm text-slate-500">
             Join the discussion.
@@ -82,12 +103,12 @@ export default function Comments({
       )}
 
       <div className="space-y-6">
-        {comments.length === 0 ? (
+        {currentComments.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-slate-300 py-10 text-center text-slate-500">
             No comments yet. Be the first to comment.
           </div>
         ) : (
-          comments.map((comment) => (
+          currentComments.map((comment) => (
             <article
               key={comment.id}
               className="rounded-2xl border border-slate-200 p-5"
@@ -100,7 +121,7 @@ export default function Comments({
                   <time className="text-xs text-slate-500">
                     {new Intl.DateTimeFormat("en-IN", {
                       dateStyle: "medium",
-                    }).format(comment.createdAt)}
+                    }).format(new Date(comment.createdAt))}
                   </time>
                 </div>
               </div>

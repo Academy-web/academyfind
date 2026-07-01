@@ -47,8 +47,9 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
-import { saveAdminBlogPost } from "@/lib/User/admin/admin-blog";
+import { saveAdminBlogPost, deleteAdminBlogPost } from "@/lib/User/admin/admin-blog";
 import { saveBlogPost } from "@/lib/User/user/blog/saveblogpost";
+import { deleteBlogPost } from "@/lib/User/user/blog/deleteblogpost";
 import { uploadImage } from "./utils/uploadImage";
 
 import Editor from "./Editor";
@@ -90,12 +91,12 @@ function SectionCard({
 }) {
   return (
     <Card
-      className={`rounded-2xl border-0 bg-white shadow-sm ring-1 ring-slate-200 ${className}`}
+      className={`rounded-[22px] border border-slate-100 bg-white/70 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 ring-1 ring-slate-100/50 ${className}`}
     >
-      <CardHeader>
-        <CardTitle className="text-slate-900">{title}</CardTitle>
+      <CardHeader className="pb-4">
+        <CardTitle className="text-xl font-bold tracking-tight text-slate-800">{title}</CardTitle>
         {description ? (
-          <CardDescription className="text-slate-500">
+          <CardDescription className="text-sm text-slate-500 mt-1">
             {description}
           </CardDescription>
         ) : null}
@@ -401,8 +402,45 @@ export default function BlogEditorForm({
     });
   };
 
+  const handleDelete = async () => {
+    if (!confirm("Are you sure you want to delete this article? This action cannot be undone.")) {
+      return;
+    }
+
+    setSaveState("saving");
+    try {
+      const res = management === "admin"
+        ? await deleteAdminBlogPost(postId!)
+        : await deleteBlogPost(postId!);
+      
+      if (res.success) {
+        toast.success("Post deleted successfully.");
+        router.push(management === "admin" ? "/af-ass-manage/blog" : "/blog/my-posts");
+      } else {
+        toast.error(res.error || "Failed to delete post.");
+        setSaveState("unsaved");
+      }
+    } catch (err) {
+      toast.error("An error occurred while deleting the post.");
+      setSaveState("unsaved");
+    }
+  };
+
   const actionButtons = (
     <>
+      {mode === "edit" && postId && (
+        <Button
+          type="button"
+          variant="ghost"
+          size="lg"
+          disabled={isPending || isUploading}
+          onClick={handleDelete}
+          className="text-red-500 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-100 font-semibold"
+        >
+          <Trash2 className="h-4 w-4" />
+          Delete Post
+        </Button>
+      )}
       <Button
         type="button"
         variant="outline"
@@ -494,13 +532,13 @@ export default function BlogEditorForm({
                   maxLength={180}
                   onChange={handleTitleChange}
                   placeholder="A useful, specific post title"
-                  className="h-11 rounded-xl border-slate-200 text-base"
+                  className="h-11 rounded-xl border-slate-200 text-base transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
                 />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="blog-slug">Slug</Label>
-                <div className="flex overflow-hidden rounded-xl border border-slate-200 bg-white focus-within:ring-3 focus-within:ring-amber-200">
+                <div className="flex overflow-hidden rounded-xl border border-slate-200 bg-white transition-all focus-within:border-amber-400 focus-within:ring-4 focus-within:ring-amber-100">
                   <span className="hidden items-center border-r border-slate-200 bg-slate-50 px-3 text-sm text-slate-500 sm:flex">
                     /blog/
                   </span>
@@ -530,7 +568,7 @@ export default function BlogEditorForm({
                   rows={4}
                   onChange={(event) => updateField("excerpt", event.target.value)}
                   placeholder="A concise summary for cards and search results."
-                  className="min-h-28 rounded-xl border-slate-200"
+                  className="min-h-28 rounded-xl border-slate-200 transition-all focus:border-amber-400 focus:ring-4 focus:ring-amber-100"
                 />
               </div>
             </div>

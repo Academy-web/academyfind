@@ -38,13 +38,40 @@ export default function ArticleActions({
   
   const [isPending, startTransition] = useTransition();
 
-  // Optimistic UI for Likes
-  const [optimisticLike, addOptimisticLike] = useOptimistic(
-    { count: initialLikes, hasLiked: hasLikedInitially },
-    (state, newLikeState: boolean) => ({
-      count: newLikeState ? state.count + 1 : state.count - 1,
-      hasLiked: newLikeState,
-    })
+  const initialReaction: "LIKE" | "HELPFUL" | "LOVE" | null = 
+    hasLikedInitially ? "LIKE" :
+    hasHelpfullyInitially ? "HELPFUL" :
+    hasLovedInitially ? "LOVE" : null;
+
+  // Single optimistic reaction state combining count and current reaction type
+  const [optimisticReaction, addOptimisticReaction] = useOptimistic(
+    { count: initialLikes, userReaction: initialReaction },
+    (state, action: { type: "LIKE" | "HELPFUL" | "LOVE"; toggle: boolean }) => {
+      const { type, toggle } = action;
+      
+      if (toggle) {
+        // Toggle OFF current reaction
+        if (state.userReaction === type) {
+          return {
+            count: Math.max(0, state.count - 1),
+            userReaction: null
+          };
+        }
+        // Toggle ON or Switch reaction type (total count only changes by 1 if there was no reaction before)
+        const countDiff = state.userReaction ? 0 : 1;
+        return {
+          count: state.count + countDiff,
+          userReaction: type
+        };
+      } else {
+        // Explicit removal
+        const countDiff = state.userReaction ? -1 : 0;
+        return {
+          count: Math.max(0, state.count + countDiff),
+          userReaction: null
+        };
+      }
+    }
   );
 
   // Optimistic UI for Bookmarks
@@ -56,24 +83,6 @@ export default function ArticleActions({
     })
   );
 
-    // Optimistic UI for Helpful
-    const [optimisticHelpful, addOptimisticHelpful] = useOptimistic(
-        { count: initialLikes, hasHelpfully: hasHelpfullyInitially },
-        (state, newHelpfulState: boolean) => ({
-            count: newHelpfulState ? state.count + 1 : state.count - 1,
-            hasHelpfully: newHelpfulState,
-        })
-    );
-
-  // Optimistic UI for Loved
-    const [optimisticLoved, addOptimisticLoved] = useOptimistic(
-        { count: initialLikes, hasLoved: hasLovedInitially },
-        (state, newLovedState: boolean) => ({
-            count: newLovedState ? state.count + 1 : state.count - 1,
-            hasLoved: newLovedState,
-        })
-    );
-
   // Report Modal State
   const [isReportOpen, setIsReportOpen] = useState(false);
   const [reportReason, setReportReason] = useState<ReportReason>("SPAM");
@@ -83,8 +92,7 @@ export default function ArticleActions({
     if (!isLoggedIn) return toast.error("Please login to like this article.");
     
     startTransition(async () => {
-      const newStatus = !optimisticLike.hasLiked;
-      addOptimisticLike(newStatus); // Instant UI update
+      addOptimisticReaction({ type: "LIKE", toggle: true });
       
       const res = await toggleReaction(postId, slug, "LIKE");
       if (!res.success) {
@@ -97,13 +105,12 @@ export default function ArticleActions({
     if (!isLoggedIn) return toast.error("Please login to mark as helpful.");
 
     startTransition(async () => {
-      const newStatus = !optimisticHelpful.hasHelpfully;
-      addOptimisticHelpful(newStatus); // Instant UI update
+      addOptimisticReaction({ type: "HELPFUL", toggle: true });
 
-        const res = await toggleReaction(postId, slug, "HELPFUL");
-        if (!res.success) {
-            toast.error(res.message || "Failed to update reaction.");
-        }
+      const res = await toggleReaction(postId, slug, "HELPFUL");
+      if (!res.success) {
+        toast.error(res.message || "Failed to update reaction.");
+      }
     });
   };
 
@@ -111,13 +118,12 @@ export default function ArticleActions({
     if (!isLoggedIn) return toast.error("Please login to mark as loved.");
     
     startTransition(async () => {
-      const newStatus = !optimisticLoved.hasLoved;
-      addOptimisticLoved(newStatus); // Instant UI update
+      addOptimisticReaction({ type: "LOVE", toggle: true });
 
-        const res = await toggleReaction(postId, slug, "LOVE");
-        if (!res.success) {
-            toast.error(res.message || "Failed to update reaction.");
-        }
+      const res = await toggleReaction(postId, slug, "LOVE");
+      if (!res.success) {
+        toast.error(res.message || "Failed to update reaction.");
+      }
     });
   };
 
@@ -126,7 +132,7 @@ export default function ArticleActions({
     
     startTransition(async () => {
       const newStatus = !optimisticBookmark.hasBookmarked;
-      addOptimisticBookmark(newStatus); // Instant UI update
+      addOptimisticBookmark(newStatus);
       
       const res = await toggleBookmark(postId, slug);
       if (!res.success) {
@@ -152,7 +158,10 @@ export default function ArticleActions({
   };
 
   const scrollToComments = () => {
-    document.getElementById("comments-section")?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById("comments-section");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -163,27 +172,28 @@ export default function ArticleActions({
           <button 
             onClick={handleLike}
             disabled={isPending}
-            className={`flex items-center gap-2 transition-colors ${optimisticLike.hasLiked ? 'text-amber-600' : 'text-slate-500 hover:text-amber-600'}`}
+            className={`flex items-center gap-2 transition-colors ${optimisticReaction.userReaction === "LIKE" ? 'text-amber-600' : 'text-slate-500 hover:text-amber-600'}`}
           >
-            <ThumbsUp className={`w-5 h-5 ${optimisticLike.hasLiked ? 'fill-amber-500' : ''}`} />
-            <span className="text-sm font-semibold">{optimisticLike.count}</span>
+            <ThumbsUp className={`w-5 h-5 ${optimisticReaction.userReaction === "LIKE" ? 'fill-amber-500' : ''}`} />
+            <span className="text-sm font-semibold">{optimisticReaction.count}</span>
           </button>
+          
           <button 
             onClick={handleHelpful}
             disabled={isPending}
-            className={`flex items-center gap-2 transition-colors ${optimisticHelpful.hasHelpfully ? 'text-emerald-600' : 'text-slate-500 hover:text-emerald-600'}`}
+            className={`flex items-center gap-2 transition-colors ${optimisticReaction.userReaction === "HELPFUL" ? 'text-emerald-600' : 'text-slate-500 hover:text-emerald-600'}`}
           >
-            <ThumbsUp className={`w-5 h-5 ${optimisticHelpful.hasHelpfully ? 'fill-emerald-500' : ''}`} />
-            <span className="text-sm font-semibold">{optimisticHelpful.count}</span>
+            <ThumbsUp className={`w-5 h-5 ${optimisticReaction.userReaction === "HELPFUL" ? 'fill-emerald-500' : ''}`} />
+            <span className="text-sm font-semibold">{optimisticReaction.count}</span>
           </button>
 
           <button 
             onClick={handleLoved}
             disabled={isPending}
-            className={`flex items-center gap-2 transition-colors ${optimisticLoved.hasLoved ? 'text-rose-600' : 'text-slate-500 hover:text-rose-600'}`}
+            className={`flex items-center gap-2 transition-colors ${optimisticReaction.userReaction === "LOVE" ? 'text-rose-600' : 'text-slate-500 hover:text-rose-600'}`}
           >
-            <Heart className={`w-5 h-5 ${optimisticLoved.hasLoved ? 'fill-rose-500' : ''}`} />
-            <span className="text-sm font-semibold">{optimisticLoved.count}</span>
+            <Heart className={`w-5 h-5 ${optimisticReaction.userReaction === "LOVE" ? 'fill-rose-500' : ''}`} />
+            <span className="text-sm font-semibold">{optimisticReaction.count}</span>
           </button>
 
           <button 

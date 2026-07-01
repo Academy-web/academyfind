@@ -1,26 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Flame } from "lucide-react";
 
-const categories = [
-  "All",
-  "JEE",
-  "NEET",
-  "CUET",
-  "UPSC",
-  "SSC",
-  "CAT",
-  "CLAT",
-  "NDA",
-  "Study Tips",
-  "Career",
-  "Admissions",
-  "Scholarships",
-];
+interface CategoryTabsProps {
+  activeCategorySlug?: string;
+  categories: { id: string; name: string; slug: string }[];
+}
 
-export default function CategoryTabs() {
-  const [active, setActive] = useState("All");
+export default function CategoryTabs({
+  activeCategorySlug = "",
+  categories,
+}: CategoryTabsProps) {
+  const searchParams = useSearchParams();
+
+  // Preserves search query parameters (like sorting/q) while resetting page to 1
+  const getCategoryHref = (slug: string) => {
+    const params = new URLSearchParams(searchParams?.toString() || "");
+    params.set("page", "1");
+    if (!slug) {
+      params.delete("category");
+    } else {
+      params.set("category", slug);
+    }
+    return `/blog?${params.toString()}`;
+  };
 
   return (
     <section className="sticky top-16 z-20 border-y border-slate-200 bg-white/90 py-5 backdrop-blur">
@@ -30,18 +35,29 @@ export default function CategoryTabs() {
           Browse
         </div>
 
+        <Link
+          href={getCategoryHref("")}
+          className={`whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
+            activeCategorySlug === ""
+              ? "bg-amber-400 text-slate-900 shadow-md"
+              : "border border-slate-200 bg-white text-slate-600 hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700"
+          }`}
+        >
+          All
+        </Link>
+
         {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActive(category)}
+          <Link
+            key={category.slug}
+            href={getCategoryHref(category.slug)}
             className={`whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-              active === category
+              activeCategorySlug === category.slug
                 ? "bg-amber-400 text-slate-900 shadow-md"
                 : "border border-slate-200 bg-white text-slate-600 hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700"
             }`}
           >
-            {category}
-          </button>
+            {category.name}
+          </Link>
         ))}
       </div>
     </section>

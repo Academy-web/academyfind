@@ -7,6 +7,7 @@ import { z } from "zod";
 import type { BlogEditorSaveInput } from "@/components/blog/editor/types";
 import { getCachedSession } from "@/lib/auth/session";
 import { prisma } from "@/lib/prisma";
+import { syncBlogPostToMeili } from "./meilisync";
 
 const blogEditorSchema = z.object({
   id: z.string().min(1).optional(),
@@ -72,13 +73,48 @@ async function persistBlogPost(
     return { success: false, error: "Please sign in to save this post." };
   }
 
-  const author = await prisma.blogAuthorProfile.findUnique({
+  let author = await prisma.blogAuthorProfile.findUnique({
     where: { userId: session.user.id },
     select: { id: true },
   });
 
+  // Auto-onboard the author if profile doesn't exist
   if (!author) {
-    return { success: false, error: "An author profile is required." };
+    const user = await prisma.user.findUnique({
+      where: { id: session.user.id },
+    });
+    if (user) {
+      const emailPrefix = user.email ? user.email.split("@")[0] : "author";
+      const baseUsername = emailPrefix.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+      let username = baseUsername || "author";
+      let isUnique = false;
+      let counter = 0;
+
+      while (!isUnique) {
+        const potentialUsername = counter === 0 ? username : `${username}${counter}`;
+        const check = await prisma.blogAuthorProfile.findUnique({
+          where: { username: potentialUsername },
+        });
+        if (!check) {
+          isUnique = true;
+          username = potentialUsername;
+        } else {
+          counter++;
+        }
+      }
+
+      author = await prisma.blogAuthorProfile.create({
+        data: {
+          userId: user.id,
+          displayName: user.name || "Anonymous Author",
+          username,
+          avatarUrl: user.image || null,
+        },
+        select: { id: true },
+      });
+    } else {
+      return { success: false, error: "An author profile is required." };
+    }
   }
 
   const value = parsed.data;
@@ -94,10 +130,11 @@ async function persistBlogPost(
     return { success: false, error: "This slug is already in use." };
   }
 
+  let existingPost = null;
   if (value.id) {
-    const existingPost = await prisma.blogPost.findUnique({
+    existingPost = await prisma.blogPost.findUnique({
       where: { id: value.id },
-      select: { authorProfileId: true },
+      select: { authorProfileId: true, publishedAt: true },
     });
 
     if (!existingPost || existingPost.authorProfileId !== author.id) {
@@ -112,13 +149,17 @@ async function persistBlogPost(
   ];
 
   const status = value.intent === "publish" ? "PUBLISHED" : "DRAFT";
+  
+  // Bug fix: Preserve original publishedAt date if post is already published
+  const publishedAt = value.intent === "publish"
+    ? (existingPost?.publishedAt ?? new Date())
+    : null;
+
   const sharedData = {
     title: value.title,
     slug: value.slug,
     excerpt: value.excerpt || null,
     contentHtml: value.contentHtml,
-    // The current TipTap setup emits HTML. Keep the required source column in
-    // sync until a Markdown extension is introduced.
     contentMarkdown: value.contentHtml,
     coverImage: value.coverImage || null,
     coverImageAlt: value.title,
@@ -128,7 +169,7 @@ async function persistBlogPost(
     metaDescription: value.metaDescription || null,
     focusKeyword: value.focusKeyword || null,
     status,
-    publishedAt: value.intent === "publish" ? new Date() : null,
+    publishedAt,
   } as const;
 
   const post = await prisma.$transaction(async (tx) => {
@@ -181,9 +222,20 @@ async function persistBlogPost(
     });
   });
 
+  // Sync to Meilisearch search index
+  await syncBlogPostToMeili(post.id);
+
+  // Invalidate Next.js cache paths
   revalidatePath("/blog");
   revalidatePath("/blog/my-posts");
+  revalidatePath("/blog/search");
   revalidatePath(`/blog/${post.slug}`);
+  if (value.categoryId) {
+    const cat = await prisma.blogCategory.findUnique({ where: { id: value.categoryId }, select: { slug: true } });
+    if (cat?.slug) {
+      revalidatePath(`/blog/category/${cat.slug}`);
+    }
+  }
 
   return { success: true, ...post };
 }

@@ -17,12 +17,16 @@ export async function getBookmarkedPosts({
     redirect("/login");
   }
 
+  const where = {
+    userId,
+    post: {
+      status: BlogStatus.PUBLISHED,
+    },
+  };
+
   const [bookmarks, total] = await Promise.all([
     prisma.blogBookmark.findMany({
-      where: {
-        userId,
-      },
-
+      where,
       include: {
         post: {
           include: {
@@ -32,29 +36,21 @@ export async function getBookmarkedPosts({
           },
         },
       },
-
       orderBy: {
         createdAt: "desc",
       },
-
       skip: (page - 1) * limit,
-
       take: limit,
     }),
 
     prisma.blogBookmark.count({
-      where: {
-        userId,
-      },
+      where,
     }),
   ]);
 
   const posts = bookmarks
     .map((bookmark: { post: any }) => bookmark.post)
-    .filter(
-      (post: any): post is NonNullable<typeof post> =>
-        !!post && post.status === BlogStatus.PUBLISHED
-    );
+    .filter((post: any): post is NonNullable<typeof post> => !!post);
 
   const totalPages = Math.ceil(total / limit);
 

@@ -65,7 +65,6 @@ export async function updateJobPosting(jobId: string, formData: FormData) {
                 responsibilities: formData.get("responsibilities") as string,
                 requirements: formData.get("requirements") as string,
                 benefits: (formData.get("benefits") as string) || null,
-                applicationDeadline: applicationDeadlineStr ? new Date(applicationDeadlineStr) : null,
                 isActive: formData.get("isActive") === "true",
             }
         });

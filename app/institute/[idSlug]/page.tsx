@@ -250,6 +250,8 @@ export default async function InstitutePage({ params }: PageProps) {
                           {institute.facebookUrl && <a href={institute.facebookUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:scale-110 transition-transform"><FaFacebook className="h-5 w-5" /></a>}
                           {institute.youtubeUrl && <a href={institute.youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:scale-110 transition-transform"><FaYoutube className="h-5 w-5" /></a>}
                           {institute.linkedinUrl && <a href={institute.linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:scale-110 transition-transform"><FaLinkedin className="h-5 w-5" /></a>}
+                          {institute.twitterUrl && <a href={institute.twitterUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:scale-110 transition-transform"><FaTwitter className="h-5 w-5" /></a>}
+                          {institute.telegramUrl && <a href={institute.telegramUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:scale-110 transition-transform"><FaTelegram className="h-5 w-5" /></a>}
                         </div>
                       )}
                     </div>

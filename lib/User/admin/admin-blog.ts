@@ -7,6 +7,7 @@ import { z } from "zod";
 import type { BlogEditorSaveInput } from "@/components/blog/editor/types";
 import { getCachedSession } from "@/lib/auth/session";
 import { prisma } from "@/lib/prisma";
+import { syncBlogPostToMeili, deleteBlogPostFromMeili } from "@/lib/User/user/blog/meilisync";
 
 const adminBlogSchema = z.object({
   id: z.string().min(1).optional(),
@@ -222,9 +223,13 @@ export async function saveAdminBlogPost(
       });
     });
 
+    // Sync post to Meilisearch
+    await syncBlogPostToMeili(post.id);
+
     revalidatePath("/blog");
     revalidatePath(`/blog/${post.slug}`);
     revalidatePath("/af-ass-manage/blog");
+    revalidatePath("/blog/search");
     return { success: true, ...post };
   } catch (error) {
     console.error("Unable to save admin blog post:", error);
@@ -258,10 +263,26 @@ export async function archiveAdminBlogPost(postId: string) {
 export async function deleteAdminBlogPost(postId: string) {
   try {
     await requireAdmin();
+    // Fetch slug for path revalidation
+    const post = await prisma.blogPost.findUnique({
+      where: { id: postId },
+      select: { slug: true }
+    });
+
     await prisma.blogPost.delete({ where: { id: postId } });
+
+    // Sync to Meilisearch
+    await deleteBlogPostFromMeili(postId);
+
+    revalidatePath("/blog");
+    revalidatePath("/blog/search");
+    if (post?.slug) {
+      revalidatePath(`/blog/${post.slug}`);
+    }
     revalidatePath("/af-ass-manage/blog");
     return { success: true };
-  } catch {
+  } catch (error) {
+    console.error("Error deleting admin blog post:", error);
     return { success: false, error: "Unable to delete this post." };
   }
 }

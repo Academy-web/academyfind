@@ -113,7 +113,7 @@ export default function Editor({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm flex flex-col",
+        "overflow-hidden rounded-[22px] border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 flex flex-col focus-within:border-amber-400 focus-within:ring-4 focus-within:ring-amber-100/55",
         className
       )}
     >

@@ -78,7 +78,7 @@ export default async function BlogDetailPage({
 
               <NewsletterCTA />
 
-              <Comments comments={post.comments} canComment={!!userId} />
+              <Comments postId={post.id} comments={post.comments} canComment={!!userId} />
           </main>
 
           <aside>
